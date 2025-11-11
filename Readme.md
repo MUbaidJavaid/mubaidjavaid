@@ -80,7 +80,7 @@
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&theme=github_dark&hide_title=true" alt="GitHub Stats" height="165" />
   <img src="https://streak-stats.demolab.com/?user=MUbaidJavaid&theme=github-dark-blue&hide_border=true" alt="GitHub Streak" height="165" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&theme=github-dark-blue&hide_border=true" alt="GitHub Streak" height="165" />
+  <!-- <img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&theme=github-dark-blue&hide_border=true" alt="GitHub Streak" height="165" /> -->
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&hide_title=true&langs_count=7&theme=github_dark" alt="Top Languages" height="165" />
 </div>
 <br/>
