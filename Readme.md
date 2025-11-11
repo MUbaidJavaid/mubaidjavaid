@@ -3,7 +3,9 @@
   Hi there 👋, I'm <span style="color:#3FB950;">Ubaid Javaid</span>
 </h1>
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&color=3FB950&center=true&vCenter=true&width=435&lines=Web+Developer+%26+Consultant;Founder+of+Fiesta+Consultants;Passionate+about+Tech+%F0%9F%92%BB" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=32&pause=1000&color=0A66C2&center=true&vCenter=true&width=700&lines=MERN-STACK+DEVELOPER;Full-Stack+Engineer+(MERN);Building+Scalable+Web+Apps+%F0%9F%92%BB" alt="Typing SVG" />
+</p>
+
 </p>
 
 ---
