@@ -11,6 +11,9 @@ import AboutSection from "@/components/about-section"
 import ContactSection from "@/components/contact-section"
 import ParticleBackground from "@/components/particle-background"
 
+
+
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState("hero")
 
@@ -34,7 +37,8 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    // <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-foreground overflow-x-hidden">
       <ParticleBackground />
       <InteractiveEffects />
       <Navigation activeSection={activeSection} onNavigate={setActiveSection} />
@@ -42,6 +46,8 @@ export default function Home() {
       <MainLayout>
         <section id="hero" className="min-h-screen relative">
           <HeroSection />
+         
+          
         </section>
 
         <section id="projects" className="min-h-screen relative py-20">

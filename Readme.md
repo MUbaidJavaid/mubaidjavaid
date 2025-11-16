@@ -38,16 +38,16 @@
 
 
 **Frontend:**  
-- HTML, CSS, TailwindCSS  
-- JavaScript, TypeScript  
-- React.js, Next.js  
-- Material UI, EJS  
+- HTML | CSS | TailwindCSS  
+- JavaScript | TypeScript  
+- React.js | Next.js  
+- Material UI | ShadCN | EJS  
 
 **Backend:**  
-- Node.js, Express  
+- Node.js | Express  
 
 **Database:**  
-- MongoDB, SQL 
+- MongoDB | SQL 
 
 ---
 

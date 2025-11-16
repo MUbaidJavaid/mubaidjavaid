@@ -41,7 +41,7 @@ export default function InteractiveEffects() {
     >
       {/* Glow effect following mouse */}
       <div
-        className="absolute w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl opacity-0 hover:opacity-50 transition-opacity duration-300"
+        className="absolute w-96 h-96 bg-linear-to-r from-primary/20 to-accent/20 rounded-full blur-3xl opacity-0 hover:opacity-50 transition-opacity duration-300"
         style={{
           left: "var(--mouse-x)",
           top: "var(--mouse-y)",

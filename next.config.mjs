@@ -1,3 +1,11 @@
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+/** Fix __dirname for ESM */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   compress: true,
@@ -11,7 +19,10 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     unoptimized: true,
   },
-
+ turbopack: {
+    // optional: fix workspace root warning
+    root: __dirname,
+  },
   experimental: {
     optimizePackageImports: ["framer-motion", "lucide-react"],
   },
