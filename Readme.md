@@ -38,10 +38,10 @@
 
 
 **Frontend:**  
-- HTML | CSS | TailwindCSS  
-- JavaScript | TypeScript  
-- React.js | Next.js  
-- Material UI | ShadCN | EJS  
+- HTML, CSS, TailwindCSS  
+- JavaScript, TypeScript  
+- React.js, Next.js  
+- Material UI, EJS  
 
 **Backend:**  
 - Node.js | Express  
