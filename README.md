@@ -170,3 +170,124 @@ I am selective, partnering only with teams committed to **technical excellence**
 <!-- Footer Banner -->
 
 ![Footer Banner](https://capsule-render.vercel.app/api?type=waving&color=0:00e0ff,100:00ff9d&height=120&section=footer&fontSize=40&fontColor=ffffff)
+
+
+
+
+
+
+
+<p align="center"> <img width="48%" src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&theme=dark&bg_color=0a0a0a&hide_border=true&title_color=ffffff&icon_color=00e0ff" /> <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&theme=dark&bg_color=0a0a0a&hide_border=true&title_color=ffffff" /> </p><p align="center"> <img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&theme=dark&background=0a0a0a&hide_border=true" /> </p>
+<p align="center"> <img src="https://skillicons.dev/icons?i=react,nextjs,ts,nodejs,express,mongodb,postgres,tailwind,git,docker,vercel&perline=11" /> </p>
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=shark&color=auto&height=200&section=header&text=M%20Ubaid%20Javaid&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=40&desc=Senior%20MERN%20Architect%20%7C%20Performance%20Engineer&descAlignY=60&descSize=16"/>
+
+# `if(code.works) { deploy(); } else { debug(); }`
+
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-000?style=flat-square&logo=vercel&logoColor=white)](https://mubaidjavaid.vercel.app)
+[![GitHub](https://img.shields.io/badge/GITHUB-000?style=flat-square&logo=github&logoColor=white)](https://github.com/MUbaidJavaid)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-000?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/mubaidjavaid)
+[![Email](https://img.shields.io/badge/EMAIL-000?style=flat-square&logo=gmail&logoColor=white)](mailto:ubaidjaved500@gmail.com)
+
+---
+
+</div>
+
+```javascript
+const mUbaidJavaid = {
+  title: "Senior MERN Architect",
+  experience: "5+ years production",
+  stack: {
+    frontend: ["React", "Next.js", "TypeScript", "Tailwind"],
+    backend: ["Node.js", "Express", "MongoDB", "PostgreSQL"],
+    tools: ["Docker", "Git", "Vercel", "AWS"],
+  },
+  philosophy: "Clean code > clever code",
+};
+```
+
+<p align="center"> <a href="mailto:ubaidjaved500@gmail.com"><img src="https://img.shields.io/badge/EMAIL_ME-000?style=for-the-badge&logo=gmail&logoColor=white" /></a> <a href="https://mubaidjavaid.vercel.app"><img src="https://img.shields.io/badge/PORTFOLIO-000?style=for-the-badge&logo=vercel&logoColor=white" /></a> <a href="https://linkedin.com/in/mubaidjavaid"><img src="https://img.shields.io/badge/LINKEDIN-000?style=for-the-badge&logo=linkedin&logoColor=white" /></a> </p>
+<div align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=100&section=footer"/> </div><div align="center"> <sub> ⚡ "Software is easy. Engineering is hard. Let's do the latter." ⚡<br/> © 2025 M Ubaid Javaid </sub> </div> ```
+<p align="center"> <a href="mailto:ubaidjaved500@gmail.com"> <img src="https://img.shields.io/badge/EMAIL_ME-0a0a0a?style=for-the-badge&logo=gmail&logoColor=white&logoWidth=20" /> </a> <a href="https://mubaidjavaid.vercel.app"> <img src="https://img.shields.io/badge/VIEW_PORTFOLIO-0a0a0a?style=for-the-badge&logo=vercel&logoColor=white&logoWidth=20" /> </a> <a href="https://linkedin.com/in/mubaidjavaid"> <img src="https://img.shields.io/badge/CONNECT_LINKEDIN-0a0a0a?style=for-the-badge&logo=linkedin&logoColor=white&logoWidth=20" /> </a> </p>
+<div align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=120&section=footer"/> </div><div align="center"> <sub> ⚡ "Software is easy. Engineering is hard. Let's do the latter." ⚡ <br/> © 2025 M Ubaid Javaid </sub> </div> ```
+
+<p align="center"> <img width="48%" src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&theme=dark&bg_color=0a0a0a&hide_border=true&title_color=ffffff&icon_color=00e0ff" /> <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&theme=dark&bg_color=0a0a0a&hide_border=true&title_color=ffffff" /> </p><p align="center"> <img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&theme=dark&background=0a0a0a&hide_border=true" /> </p>
+
+<p align="center"> <img src="https://skillicons.dev/icons?i=react,nextjs,ts,nodejs,express,mongodb,postgres,tailwind,git,docker,vercel&perline=11" /> </p>
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=shark&color=auto&height=250&section=header&text=M%20Ubaid%20Javaid&fontSize=65&fontColor=ffffff&animation=twinkling&fontAlignY=45&desc=Senior%20MERN%20Architect%20%7C%20Performance%20Engineer&descAlignY=65&descSize=20"/>
+
+# `if(code.works) { deploy(); } else { debug(); }`
+
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-0a0a0a?style=flat-square&logo=vercel&logoColor=white&color=0a0a0a)](https://mubaidjavaid.vercel.app)
+[![GitHub](https://img.shields.io/badge/GITHUB-0a0a0a?style=flat-square&logo=github&logoColor=white&color=0a0a0a)](https://github.com/MUbaidJavaid)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0a0a0a?style=flat-square&logo=linkedin&logoColor=white&color=0a0a0a)](https://linkedin.com/in/mubaidjavaid)
+[![Email](https://img.shields.io/badge/EMAIL-0a0a0a?style=flat-square&logo=gmail&logoColor=white&color=0a0a0a)](mailto:ubaidjaved500@gmail.com)
+
+---
+
+</div>
+
+````javascript
+// whoami.js
+const mUbaidJavaid = {
+  title: "Senior MERN Architect",
+  experience: "5+ years production",
+  stack: {
+    frontend: ["React", "Next.js", "TypeScript", "Tailwind"],
+    backend: ["Node.js", "Express", "MongoDB", "PostgreSQL"],
+    tools: ["Docker", "Git", "Vercel", "AWS"]
+  },
+  philosophy: "Clean code > clever code",
+  currentFocus: "Building scalable full-stack applications"
+};
+
+
+
+<div align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&pause=1000&color=00E0FF&center=true&vCenter=true&width=600&lines=console.log(%22Hello%2C+World!%22);+M+Ubaid+Javaid;Senior+MERN+Architect;Performance+Obsessed" alt="Typing SVG" />
+
+<br/>
+
+[![X](https://img.shields.io/badge/-000?style=flat&logo=x&logoColor=white)](https://x.com/)
+[![GitHub](https://img.shields.io/badge/-000?style=flat&logo=github&logoColor=white)](https://github.com/MUbaidJavaid)
+[![LinkedIn](https://img.shields.io/badge/-000?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/mubaidjavaid)
+[![Portfolio](https://img.shields.io/badge/-000?style=flat&logo=vercel&logoColor=white)](https://mubaidjavaid.vercel.app)
+[![Email](https://img.shields.io/badge/-000?style=flat&logo=gmail&logoColor=white)](mailto:ubaidjaved500@gmail.com)
+
+</div>
+
+---
+
+### ✦ about me
+
+```python
+# hey there 👋
+
+class M_Ubaid_Javaid:
+    def __init__(self):
+        self.role = "Senior MERN Architect"
+        self.location = "Building cool stuff on the internet"
+        self.experience = "5+ years of shipping code"
+        self.philosophy = "make it work, make it fast, make it clean"
+
+    def current_focus(self):
+        return ["React 19", "Next.js 16", "TypeScript", "System Design"]
+
+    def daily_driver(self):
+        return "TypeScript on everything — no exceptions"
+````
+
+<p align="center"> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> <img src="https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=next.js&logoColor=white" /> <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" /> <img src="https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" /> <br/> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /> <img src="https://img.shields.io/badge/Express-000?style=for-the-badge&logo=express&logoColor=white" /> <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /> <br/> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" /> <img src="https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=vercel&logoColor=white" /> </p>
+
+<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&theme=dark&bg_color=0a0a0a&hide_border=true&title_color=00E0FF&icon_color=00E0FF" width="49%" /> <img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&theme=dark&background=0a0a0a&hide_border=true&stroke=00E0FF&ring=00E0FF&fire=00E0FF&currStreakLabel=00E0FF" width="49%" /> </p><p align="center"> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&theme=dark&bg_color=0a0a0a&hide_border=true&title_color=00E0FF" width="40%" /> </p>
+
+
+
+<p align="center"> <a href="https://github.com/MUbaidJavaid"> <img src="https://img.shields.io/badge/github-0a0a0a?style=for-the-badge&logo=github&logoColor=white&labelColor=0a0a0a" /> </a> <a href="https://linkedin.com/in/mubaidjavaid"> <img src="https://img.shields.io/badge/linkedin-0a0a0a?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0a0a0a" /> </a> <a href="mailto:ubaidjaved500@gmail.com"> <img src="https://img.shields.io/badge/email-0a0a0a?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0a0a0a" /> </a> <a href="https://mubaidjavaid.vercel.app"> <img src="https://img.shields.io/badge/portfolio-0a0a0a?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0a0a0a" /> </a> </p>
+<div align="center"> <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00E0FF,100:00FF9D&height=100&section=footer"/> </div><div align="center"> <sub> ⚡ code. ship. repeat. ⚡<br/> made with ☕ and 🎧 </sub> </div> ```
+
