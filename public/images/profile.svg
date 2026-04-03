@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1000" viewBox="0 0 900 1000" fill="none">
+    <defs>
+        <linearGradient id="pbg" x1="100" y1="80" x2="760" y2="920" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#CBDDE9" />
+            <stop offset="1" stop-color="#F8FAFC" />
+        </linearGradient>
+    </defs>
+    <rect width="900" height="1000" fill="url(#pbg)" />
+
+
+
+
+
+
+
+
+</svg> <text x="300" y="530" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="24"
+    font-weight="500">Full-Stack Developer</text> <text x="300" y="485" fill="#0F172A"
+    font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">M Ubaid Javaid</text>
+<rect x="315" y="655" width="220" height="18" rx="9" fill="#E6EEF4" />
+<rect x="315" y="615" width="270" height="22" rx="11" fill="#D9E5EE" />
+<rect x="250" y="560" width="400" height="220" rx="40" fill="#FFFFFF" />
+<circle cx="450" cy="360" r="170" fill="#2872A1" fill-opacity="0.2" />

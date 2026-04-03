@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" fill="none">
+    <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="900" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0F172A" />
+            <stop offset="1" stop-color="#1F5F86" />
+        </linearGradient>
+    </defs>
+    <rect width="1400" height="900" fill="url(#bg)" />
+    <rect x="120" y="120" width="760" height="500" rx="24" fill="#F8FAFC" fill-opacity="0.95" />
+    <rect x="170" y="190" width="260" height="26" rx="10" fill="#CBDDE9" />
+    <rect x="170" y="235" width="620" height="14" rx="7" fill="#D9E5EE" />
+    <rect x="170" y="266" width="560" height="14" rx="7" fill="#D9E5EE" />
+
+
+
+
+
+
+
+
+</svg> <text x="170" y="165" fill="#0F172A" font-family="Inter, Arial, sans-serif" font-size="28"
+    font-weight="700">Inventory & Support System</text>
+<rect x="980" y="300" width="250" height="190" rx="18" fill="#2872A1" fill-opacity="0.22" />
+<rect x="930" y="240" width="350" height="420" rx="24" fill="#F8FAFC" fill-opacity="0.9" />
+<rect x="590" y="315" width="190" height="130" rx="16" fill="#EAF3F9" />
+<rect x="380" y="315" width="190" height="130" rx="16" fill="#EAF3F9" />
+<rect x="170" y="315" width="190" height="130" rx="16" fill="#EAF3F9" />

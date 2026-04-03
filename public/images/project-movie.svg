@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" fill="none">
+    <defs>
+        <linearGradient id="bg3" x1="100" y1="100" x2="1300" y2="850" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1B2A3D" />
+            <stop offset="1" stop-color="#2872A1" />
+        </linearGradient>
+    </defs>
+    <rect width="1400" height="900" fill="url(#bg3)" />
+    <rect x="120" y="120" width="1160" height="660" rx="30" fill="#0F172A" fill-opacity="0.5" />
+    <rect x="190" y="200" width="250" height="420" rx="18" fill="#CBDDE9" />
+    <rect x="470" y="200" width="250" height="420" rx="18" fill="#CBDDE9" />
+    <rect x="750" y="200" width="250" height="420" rx="18" fill="#CBDDE9" />
+    <rect x="1030" y="200" width="170" height="420" rx="18" fill="#CBDDE9" />
+    <rect x="190" y="660" width="1010" height="18" rx="9" fill="#D9E5EE" />
+    <text x="190" y="175" fill="#EAF3F9" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Movie
+        Discovery Frontend</text>
+</svg>

@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens - premium SaaS + engineer portfolio
+  • 8px spatial rhythm: prefer Tailwind spacing scale (4=16px, 6=24px, 8=32px…)
+  • Primary: #246b96 blue-teal (trust, clarity on white)
+  • Highlight / accent: teal for CTAs and emphasis (use sparingly)
+*/
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - #246b96 (clear blue-teal; stronger on white than indigo) */
+    --primary: 202 61% 37%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 202 64% 29%;
+
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 24% 96%;
+    --muted-foreground: 215 16% 38%;
+
+    /* UI accent (soft - cards, hovers) */
+    --accent: 214 36% 92%;
+    --accent-foreground: 222 47% 11%;
+
+    /* Brand highlight - teal for links, badges, secondary CTAs */
+    --highlight: 188 72% 34%;
+    --highlight-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 202 61% 37%;
+
+    --radius: 0.9rem;
+    --heading: 222 47% 11%;
+    --body: 215 16% 38%;
+    --surface: 210 22% 98%;
+    --surface-elevated: 0 0% 100%;
+
+    /* Brand gradient: anchor #246b96 → deeper same-hue (premium depth, not flat) */
+    --brand-gradient: linear-gradient(135deg, #246b96, hsl(202 64% 27%));
+
+    /* Scrollbars: square thumb, slate + primary (overridden in .dark) */
+    --scrollbar-thumb: 202 42% 46%;
+    --scrollbar-thumb-hover: 202 50% 38%;
+    --scrollbar-track: 214 26% 91%;
+
+    --shadow-card:
+      0 2px 8px hsl(222 47% 11% / 0.04),
+      0 20px 48px -28px hsl(202 55% 22% / 0.18),
+      0 0 0 1px hsl(214 32% 88% / 0.85);
+
+    --shadow-float:
+      0 10px 28px -12px hsl(222 47% 11% / 0.12),
+      0 28px 64px -24px hsl(202 58% 32% / 0.22);
+  }
+
+  .dark {
+    --background: 222 47% 9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 41% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 41% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 188 65% 48%;
+    --primary-foreground: 222 47% 9%;
+    --primary-hover: 188 58% 42%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 217 28% 16%;
+    --muted-foreground: 215 16% 72%;
+
+    --accent: 217 30% 20%;
+    --accent-foreground: 210 40% 96%;
+
+    --highlight: 188 72% 42%;
+    --highlight-foreground: 222 47% 9%;
+
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 28% 22%;
+    --input: 217 28% 22%;
+    --ring: 188 65% 48%;
+
+    --heading: 210 40% 98%;
+    --body: 215 16% 72%;
+    --surface: 222 44% 8%;
+    --surface-elevated: 222 41% 12%;
+
+    --shadow-card:
+      0 2px 12px hsl(0 0% 0% / 0.35),
+      0 24px 48px -28px hsl(188 55% 25% / 0.25),
+      0 0 0 1px hsl(217 28% 22% / 0.9);
+
+    --shadow-float:
+      0 12px 32px -14px hsl(0 0% 0% / 0.45),
+      0 28px 64px -24px hsl(188 50% 20% / 0.35);
+
+    --scrollbar-thumb: 188 42% 48%;
+    --scrollbar-thumb-hover: 188 50% 55%;
+    --scrollbar-track: 217 26% 16%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 15px;
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-background font-body text-body antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+    background-image:
+      radial-gradient(
+        circle at 10% -10%,
+        hsl(var(--primary) / 0.09),
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 92% 0%,
+        hsl(188 72% 34% / 0.06),
+        transparent 40%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        hsl(210 40% 98%) 100%
+      );
+    min-height: 100vh;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(
+        circle at 12% -8%,
+        hsl(var(--primary) / 0.14),
+        transparent 42%
+      ),
+      radial-gradient(
+        circle at 88% 4%,
+        hsl(188 72% 34% / 0.08),
+        transparent 45%
+      ),
+      linear-gradient(180deg, hsl(222 47% 9%) 0%, hsl(222 44% 7%) 100%);
+  }
+
+  /* Scrollbars: box-shaped thumb (no rounding), theme colors (Firefox + WebKit) */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: hsl(var(--scrollbar-track));
+    border-radius: 0;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: hsl(var(--scrollbar-thumb));
+    border-radius: 0;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--scrollbar-thumb-hover));
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: hsl(var(--scrollbar-track));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-heading font-semibold tracking-tight;
+  }
+
+  /* Typography rhythm - clear hierarchy */
+  h1 {
+    @apply text-balance;
+  }
+}
+
+@layer utilities {
+  /* Full-site dark mode: use these instead of raw bg-white / gray hex */
+  .surface-page {
+    @apply bg-white dark:bg-background;
+  }
+  .surface-muted {
+    @apply bg-[#F8FAFC] dark:bg-slate-950/50;
+  }
+  .surface-panel {
+    @apply bg-white dark:bg-card;
+  }
+  .surface-muted-soft {
+    @apply bg-[#FAFBFC] dark:bg-slate-900/40;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-[1240px] px-4 sm:px-4 lg:px-5 xl:px-6;
+  }
+
+  /* Section vertical rhythm on 8px grid: 80 / 96 / 128 px */
+  .section-padding {
+    @apply py-14 md:py-16 lg:py-20;
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/85;
+  }
+
+  .section-label::before {
+    content: "";
+    @apply inline-block h-1.5 w-1.5  bg-primary align-middle;
+  }
+
+  .card-surface {
+    @apply border border-border/50 bg-white/95 backdrop-blur-[2px] dark:border-border/50 dark:bg-card/95;
+  }
+
+  .section-anchor {
+    @apply relative;
+  }
+
+  .section-anchor::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent;
+  }
+
+  .soft-panel {
+    @apply border border-border/65 bg-gradient-to-b from-white via-white to-[#F4F7FB] shadow-card dark:border-border/50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950;
+  }
+
+  .display-kicker {
+    @apply text-[0.69rem] font-semibold uppercase tracking-[0.2em] text-primary/90;
+  }
+
+  .gradient-text {
+    background-image: var(--brand-gradient);
+    @apply bg-clip-text text-transparent;
+  }
+
+  .section-heading {
+    @apply font-heading font-extrabold leading-[1.12] tracking-[-0.022em] text-heading;
+  }
+
+  .section-heading-accent {
+    @apply font-heading not-italic text-primary;
+  }
+
+  /* Premium section frame - subtle lift + hairline edge (use sparingly) */
+  .pro-surface {
+    @apply border border-border/50 bg-gradient-to-b from-white via-white to-[#F7FAFC] shadow-card ring-1 ring-black/[0.02] dark:border-border/50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 dark:ring-white/[0.04];
+  }
+
+  /* Stat / metric numerals - aligned figures */
+  .tabular-nums-pro {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .text-balance-safe {
+    text-wrap: balance;
+  }
+
+  /* Staggered reveal - use with animation-delay inline */
+  .animate-reveal {
+    animation: fade-up 0.65s ease-out both;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Skeleton shimmer - premium loading states */
+  @keyframes skeleton-shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .skeleton-shimmer {
+    @apply relative overflow-hidden bg-muted/90;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    @apply absolute inset-0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(0 0% 100% / 0.55),
+      transparent
+    );
+    animation: skeleton-shimmer 1.35s ease-in-out infinite;
+  }
+
+  /* Indeterminate bar for route / splash loading */
+  @keyframes route-load-bar {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(380%);
+    }
+  }
+
+  .animate-route-load-bar {
+    animation: route-load-bar 1.15s ease-in-out infinite;
+  }
+}
