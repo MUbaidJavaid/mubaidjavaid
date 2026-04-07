@@ -318,10 +318,6 @@
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&hide_border=true&bg_color=0f172a&title_color=38bdf8&icon_color=22d3ee&text_color=cbd5e1&ring_color=38bdf8&hide=prs&include_all_commits=true&count_private=true" width="48%" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&hide_border=true&bg_color=0f172a&title_color=38bdf8&text_color=cbd5e1&langs_count=8&card_width=340" width="40%" />
-
-<br/><br/>
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&hide_border=true&background=0f172a&stroke=1e293b&ring=38bdf8&fire=22d3ee&currStreakLabel=38bdf8&sideLabels=38bdf8&dates=64748b&currStreakNum=f0f9ff&sideNums=f0f9ff" width="55%" />
 
@@ -331,11 +327,6 @@
 
 <br/><br/>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake.svg" />
-  <img alt="contribution snake" src="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake-dark.svg" width="95%" />
-</picture>
 
 </div>
 
