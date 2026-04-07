@@ -1,404 +1,396 @@
 <div align="center">
 
-<!-- ═══════════════════════════════════════════════════════════════════
-     M UBAID JAVAID — GitHub Profile README
-     Architecture: Dark Cyan + Lime accent on deep navy
-     ═══════════════════════════════════════════════════════════════════ -->
-
-<img src="https://capsule-render.vercel.app/api?type=transparent&height=1&color=0d1117" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,25:1e3a5f,50:0ea5e9,75:1e3a5f,100:0f172a&height=250&section=header&text=M%20Ubaid%20Javaid&fontSize=70&fontColor=f0f9ff&animation=fadeIn&fontAlignY=35&desc=Full-Stack%20Developer%20%E2%80%94%20I%20build%20web%20products%20that%20actually%20work.&descAlignY=58&descSize=17&descColor=7dd3fc" />
 
 <br/>
 
-<!-- ─── CUSTOM ASCII HEADER ─── -->
-
-```
-                                                                              
-   ███╗   ███╗    ██╗   ██╗██████╗  █████╗ ██╗██████╗                        
-   ████╗ ████║    ██║   ██║██╔══██╗██╔══██╗██║██╔══██╗                       
-   ██╔████╔██║    ██║   ██║██████╔╝███████║██║██║  ██║                       
-   ██║╚██╔╝██║    ██║   ██║██╔══██╗██╔══██║██║██║  ██║                       
-   ██║ ╚═╝ ██║    ╚██████╔╝██████╔╝██║  ██║██║██████╔╝                       
-   ╚═╝     ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝                        
-                                                                              
-   ─────────────────────────────────────────────────────────────────           
-   SENIOR MERN ARCHITECT  ·  PERFORMANCE ENGINEER  ·  SYSTEM DESIGNER        
-   ─────────────────────────────────────────────────────────────────           
-```
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=500&size=20&duration=3000&pause=1500&color=38BDF8&center=true&vCenter=true&multiline=false&repeat=true&width=650&height=45&lines=Turning+ideas+into+fast%2C+reliable+web+applications;From+concept+to+launch+%E2%80%94+I+handle+the+full+journey;Clean+code+today+%3D+easy+updates+tomorrow;Your+product+deserves+engineering+that+lasts" alt="Typing" />
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=15&duration=3500&pause=1000&color=06B6D4&center=true&vCenter=true&multiline=true&repeat=true&width=620&height=80&lines=%E2%96%B8+TypeScript+strict+mode+%E2%80%94+or+it+doesn%27t+ship.;%E2%96%B8+Sub-1s+LCP+is+the+floor%2C+not+the+ceiling.;%E2%96%B8+I+don%27t+build+features.+I+engineer+systems.;%E2%96%B8+Performance+is+a+property%2C+not+a+patch." alt="Typing SVG" />
-
-<br/>
-
-<a href="https://mubaidjavaid.vercel.app"><img src="https://img.shields.io/badge/◆_PORTFOLIO-0d1117?style=for-the-badge&logo=vercel&logoColor=06b6d4" /></a>
-<a href="https://github.com/MUbaidJavaid"><img src="https://img.shields.io/badge/◆_GITHUB-0d1117?style=for-the-badge&logo=github&logoColor=e2e8f0" /></a>
-<a href="https://linkedin.com/in/mubaidjavaid"><img src="https://img.shields.io/badge/◆_LINKEDIN-0d1117?style=for-the-badge&logo=linkedin&logoColor=06b6d4" /></a>
-<a href="mailto:ubaidjaved500@gmail.com"><img src="https://img.shields.io/badge/◆_EMAIL-0d1117?style=for-the-badge&logo=gmail&logoColor=a3e635" /></a>
+<a href="https://mubaidjavaid-ten.vercel.app/"><img src="https://img.shields.io/badge/%20%F0%9F%8C%90%20PORTFOLIO-1e293b?style=for-the-badge&labelColor=0f172a" height="36"/></a>&ensp;
+<a href="https://github.com/MUbaidJavaid"><img src="https://img.shields.io/badge/%20%F0%9F%92%BB%20GITHUB-1e293b?style=for-the-badge&labelColor=0f172a" height="36"/></a>&ensp;
+<a href="https://linkedin.com/in/mubaidjavaid"><img src="https://img.shields.io/badge/%20%F0%9F%94%97%20LINKEDIN-1e293b?style=for-the-badge&labelColor=0f172a" height="36"/></a>&ensp;
+<a href="mailto:mubaidjavaid97@gmail.com"><img src="https://img.shields.io/badge/%20%E2%9C%89%EF%B8%8F%20EMAIL-1e293b?style=for-the-badge&labelColor=0f172a" height="36"/></a>
 
 <br/><br/>
 
-![Profile Views](https://komarev.com/ghpvc/?username=MUbaidJavaid&style=for-the-badge&color=06b6d4&label=PROFILE+VIEWS&abbreviated=true)&ensp;![Followers](https://img.shields.io/github/followers/MUbaidJavaid?style=for-the-badge&color=06b6d4&labelColor=0d1117&label=FOLLOWERS)
+![Status](https://img.shields.io/badge/🟢%20AVAILABLE%20FOR%20WORK-0ea5e9?style=flat-square&labelColor=0f172a)&ensp;![Location](https://img.shields.io/badge/📍%20Multan,%20Pakistan-334155?style=flat-square&labelColor=0f172a)&ensp;![Response](https://img.shields.io/badge/⚡%20Replies%20within%2024h-334155?style=flat-square&labelColor=0f172a)
 
 </div>
 
 <br/>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
 
 <br/>
 
 <div align="center">
 
-## `⬡ IDENTITY`
+## 👋 Who Am I?
 
 </div>
 
 <br/>
 
-<table width="100%">
+<div align="center">
+<table>
 <tr>
-<td width="55%" valign="top">
+<td>
 
-```typescript
-// ── engineer.manifest.ts ──────────────────────────
-
-interface Architect {
-  readonly name: string;
-  readonly role: string;
-  readonly runtime: string;
-  readonly obsessions: readonly string[];
-  readonly axioms: Record<string, string>;
-  readonly signal: "OPEN_TO_ELITE_TEAMS";
-}
-
-const ubaid: Architect = {
-  name:    "M Ubaid Javaid",
-  role:    "Senior MERN Architect",
-  runtime: "5+ years · production-grade systems",
-
-  obsessions: [
-    "TypeScript strict — no implicit any, ever",
-    "Sub-1s LCP as baseline, not aspiration",
-    "Architecture that survives the roadmap",
-    "Zero regressions on every single deploy",
-  ],
-
-  axioms: {
-    code:     "clean    >  clever",
-    thinking: "systems  >  features",
-    delivery: "outcomes >  output",
-    typing:   "strict   || process.exit(1)",
-  },
-
-  signal: "OPEN_TO_ELITE_TEAMS",
-} as const satisfies Architect;
-```
-
-</td>
-<td width="45%" valign="top" align="center">
-
-<br/>
-
-<picture>
-  <img src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&hide_border=true&bg_color=0d1117&title_color=06b6d4&icon_color=a3e635&text_color=94a3b8&ring_color=06b6d4&hide=prs&include_all_commits=true&count_private=true&card_width=380" width="100%" />
-</picture>
-
-<br/>
-
-<picture>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&hide_border=true&background=0d1117&stroke=1e293b&ring=06b6d4&fire=a3e635&currStreakLabel=06b6d4&sideLabels=06b6d4&dates=475569&currStreakNum=e2e8f0&sideNums=e2e8f0" width="100%" />
-</picture>
+> **I'm a Full-Stack Developer who helps businesses and teams build web products that are fast, reliable, and easy to grow.**
+>
+> Think of me as the person who takes your idea — whether it's a booking platform, a business website, or an internal dashboard — and turns it into a real, working product that your users love and your team can maintain.
+>
+> I don't just write code. I think through the **user experience**, the **business goals**, the **performance**, and the **long-term health** of your product — so it works today *and* still works a year from now.
 
 </td>
 </tr>
 </table>
-
-<br/>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+</div>
 
 <br/>
 
 <div align="center">
 
-## `⬡ PRODUCTION TELEMETRY`
-
-<br/>
-
-| | `API LATENCY` | `DEPLOY CYCLE` | `A11Y SCORE` | `UPTIME SLA` | `P&L IMPACT` |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| **metric** | `↓ 35%` | `↓ 40%` | `100 / 100` | `99.95%` | `$500K+` |
-| **context** | response time | release friction | lighthouse | peak traffic | direct revenue |
-| **outcome** | $120K recovered | 2× ship velocity | $450K ARR unlocked | zero loss | contribution |
-
-<br/>
-
-> ```
-> All figures are production-verified. No synthetic benchmarks. No vanity metrics.
-> ```
+| 🎯 What I Do | 🧰 How I Do It | 🤝 How I Work |
+|:---|:---|:---|
+| Build complete web applications from scratch | React, Next.js, Node.js, MongoDB | Clear communication, weekly updates |
+| Create fast business websites that rank well | TypeScript, Tailwind CSS, Express.js | Realistic timelines, no surprises |
+| Design admin dashboards & internal tools | PostgreSQL, Redis, Docker, Vercel | You see progress every step of the way |
+| Connect third-party services & APIs | JWT Auth, REST APIs, Git/GitHub | Clean handover with documentation |
 
 </div>
 
 <br/>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
 
 <br/>
 
 <div align="center">
 
-## `⬡ STACK MANIFEST`
+## 💼 Where I've Worked
+
+</div>
+
+<br/>
+
+<div align="center">
+
+| | Role | Company | Period |
+|:---:|:---|:---|:---|
+| 🔵 | **MERN-Stack & Next.js Developer** | **Evolvo** | Feb 2026 → Present |
+| ⚪ | **MERN-Stack Developer** | **Fiesta Content Solutions** | Jul 2024 → Jan 2026 |
+
+</div>
+
+<br/>
+
+> **At Evolvo**, I lead full-stack implementation across web products — frontend architecture, API integration, performance optimization, and working closely with design and product teams to deliver features that actually ship and perform.
+>
+> **At Fiesta**, I built responsive interfaces, backend logic, and integration workflows across multiple MERN projects — strengthening my delivery discipline and ability to write maintainable production code.
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
+
+<br/>
+
+<div align="center">
+
+## 🛠️ What I Build With
+
+</div>
+
+<br/>
+
+<div align="center">
+
+**The tools I use daily to build your product:**
+
+<br/>
+
+| **Frontend** *(What users see)* | **Backend** *(What powers it)* | **DevOps** *(How it ships)* |
+|:---:|:---:|:---:|
+| <img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind&theme=dark&perline=4" /> | <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,postgres&theme=dark&perline=4" /> | <img src="https://skillicons.dev/icons?i=docker,vercel,git,github&theme=dark&perline=4" /> |
+| React · Next.js | Node.js · Express | Docker · Vercel |
+| TypeScript · Tailwind | MongoDB · PostgreSQL | Git · GitHub Actions |
+
+<br/>
+
+**Also experienced with:**&ensp; `Redis` · `Prisma` · `Framer Motion` · `ShadCN UI` · `TanStack Query` · `Zustand` · `Redux Toolkit` · `React Hook Form` · `Zod` · `JWT / OAuth 2.0` · `Three.js` · `tRPC`
+
+</div>
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
+
+<br/>
+
+<div align="center">
+
+## 🧩 Services I Offer
+
+*Everything you need to go from idea → live product.*
+
+</div>
+
+<br/>
+
+<div align="center">
+
+| | Service | What You Get |
+|:---:|:---|:---|
+| 🌐 | **Full-Stack Web App Development** | Complete applications from database to UI — built to handle real users |
+| 🏢 | **Next.js Business Websites** | Fast, SEO-friendly websites that help visitors trust you and take action |
+| ⚛️ | **React Frontend Development** | Beautiful, responsive interfaces that work smoothly on every device |
+| 📊 | **Admin Dashboards & Internal Tools** | Custom dashboards so your team can manage operations without spreadsheets |
+| 🔌 | **API & Third-Party Integration** | Connect payment systems, email tools, auth providers — reliably |
+| 🔧 | **Maintenance & Feature Development** | Ongoing support, bug fixes, and new features after your product launches |
+
+</div>
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
+
+<br/>
+
+<div align="center">
+
+## 🚀 Projects I've Shipped
+
+*Real products, real users — not just tutorials.*
+
+</div>
+
+<br/>
+
+<details>
+<summary>📦 &ensp;<b>Inventory Management & Support Ticket System</b>&ensp;—&ensp;Full-Stack App</summary>
+
+<br/>
+
+> **The Problem:** A business needed one place to manage their stock, handle customer support tickets, track installations, and process transactions — instead of juggling spreadsheets and emails.
+>
+> **What I Built:** A complete workflow system where everything connects — inventory, tickets, categories, and transactions all in one dashboard. One source of truth, no more chaos.
+>
+> **Tech Used:** `React` · `Node.js` · `Express.js` · `MongoDB`
+>
+> 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/inventory-management-support-ticket-system)
+
+</details>
+
+<details>
+<summary>✈️ &ensp;<b>Yalla Dubai — Travel Booking Platform</b>&ensp;—&ensp;Full-Stack App</summary>
+
+<br/>
+
+> **The Problem:** A travel company needed a structured web platform for their Dubai packages — with user accounts, booking flows, and organized content.
+>
+> **What I Built:** A modular travel platform with authentication, clean routing, and user-facing booking interactions — built so the team can easily add new destinations and features.
+>
+> **Tech Used:** `Node.js` · `Express.js` · `EJS` · `JavaScript`
+>
+> 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/yalla-dubai-travel-platform)
+
+</details>
+
+<details>
+<summary>🎬 &ensp;<b>Movie Discovery App</b>&ensp;—&ensp;Frontend Application</summary>
+
+<br/>
+
+> **The Problem:** Create a smooth, fast way for users to browse, search, and explore movies with real data from an external database.
+>
+> **What I Built:** A responsive movie browsing app with clean navigation between lists, search results, and detailed movie pages — focused on speed and user experience.
+>
+> **Tech Used:** `React` · `JavaScript` · `Tailwind CSS` · `React Router`
+>
+> 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/movie-discovery-frontend)
+
+</details>
+
+<br/>
+
+<div align="center">
+
+🔗 **[See all projects on my portfolio →](https://mubaidjavaid-ten.vercel.app/projects)**
+
+</div>
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
+
+<br/>
+
+<div align="center">
+
+## 📊 What I Bring to the Table
+
+*Not just code — real business results.*
+
+</div>
+
+<br/>
+
+<div align="center">
+
+| | What I Deliver | Why It Matters For You |
+|:---:|:---|:---|
+| ⚡ | **Fast-loading websites** (under 1 second) | Your customers don't wait. Fast sites = more sales. |
+| ♿ | **Accessible to everyone** | Reach more users, meet compliance, win enterprise deals. |
+| 🔒 | **Secure authentication & data handling** | Your users' data stays safe. Period. |
+| 📱 | **Works on every device** | Phone, tablet, laptop — flawless everywhere. |
+| 📈 | **SEO-optimized structure** | People can actually find you on Google. |
+| 🧹 | **Clean, documented codebase** | Any future developer can pick up where I left off. |
+
+</div>
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
+
+<br/>
+
+<div align="center">
+
+## 🔧 How I Work
+
+*No guesswork. No surprises. Just structured delivery.*
+
+</div>
 
 <br/>
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                        F R O N T E N D                          │
-└─────────────────────────────────────────────────────────────────┘
+   ┌───────────┐    ┌───────────┐    ┌───────────┐    ┌───────────┐
+   │    📋     │    │    🎨     │    │    💻     │    │    🚀     │
+   │ DISCOVER  │───▶│  DESIGN   │───▶│   BUILD   │───▶│  LAUNCH   │
+   │           │    │           │    │           │    │           │
+   │ Goals &   │    │ Structure │    │ Frontend  │    │ Testing & │
+   │ Scope     │    │ & Layout  │    │ Backend   │    │ Deploy    │
+   │ Week 1    │    │ Week 1-2  │    │ Week 2-4  │    │ Week 4-5  │
+   └───────────┘    └───────────┘    └───────────┘    └───────────┘
+                                                            │
+                                                            ▼
+                                                      ┌───────────┐
+                                                      │    🤝     │
+                                                      │  HANDOVER │
+                                                      │  & SUPPORT│
+                                                      │ Docs +    │
+                                                      │ Ongoing   │
+                                                      └───────────┘
 ```
 
-<img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,threejs&theme=dark&perline=5" />
+<br/>
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                  B A C K E N D  ·  D A T A                      │
-└─────────────────────────────────────────────────────────────────┘
-```
+> **You get:** Clear scope upfront · Weekly progress updates · Production-safe decisions · Full documentation at handover
 
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,postgres,redis,prisma&theme=dark&perline=6" />
+<br/>
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              D E V O P S  ·  T O O L C H A I N                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
 
-<img src="https://skillicons.dev/icons?i=docker,githubactions,vercel,git,linux,figma&theme=dark&perline=6" />
+<br/>
+
+<div align="center">
+
+## ✍️ I Also Write About Engineering
+
+**22 published articles** on full-stack development, API design, database patterns, and real-world implementation decisions.
+
+🔗 **[Read my blog →](https://mubaidjavaid-ten.vercel.app/blog)**
+
+</div>
+
+<br/>
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
+
+<br/>
+
+<div align="center">
+
+## 📈 GitHub Activity
+
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&hide_border=true&bg_color=0f172a&title_color=38bdf8&icon_color=22d3ee&text_color=cbd5e1&ring_color=38bdf8&hide=prs&include_all_commits=true&count_private=true" width="48%" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&hide_border=true&bg_color=0f172a&title_color=38bdf8&text_color=cbd5e1&langs_count=8&card_width=340" width="40%" />
 
 <br/><br/>
 
-`Framer Motion` · `React Three Fiber` · `TanStack Query` · `Zustand` · `ShadCN UI` · `Aceternity UI` · `WebGL / GLSL` · `tRPC` · `Zod` · `Turbopack` · `pnpm` · `JWT / OAuth 2.0`
-
-</div>
-
-<br/>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<br/>
-
-<div align="center">
-
-## `⬡ CASE FILES`
-
-</div>
-
-<br/>
-
-<details>
-<summary>&ensp;🔹&ensp;<kbd>&nbsp;CASE 01&nbsp;</kbd>&ensp;<b>Secure Booking Ecosystem</b>&ensp;━━&ensp;<code>$120K/yr recovered</code></summary>
-
-<br/>
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  STACK     MongoDB · Express · React 19 · Node.js 20                │
-│  STATUS    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  DEPLOYED             │
-│  PROBLEM   High checkout latency → payment-stage abandonment        │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-**Intervention:** Modular REST API with session affinity, JWT sliding-expiry rotation, response compression middleware, Redis-layer caching on hot paths, and full N+1 query elimination across the booking pipeline.
-
-**Result:**&emsp;`35% faster data fetching` · `$120,000 recovered annually` from previously abandoned bookings
-
-</details>
-
-<details>
-<summary>&ensp;🔹&ensp;<kbd>&nbsp;CASE 02&nbsp;</kbd>&ensp;<b>Global Content Platform — A11Y First</b>&ensp;━━&ensp;<code>$450K ARR unlocked</code></summary>
-
-<br/>
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  STACK     Next.js 16 · TypeScript 5.4 · ISR · WCAG 2.2            │
-│  STATUS    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  DEPLOYED             │
-│  PROBLEM   Accessibility failures blocking enterprise contracts     │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-**Intervention:** Semantic HTML restructure across 200+ components, ARIA labeling, keyboard navigation, screen reader QA in 3 browsers, ISR for sub-100ms global content delivery.
-
-**Result:**&emsp;`100/100 Lighthouse A11Y` · `3 enterprise contracts` worth `$450K ARR` unblocked
-
-</details>
-
-<details>
-<summary>&ensp;🔹&ensp;<kbd>&nbsp;CASE 03&nbsp;</kbd>&ensp;<b>Legacy Modernization + CI/CD</b>&ensp;━━&ensp;<code>2× shipping velocity</code></summary>
-
-<br/>
-
-```
-┌──────────────────────────────────────────────────────────────────────┐
-│  STACK     TypeScript · GitHub Actions · Docker Compose · Jest      │
-│  STATUS    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  DEPLOYED             │
-│  PROBLEM   Untested JS codebase + fragile manual deploys            │
-└──────────────────────────────────────────────────────────────────────┘
-```
-
-**Intervention:** Full TypeScript strict-mode migration, automated regression pipeline on every PR via GitHub Actions, Docker Compose dev/staging/prod env parity, pre-commit lint + format enforcement.
-
-**Result:**&emsp;`40% less deployment friction` · Team ships `2× more features` per sprint
-
-</details>
-
-<br/>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<br/>
-
-<div align="center">
-
-## `⬡ RUNTIME PRINCIPLES`
-
-</div>
-
-<br/>
-
-```bash
-# ╔═══════════════════════════════════════════════════════════════╗
-# ║  /etc/engineer/runtime.conf  —  production-proven            ║
-# ╚═══════════════════════════════════════════════════════════════╝
-
-[performance]
-LCP_ceiling      = 1000ms            # non-negotiable
-INP_ceiling      = 200ms             # interaction baseline
-CLS              = 0                 # always zero layout shift
-cache_strategy   = redis + ISR + edge-side-includes
-
-[code]
-typescript       = strict            # no implicit any. ever.
-untested_prs     = rejected          # zero tolerance
-lint             = pre-commit hook   # enforced, not suggested
-documentation    = self-evident      # code is the spec
-
-[architecture]
-n_plus_one       = forbidden         # query every relation once
-auth_pattern     = RBAC + JWT rotation + parameterized queries
-infra_cost       = ↓32%              # via Redis + dataloader
-scale_path       = monolith → micro-frontend (when earned)
-
-[axioms]
-clean            > clever            # readability is performance
-architecture     > features          # systems outlast sprints
-outcomes         > output            # metrics beat commit counts
-```
-
-<br/>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-<br/>
-
-<div align="center">
-
-## `⬡ ACTIVITY GRAPH`
-
-<br/>
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&hide_border=true&bg_color=0d1117&title_color=06b6d4&text_color=94a3b8&langs_count=8&card_width=440" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&hide_border=true&background=0f172a&stroke=1e293b&ring=38bdf8&fire=22d3ee&currStreakLabel=38bdf8&sideLabels=38bdf8&dates=64748b&currStreakNum=f0f9ff&sideNums=f0f9ff" width="55%" />
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=MUbaidJavaid&bg_color=0d1117&color=06b6d4&line=06b6d4&point=a3e635&area=true&area_color=06b6d4&hide_border=true&radius=8" width="97%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=MUbaidJavaid&bg_color=0f172a&color=38bdf8&line=38bdf8&point=22d3ee&area=true&area_color=0ea5e9&hide_border=true&radius=8" width="95%" />
 
 <br/><br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake.svg" />
-  <img alt="contribution snake" src="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake-dark.svg" width="97%" />
+  <img alt="contribution snake" src="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake-dark.svg" width="95%" />
 </picture>
 
 </div>
 
 <br/>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" alt="divider"/>
 
 <br/>
 
 <div align="center">
 
-## `⬡ CURRENTLY`
+## 🤝 Let's Work Together
+
+<br/>
+
+<table>
+<tr>
+<td align="center">
+
+### I'm available for:
+
+**Freelance Projects** · **Contract Work** · **Full-Time Roles** · **Startup Collaboration**
+
+<br/>
+
+Whether you're launching a new product, fixing a broken one, or need a reliable developer on your team — I'd love to hear about what you're building.
+
+<br/>
+
+**📬 Drop me a message — I reply within 24 hours.**
+
+<br/>
+
+<a href="mailto:mubaidjavaid97@gmail.com"><img src="https://img.shields.io/badge/mubaidjavaid97%40gmail.com-0f172a?style=for-the-badge&logo=gmail&logoColor=38bdf8&labelColor=0f172a" height="38"/></a>
+
+<a href="https://mubaidjavaid-ten.vercel.app/contact"><img src="https://img.shields.io/badge/💬%20START%20A%20CONVERSATION-0ea5e9?style=for-the-badge&labelColor=0ea5e9" height="38"/></a>
+
+<a href="https://mubaidjavaid-ten.vercel.app/"><img src="https://img.shields.io/badge/🌐%20VIEW%20FULL%20PORTFOLIO-1e293b?style=for-the-badge&labelColor=0f172a" height="38"/></a>
+
+<a href="https://linkedin.com/in/mubaidjavaid"><img src="https://img.shields.io/badge/🔗%20CONNECT%20ON%20LINKEDIN-1e293b?style=for-the-badge&labelColor=0f172a" height="38"/></a>
+
+</td>
+</tr>
+</table>
 
 </div>
-
-<br/>
-
-```json
-{
-  "deep_diving": [
-    "React 19 Compiler internals",
-    "WebGPU + Three.js custom shaders",
-    "Edge Runtime cold-start optimization"
-  ],
-  "shipping":    "Real-time booking platform — optimistic UI + live collaboration sync",
-  "reading":     "Designing Data-Intensive Applications — Martin Kleppmann",
-  "soundtrack":  "Polyphia · Intervals · Periphery · Plini  ──  focus.mode = engaged"
-}
-```
-
-<br/>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <br/>
 
 <div align="center">
 
-## `⬡ OPEN CHANNEL`
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,25:1e3a5f,50:0ea5e9,75:1e3a5f,100:0f172a&height=130&section=footer" />
 
-<br/>
+**Building web products that work — for businesses that care.**
 
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
-║   I partner with teams that treat engineering as leverage,           ║
-║   not overhead.                                                      ║
-║                                                                      ║
-║   Performance · Security · Maintainability                           ║
-║   — all three, not two of three.                                     ║
-║                                                                      ║
-║   If your team operates at that standard,                            ║
-║   let's build something permanent.                                   ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
-
-<br/>
-
-[![Email](https://img.shields.io/badge/ubaidjaved500%40gmail.com-0d1117?style=for-the-badge&logo=gmail&logoColor=a3e635&labelColor=0d1117)](mailto:ubaidjaved500@gmail.com)&ensp;[![Portfolio](https://img.shields.io/badge/mubaidjavaid.vercel.app-0d1117?style=for-the-badge&logo=vercel&logoColor=06b6d4&labelColor=0d1117)](https://mubaidjavaid.vercel.app)&ensp;[![LinkedIn](https://img.shields.io/badge/linkedin.com%2Fin%2Fmubaidjavaid-0d1117?style=for-the-badge&logo=linkedin&logoColor=a3e635&labelColor=0d1117)](https://linkedin.com/in/mubaidjavaid)
-
-<br/><br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0f172a,100:0d1117&height=120&section=footer" />
-
-```
-// Two kinds of engineers exist:
-// those who write code — and those who solve problems.
-// The code is just how the second type leaves evidence.
-```
-
-<sub>`© 2025 · M UBAID JAVAID · SENIOR MERN ARCHITECT · PERFORMANCE ENGINEER`</sub>
+<sub>`© 2026 · M Ubaid Javaid · Full-Stack Developer · Multan, Pakistan`</sub>
 
 </div>
-
-<!--
-  You found the source.
-  You're the kind of engineer who reads before asking.
-  That's already the difference.
-  — Ubaid
--->
