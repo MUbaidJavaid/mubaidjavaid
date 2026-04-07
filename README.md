@@ -1,80 +1,114 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:060a10,35:0a1628,65:0a1628,100:060a10&height=320&section=header&text=M%20UBAID%20JAVAID&fontSize=82&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=Senior%20MERN%20Architect%20%E2%80%A2%20Performance%20Engineer%20%E2%80%A2%20System%20Designer&descAlignY=62&descSize=16&descColor=4fffb0" />
+<!-- ═══════════════════════════════════════════════════════════════════
+     M UBAID JAVAID — GitHub Profile README
+     Architecture: Dark Cyan + Lime accent on deep navy
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<img src="https://capsule-render.vercel.app/api?type=transparent&height=1&color=0d1117" />
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=18&pause=1100&color=4FFFB0&center=true&vCenter=true&multiline=false&width=680&lines=TypeScript+strict+mode+%E2%80%94+or+don%27t+ship.;Sub-1s+LCP+is+the+baseline%2C+not+the+goal.;Architecture+is+the+work.+Code+is+the+output.;Performance+is+a+property%2C+not+a+feature." alt="Typing" />
+<!-- ─── CUSTOM ASCII HEADER ─── -->
+
+```
+                                                                              
+   ███╗   ███╗    ██╗   ██╗██████╗  █████╗ ██╗██████╗                        
+   ████╗ ████║    ██║   ██║██╔══██╗██╔══██╗██║██╔══██╗                       
+   ██╔████╔██║    ██║   ██║██████╔╝███████║██║██║  ██║                       
+   ██║╚██╔╝██║    ██║   ██║██╔══██╗██╔══██║██║██║  ██║                       
+   ██║ ╚═╝ ██║    ╚██████╔╝██████╔╝██║  ██║██║██████╔╝                       
+   ╚═╝     ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝                        
+                                                                              
+   ─────────────────────────────────────────────────────────────────           
+   SENIOR MERN ARCHITECT  ·  PERFORMANCE ENGINEER  ·  SYSTEM DESIGNER        
+   ─────────────────────────────────────────────────────────────────           
+```
 
 <br/>
 
-<a href="https://mubaidjavaid.vercel.app">
-<img src="https://img.shields.io/badge/%E2%97%88%20Portfolio-060a10?style=flat-square&logo=vercel&logoColor=4fffb0&labelColor=060a10" height="28"/>
-</a>&ensp;
-<a href="https://github.com/MUbaidJavaid">
-<img src="https://img.shields.io/badge/%E2%97%88%20GitHub-060a10?style=flat-square&logo=github&logoColor=ffffff&labelColor=060a10" height="28"/>
-</a>&ensp;
-<a href="https://linkedin.com/in/mubaidjavaid">
-<img src="https://img.shields.io/badge/%E2%97%88%20LinkedIn-060a10?style=flat-square&logo=linkedin&logoColor=4fffb0&labelColor=060a10" height="28"/>
-</a>&ensp;
-<a href="mailto:ubaidjaved500@gmail.com">
-<img src="https://img.shields.io/badge/%E2%97%88%20Email-060a10?style=flat-square&logo=gmail&logoColor=ffffff&labelColor=060a10" height="28"/>
-</a>
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=15&duration=3500&pause=1000&color=06B6D4&center=true&vCenter=true&multiline=true&repeat=true&width=620&height=80&lines=%E2%96%B8+TypeScript+strict+mode+%E2%80%94+or+it+doesn%27t+ship.;%E2%96%B8+Sub-1s+LCP+is+the+floor%2C+not+the+ceiling.;%E2%96%B8+I+don%27t+build+features.+I+engineer+systems.;%E2%96%B8+Performance+is+a+property%2C+not+a+patch." alt="Typing SVG" />
+
+<br/>
+
+<a href="https://mubaidjavaid.vercel.app"><img src="https://img.shields.io/badge/◆_PORTFOLIO-0d1117?style=for-the-badge&logo=vercel&logoColor=06b6d4" /></a>
+<a href="https://github.com/MUbaidJavaid"><img src="https://img.shields.io/badge/◆_GITHUB-0d1117?style=for-the-badge&logo=github&logoColor=e2e8f0" /></a>
+<a href="https://linkedin.com/in/mubaidjavaid"><img src="https://img.shields.io/badge/◆_LINKEDIN-0d1117?style=for-the-badge&logo=linkedin&logoColor=06b6d4" /></a>
+<a href="mailto:ubaidjaved500@gmail.com"><img src="https://img.shields.io/badge/◆_EMAIL-0d1117?style=for-the-badge&logo=gmail&logoColor=a3e635" /></a>
 
 <br/><br/>
 
-<img src="https://komarev.com/ghpvc/?username=MUbaidJavaid&style=flat-square&color=4fffb0&label=profile+views&abbreviated=true" />
-&ensp;
-<img src="https://img.shields.io/github/followers/MUbaidJavaid?style=flat-square&color=4fffb0&labelColor=060a10&label=followers" />
+![Profile Views](https://komarev.com/ghpvc/?username=MUbaidJavaid&style=for-the-badge&color=06b6d4&label=PROFILE+VIEWS&abbreviated=true)&ensp;![Followers](https://img.shields.io/github/followers/MUbaidJavaid?style=for-the-badge&color=06b6d4&labelColor=0d1117&label=FOLLOWERS)
 
 </div>
 
 <br/>
 
-##
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<table>
+<br/>
+
+<div align="center">
+
+## `⬡ IDENTITY`
+
+</div>
+
+<br/>
+
+<table width="100%">
 <tr>
-<td width="50%" valign="top">
-
-### ◈ `whoami`
+<td width="55%" valign="top">
 
 ```typescript
-const engineer = {
-  name: "M Ubaid Javaid",
-  title: "Senior MERN Architect",
-  runtime: "5+ years in production",
+// ── engineer.manifest.ts ──────────────────────────
 
-  strengths: [
-    "React 19 + Next.js performance",
-    "TypeScript strict mode architect",
-    "Full-stack system design",
-    "UI/UX precision engineering",
+interface Architect {
+  readonly name: string;
+  readonly role: string;
+  readonly runtime: string;
+  readonly obsessions: readonly string[];
+  readonly axioms: Record<string, string>;
+  readonly signal: "OPEN_TO_ELITE_TEAMS";
+}
+
+const ubaid: Architect = {
+  name:    "M Ubaid Javaid",
+  role:    "Senior MERN Architect",
+  runtime: "5+ years · production-grade systems",
+
+  obsessions: [
+    "TypeScript strict — no implicit any, ever",
+    "Sub-1s LCP as baseline, not aspiration",
+    "Architecture that survives the roadmap",
+    "Zero regressions on every single deploy",
   ],
 
-  philosophy: {
-    code: "clean > clever",
-    systems: "architecture > features",
-    delivery: "ship fast, regress never",
-    typing: "strict mode or nothing",
+  axioms: {
+    code:     "clean    >  clever",
+    thinking: "systems  >  features",
+    delivery: "outcomes >  output",
+    typing:   "strict   || process.exit(1)",
   },
 
-  status: "OPEN_TO_ELITE_WORK",
-};
+  signal: "OPEN_TO_ELITE_TEAMS",
+} as const satisfies Architect;
 ```
 
 </td>
-<td width="50%" valign="top">
-
-### ◈ `ps aux` — live readings
+<td width="45%" valign="top" align="center">
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&hide_border=true&bg_color=060a10&title_color=4fffb0&icon_color=4fffb0&text_color=c9d1d9&ring_color=4fffb0&hide=prs" width="100%" />
+<picture>
+  <img src="https://github-readme-stats.vercel.app/api?username=MUbaidJavaid&show_icons=true&hide_border=true&bg_color=0d1117&title_color=06b6d4&icon_color=a3e635&text_color=94a3b8&ring_color=06b6d4&hide=prs&include_all_commits=true&count_private=true&card_width=380" width="100%" />
+</picture>
 
 <br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&theme=dark&hide_border=true&background=060a10&stroke=4fffb0&ring=4fffb0&fire=4fffb0&currStreakLabel=4fffb0&sideLabels=4fffb0&dates=6b7280&currStreakNum=ffffff&sideNums=ffffff" width="100%" />
+<picture>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MUbaidJavaid&hide_border=true&background=0d1117&stroke=1e293b&ring=06b6d4&fire=a3e635&currStreakLabel=06b6d4&sideLabels=06b6d4&dates=475569&currStreakNum=e2e8f0&sideNums=e2e8f0" width="100%" />
+</picture>
 
 </td>
 </tr>
@@ -82,262 +116,289 @@ const engineer = {
 
 <br/>
 
-## ◈ `cat /metrics/production.log`
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <br/>
 
 <div align="center">
 
-<table>
-<tr>
-  <td align="center" width="180">
-    <img src="https://img.shields.io/badge/API%20Latency-060a10?style=for-the-badge&labelColor=060a10" /><br/>
-    <strong><code>↓ 35%</code></strong><br/>
-    <sub>$120K/yr recovered</sub>
-  </td>
-  <td align="center" width="180">
-    <img src="https://img.shields.io/badge/Deploy%20Cycle-060a10?style=for-the-badge&labelColor=060a10" /><br/>
-    <strong><code>↓ 40%</code></strong><br/>
-    <sub>2× shipping velocity</sub>
-  </td>
-  <td align="center" width="180">
-    <img src="https://img.shields.io/badge/A11Y%20Score-060a10?style=for-the-badge&labelColor=060a10" /><br/>
-    <strong><code>100 / 100</code></strong><br/>
-    <sub>$450K ARR unlocked</sub>
-  </td>
-  <td align="center" width="180">
-    <img src="https://img.shields.io/badge/Uptime%20SLA-060a10?style=for-the-badge&labelColor=060a10" /><br/>
-    <strong><code>99.95%</code></strong><br/>
-    <sub>Zero peak-traffic loss</sub>
-  </td>
-  <td align="center" width="180">
-    <img src="https://img.shields.io/badge/Revenue%20Impact-060a10?style=for-the-badge&labelColor=060a10" /><br/>
-    <strong><code>$500K+</code></strong><br/>
-    <sub>Direct P&L contribution</sub>
-  </td>
-</tr>
-</table>
+## `⬡ PRODUCTION TELEMETRY`
 
-> _All metrics are production-verified. No synthetic benchmarks. No guesses._
+<br/>
+
+| | `API LATENCY` | `DEPLOY CYCLE` | `A11Y SCORE` | `UPTIME SLA` | `P&L IMPACT` |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **metric** | `↓ 35%` | `↓ 40%` | `100 / 100` | `99.95%` | `$500K+` |
+| **context** | response time | release friction | lighthouse | peak traffic | direct revenue |
+| **outcome** | $120K recovered | 2× ship velocity | $450K ARR unlocked | zero loss | contribution |
+
+<br/>
+
+> ```
+> All figures are production-verified. No synthetic benchmarks. No vanity metrics.
+> ```
 
 </div>
 
 <br/>
 
-## ◈ `ls -la /stack`
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <br/>
 
 <div align="center">
 
-**Frontend**
+## `⬡ STACK MANIFEST`
 
-<img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,threejs,html,css&perline=7&theme=dark" />
+<br/>
 
-**Backend · Data · DevOps**
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        F R O N T E N D                          │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,postgres,redis,docker,vercel&perline=7&theme=dark" />
+<img src="https://skillicons.dev/icons?i=react,nextjs,ts,tailwind,threejs&theme=dark&perline=5" />
 
-**Toolchain**
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  B A C K E N D  ·  D A T A                      │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-<img src="https://skillicons.dev/icons?i=git,github,githubactions,jest,vscode,figma,linux&perline=7&theme=dark" />
+<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,postgres,redis,prisma&theme=dark&perline=6" />
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│              D E V O P S  ·  T O O L C H A I N                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+<img src="https://skillicons.dev/icons?i=docker,githubactions,vercel,git,linux,figma&theme=dark&perline=6" />
+
+<br/><br/>
+
+`Framer Motion` · `React Three Fiber` · `TanStack Query` · `Zustand` · `ShadCN UI` · `Aceternity UI` · `WebGL / GLSL` · `tRPC` · `Zod` · `Turbopack` · `pnpm` · `JWT / OAuth 2.0`
 
 </div>
 
 <br/>
 
-**Extended toolkit:**&ensp;
-`Framer Motion`&ensp;`React Three Fiber`&ensp;`TanStack Query`&ensp;`Zustand`&ensp;`ShadCN UI`&ensp;`Aceternity UI`&ensp;`Turbopack`&ensp;`pnpm`&ensp;`JWT / OAuth 2.0`&ensp;`Redis`&ensp;`WebGL / GLSL`
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <br/>
 
-## ◈ `cat /cases/*.md`
+<div align="center">
+
+## `⬡ CASE FILES`
+
+</div>
 
 <br/>
 
 <details>
-<summary>
-&ensp;<kbd>CASE_01</kbd>&ensp;<strong>Secure Booking Ecosystem</strong>&ensp;—&ensp;<code>$120K/yr recovered in abandoned bookings</code>
-</summary>
+<summary>&ensp;🔹&ensp;<kbd>&nbsp;CASE 01&nbsp;</kbd>&ensp;<b>Secure Booking Ecosystem</b>&ensp;━━&ensp;<code>$120K/yr recovered</code></summary>
 
 <br/>
 
 ```
- STACK     MongoDB · Express · React 19 · Node.js 20
- STATUS    ████████████████████ DEPLOYED
- PROBLEM   High-latency checkout → payment-stage abandonment
+┌──────────────────────────────────────────────────────────────────────┐
+│  STACK     MongoDB · Express · React 19 · Node.js 20                │
+│  STATUS    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  DEPLOYED             │
+│  PROBLEM   High checkout latency → payment-stage abandonment        │
+└──────────────────────────────────────────────────────────────────────┘
 ```
 
-**What I did:** Architected a modular REST API with session affinity, JWT rotation with sliding expiry, aggressive response compression middleware, and targeted N+1 query elimination across the full booking pipeline. Added Redis-layer caching for product and session data.
+**Intervention:** Modular REST API with session affinity, JWT sliding-expiry rotation, response compression middleware, Redis-layer caching on hot paths, and full N+1 query elimination across the booking pipeline.
 
-**Result:**&ensp;`35% faster data fetching`&ensp;→&ensp;`$120,000 recovered annually` from previously abandoned carts.
+**Result:**&emsp;`35% faster data fetching` · `$120,000 recovered annually` from previously abandoned bookings
 
-<br/>
 </details>
 
 <details>
-<summary>
-&ensp;<kbd>CASE_02</kbd>&ensp;<strong>Global Content Platform — A11Y First</strong>&ensp;—&ensp;<code>$450K ARR unlocked</code>
-</summary>
+<summary>&ensp;🔹&ensp;<kbd>&nbsp;CASE 02&nbsp;</kbd>&ensp;<b>Global Content Platform — A11Y First</b>&ensp;━━&ensp;<code>$450K ARR unlocked</code></summary>
 
 <br/>
 
 ```
- STACK     Next.js 16 · TypeScript 5.4 · ISR · WCAG 2.2
- STATUS    ████████████████████ DEPLOYED
- PROBLEM   Accessibility failures blocking enterprise contract eligibility
+┌──────────────────────────────────────────────────────────────────────┐
+│  STACK     Next.js 16 · TypeScript 5.4 · ISR · WCAG 2.2            │
+│  STATUS    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  DEPLOYED             │
+│  PROBLEM   Accessibility failures blocking enterprise contracts     │
+└──────────────────────────────────────────────────────────────────────┘
 ```
 
-**What I did:** Full semantic HTML restructure, ARIA labeling across 200+ components, keyboard navigation implementation, screen reader QA across 3 browsers, and ISR for sub-100ms global content delivery.
+**Intervention:** Semantic HTML restructure across 200+ components, ARIA labeling, keyboard navigation, screen reader QA in 3 browsers, ISR for sub-100ms global content delivery.
 
-**Result:**&ensp;`100/100 Lighthouse A11Y`&ensp;→&ensp;`3 enterprise contracts` worth `$450K ARR` unblocked.
+**Result:**&emsp;`100/100 Lighthouse A11Y` · `3 enterprise contracts` worth `$450K ARR` unblocked
 
-<br/>
 </details>
 
 <details>
-<summary>
-&ensp;<kbd>CASE_03</kbd>&ensp;<strong>Legacy Modernization + CI/CD Pipeline</strong>&ensp;—&ensp;<code>2× feature shipping velocity</code>
-</summary>
+<summary>&ensp;🔹&ensp;<kbd>&nbsp;CASE 03&nbsp;</kbd>&ensp;<b>Legacy Modernization + CI/CD</b>&ensp;━━&ensp;<code>2× shipping velocity</code></summary>
 
 <br/>
 
 ```
- STACK     TypeScript · GitHub Actions · Docker Compose · Jest
- STATUS    ████████████████████ DEPLOYED
- PROBLEM   Untested JS codebase + fragile manual deployments
+┌──────────────────────────────────────────────────────────────────────┐
+│  STACK     TypeScript · GitHub Actions · Docker Compose · Jest      │
+│  STATUS    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  DEPLOYED             │
+│  PROBLEM   Untested JS codebase + fragile manual deploys            │
+└──────────────────────────────────────────────────────────────────────┘
 ```
 
-**What I did:** Full TypeScript strict-mode migration, automated regression testing via GitHub Actions on every PR, Docker Compose for dev/staging/prod environment parity, and pre-commit hooks enforcing lint and format.
+**Intervention:** Full TypeScript strict-mode migration, automated regression pipeline on every PR via GitHub Actions, Docker Compose dev/staging/prod env parity, pre-commit lint + format enforcement.
 
-**Result:**&ensp;`40% reduction in deployment friction`&ensp;→&ensp;team ships `2× more features` per sprint.
+**Result:**&emsp;`40% less deployment friction` · Team ships `2× more features` per sprint
 
-<br/>
 </details>
 
 <br/>
 
-## ◈ `cat /etc/principles.conf`
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+<br/>
+
+<div align="center">
+
+## `⬡ RUNTIME PRINCIPLES`
+
+</div>
 
 <br/>
 
 ```bash
-# /etc/engineer/principles.conf
-# Last modified: production-proven
+# ╔═══════════════════════════════════════════════════════════════╗
+# ║  /etc/engineer/runtime.conf  —  production-proven            ║
+# ╚═══════════════════════════════════════════════════════════════╝
 
 [performance]
-LCP_target       = <1000ms         # non-negotiable
-INP_target       = <200ms          # baseline
-CLS              = 0               # always zero
-caching_strategy = redis + ISR + edge-side-includes
+LCP_ceiling      = 1000ms            # non-negotiable
+INP_ceiling      = 200ms             # interaction baseline
+CLS              = 0                 # always zero layout shift
+cache_strategy   = redis + ISR + edge-side-includes
 
-[code_quality]
-typescript       = strict          # no implicit any. ever.
-tests            = mandatory       # 0 untested PRs merged
-lint             = pre-commit      # enforced, not suggested
-code_review      = every PR        # no exceptions for seniors
+[code]
+typescript       = strict            # no implicit any. ever.
+untested_prs     = rejected          # zero tolerance
+lint             = pre-commit hook   # enforced, not suggested
+documentation    = self-evident      # code is the spec
 
 [architecture]
-query_policy     = no N+1. ever.
-auth             = RBAC + JWT-rotation + parameterized queries
-frontend_pattern = modular → micro-frontend at scale
-infra_cost       = minimize via dataloader + Redis (↓32%)
+n_plus_one       = forbidden         # query every relation once
+auth_pattern     = RBAC + JWT rotation + parameterized queries
+infra_cost       = ↓32%              # via Redis + dataloader
+scale_path       = monolith → micro-frontend (when earned)
 
-[hiring_signal]
-clean_code       > clever_code
-architecture     > individual_contribution
-system_outcomes  > commit_count
+[axioms]
+clean            > clever            # readability is performance
+architecture     > features          # systems outlast sprints
+outcomes         > output            # metrics beat commit counts
 ```
 
 <br/>
 
-## ◈ `uptime && currently`
-
-<br/>
-
-```json
-{
-  "learning": [
-    "React 19 Compiler internals",
-    "WebGPU + Three.js shaders",
-    "Edge Runtime patterns"
-  ],
-  "building": "Real-time booking infra with optimistic UI + live sync",
-  "reading": "Designing Data-Intensive Applications — Martin Kleppmann",
-  "soundtrack": "Polyphia · Intervals · Periphery  //  deep-work playlist"
-}
-```
-
-<br/>
-
-## ◈ `git log --graph`
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <br/>
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&hide_border=true&bg_color=060a10&title_color=4fffb0&text_color=c9d1d9&langs_count=8" width="44%" />
+## `⬡ ACTIVITY GRAPH`
+
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MUbaidJavaid&layout=compact&hide_border=true&bg_color=0d1117&title_color=06b6d4&text_color=94a3b8&langs_count=8&card_width=440" />
 
 <br/><br/>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=MUbaidJavaid&bg_color=060a10&color=4fffb0&line=4fffb0&point=ffffff&area=true&area_color=4fffb0&hide_border=true&radius=6" width="97%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=MUbaidJavaid&bg_color=0d1117&color=06b6d4&line=06b6d4&point=a3e635&area=true&area_color=06b6d4&hide_border=true&radius=8" width="97%" />
 
 <br/><br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake.svg" />
-  <img alt="contribution snake" src="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake-dark.svg" />
+  <img alt="contribution snake" src="https://raw.githubusercontent.com/MUbaidJavaid/MUbaidJavaid/output/github-snake-dark.svg" width="97%" />
 </picture>
 
 </div>
 
 <br/>
 
-## ◈ `ssh contact@mubaidjavaid.dev`
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 <br/>
 
 <div align="center">
 
-```
-  I partner with teams that treat engineering as leverage — not overhead.
-  Performance · Security · Maintainability — all three, not two.
-  If that describes your team, let's build something that lasts.
+## `⬡ CURRENTLY`
+
+</div>
+
+<br/>
+
+```json
+{
+  "deep_diving": [
+    "React 19 Compiler internals",
+    "WebGPU + Three.js custom shaders",
+    "Edge Runtime cold-start optimization"
+  ],
+  "shipping":    "Real-time booking platform — optimistic UI + live collaboration sync",
+  "reading":     "Designing Data-Intensive Applications — Martin Kleppmann",
+  "soundtrack":  "Polyphia · Intervals · Periphery · Plini  ──  focus.mode = engaged"
+}
 ```
 
 <br/>
 
-<a href="mailto:ubaidjaved500@gmail.com">
-<img src="https://img.shields.io/badge/ubaidjaved500%40gmail.com-060a10?style=for-the-badge&logo=gmail&logoColor=4fffb0&labelColor=060a10" height="34"/>
-</a>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-<a href="https://mubaidjavaid.vercel.app">
-<img src="https://img.shields.io/badge/mubaidjavaid.vercel.app-060a10?style=for-the-badge&logo=vercel&logoColor=ffffff&labelColor=060a10" height="34"/>
-</a>
+<br/>
 
-<a href="https://linkedin.com/in/mubaidjavaid">
-<img src="https://img.shields.io/badge/linkedin%2Fin%2Fmubaidjavaid-060a10?style=for-the-badge&logo=linkedin&logoColor=4fffb0&labelColor=060a10" height="34"/>
-</a>
+<div align="center">
+
+## `⬡ OPEN CHANNEL`
+
+<br/>
+
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║   I partner with teams that treat engineering as leverage,           ║
+║   not overhead.                                                      ║
+║                                                                      ║
+║   Performance · Security · Maintainability                           ║
+║   — all three, not two of three.                                     ║
+║                                                                      ║
+║   If your team operates at that standard,                            ║
+║   let's build something permanent.                                   ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
+
+<br/>
+
+[![Email](https://img.shields.io/badge/ubaidjaved500%40gmail.com-0d1117?style=for-the-badge&logo=gmail&logoColor=a3e635&labelColor=0d1117)](mailto:ubaidjaved500@gmail.com)&ensp;[![Portfolio](https://img.shields.io/badge/mubaidjavaid.vercel.app-0d1117?style=for-the-badge&logo=vercel&logoColor=06b6d4&labelColor=0d1117)](https://mubaidjavaid.vercel.app)&ensp;[![LinkedIn](https://img.shields.io/badge/linkedin.com%2Fin%2Fmubaidjavaid-0d1117?style=for-the-badge&logo=linkedin&logoColor=a3e635&labelColor=0d1117)](https://linkedin.com/in/mubaidjavaid)
 
 <br/><br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:060a10,40:0a1628,100:060a10&height=140&section=footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:0f172a,100:0d1117&height=120&section=footer" />
 
 ```
-// Two types of developers exist.
-// Those who write code — and those who solve problems.
-// The code is just how the second type proves their work.
+// Two kinds of engineers exist:
+// those who write code — and those who solve problems.
+// The code is just how the second type leaves evidence.
 ```
 
-<sub><code>© 2025 · M UBAID JAVAID · SENIOR MERN ARCHITECT · PERFORMANCE ENGINEER</code></sub>
+<sub>`© 2025 · M UBAID JAVAID · SENIOR MERN ARCHITECT · PERFORMANCE ENGINEER`</sub>
 
 </div>
 
 <!--
-  You found the source view. Respect.
-  Most people scroll past.
-  You're the type that reads the docs before asking questions.
-  That's the difference.
+  You found the source.
+  You're the kind of engineer who reads before asking.
+  That's already the difference.
   — Ubaid
 -->
