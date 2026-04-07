@@ -391,6 +391,6 @@ Whether you're launching a new product, fixing a broken one, or need a reliable 
 
 **Building web products that work — for businesses that care.**
 
-<sub>`© 2026 · M Ubaid Javaid · Full-Stack Developer · Multan, Pakistan`</sub>
+<sub>`© 2024 · M Ubaid Javaid · Full-Stack Developer · Multan, Pakistan`</sub>
 
 </div>
