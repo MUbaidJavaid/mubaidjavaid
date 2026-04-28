@@ -19,7 +19,7 @@ export function ServicesPreview () {
             <span className='section-heading-accent'>product stages</span>
           </h2>
           <p className='max-w-2xl text-base leading-[1.8] text-body sm:text-[1.05rem]'>
-            From MVP to production-scale apps - I provide full-stack development
+            From MVP to production-scale apps, I provide full-stack development
             support with clean architecture, performance optimization, and
             scalable infrastructure.
           </p>

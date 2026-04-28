@@ -75,8 +75,8 @@ export function ProofSnapshot () {
                   Built for{' '}
                   <span className='section-heading-accent'>
                     reliable delivery
-                  </span>{' '}
-                  - not just demos
+                  </span>
+                  , not just demos
                 </h2>
                 <p className='mt-4 max-w-md text-sm leading-[1.8] text-body/85 md:max-w-lg'>
                   I document how systems are structured, how trade-offs were

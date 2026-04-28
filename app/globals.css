@@ -109,8 +109,7 @@
     --surface-elevated: 222 41% 12%;
 
     --shadow-card:
-      0 2px 12px hsl(0 0% 0% / 0.35),
-      0 24px 48px -28px hsl(188 55% 25% / 0.25),
+      0 2px 12px hsl(0 0% 0% / 0.35), 0 24px 48px -28px hsl(188 55% 25% / 0.25),
       0 0 0 1px hsl(217 28% 22% / 0.9);
 
     --shadow-float:
@@ -130,7 +129,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-size: 15px;
+    font-size: 20px;
     overflow-x: clip;
   }
 
@@ -210,9 +209,46 @@
     @apply font-heading text-heading font-semibold tracking-tight;
   }
 
-  /* Typography rhythm - clear hierarchy */
+  /* Fluid type scale — 15px base, 1.25 ratio, clamped for responsiveness */
   h1 {
+    font-size: clamp(2rem, 4.5vw + 0.5rem, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
     @apply text-balance;
+  }
+  h2 {
+    font-size: clamp(1.55rem, 2.8vw + 0.4rem, 2.4rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  h3 {
+    font-size: clamp(1.15rem, 1.6vw + 0.3rem, 1.55rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+  h4 {
+    font-size: clamp(1rem, 0.8vw + 0.2rem, 1.15rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  p,
+  li {
+    line-height: 1.8;
+  }
+
+  /* Calibrated body text — clear and readable at 15px */
+  .text-body-base {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+  }
+  .text-body-sm {
+    font-size: 0.8125rem;
+    line-height: 1.75;
+  }
+  .text-body-xs {
+    font-size: 0.75rem;
+    line-height: 1.65;
   }
 }
 
@@ -221,12 +257,15 @@
   .surface-page {
     @apply bg-white dark:bg-background;
   }
+
   .surface-muted {
     @apply bg-[#F8FAFC] dark:bg-slate-950/50;
   }
+
   .surface-panel {
     @apply bg-white dark:bg-card;
   }
+
   .surface-muted-soft {
     @apply bg-[#FAFBFC] dark:bg-slate-900/40;
   }
@@ -254,7 +293,7 @@
 
   .section-label::before {
     content: "";
-    @apply inline-block h-1.5 w-1.5  bg-primary align-middle;
+    @apply inline-block h-1.5 w-1.5 bg-primary align-middle;
   }
 
   .card-surface {
@@ -315,6 +354,7 @@
       opacity: 0;
       transform: translateY(14px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -350,6 +390,7 @@
     0% {
       transform: translateX(-100%);
     }
+
     100% {
       transform: translateX(380%);
     }

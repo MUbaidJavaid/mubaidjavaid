@@ -1,187 +1,400 @@
 'use client'
 
 import { TypingTagline } from '@/components/hero/TypingTagline'
-import ClickSpark from '@/components/ui/ClickSpark'
-import { MagneticButton } from '@/components/ui/MagneticButton'
-import { Button } from '@/components/ui/button'
-import { heroContent, heroTaglines } from '@/data/site'
+import { DiscoveryCallModal } from '@/components/system/DiscoveryCallModal'
+import { heroTaglines } from '@/data/site'
 import { motion, useReducedMotion } from 'framer-motion'
+import Link from 'next/link'
+
+/* ── Floating tilted geometric square ── */
+function FloatingTile ({
+  size,
+  style,
+  rotate,
+  delay = 0,
+  opacity = 0.35,
+  blur = 0
+}: {
+  size: number
+  style?: React.CSSProperties
+  rotate: number
+  delay?: number
+  opacity?: number
+  blur?: number
+}) {
+  return (
+    <motion.div
+      className='pointer-events-none absolute rounded-xl border-2'
+      style={{
+        width: size,
+        height: size,
+        rotate: `${rotate}deg`,
+        opacity,
+        filter: blur ? `blur(${blur}px)` : undefined,
+        borderColor: '#256e99',
+        background: 'linear-gradient(135deg, #256e99 / 0.15, #1e5a82 / 0.08)',
+        ...style
+      }}
+      animate={{
+        y: [0, -15, 0],
+        x: [0, 5, 0],
+        rotate: [`${rotate}deg`, `${rotate + 8}deg`, `${rotate}deg`]
+      }}
+      transition={{
+        duration: 12 + delay,
+        repeat: Infinity,
+        ease: 'easeInOut',
+        delay
+      }}
+    />
+  )
+}
+
+const STACK = [
+  'React',
+  'Next.js',
+  'Node.js',
+  'Express',
+  'MongoDB',
+  'TypeScript'
+] as const
 
 export function HeroSection () {
   const reduce = useReducedMotion()
 
   return (
-    <section className='section-anchor relative overflow-hidden surface-page py-12 md:py-16 lg:py-20'>
-      {/* Subtle floating gradient orb: depth without clutter */}
+    <section
+      id='hero'
+      className='relative overflow-hidden surface-page'
+      style={{ minHeight: 'min(92vh, 840px)' }}
+    >
+      {/* Primary radial gradient - centered top */}
       <div
-        className='pointer-events-none absolute -left-[18%] top-[8%] h-[min(52vw,420px)] w-[min(52vw,420px)] rounded-full opacity-[0.38] blur-3xl dark:opacity-[0.22]'
+        className='pointer-events-none absolute inset-0'
         aria-hidden
         style={{
           background:
-            'radial-gradient(circle at 40% 40%, hsl(var(--primary) / 0.45), transparent 62%)'
+            'radial-gradient(ellipse 110% 90% at 50% -5%, #256e99 / 0.25, transparent 65%)'
         }}
-      />
-      <motion.div
-        className='pointer-events-none absolute right-[-12%] top-[22%] h-[min(42vw,320px)] w-[min(42vw,320px)] rounded-full opacity-[0.28] blur-3xl dark:opacity-[0.18]'
-        aria-hidden
-        style={{
-          background:
-            'radial-gradient(circle at 50% 50%, hsl(188 72% 42% / 0.35), transparent 65%)'
-        }}
-        animate={
-          reduce
-            ? undefined
-            : {
-                y: [0, -14, 0],
-                x: [0, 6, 0]
-              }
-        }
-        transition={
-          reduce
-            ? undefined
-            : { duration: 14, repeat: Infinity, ease: 'easeInOut' }
-        }
       />
 
-      <div className='container-wide relative z-10 grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:pt-1'>
+      {/* Secondary accent gradients - corners */}
+      <div
+        className='pointer-events-none absolute inset-0'
+        aria-hidden
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 70% at 100% 80%, #1e5a82 / 0.12, transparent 60%),' +
+            'radial-gradient(ellipse 60% 60% at 0% 70%, #256e99 / 0.1, transparent 65%)'
+        }}
+      />
+
+      {/* Animated gradient wave effect */}
+      <motion.div
+        className='pointer-events-none absolute inset-0'
+        aria-hidden
+        animate={{
+          opacity: [0.4, 0.6, 0.4]
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: 'easeInOut'
+        }}
+        style={{
+          background:
+            'radial-gradient(circle at 50% 50%, #256e99 / 0.06, transparent 70%)'
+        }}
+      />
+
+      {/* Floating decorative tiles */}
+      {!reduce && (
+        <>
+          {/* Top left area */}
+          <FloatingTile
+            size={104}
+            style={{ top: '7%', left: '2%' }}
+            rotate={14}
+            delay={0}
+            opacity={0.4}
+            blur={0}
+          />
+          <FloatingTile
+            size={64}
+            style={{ top: '22%', left: '11%' }}
+            rotate={-7}
+            delay={1.6}
+            opacity={0.35}
+            blur={0}
+          />
+
+          {/* Top right area */}
+          <FloatingTile
+            size={128}
+            style={{ top: '5%', right: '3%' }}
+            rotate={-19}
+            delay={0.9}
+            opacity={0.38}
+            blur={0}
+          />
+          <FloatingTile
+            size={76}
+            style={{ top: '30%', right: '1%' }}
+            rotate={11}
+            delay={2.3}
+            opacity={0.36}
+            blur={0}
+          />
+
+          {/* Left side */}
+          <FloatingTile
+            size={52}
+            style={{ top: '60%', left: '2%' }}
+            rotate={23}
+            delay={1}
+            opacity={0.33}
+            blur={0}
+          />
+
+          {/* Right side */}
+          <FloatingTile
+            size={82}
+            style={{ top: '66%', right: '6%' }}
+            rotate={-13}
+            delay={3}
+            opacity={0.34}
+            blur={0}
+          />
+
+          {/* Additional boxes for more scattered effect */}
+          <FloatingTile
+            size={68}
+            style={{ top: '15%', left: '35%' }}
+            rotate={45}
+            delay={2}
+            opacity={0.32}
+            blur={0}
+          />
+
+          <FloatingTile
+            size={56}
+            style={{ top: '50%', right: '22%' }}
+            rotate={-25}
+            delay={1.2}
+            opacity={0.33}
+            blur={0}
+          />
+
+          <FloatingTile
+            size={48}
+            style={{ bottom: '20%', left: '18%' }}
+            rotate={60}
+            delay={2.5}
+            opacity={0.31}
+            blur={0}
+          />
+
+          <FloatingTile
+            size={92}
+            style={{ top: '45%', left: '65%' }}
+            rotate={-40}
+            delay={1.8}
+            opacity={0.35}
+            blur={0}
+          />
+        </>
+      )}
+
+      {/* ── Content ── */}
+      <div className='container-wide relative z-10 flex flex-col items-center justify-center px-4 pb-20 pt-10 text-center sm:pt-16 lg:pt-20'>
+        {/* ── Name branding ── */}
         <motion.div
-          className='space-y-6 lg:space-y-7'
-          initial={reduce ? false : { opacity: 0, y: 16 }}
+          initial={reduce ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className='mb-6'
         >
-          <p className='inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/85'>
-            <span className='h-1.5 w-1.5 bg-primary' />
-            Full-Stack Developer
+          {/* Kicker — no emoji, clean label */}
+          <p
+            className='mb-4 text-[10.5px] font-semibold uppercase tracking-[0.22em]'
+            style={{ color: 'hsl(202 61% 38%)' }}
+          >
+            Full-Stack Developer &middot; Multan, Pakistan
           </p>
-          <h1 className='section-heading max-w-[22ch] text-[2.25rem] leading-[1.04] sm:text-[2.8rem] lg:text-[3.3rem]'>
-            <span className='text-heading dark:text-slate-50'>M Ubaid </span>
-            <span className='section-heading-accent'>Javaid</span>
-            <div className=' min-h-[2.1rem]'>
-              <TypingTagline
-                phrases={heroTaglines}
-                className='text-lg font-medium tracking-normal text-body sm:text-[1.35rem] dark:text-slate-300'
-              />
-            </div>
+
+          {/* Primary name — largest element on the page */}
+          <h1
+            className='font-heading font-extrabold leading-none tracking-[-0.03em] text-heading'
+            style={{ fontSize: 'clamp(3rem, 8.5vw, 6rem)' }}
+          >
+            M Ubaid Javaid
           </h1>
-          <p className='max-w-2xl text-base leading-[1.95] text-body sm:text-[1.05rem]'>
-            {heroContent.paragraph}
-          </p>
-          <p className='max-w-2xl text-sm leading-[1.85] text-body sm:text-base'>
-            {heroContent.support}
-          </p>
-          <div className='flex flex-wrap items-center gap-4'>
-            <ClickSpark>
-              <Button
-                href='/projects'
-                className='group relative overflow-hidden bg-[#0F172A] px-7 py-3 text-sm font-semibold text-white shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1e293b] hover:shadow-float dark:bg-slate-800 dark:hover:bg-slate-700'
-              >
-                View Projects
-                <span className='ml-2 inline-block transition-transform duration-200 group-hover:translate-x-0.5'>
-                  →
-                </span>
-              </Button>
-            </ClickSpark>
-            <MagneticButton
-              href='/contact'
-              className='group flex items-center justify-center gap-2 border border-primary/35 bg-transparent px-6 py-3 text-sm font-semibold text-primary shadow-none transition-[box-shadow,background-color,border-color] hover:border-primary/55 hover:bg-primary/10 hover:shadow-card dark:hover:bg-primary/15'
-            >
-              Hire Me
-              <span className='inline-block transition-transform duration-200 group-hover:translate-x-0.5'>
-                →
-              </span>
-            </MagneticButton>
+
+          {/* Animated role directly beneath name */}
+          <div className='mt-3.5 flex items-center justify-center gap-3'>
+            <span
+              className='block h-px w-7 flex-shrink-0'
+              style={{ background: 'hsl(202 61% 37% / 0.35)' }}
+              aria-hidden
+            />
+            <TypingTagline
+              phrases={heroTaglines}
+              className='text-[1rem] font-semibold tracking-wide text-primary sm:text-[1.08rem]'
+            />
+            <span
+              className='block h-px w-7 flex-shrink-0'
+              style={{ background: 'hsl(202 61% 37% / 0.35)' }}
+              aria-hidden
+            />
           </div>
-          <p className='flex items-center gap-2 text-[.82rem] text-body/75'>
-            <span className='h-2 w-2 animate-pulse rounded-full bg-emerald-500' />
-            {heroContent.availability}
-          </p>
-          <ul className='grid max-w-xl grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2'>
-            {[
-              'Full-stack delivery from brief to launch.',
-              'Clean React / Next.js frontend architecture.',
-              'Reliable Node.js / Express & MongoDB backends.',
-              'Performance, usability & production readiness.'
-            ].map((item, i) => (
-              <motion.li
-                key={item}
-                initial={reduce ? false : { opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06, duration: 0.4 }}
-                className='flex items-start gap-2 text-[.82rem] leading-[1.65] text-body/75'
-              >
-                <span className='mt-0.5 flex h-[14px] w-[14px] shrink-0 items-center justify-center rounded-[3px] bg-primary/12 text-[9px] text-primary dark:bg-primary/20'>
-                  ✦
-                </span>
-                {item}
-              </motion.li>
-            ))}
-          </ul>
         </motion.div>
 
+        {/* ── Tech stack pills ── */}
         <motion.div
-          className='relative grid gap-4 sm:mx-auto sm:max-w-lg lg:mx-0'
-          initial={reduce ? false : { opacity: 0, y: 20 }}
+          className='mb-8 flex flex-wrap items-center justify-center gap-2'
+          initial={reduce ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <div className='overflow-hidden rounded-2xl border border-border/55 bg-white shadow-card ring-1 ring-black/[0.02] dark:border-border/60 dark:bg-card dark:ring-white/5'>
-            <div className='flex items-center justify-between border-b border-border/55 bg-[#F8FAFC] px-4 py-2.5 dark:border-border/50 dark:bg-slate-900/80'>
-              <div className='flex items-center gap-2'>
-                <span className='h-2.5 w-2.5 rounded-full bg-[#FF5F57]' />
-                <span className='h-2.5 w-2.5 rounded-full bg-[#FEBC2E]' />
-                <span className='h-2.5 w-2.5 rounded-full bg-[#28C840]' />
-              </div>
-              <p className='font-mono text-[11px] text-body/60'>
-                build-profile.ts
-              </p>
-            </div>
-            <div className='space-y-4 p-5'>
-              <div className='p-4'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.13em] text-primary/80'>
-                  Focus Areas
-                </p>
-                <p className='mt-2 text-sm leading-relaxed text-body/85'>
-                  Product architecture, maintainable frontend systems, reliable
-                  backend workflows, and delivery-ready execution.
-                </p>
-              </div>
+          {STACK.map(tech => (
+            <span
+              key={tech}
+              className='rounded-full border px-3 py-1 text-[11px] font-medium tracking-wide'
+              style={{
+                borderColor: 'hsl(202 61% 37% / 0.22)',
+                background: 'hsl(202 61% 37% / 0.05)',
+                color: 'hsl(202 61% 40%)'
+              }}
+            >
+              {tech}
+            </span>
+          ))}
+        </motion.div>
 
-              <div className='relative grid overflow-hidden sm:grid-cols-2 before:pointer-events-none before:absolute before:inset-y-0 before:left-1/2 before:w-px before:-translate-x-1/2 before:bg-border/70 after:pointer-events-none after:absolute after:inset-x-0 after:top-1/2 after:h-px after:-translate-y-1/2 after:bg-border/70'>
-                {[
-                  { label: 'Primary stack', value: 'MERN + Next.js' },
-                  {
-                    label: 'Delivery mode',
-                    value: 'End-to-end product builds'
-                  },
-                  { label: 'Response', value: 'Within 24 hours' },
-                  { label: 'Timezone', value: 'PKT · Remote friendly' }
-                ].map(item => (
-                  <div key={item.label} className='bg-white p-3.5 dark:bg-card'>
-                    <p className='text-[10px] font-semibold uppercase tracking-[0.12em] text-body/55'>
-                      {item.label}
-                    </p>
-                    <p className='mt-1 text-[13px] font-semibold text-heading'>
-                      {item.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
+        {/* ── Value proposition ── */}
+        <motion.p
+          className='mx-auto max-w-[54ch] text-[1.02rem] leading-[1.88] text-body sm:text-[1.06rem]'
+          initial={reduce ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.18 }}
+        >
+          I design, build, and ship scalable web applications: from lean MVPs to
+          full-product platforms, with clean architecture, reliable backends,
+          and user-facing experiences that support real business outcomes.
+        </motion.p>
 
-              <div className='rounded-md bg-gradient-to-br from-slate-600 via-slate-700 to-[hsl(202_42%_36%)] p-4 text-white shadow-sm ring-1 ring-slate-900/10 dark:bg-[linear-gradient(145deg,#0F172A_0%,#1e1b4b_58%,#1d4ed8_120%)] dark:shadow-none dark:ring-0'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-200/95'>
-                  Collaboration Promise
-                </p>
-                <p className='mt-2 text-sm leading-relaxed text-slate-100/95'>
-                  Clear scope, weekly updates, and production-safe delivery
-                  decisions, so progress stays visible and reliable.
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* ── CTAs ── */}
+        <motion.div
+          className='mt-9 flex flex-wrap items-center justify-center gap-4'
+          initial={reduce ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.26 }}
+        >
+          <Link
+            href='/contact'
+            id='hero-cta-hire'
+            className='inline-flex items-center gap-2 rounded-none px-7 py-3 text-[0.88rem] font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-px hover:shadow-lg active:scale-[0.98]'
+            style={{
+              background:
+                'linear-gradient(160deg, hsl(202 61% 37%), hsl(202 64% 27%))',
+              boxShadow: '0 6px 22px -6px hsl(202 61% 37% / 0.45)'
+            }}
+          >
+            Get in Touch
+            <svg
+              width='14'
+              height='14'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2.2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              aria-hidden
+            >
+              <path d='M5 12h14M12 5l7 7-7 7' />
+            </svg>
+          </Link>
+
+          <Link
+            href='/projects'
+            id='hero-cta-work'
+            className='inline-flex items-center gap-2 rounded-none border px-7 py-3 text-[0.88rem] font-semibold transition-all duration-200 hover:-translate-y-px hover:bg-primary/[0.06] active:scale-[0.98]'
+            style={{
+              borderColor: 'hsl(202 61% 37% / 0.32)',
+              color: 'hsl(202 61% 37%)'
+            }}
+          >
+            View Projects
+            <svg
+              width='14'
+              height='14'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2.2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              aria-hidden
+            >
+              <path d='M5 12h14M12 5l7 7-7 7' />
+            </svg>
+          </Link>
+        </motion.div>
+
+        {/* ── Availability ── */}
+        <motion.p
+          className='mt-5 flex items-center justify-center gap-2 text-[0.78rem] text-body/65'
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.38 }}
+        >
+          <span
+            className='h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500'
+            aria-hidden
+          />
+          Available for freelance, contract, and full-time roles
+        </motion.p>
+
+        {/* ── Trust strip ── */}
+        <motion.div
+          className='mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-2.5 border-t border-border/50 pt-7'
+          initial={reduce ? false : { opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.46 }}
+          role='list'
+          aria-label='Core strengths'
+        >
+          {[
+            'MERN Stack + Next.js',
+            'End-to-End Product Delivery',
+            'Business-Focused Engineering',
+            'Scalable Architecture'
+          ].map(item => (
+            <span
+              key={item}
+              role='listitem'
+              className='flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.1em] text-body/55'
+            >
+              <span className='h-px w-3 bg-primary/30' aria-hidden />
+              {item}
+            </span>
+          ))}
         </motion.div>
       </div>
+
+      {/* Bottom fade */}
+      <div
+        className='pointer-events-none absolute inset-x-0 bottom-0 h-20'
+        aria-hidden
+        style={{
+          background:
+            'linear-gradient(to bottom, transparent, hsl(var(--background) / 0.45))'
+        }}
+      />
+
+      {/* Discovery Call Modal - Appears after 5 seconds */}
+      <DiscoveryCallModal showDelay={5000} />
     </section>
   )
 }

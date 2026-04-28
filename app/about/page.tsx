@@ -1,5 +1,6 @@
 import { AboutPersonJsonLd } from '@/components/about/AboutPersonJsonLd'
 import { CodeQualitySection } from '@/components/sections/CodeQualitySection'
+import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { experience } from '@/data/site'
 import { pageMetadata } from '@/lib/seo'
 import {
@@ -92,66 +93,22 @@ export default function AboutPage () {
     <>
       <AboutPersonJsonLd />
 
-      <section className='section-anchor relative overflow-hidden surface-page py-10'>
-        {/* Background */}
-        <div className='pointer-events-none absolute inset-0'>
-          <div className='absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_0%_40%,rgba(40,114,161,.05),transparent_65%),radial-gradient(ellipse_40%_40%_at_100%_20%,rgba(15,23,42,.03),transparent_65%)]' />
-          <div
-            className='absolute inset-0'
-            style={{
-              backgroundImage:
-                'linear-gradient(rgba(15,23,42,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.022) 1px,transparent 1px)',
-              backgroundSize: '44px 44px',
-              maskImage:
-                'radial-gradient(ellipse 90% 80% at 50% 50%,black 0%,transparent 80%)'
-            }}
-          />
-        </div>
+      <PageHeroHeader
+        subtitle='About'
+        title={
+          <>
+            Building business-ready web products
+            <br />
+            with <span style={{ color: '#256e99' }}>clean engineering</span>
+          </>
+        }
+        description="I'm M Ubaid Javaid, a Full-Stack Developer based in Multan, Pakistan, specialising in React, Next.js, Node.js, Express and MongoDB. I work with startups and teams that need reliable, scalable web products with clear scope and maintainable architecture."
+      />
 
+      <section className='section-anchor relative overflow-hidden surface-page py-10'>
         <div className='container-wide relative z-10 grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start'>
           {/* ════ LEFT ════ */}
           <article className='flex flex-col gap-7'>
-            {/* Eyebrow */}
-            <div className='flex items-center gap-2'>
-              <span className='h-1.5 w-1.5 flex-shrink-0  bg-primary' />
-              <span className='text-[8.5px] font-bold uppercase tracking-[.22em] text-primary'>
-                About
-              </span>
-            </div>
-
-            {/* Heading - H1 with primary keyword */}
-            <h1 className='section-heading text-[2rem] sm:text-[2.5rem]'>
-              Building business-ready web products
-              <br />
-              with <em className='section-heading-accent'>clean engineering</em>
-            </h1>
-
-            {/* Bio - keyword-rich for SEO */}
-            <div className='flex flex-col gap-3'>
-              <p className='text-[.85rem] leading-[1.9] text-body/75'>
-                I'm{' '}
-                <strong className='font-semibold text-heading'>
-                  M Ubaid Javaid
-                </strong>
-                , a Full-Stack Developer based in Multan, Pakistan, specialising
-                in{' '}
-                <strong className='font-semibold text-heading'>
-                  React, Next.js, Node.js, Express and MongoDB
-                </strong>
-                . I work with startups, agencies, and business teams that need
-                more than surface-level development. The focus is practical
-                product delivery: clear scope, reliable architecture, and
-                implementation that supports real users and operational goals.
-              </p>
-              <p className='text-[.85rem] leading-[1.9] text-body/75'>
-                My process combines UX clarity with system-level engineering.
-                That means interfaces that communicate value clearly, backend
-                flows that behave predictably, and codebases that remain
-                maintainable as your team adds new features, integrations, and
-                scale requirements.
-              </p>
-            </div>
-
             {/* Value propositions */}
             <div className='flex flex-col gap-2.5'>
               {values.map(v => (

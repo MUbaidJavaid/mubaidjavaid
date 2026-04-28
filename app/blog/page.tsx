@@ -1,9 +1,9 @@
 import { BlogArticlesSection } from '@/components/blog/BlogArticlesSection'
+import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { EmptyState } from '@/components/system/EmptyState'
 import { posts } from '@/data/posts'
 import { site } from '@/data/site'
 import { pageMetadata } from '@/lib/seo'
-import { BookOpen } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const dynamic = 'force-static'
@@ -72,63 +72,22 @@ export default function BlogPage () {
         }}
       />
 
+      <PageHeroHeader
+        subtitle='Blog'
+        title={
+          <>
+            Engineering articles on{' '}
+            <span style={{ color: '#256e99' }}>full-stack development</span>
+          </>
+        }
+        description='Practical insights on React architecture, Next.js best practices, Node.js API design, MongoDB schema patterns, and real-world MERN stack development from production projects.'
+      />
+
       <section
         className='section-anchor relative overflow-hidden surface-page py-20'
         aria-labelledby='blog-page-heading'
       >
-        <div className='pointer-events-none absolute inset-0'>
-          <div className='absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_100%_0%,rgba(40,114,161,.05),transparent_65%),radial-gradient(ellipse_40%_50%_at_0%_100%,rgba(15,23,42,.025),transparent_65%)]' />
-          <div
-            className='absolute inset-0'
-            style={{
-              backgroundImage:
-                'linear-gradient(rgba(15,23,42,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.02) 1px,transparent 1px)',
-              backgroundSize: '44px 44px',
-              maskImage:
-                'radial-gradient(ellipse 90% 80% at 50% 50%,black,transparent 80%)'
-            }}
-          />
-        </div>
-
         <div className='container-wide relative z-10 space-y-8'>
-          <div className='flex flex-wrap items-end justify-between gap-6'>
-            <div>
-              <p className='section-label'>Writing</p>
-              <h1
-                id='blog-page-heading'
-                className='section-heading mt-2 text-[1.9rem] sm:text-[2.5rem]'
-              >
-                Engineering notes with real{' '}
-                <span className='section-heading-accent'>
-                  implementation depth
-                </span>
-              </h1>
-              <p className='mt-2 max-w-[540px] text-sm leading-[1.75] text-body/65'>
-                Practical articles on React, Next.js, Node.js and full-stack
-                architecture drawn from real production project work.
-              </p>
-            </div>
-
-            <div className='flex items-center gap-2.5'>
-              {[
-                { n: String(posts.length), l: 'Articles' },
-                { n: avgRead, l: 'Avg read' },
-                { n: lastUpdated, l: 'Latest' }
-              ].map(s => (
-                <div
-                  key={s.l}
-                  className='flex flex-col items-center border border-[#0F172A]/[.05] bg-[#FAFBFC] px-4 py-2 transition-all hover:border-primary/20 hover:shadow-[0_4px_12px_rgba(15,23,42,.06)] dark:border-border/50 dark:bg-slate-900/60 dark:hover:border-primary/35'
-                >
-                  <span className='font-heading text-[1.05rem] font-extrabold leading-none tracking-tight text-heading'>
-                    {s.n}
-                  </span>
-                  <span className='mt-0.5 text-[.58rem] font-bold uppercase tracking-[.15em] text-body/40'>
-                    {s.l}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
           <div className='grid gap-4  md:grid-cols-3 '>
             <div className='md:border-r md:border-border/55'>
               <p className='text-xs  font-semibold uppercase tracking-[0.14em] text-primary/75'>
