@@ -4,6 +4,10 @@ export type Project = {
   summary: string;
   description: string;
   image: string;
+  /** Optional gallery of related images (public folder paths) */
+  images?: string[];
+  /** Descriptive alt text for main image */
+  imageAlt?: string;
   /** Public demo (Vercel, Netlify, etc.) - omit if not shareable */
   liveUrl?: string;
   /** Repository or profile link visitors can verify */
@@ -34,7 +38,13 @@ export const projects: Project[] = [
       "A custom full-stack workflow system for inventory operations, item and category management, support tickets, installation tracking, and transaction handling.",
     description:
       "Role-aware internal tool combining inventory management with support ticket workflows, designed to replace scattered spreadsheets and ad-hoc processes.",
-    image: "/images/project-inventory.svg",
+    image: "/Projects/Elder-Guard-Health/Elder-Guard-Health-08.svg",
+    imageAlt: "Inventory dashboard and support ticket overview for operations",
+    images: [
+      "/Projects/Elder-Guard-Health/Elder-Guard-Health-08.svg",
+      "/Projects/Elder-Guard-Health/Elder-Guard-Health-03.svg",
+      "/Projects/Elder-Guard-Health/Elder-Guard-Health-10.svg",
+    ],
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development",
     stack: ["React", "Node.js", "Express.js", "MongoDB", "Material UI"],
@@ -43,8 +53,7 @@ export const projects: Project[] = [
       "An internal web application that centralizes inventory data, ticketing workflows, and related operational tracking for a small team.",
     problem:
       "The team was managing inventory, tickets, and installation work across multiple spreadsheets and messages, making it easy to lose context and hard to see the current state of operations.",
-    goal:
-      "Provide a single application to manage items, categories, tickets, and transactions with clear visibility, basic audit history, and predictable workflows.",
+    goal: "Provide a single application to manage items, categories, tickets, and transactions with clear visibility, basic audit history, and predictable workflows.",
     myRole:
       "Designed and implemented the React frontend, Express.js API, MongoDB data models, and role-aware routes, focusing on practical, maintainable workflows.",
     keyFeatures: [
@@ -78,7 +87,12 @@ export const projects: Project[] = [
       "A structured web application for travel-oriented workflows with authentication, modular backend routing, and user-facing interaction flows.",
     description:
       "Server-rendered Node.js/Express application with EJS views, authentication, and modular routing to support travel-related user journeys.",
-    image: "/images/project-travel.svg",
+    image: "/Projects/Mind-Weave-Clinic/mind-weare-clinic02.svg",
+    imageAlt: "Travel listings and booking UI for a travel platform",
+    images: [
+      "/Projects/Mind-Weave-Clinic/mind-weare-clinic02.svg",
+      "/Projects/Mind-Weave-Clinic/Desktop - 101.svg",
+    ],
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development",
     stack: ["Node.js", "Express.js", "EJS", "JavaScript", "Authentication"],
@@ -87,8 +101,7 @@ export const projects: Project[] = [
       "A travel-focused application that organizes backend logic into clear modules and supports authenticated user flows for browsing and interacting with travel content.",
     problem:
       "The platform needed a more structured backend and authentication layer so travel-related features could be implemented consistently instead of as isolated scripts.",
-    goal:
-      "Create a maintainable backend with organized controllers, routes, and models, along with server-rendered views and protected routes for logged-in users.",
+    goal: "Create a maintainable backend with organized controllers, routes, and models, along with server-rendered views and protected routes for logged-in users.",
     myRole:
       "Implemented backend structure, authentication workflows, route organization, and EJS-based views for core flows.",
     keyFeatures: [
@@ -122,17 +135,27 @@ export const projects: Project[] = [
       "A responsive frontend application that integrates with an external movie database API to fetch and display content through a clean browsing experience.",
     description:
       "React-based movie discovery interface that uses an external API to power routed views, search, and detail pages with a focus on layout and clarity.",
-    image: "/images/project-movie.svg",
+    image: "/Projects/Mind-Weave-Clinic/Desktop - 110.svg",
+    imageAlt: "Movie discovery app card grid and detail layout",
+    images: [
+      "/Projects/Mind-Weave-Clinic/Desktop - 110.svg",
+      "/Projects/Mind-Weave-Clinic/Desktop - 109.svg",
+    ],
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Frontend Development",
-    stack: ["React", "JavaScript", "Tailwind CSS", "React Router", "API Integration"],
+    stack: [
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "React Router",
+      "API Integration",
+    ],
     featured: true,
     overview:
       "A single-page React application for browsing movies from an external API, with views for listings, search results, and detail pages.",
     problem:
       "The UI needed a clear information hierarchy for search, listings, and detail views while handling an unreliable third-party API - slow responses and occasional errors - without confusing end users.",
-    goal:
-      "Build a polished frontend that demonstrates API integration, routed navigation, and a calm layout for media content, with explicit loading and error states.",
+    goal: "Build a polished frontend that demonstrates API integration, routed navigation, and a calm layout for media content, with explicit loading and error states.",
     myRole:
       "Implemented the React components, routing, styling, and API integration, focusing on predictable layouts and loading states.",
     keyFeatures: [
@@ -158,6 +181,97 @@ export const projects: Project[] = [
     ],
     architectureSummary:
       "Client-only SPA: route-level containers fetch from the movie API; presentational components receive props and stay free of side effects. Global state stays minimal; URL drives primary navigation state.",
+  },
+  {
+    slug: "elder-guard-health",
+    title: "Elder Guard Health",
+    summary:
+      "A healthcare platform for elder care coordination, appointments, and remote monitoring dashboards.",
+    description:
+      "A focused product for coordinating care, scheduling, and simple remote monitoring intended for small clinics and home-care teams.",
+    image: "/Projects/Elder-Guard-Health/Elder-Guard-Health-00.svg",
+    imageAlt: "Elder Guard Health landing and dashboard screenshots",
+    images: [
+      "/Projects/Elder-Guard-Health/Elder-Guard-Health-00.svg",
+      "/Projects/Elder-Guard-Health/Elder-Guard-Health-04.svg",
+      "/Projects/Elder-Guard-Health/Elder-Guard-Health-12.svg",
+    ],
+    githubUrl: undefined,
+    role: "Full-Stack Development",
+    stack: ["React", "Next.js", "Node.js"],
+    featured: false,
+    overview:
+      "A lightweight care coordination app with appointment scheduling, simple monitoring dashboards, and caregiver messaging.",
+    problem:
+      "Local clinics lacked an easy-to-use interface for coordinating elder care across multiple caregivers and family members.",
+    goal: "Ship a minimal, maintainable web app that surfaces appointments, patient notes, and simple health metrics to caregivers.",
+    myRole:
+      "Led frontend implementation with Next.js and built REST endpoints for basic scheduling and notifications.",
+    keyFeatures: [
+      "Appointment scheduling",
+      "Care team notes",
+      "Simple vitals dashboard",
+    ],
+    technicalDecisions:
+      "Chose server-rendered pages for better SEO where relevant and client-side navigation for interactive dashboards.",
+    challenges:
+      "Balancing simple UX with the need to capture structured caregiving data without overwhelming users.",
+    outcome:
+      "Delivered a small, maintainable product that reduced scheduling friction and centralized care notes.",
+    learned:
+      "Small, focused features win adoption faster than large all-in-one systems in caregiving contexts.",
+    impact: [
+      "Simplified scheduling for caregivers",
+      "Centralized patient notes",
+      "Reduced missed appointments",
+    ],
+    architectureSummary:
+      "Next.js frontend with lightweight API routes for scheduling and messaging, backed by a simple document store.",
+  },
+  {
+    slug: "mind-weave-clinic",
+    title: "Mind Weave Clinic",
+    summary:
+      "A responsive clinic website and patient portal for therapy scheduling and resources.",
+    description:
+      "An approachable web presence paired with a simple portal for booking and managing therapy sessions.",
+    image: "/Projects/Mind-Weave-Clinic/mind-weare-clinic01.svg",
+    imageAlt: "Mind Weave Clinic website and booking interface screenshots",
+    images: [
+      "/Projects/Mind-Weave-Clinic/mind-weare-clinic01.svg",
+      "/Projects/Mind-Weave-Clinic/mind-weare-clinic03.svg",
+      "/Projects/Mind-Weave-Clinic/Desktop - 112.svg",
+    ],
+    githubUrl: undefined,
+    role: "Frontend & UX",
+    stack: ["React", "Tailwind CSS"],
+    featured: false,
+    overview:
+      "Marketing site plus lightweight portal for session bookings and client resources.",
+    problem:
+      "The clinic needed a modern, accessible website and a streamlined booking flow for clients.",
+    goal: "Provide a friendly web experience and a simple portal to reduce administrative overhead for bookings.",
+    myRole: "Designed and implemented the site frontend and booking interface.",
+    keyFeatures: [
+      "Accessible copy and layout",
+      "Booking calendar integration",
+      "Resource library",
+    ],
+    technicalDecisions:
+      "Focused on a minimal frontend with progressive enhancement and clear accessibility patterns.",
+    challenges:
+      "Designing an empathetic UX while keeping the technical surface minimal for maintainability.",
+    outcome:
+      "Improved conversion for new clients and a simpler booking process for administrators.",
+    learned:
+      "Small UX decisions (microcopy, spacing) significantly affect trust for healthcare sites.",
+    impact: [
+      "Higher booking conversion",
+      "Easier admin workflows",
+      "Clear client-facing resources",
+    ],
+    architectureSummary:
+      "Static-first site with simple booking endpoints and accessible UI components.",
   },
 ];
 

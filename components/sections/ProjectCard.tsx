@@ -10,8 +10,12 @@ export function ProjectCard ({ project }: { project: Project }) {
     <article className='group relative flex h-full flex-col overflow-hidden rounded-xl border border-border/80 bg-card shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-float dark:border-border/60 dark:bg-card'>
       <div className='relative h-64 w-full overflow-hidden bg-secondary'>
         <Image
-          src={project.image}
-          alt={project.title}
+          src={
+            project.images && project.images.length
+              ? project.images[0]
+              : project.image
+          }
+          alt={project.imageAlt || project.title}
           fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           className='object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.07]'
