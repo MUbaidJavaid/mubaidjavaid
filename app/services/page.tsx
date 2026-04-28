@@ -49,7 +49,7 @@ export default function ServicesPage () {
             {services.map((service, index) => (
               <article
                 key={service.title}
-                className='group relative bg-background p-8 transition-all duration-500 hover:bg-card active:scale-[0.98]'
+                className='group relative bg-background p-5 sm:p-6 md:p-7 transition-all duration-500 hover:bg-card active:scale-[0.98]'
               >
                 <div className='mb-6 flex items-center justify-between'>
                   <div className='flex h-7 w-full items-start justify-start gap-2 transition-all duration-300 group-hover:border-primary/40 '>

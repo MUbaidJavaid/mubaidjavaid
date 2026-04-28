@@ -141,9 +141,9 @@ export function ContactPageClient () {
             </div>
           </div>
 
-          <div className='grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10'>
+          <div className='grid gap-6 sm:gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10'>
             <div className='space-y-5'>
-              <div className='border border-border/30 bg-white/90 p-6 shadow-sm backdrop-blur-sm dark:border-border/50 dark:bg-slate-900/85'>
+              <div className='border border-border/30 bg-white/90 p-5 sm:p-6 shadow-sm backdrop-blur-sm dark:border-border/50 dark:bg-slate-900/85'>
                 <div className='flex items-center gap-3'>
                   <div className='rounded-full bg-green-500/10 p-2'>
                     <span className='block h-2 w-2 rounded-full bg-green-500 animate-pulse' />
@@ -193,7 +193,7 @@ export function ContactPageClient () {
               </div>
             </div>
 
-            <div className='border border-border/30 surface-panel p-6 sm:p-8 lg:p-9 dark:border-border/50'>
+            <div className='border border-border/30 surface-panel p-4 sm:p-7 lg:p-9 dark:border-border/50'>
               <div className='mb-6 space-y-2 text-center lg:text-left'>
                 <p className='display-kicker'>Project inquiry</p>
                 <h2 className='section-heading text-xl sm:text-2xl'>
@@ -210,7 +210,7 @@ export function ContactPageClient () {
                 className='flex flex-col gap-5'
                 onSubmit={e => e.preventDefault()}
               >
-                <div className='grid gap-5 sm:grid-cols-2'>
+                <div className='grid gap-4 sm:grid-cols-2 sm:gap-5'>
                   <div className='space-y-1.5'>
                     <label
                       htmlFor='contact-name'

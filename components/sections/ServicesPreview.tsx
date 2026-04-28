@@ -34,7 +34,7 @@ export function ServicesPreview () {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className='group relative bg-background p-8 transition-all duration-500 hover:bg-card active:scale-[0.98]'
+              className='group relative bg-background p-5 sm:p-6 md:p-7 transition-all duration-500 hover:bg-card active:scale-[0.98]'
             >
               <div className='mb-6 flex items-center justify-between'>
                 <div className='flex h-7 w-full items-start justify-start gap-2 transition-all duration-300 group-hover:border-primary/40 '>
@@ -43,7 +43,7 @@ export function ServicesPreview () {
                     return <Icon className='h-5 w-5 text-primary' />
                   })()}
 
-                  <h3 className=' font-heading text-[15px] font-bold text-heading transition-colors duration-300 group-hover:text-primary text-nowrap'>
+                  <h3 className='font-heading text-[15px] font-bold leading-snug text-heading transition-colors duration-300 group-hover:text-primary'>
                     {service.title}
                   </h3>
                 </div>

@@ -106,13 +106,13 @@ export default async function BlogPostPage ({
       <div className='pointer-events-none absolute inset-0'>
         <div className='absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_100%_0%,rgba(40,114,161,.05),transparent_65%),radial-gradient(ellipse_40%_50%_at_0%_100%,rgba(15,23,42,.025),transparent_65%)]' />
       </div>
-      <div className='container-wide relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start'>
+      <div className='container-wide relative z-10 grid gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start'>
         <div>
           <script
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
           />
-          <div className='relative overflow-hidden border border-[#0F172A]/[.08] surface-panel p-6 sm:p-8 lg:p-10 dark:border-border/50'>
+          <div className='relative overflow-hidden border border-[#0F172A]/[.08] surface-panel p-4 sm:p-6 lg:p-10 dark:border-border/50'>
             <div className='absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent' />
             <header className='space-y-5'>
               <Link
@@ -216,9 +216,12 @@ export default async function BlogPostPage ({
                 <h2 className='section-heading text-lg sm:text-xl lg:text-2xl'>
                   Key takeaways
                 </h2>
-                <ul className='list-inside list-disc space-y-2.5 text-body marker:text-primary'>
+                <ul className='list-inside list-disc space-y-2.5 break-words text-body marker:text-primary'>
                   {post.keyTakeaways.map((item, i) => (
-                    <li key={i} className='pl-1 text-sm leading-[1.8] sm:text-base'>
+                    <li
+                      key={i}
+                      className='pl-1 text-sm leading-[1.8] sm:text-base'
+                    >
                       {item}
                     </li>
                   ))}
@@ -236,7 +239,7 @@ export default async function BlogPostPage ({
             </div>
           </div>
 
-          <section className='mt-6 border border-border surface-muted p-6 dark:border-border/50'>
+          <section className='mt-6 border border-border surface-muted p-4 sm:p-6 dark:border-border/50'>
             <div className='space-y-4'>
               <p className='section-label'>Continue Exploring</p>
               <h2 className='section-heading text-lg sm:text-xl'>
@@ -257,7 +260,7 @@ export default async function BlogPostPage ({
           </section>
 
           {nextPost && (
-            <section className='mt-6   p-6'>
+            <section className='mt-6 p-4 sm:p-6'>
               <p className='section-label'>Up Next</p>
               <h2 className='mt-2 section-heading text-lg sm:text-xl'>
                 Continue reading

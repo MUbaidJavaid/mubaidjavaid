@@ -47,7 +47,7 @@ export function pageMetadata(input: {
       locale: "en",
       images: [
         {
-          url: "/opengraph-image",
+          url: "/mubaidjavaid.png",
           width: 1200,
           height: 630,
           alt: `${site.name} portfolio preview`,
@@ -58,7 +58,7 @@ export function pageMetadata(input: {
       card: "summary_large_image",
       title: fullTitle,
       description: input.description,
-      images: ["/opengraph-image"],
+      images: ["/mubaidjavaid.png"],
     },
   };
 }
@@ -108,7 +108,8 @@ export function contactPageJsonLd() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: `Contact | ${site.name}`,
-    description: "Contact M Ubaid Javaid for freelance, contract, remote, and full-time opportunities.",
+    description:
+      "Contact M Ubaid Javaid for freelance, contract, remote, and full-time opportunities.",
     url: contactUrl.toString(),
     mainEntity: {
       "@type": "Person",

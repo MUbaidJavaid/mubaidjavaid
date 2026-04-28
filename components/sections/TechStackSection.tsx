@@ -51,13 +51,15 @@ const stackGroups = [
 
 export function TechStackSection () {
   return (
-    <section className='section-anchor section-padding surface-page px-4'>
-      <p className='section-label mx-4'>Tech Stack</p>
-      <h2 className='section-heading text-2xl sm:text-3xl lg:text-4xl ml-4'>
-        Organized tooling for{' '}
-        <span className='section-heading-accent'>reliable delivery</span>
-      </h2>
-      <div className='container-wide space-y-6 '>
+    <section className='section-anchor section-padding surface-page'>
+      <div className='container-wide space-y-6'>
+        <div className='space-y-2'>
+          <p className='section-label'>Tech Stack</p>
+          <h2 className='section-heading text-2xl sm:text-3xl lg:text-4xl'>
+            Organized tooling for{' '}
+            <span className='section-heading-accent'>reliable delivery</span>
+          </h2>
+        </div>
         <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
           {stackGroups.map(group => (
             <article
