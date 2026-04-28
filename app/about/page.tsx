@@ -289,7 +289,7 @@ export default function AboutPage () {
             {/* CTA */}
             <Link
               href='/contact'
-              className='group flex items-center justify-center gap-2  bg-[#0F172A] py-3 text-[.82rem] font-semibold text-white transition-all hover:-translate-y-px hover:bg-[#1e293b] hover:shadow-[0_6px_20px_rgba(15,23,42,.18)] dark:bg-cyan-500/90'
+              className='group flex items-center justify-center gap-2  bg-[#0F172A] py-3 text-[.82rem] font-semibold text-white transition-all hover:-translate-y-px hover:bg-[#1e293b] hover:shadow-[0_6px_20px_rgba(15,23,42,.18)]'
             >
               Get in touch
               <span className='transition-transform group-hover:translate-x-0.5'>

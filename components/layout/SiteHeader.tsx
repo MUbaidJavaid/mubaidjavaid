@@ -34,7 +34,7 @@ export function SiteHeader () {
           href='/'
           className='flex min-w-0 items-center gap-3 leading-tight'
         >
-          <span className='inline-flex h-9 w-9 items-center justify-center dark:bg-cyan-500 bg-[linear-gradient(140deg,#246b96,hsl(202_64%_27%))] text-sm font-bold text-white shadow-card ring-1 ring-white/15'>
+          <span className='inline-flex h-9 w-9 items-center justify-center bg-[linear-gradient(140deg,#246b96,hsl(202_64%_27%))] text-sm font-bold text-white shadow-card ring-1 ring-white/15'>
             MU
           </span>
           <span className='min-w-0'>

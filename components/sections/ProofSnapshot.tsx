@@ -86,7 +86,7 @@ export function ProofSnapshot () {
                 <div className='mt-6 flex flex-wrap gap-2.5'>
                   <Link
                     href='/projects'
-                    className='inline-flex items-center gap-2  bg-[#0F172A] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_12px_rgba(30, 43, 75, 0.18)] transition-all duration-200  hover:bg-[#1e293b] dark:bg-cyan-500/90 dark:hover:bg-cyan-600'
+                    className='inline-flex items-center gap-2  bg-[#0F172A] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_12px_rgba(30, 43, 75, 0.18)] transition-all duration-200  hover:bg-[#1e293b]'
                   >
                     Review case studies
                     <ArrowUpRight className='h-4 w-4 opacity-90' aria-hidden />

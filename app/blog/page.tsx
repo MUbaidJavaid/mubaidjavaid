@@ -4,6 +4,7 @@ import { EmptyState } from '@/components/system/EmptyState'
 import { posts } from '@/data/posts'
 import { site } from '@/data/site'
 import { pageMetadata } from '@/lib/seo'
+import { BookOpen } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const dynamic = 'force-static'
