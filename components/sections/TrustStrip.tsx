@@ -20,7 +20,7 @@ export function TrustStrip () {
         <header className='mx-auto mb-8 max-w-2xl text-center sm:mb-10'>
           <h2
             id='truststrip-heading'
-            className='font-heading text-[1.35rem] font-bold leading-snug tracking-tight text-heading sm:text-2xl md:text-[1.65rem]'
+            className='text-balance font-heading text-[1.35rem] font-bold leading-snug tracking-tight text-slate-900 dark:text-slate-100 sm:text-2xl md:text-[1.65rem]'
           >
             Same web. Different foundations.
           </h2>
@@ -222,7 +222,7 @@ export function TrustStrip () {
             </p>
             <Link
               href='/contact'
-              className='mt-4 inline-flex items-center justify-center gap-2 rounded-xl border border-[hsl(202_61%_37%_/0.35)] bg-[hsl(202_61%_37%)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_hsl(202_61%_37%_/0.55)] transition-all hover:bg-[hsl(202_64%_32%)] active:scale-[0.98] dark:border-[hsl(188_72%_42%_/0.4)] dark:bg-[hsl(202_61%_34%)] dark:hover:bg-[hsl(202_61%_38%)]'
+              className='mt-4 inline-flex items-center justify-center gap-2 rounded-none border border-[hsl(202_61%_37%_/0.35)] bg-[hsl(202_61%_37%)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_hsl(202_61%_37%_/0.55)] transition-all hover:bg-[hsl(202_64%_32%)] active:scale-[0.98] dark:border-[hsl(188_72%_42%_/0.4)] dark:bg-[hsl(202_61%_34%)] dark:hover:bg-[hsl(202_61%_38%)]'
             >
               Book a discovery call
               <svg
