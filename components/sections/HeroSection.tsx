@@ -206,7 +206,7 @@ export function HeroSection () {
       )}
 
       {/* ── Content ── */}
-      <div className='container-wide relative z-10 flex flex-col items-center justify-center px-4 pb-20 pt-10 text-center sm:pt-16 lg:pt-20'>
+      <div className='container-wide relative z-10 flex min-w-0 flex-col items-center justify-center pb-20 pt-10 text-center sm:pt-16 lg:pt-20'>
         {/* ── Name branding ── */}
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 14 }}
@@ -358,7 +358,7 @@ export function HeroSection () {
 
         {/* ── Trust strip ── */}
         <motion.div
-          className='mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-2.5 border-t border-border/50 pt-7'
+          className='mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-3 border-t border-border/50 pt-5 sm:mt-14 sm:gap-x-4 sm:pt-6'
           initial={reduce ? false : { opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.46 }}
@@ -374,9 +374,12 @@ export function HeroSection () {
             <span
               key={item}
               role='listitem'
-              className='flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.1em] text-body/55'
+              className='inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/75 px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-body/68 shadow-sm backdrop-blur-sm transition-colors duration-200 hover:border-primary/25 hover:text-primary dark:border-border/50 dark:bg-slate-900/60 dark:hover:border-primary/35'
             >
-              <span className='h-px w-3 bg-primary/30' aria-hidden />
+              <span
+                className='h-1.5 w-1.5 rounded-full bg-primary/35'
+                aria-hidden
+              />
               {item}
             </span>
           ))}

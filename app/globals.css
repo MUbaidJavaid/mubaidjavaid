@@ -129,7 +129,8 @@
 
   html {
     scroll-behavior: smooth;
-    font-size: 20px;
+    /* Fluid root: comfortable on small phones, scales up to 20px on large viewports */
+    font-size: clamp(15px, 0.35vw + 14px, 20px);
     overflow-x: clip;
   }
 
@@ -271,7 +272,13 @@
   }
 
   .container-wide {
-    @apply mx-auto w-full max-w-[1240px] px-4 sm:px-4 lg:px-5 xl:px-6;
+    @apply mx-auto min-w-0 w-full max-w-[1240px]
+      pl-[max(1rem,env(safe-area-inset-left,0px))]
+      pr-[max(1rem,env(safe-area-inset-right,0px))]
+      lg:pl-[max(1.25rem,env(safe-area-inset-left,0px))]
+      lg:pr-[max(1.25rem,env(safe-area-inset-right,0px))]
+      xl:pl-[max(1.5rem,env(safe-area-inset-left,0px))]
+      xl:pr-[max(1.5rem,env(safe-area-inset-right,0px))];
   }
 
   /* Section vertical rhythm on 8px grid: 80 / 96 / 128 px */

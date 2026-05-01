@@ -179,7 +179,7 @@ export function PageHeroHeader ({
           initial={reduce ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className='mx-auto flex max-w-4xl flex-col items-center space-y-4 text-center md:space-y-6'
+          className='mx-auto flex w-full min-w-0 max-w-4xl flex-col items-center space-y-4 text-center md:space-y-6'
         >
           {/* Kicker/Label */}
           {subtitle && (

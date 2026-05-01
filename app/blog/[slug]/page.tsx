@@ -102,18 +102,47 @@ export default async function BlogPostPage ({
       : null
 
   return (
-    <article className='section-anchor relative overflow-hidden surface-page py-10'>
+    <article className='section-anchor relative min-w-0 overflow-hidden surface-page py-8 sm:py-10'>
       <div className='pointer-events-none absolute inset-0'>
         <div className='absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_100%_0%,rgba(40,114,161,.05),transparent_65%),radial-gradient(ellipse_40%_50%_at_0%_100%,rgba(15,23,42,.025),transparent_65%)]' />
       </div>
-      <div className='container-wide relative z-10 grid gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:items-start'>
-        <div>
+      <div className='container-wide relative z-10 grid min-w-0 gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,18rem)] lg:items-start'>
+        <div className='min-w-0'>
           <script
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
           />
-          <div className='relative overflow-hidden border border-[#0F172A]/[.08] surface-panel p-4 sm:p-6 lg:p-10 dark:border-border/50'>
+          <div className='relative min-w-0 overflow-hidden border border-[#0F172A]/[.08] surface-panel p-3 sm:p-6 lg:p-10 dark:border-border/50'>
             <div className='absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent' />
+            <nav
+              aria-label='On this page'
+              className='mb-6 border border-border surface-muted-soft p-3 sm:p-4 lg:hidden dark:border-border/50'
+            >
+              <p className='section-label mb-3'>On this page</p>
+              <div className='flex max-h-[min(40vh,14rem)] flex-col gap-1 overflow-y-auto overscroll-y-contain text-sm'>
+                {post.sections.map(section => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className='rounded-md px-2 py-1.5 text-body transition-colors hover:bg-primary/10 hover:text-primary'
+                  >
+                    {section.title}
+                  </a>
+                ))}
+                <a
+                  href='#key-takeaways'
+                  className='rounded-md px-2 py-1.5 font-semibold text-heading transition-colors hover:bg-primary/10 hover:text-primary'
+                >
+                  Key takeaways
+                </a>
+                <a
+                  href='#conclusion'
+                  className='rounded-md px-2 py-1.5 font-semibold text-heading transition-colors hover:bg-primary/10 hover:text-primary'
+                >
+                  Conclusion
+                </a>
+              </div>
+            </nav>
             <header className='space-y-5'>
               <Link
                 href='/blog'
@@ -134,15 +163,15 @@ export default async function BlogPostPage ({
                 </span>
                 <span>{post.readTime}</span>
               </div>
-              <h1 className='section-heading text-[1.7rem] sm:text-[2.1rem] lg:text-[2.45rem]'>
+              <h1 className='section-heading text-balance text-[clamp(1.35rem,4.2vw+0.5rem,2.45rem)]'>
                 {post.title}
               </h1>
               {post.subtitle ? (
-                <p className='max-w-3xl text-base font-medium text-primary/90 sm:text-lg'>
+                <p className='w-full max-w-3xl text-base font-medium text-primary/90 sm:text-lg'>
                   {post.subtitle}
                 </p>
               ) : null}
-              <p className='max-w-3xl text-sm leading-[1.8] text-body sm:text-base'>
+              <p className='w-full max-w-3xl text-sm leading-[1.8] text-body sm:text-base'>
                 {post.summary}
               </p>
               <div className='flex flex-wrap gap-2'>
@@ -157,8 +186,8 @@ export default async function BlogPostPage ({
               </div>
             </header>
 
-            <div className='mt-8 space-y-10'>
-              <p className='max-w-3xl text-sm leading-[1.85] text-body sm:text-base'>
+            <div className='mt-8 min-w-0 space-y-10'>
+              <p className='w-full max-w-3xl text-sm leading-[1.85] text-body sm:text-base'>
                 {post.intro}
               </p>
               {post.sections.map(section => (
@@ -198,8 +227,8 @@ export default async function BlogPostPage ({
                             code-snippet.{section.codeExample.language}
                           </p>
                         </div>
-                        <pre className='overflow-x-auto p-5 text-left text-[13px] leading-relaxed text-slate-100'>
-                          <code className='font-mono text-[13px]'>
+                        <pre className='overflow-x-auto p-4 text-left text-[12px] leading-relaxed text-slate-100 sm:p-5 sm:text-[13px]'>
+                          <code className='font-mono text-[12px] sm:text-[13px]'>
                             {section.codeExample.code}
                           </code>
                         </pre>
@@ -211,7 +240,7 @@ export default async function BlogPostPage ({
 
               <section
                 id='key-takeaways'
-                className='scroll-mt-28 space-y-4  border border-primary/10 bg-[#EFF6FB] p-6 sm:p-8'
+                className='scroll-mt-28 space-y-4 border border-primary/10 bg-[#EFF6FB] p-4 sm:p-6 md:p-8'
               >
                 <h2 className='section-heading text-lg sm:text-xl lg:text-2xl'>
                   Key takeaways
@@ -289,8 +318,8 @@ export default async function BlogPostPage ({
           )}
         </div>
 
-        <aside className='hidden lg:block lg:sticky lg:top-28'>
-          <div className='border border-border surface-muted p-6 dark:border-border/50'>
+        <aside className='hidden min-w-0 lg:block lg:sticky lg:top-28'>
+          <div className='border border-border surface-muted p-5 lg:p-6 dark:border-border/50'>
             <div className='space-y-4'>
               <p className='section-label'>On This Page</p>
               <nav className='space-y-3 text-sm text-body'>

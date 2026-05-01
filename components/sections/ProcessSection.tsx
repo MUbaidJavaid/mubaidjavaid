@@ -54,7 +54,7 @@ export function ProcessSection () {
         {/* Steps grid */}
         <div
           ref={gridRef}
-          className='grid gap-px overflow-hidden border border-border/50 bg-border/50 sm:grid-cols-2 lg:grid-cols-4'
+          className='grid gap-px overflow-hidden border border-border/50 bg-border/50 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
         >
           {process.map((item, index) => {
             const Icon = stepIcons[index % stepIcons.length]

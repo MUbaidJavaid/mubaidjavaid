@@ -22,19 +22,28 @@ export function ProofSnapshot () {
       label: 'Case studies',
       value: String(caseStudies),
       hint: 'Documented builds',
-      icon: FolderGit2
+      icon: FolderGit2,
+      accent: 'from-sky-500/20 via-sky-500/8 to-transparent',
+      ring: 'border-sky-500/15',
+      glow: 'bg-sky-500/8'
     },
     {
       label: 'Engineering articles',
       value: String(articles),
       hint: 'Implementation depth',
-      icon: BookOpen
+      icon: BookOpen,
+      accent: 'from-teal-500/20 via-teal-500/8 to-transparent',
+      ring: 'border-teal-500/15',
+      glow: 'bg-teal-500/8'
     },
     {
       label: 'Response target',
       value: '24h',
       hint: 'First reply on inquiries',
-      icon: Timer
+      icon: Timer,
+      accent: 'from-amber-500/20 via-amber-500/8 to-transparent',
+      ring: 'border-amber-500/15',
+      glow: 'bg-amber-500/8'
     }
   ]
 
@@ -57,7 +66,7 @@ export function ProofSnapshot () {
         }}
       />
 
-      <div className='container-wide relative z-10 px-4 py-14 sm:px-6 md:px-8 lg:px-10 lg:py-16'>
+      <div className='container-wide relative z-10 py-14 lg:py-16'>
         <div className='  md:p-8 lg:p-9'>
           <div className='grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-10'>
             {/* Copy column */}
@@ -103,31 +112,61 @@ export function ProofSnapshot () {
             </div>
 
             {/* Stats */}
-            <div className='grid gap-3 sm:grid-cols-3 sm:gap-3.5'>
+            <div className='grid gap-3 sm:grid-cols-2 xl:grid-cols-3 sm:gap-3.5'>
               {stats.map((s, i) => {
                 const Icon = s.icon
                 return (
                   <div
                     key={s.label}
-                    className='group relative flex min-h-[160px] flex-col overflow-hidden border border-border/30 surface-panel p-4 shadow-[0_1px_2px_rgba(15,23,42,.04)] ring-1 ring-black/[0.015] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 dark:border-border/50 dark:ring-white/[0.04]'
+                    className={`group relative flex min-h-[156px] flex-col overflow-hidden border surface-panel p-3 shadow-[0_1px_2px_rgba(15,23,42,.04)] ring-1 ring-black/[0.015] transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:ring-white/[0.04] sm:min-h-[170px] sm:p-4 ${
+                      s.ring
+                    } ${i === 1 ? 'xl:translate-y-3' : ''}`}
                     style={{ animationDelay: `${i * 70}ms` }}
                   >
-                    <div className='mb-4 inline-flex h-10 w-10 items-center justify-center text-primary transition-all duration-300 '>
-                      <Icon
-                        className='h-4.5 w-4.5'
-                        strokeWidth={2}
+                    <div
+                      className={`pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${s.accent}`}
+                      aria-hidden
+                    />
+                    <div
+                      className={`pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full ${s.glow} blur-3xl transition-opacity duration-300 group-hover:opacity-80`}
+                      aria-hidden
+                    />
+                    <div
+                      className='pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100'
+                      aria-hidden
+                      style={{
+                        background:
+                          'radial-gradient(circle at 0% 0%, hsl(var(--primary) / 0.06), transparent 38%)'
+                      }}
+                    />
+
+                    <div className='mb-4 flex items-center gap-2 sm:gap-2.5'>
+                      <div className='inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border/50 bg-white/85 text-primary shadow-sm transition-all duration-300 group-hover:border-primary/25 group-hover:bg-primary/5 dark:border-border/60 dark:bg-slate-900/70 sm:h-9 sm:w-9 lg:h-10 lg:w-10'>
+                        <Icon
+                          className='h-4.5 w-4.5'
+                          strokeWidth={2}
+                          aria-hidden
+                        />
+                      </div>
+                      <p className='tabular-nums-pro whitespace-nowrap font-heading text-[1.6rem] font-extrabold leading-none tracking-tight text-heading sm:text-[2.15rem]'>
+                        {s.value}
+                      </p>
+                    </div>
+                    <div className='space-y-1.5'>
+                      <p className='text-[10px] font-bold uppercase tracking-[0.17em] text-body/55'>
+                        {s.label}
+                      </p>
+                    </div>
+
+                    <div className='mt-auto pt-4'>
+                      <div
+                        className='h-px w-full bg-gradient-to-r from-border/50 via-border/20 to-transparent'
                         aria-hidden
                       />
+                      <p className='mt-2.5 text-xs leading-relaxed text-body/68'>
+                        {s.hint}
+                      </p>
                     </div>
-                    <p className='tabular-nums-pro font-heading text-[2rem] font-extrabold tracking-tight text-heading'>
-                      {s.value}
-                    </p>
-                    <p className='mt-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-body/50'>
-                      {s.label}
-                    </p>
-                    <p className='mt-2 text-xs leading-relaxed text-body/65'>
-                      {s.hint}
-                    </p>
                   </div>
                 )
               })}

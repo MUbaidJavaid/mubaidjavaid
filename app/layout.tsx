@@ -8,6 +8,7 @@ import { ScrollProgressIndicator } from '@/components/system/ScrollProgressIndic
 import { ThemeProvider } from '@/components/system/ThemeProvider'
 import ClickSpark from '@/components/ui/ClickSpark'
 import { site } from '@/data/site'
+import { Toaster } from 'sonner'
 import { personJsonLd, websiteJsonLd } from '@/lib/seo'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Manrope } from 'next/font/google'
@@ -111,6 +112,7 @@ export default function RootLayout ({
           }}
         />
         <ThemeProvider>
+          <Toaster position='top-center' richColors closeButton />
           <Suspense fallback={null}>
             <NavigationProgress />
           </Suspense>

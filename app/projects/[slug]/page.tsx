@@ -2,12 +2,7 @@ import { ProjectDetailBody } from '@/components/projects/ProjectDetailBody'
 import { BrowserFrame } from '@/components/ui/BrowserFrame'
 import { getProjectBySlug, projects } from '@/data/projects'
 import { pageMetadata } from '@/lib/seo'
-import {
-  ArrowUpRight,
-  ChevronLeft,
-  ExternalLink,
-  Github
-} from 'lucide-react'
+import { ArrowUpRight, ChevronLeft, ExternalLink, Github } from 'lucide-react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'

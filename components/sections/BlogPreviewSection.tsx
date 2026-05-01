@@ -80,7 +80,7 @@ export function BlogPreviewSection () {
                 <span className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[.04] to-transparent transition-transform duration-700 group-hover:translate-x-full' />
                 <span
                   aria-hidden
-                  className='pointer-events-none absolute right-4 top-0 select-none font-heading text-[5.5rem] font-extrabold leading-none text-white/[.06]'
+                  className='pointer-events-none absolute right-4 top-0 select-none font-heading text-[5.5rem] font-extrabold leading-none text-white/[.08]'
                 >
                   01
                 </span>
@@ -131,7 +131,7 @@ export function BlogPreviewSection () {
                   <span className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary/[.04] to-transparent transition-transform duration-500 group-hover:translate-x-full' />
                   <span
                     aria-hidden
-                    className='pointer-events-none absolute right-3 top-0 select-none font-heading text-[3.5rem] font-extrabold leading-none text-[#0F172A]/[.04] dark:text-white/[.06]'
+                    className='pointer-events-none absolute right-3 top-0 select-none font-heading text-[3.5rem] font-extrabold leading-none text-[#0F172A]/[.08] dark:text-white/[.10]'
                   >
                     {String(idx + 2).padStart(2, '0')}
                   </span>
