@@ -1,300 +1,243 @@
+import { Check, LayoutTemplate, Sparkles } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+
+const IMG_TEMPLATE =
+  'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=85'
+const IMG_BESPOKE =
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=85'
+
+/**
+ * Template vs bespoke: real imagery, clearer copy (no em dashes), grounded tone.
+ */
 export function TrustStrip () {
   return (
     <section
-      className='section-anchor min-w-0 bg-white/95 py-8 sm:py-10 lg:py-12 dark:bg-slate-950/85'
-      aria-label='Bespoke website comparison'
+      className='section-anchor min-w-0 bg-white/95 py-10 sm:py-12 lg:py-14 dark:bg-slate-950/85'
+      aria-labelledby='truststrip-heading'
     >
       <div className='container-wide min-w-0'>
-        <div className='relative mx-auto w-full min-w-0 max-w-[1100px] overflow-hidden rounded-[2rem] bg-transparent'>
-          <div className='relative aspect-[1/0.74] min-h-[460px] w-full sm:aspect-[1/0.66] sm:min-h-[560px] lg:aspect-[1/0.56]'>
-            <svg
-              className='absolute inset-0 h-full w-full'
-              viewBox='0 0 1200 760'
-              preserveAspectRatio='xMidYMid meet'
-              aria-hidden='true'
-            >
-              <defs>
-                <linearGradient
-                  id='blobFill'
-                  x1='0%'
-                  y1='0%'
-                  x2='100%'
-                  y2='100%'
-                >
-                  <stop offset='0%' stopColor='#2a5c63' />
-                  <stop offset='100%' stopColor='#244a50' />
-                </linearGradient>
+        <header className='mx-auto mb-8 max-w-2xl text-center sm:mb-10'>
+          <h2
+            id='truststrip-heading'
+            className='font-heading text-[1.35rem] font-bold leading-snug tracking-tight text-heading sm:text-2xl md:text-[1.65rem]'
+          >
+            Same web. Different foundations.
+          </h2>
+          <p className='mt-3 text-[0.9rem] leading-relaxed text-body sm:text-[0.95rem]'>
+            Templates are a sensible starting point. Bespoke builds map structure,
+            content, and technology to{' '}
+            <span className='font-medium text-heading dark:text-slate-200'>
+              how you work and what visitors need to trust you
+            </span>
+            , without fighting a one-size grid later.
+          </p>
+        </header>
 
-                <linearGradient
-                  id='arrowStroke'
-                  x1='0%'
-                  y1='0%'
-                  x2='100%'
-                  y2='100%'
-                >
-                  <stop offset='0%' stopColor='#e6ecef' />
-                  <stop offset='100%' stopColor='#f7f9fa' />
-                </linearGradient>
+        <div className='relative mx-auto max-w-[1040px]'>
+          <div
+            className='pointer-events-none absolute -inset-4 -z-10 rounded-[2rem] opacity-95 sm:-inset-6'
+            aria-hidden
+          >
+            <div className='absolute inset-0 rounded-[inherit] bg-[linear-gradient(135deg,hsl(202_45%_97%)_0%,hsl(188_35%_96%)_42%,hsl(202_40%_94%)_100%)] dark:bg-[linear-gradient(135deg,hsl(222_41%_12%)_0%,hsl(202_35%_14%)_48%,hsl(188_30%_12%)_100%)]' />
+            <div className='absolute left-[10%] top-[20%] h-[42%] w-[52%] rounded-full bg-[hsl(202_61%_37%_/0.12)] blur-3xl dark:bg-[hsl(188_72%_34%_/0.16)]' />
+            <div className='absolute bottom-[12%] right-[8%] h-[38%] w-[48%] rounded-full bg-[hsl(188_72%_34%_/0.11)] blur-3xl dark:bg-[hsl(202_55%_40%_/0.1)]' />
+          </div>
 
-                <path
-                  id='topArcPath'
-                  d='M 120 248 C 162 116, 306 52, 470 50 C 610 48, 716 96, 804 184'
-                />
-                <path
-                  id='bottomArcPath'
-                  d='M 950 560 C 858 700, 618 730, 430 702 C 250 674, 150 604, 92 524'
-                />
-
-                <marker
-                  id='arrowHead'
-                  markerWidth='12'
-                  markerHeight='12'
-                  refX='8'
-                  refY='6'
-                  orient='auto'
-                  markerUnits='strokeWidth'
-                >
-                  <path d='M 0 0 L 12 6 L 0 12 z' fill='url(#arrowStroke)' />
-                </marker>
-
-                <filter
-                  id='softShadow'
-                  x='-20%'
-                  y='-20%'
-                  width='140%'
-                  height='140%'
-                >
-                  <feDropShadow
-                    dx='0'
-                    dy='18'
-                    stdDeviation='18'
-                    floodColor='#10262b'
-                    floodOpacity='0.14'
-                  />
-                </filter>
-              </defs>
-
-              <rect width='1200' height='760' fill='#fafbfd' />
-
-              <text
-                fill='#11363d'
-                fontSize='38'
-                fontWeight='500'
-                letterSpacing='0.01em'
-              >
-                <textPath href='#topArcPath' startOffset='4%'>
-                  Bespoke Website
-                </textPath>
-              </text>
-
-              <text
-                fill='#11363d'
-                fontSize='38'
-                fontWeight='500'
-                letterSpacing='0.01em'
-              >
-                <textPath href='#bottomArcPath' startOffset='10%'>
-                  Template Website
-                </textPath>
-              </text>
-
-              <path
-                d='M 176 164C238 116 334 102 420 134C482 158 520 192 564 226C610 260 676 268 728 300C792 340 816 414 802 478C790 530 748 570 724 620C704 662 694 710 642 724C586 738 516 706 454 702C388 698 324 724 262 708C200 692 156 646 130 594C104 544 114 486 94 438C70 382 48 320 70 258C92 196 130 192 176 164Z'
-                fill='url(#blobFill)'
-              />
-
-              <path
-                d='M 234 352 C 194 404, 198 470, 250 540'
-                fill='none'
-                stroke='url(#arrowStroke)'
-                strokeWidth='4'
-                strokeLinecap='round'
-                markerEnd='url(#arrowHead)'
-              />
-
-              <path
-                d='M 1008 532 C 1052 480, 1048 424, 1006 374'
-                fill='none'
-                stroke='url(#arrowStroke)'
-                strokeWidth='4'
-                strokeLinecap='round'
-                markerEnd='url(#arrowHead)'
-              />
-
-              <circle
-                cx='938'
-                cy='214'
-                r='150'
-                fill='#ffffff'
-                stroke='#ffffff'
-                strokeWidth='18'
-                filter='url(#softShadow)'
-              />
-              <circle
-                cx='390'
-                cy='520'
-                r='156'
-                fill='#ffffff'
-                stroke='#ffffff'
-                strokeWidth='18'
-                filter='url(#softShadow)'
-              />
-
-              <circle
-                cx='610'
-                cy='410'
-                r='38'
-                fill='#183d44'
-                stroke='#ffffff'
-                strokeWidth='8'
-                filter='url(#softShadow)'
-              />
-              <text
-                x='588'
-                y='424'
-                fill='#ffffff'
-                fontSize='36'
-                fontWeight='600'
-                letterSpacing='-0.02em'
-              >
-                VS
-              </text>
-
-              <text
-                x='74'
-                y='228'
-                fill='#f3f7f8'
-                fontSize='26'
-                fontWeight='500'
-                letterSpacing='-0.02em'
-              >
-                Template
-              </text>
-              <text
-                x='72'
-                y='260'
-                fill='#f3f7f8'
-                fontSize='26'
-                fontWeight='500'
-                letterSpacing='-0.02em'
-              >
-                Website
-              </text>
-
-              <text
-                x='768'
-                y='520'
-                fill='#f3f7f8'
-                fontSize='26'
-                fontWeight='500'
-                letterSpacing='-0.02em'
-              >
-                Bespoke
-              </text>
-              <text
-                x='768'
-                y='552'
-                fill='#f3f7f8'
-                fontSize='26'
-                fontWeight='500'
-                letterSpacing='-0.02em'
-              >
-                Website
-              </text>
-            </svg>
-
-            <div className='absolute left-[6%] top-[26%] hidden rounded-2xl border border-white/0 px-1 py-1 text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.18)] lg:block'>
-              <p className='text-[2.05rem] font-medium leading-[0.92] tracking-[-0.02em] text-white/95'>
-                Template
-                <br />
-                Website
-              </p>
-            </div>
-
-            <div className='absolute right-[12%] bottom-[26%] hidden rounded-2xl px-1 py-1 text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.18)] lg:block'>
-              <p className='text-[1.7rem] font-medium leading-[0.92] tracking-[-0.02em] text-white/95'>
-                Bespoke
-                <br />
-                Website
-              </p>
-            </div>
-
-            <div className='absolute right-[14.5%] top-[12%] h-[254px] w-[254px] overflow-hidden rounded-full border border-white/75 bg-white shadow-[0_18px_40px_rgba(10,27,36,0.16)] sm:h-[292px] sm:w-[292px] lg:h-[320px] lg:w-[320px]'>
-              <div className='absolute inset-3 rounded-full bg-[linear-gradient(135deg,#f8fafb_0%,#eef3f5_30%,#d7e0e5_100%)] p-4'>
-                <div className='flex h-full flex-col rounded-[999px] border border-slate-200/70 bg-[radial-gradient(circle_at_30%_20%,#2f3438_0,#1a1f23_58%,#0f1114_100%)] p-4 shadow-inner'>
-                  <div className='mb-3 flex items-center justify-between'>
-                    <div className='flex gap-1.5'>
-                      <span className='h-2.5 w-2.5 rounded-full bg-white/35' />
-                      <span className='h-2.5 w-2.5 rounded-full bg-white/22' />
-                      <span className='h-2.5 w-2.5 rounded-full bg-white/16' />
-                    </div>
-                    <span className='rounded-full bg-white/10 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/70'>
-                      Bespoke
-                    </span>
-                  </div>
-
-                  <div className='mt-1 space-y-3'>
-                    <p className='text-xl font-semibold leading-tight text-white'>
-                      Clean structure.
-                      <br />
-                      Confident delivery.
+          <div className='grid gap-8 md:grid-cols-[1fr_auto_1fr] md:items-stretch md:gap-6 lg:gap-10'>
+            {/* Template */}
+            <article className='group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border/80 bg-white/90 shadow-[0_14px_40px_-24px_rgba(15,23,42,0.2)] backdrop-blur-sm dark:border-border/55 dark:bg-slate-900/75'>
+              <div className='p-5 pb-0'>
+                <div className='mb-4 flex items-center gap-3'>
+                  <span className='flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-heading transition-transform duration-300 group-hover:scale-[1.03] dark:bg-slate-800 dark:text-slate-100'>
+                    <LayoutTemplate
+                      className='h-[1.35rem] w-[1.35rem]'
+                      aria-hidden
+                    />
+                  </span>
+                  <div className='min-w-0'>
+                    <p className='font-heading text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-body/78 dark:text-slate-400'>
+                      Approach A
                     </p>
-                    <div className='grid grid-cols-2 gap-2.5'>
-                      <div className='rounded-[22px] border border-white/10 bg-white/5 p-3'>
-                        <div className='mb-2 h-2.5 w-16 rounded-full bg-white/24' />
-                        <div className='space-y-2'>
-                          <div className='h-2 w-full rounded-full bg-white/12' />
-                          <div className='h-2 w-4/5 rounded-full bg-white/12' />
-                          <div className='h-2 w-2/3 rounded-full bg-white/12' />
-                        </div>
-                      </div>
-                      <div className='rounded-[22px] border border-white/10 bg-white/5 p-3'>
-                        <div className='grid grid-cols-2 gap-2'>
-                          <div className='h-14 rounded-xl bg-gradient-to-br from-cyan-300/35 to-sky-500/18' />
-                          <div className='h-14 rounded-xl bg-gradient-to-br from-slate-200/65 to-slate-500/18' />
-                          <div className='h-10 rounded-xl bg-white/8' />
-                          <div className='h-10 rounded-xl bg-white/8' />
-                        </div>
-                      </div>
-                    </div>
+                    <h3 className='font-heading text-lg font-bold leading-tight text-heading dark:text-slate-100'>
+                      Template website
+                    </h3>
                   </div>
                 </div>
               </div>
+
+              <figure className='relative mx-5 mb-5 w-[min(100%,320px)] max-w-full shrink-0 overflow-hidden rounded-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.14)] ring-1 ring-black/10 dark:ring-white/12 sm:mx-auto'>
+                {/* width/height (not fill): figure had only out-of-flow children, so layout height collapsed → invisible image */}
+                <Image
+                  src={IMG_TEMPLATE}
+                  alt='Laptop on a calm desk: a familiar setup for launching with a template.'
+                  width={900}
+                  height={675}
+                  sizes='(max-width: 768px) min(92vw, 320px), 320px'
+                  className='block aspect-[4/3] h-auto w-full object-cover object-[center_40%] transition-[transform] duration-500 ease-out group-hover:scale-[1.03]'
+                />
+                <div
+                  className='pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-slate-900/72 via-slate-900/15 to-transparent'
+                  aria-hidden
+                />
+                <figcaption className='absolute inset-x-0 bottom-0 z-[2] p-4'>
+                  <p className='text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-white/82'>
+                    Off-the-shelf starting point
+                  </p>
+                  <p className='mt-0.5 font-heading text-[0.95rem] font-bold leading-snug text-white'>
+                    Familiar grids. Fast publish.
+                  </p>
+                </figcaption>
+                <span className='absolute left-3 top-3 z-[2] rounded-full border border-white/25 bg-white/92 px-2.5 py-1 font-heading text-[9px] font-bold uppercase tracking-[0.14em] text-slate-800 shadow-md backdrop-blur-sm dark:bg-slate-900/92 dark:text-slate-100'>
+                  Template
+                </span>
+              </figure>
+
+              <div className='mt-auto px-5 pb-5'>
+                <ul className='space-y-2.5 border-t border-border/60 pt-4 text-[0.82rem] leading-snug text-body dark:border-border/45 dark:text-slate-400'>
+                  <li className='flex gap-3'>
+                    <span
+                      className='mt-[0.35rem] h-1.5 w-1.5 shrink-0 rounded-full bg-body/45 dark:bg-slate-500'
+                      aria-hidden
+                    />
+                    <span>
+                      Predictable layouts: quick to publish,{' '}
+                      <span className='font-medium text-heading/85 dark:text-slate-300'>
+                        harder to differentiate
+                      </span>{' '}
+                      as you grow.
+                    </span>
+                  </li>
+                  <li className='flex gap-3'>
+                    <span
+                      className='mt-[0.35rem] h-1.5 w-1.5 shrink-0 rounded-full bg-body/45 dark:bg-slate-500'
+                      aria-hidden
+                    />
+                    <span>
+                      Fits common patterns;{' '}
+                      <span className='font-medium text-heading/85 dark:text-slate-300'>
+                        you may compromise
+                      </span>{' '}
+                      on workflows that don&apos;t fit the theme.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <div
+              className='flex items-center justify-center gap-3 py-2 md:flex-col md:py-10'
+              aria-hidden
+            >
+              <span className='h-px min-w-[2.5rem] flex-1 bg-border/65 md:hidden' />
+              <span className='flex h-[3.25rem] w-[3.25rem] shrink-0 items-center justify-center rounded-full border-2 border-white bg-[hsl(202_61%_32%)] text-sm font-heading font-semibold uppercase tracking-[0.14em] text-white shadow-[0_12px_28px_-10px_rgba(36,107,150,0.45)] ring-4 ring-[hsl(202_61%_37%_/0.12)] dark:border-slate-800 dark:bg-[hsl(202_61%_30%)] dark:ring-[hsl(188_72%_34%_/0.15)]'>
+                vs
+              </span>
+              <span className='h-px min-w-[2.5rem] flex-1 bg-border/65 md:hidden' />
             </div>
 
-            <div className='absolute left-[14%] bottom-[12%] h-[274px] w-[274px] overflow-hidden rounded-full border border-white/75 bg-white shadow-[0_18px_40px_rgba(10,27,36,0.16)] sm:h-[312px] sm:w-[312px] lg:h-[338px] lg:w-[338px]'>
-              <div className='absolute inset-3 rounded-full bg-[linear-gradient(135deg,#fbfbfc_0%,#eef2f6_44%,#d8dfe6_100%)] p-4'>
-                <div className='flex h-full flex-col rounded-[999px] border border-slate-300/70 bg-slate-100 p-4 shadow-inner'>
-                  <div className='flex items-start justify-between'>
-                    <div>
-                      <div className='h-2.5 w-24 rounded-full bg-slate-300' />
-                      <div className='mt-2 h-2 w-16 rounded-full bg-slate-200' />
-                    </div>
-                    <div className='rounded-full border border-slate-300/80 px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-slate-600'>
-                      Template
-                    </div>
-                  </div>
-
-                  <div className='mt-4 grid flex-1 grid-cols-3 gap-2.5'>
-                    <div className='rounded-2xl bg-white shadow-sm' />
-                    <div className='rounded-2xl bg-gradient-to-br from-sky-100 to-slate-200 shadow-sm' />
-                    <div className='rounded-2xl bg-white shadow-sm' />
-                    <div className='rounded-2xl bg-gradient-to-br from-slate-200 to-slate-100 shadow-sm' />
-                    <div className='rounded-2xl bg-gradient-to-br from-cyan-100 to-slate-200 shadow-sm' />
-                    <div className='rounded-2xl bg-white shadow-sm' />
+            {/* Bespoke */}
+            <article className='group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-border/80 bg-white/90 shadow-[0_14px_40px_-24px_rgba(15,23,42,0.22)] backdrop-blur-sm dark:border-border/55 dark:bg-slate-900/75'>
+              <div className='p-5 pb-0'>
+                <div className='mb-4 flex items-center gap-3'>
+                  <span
+                    className='flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[hsl(202_61%_37%_/0.12)] text-[hsl(202_61%_37%)] transition-transform duration-300 group-hover:scale-[1.03] dark:bg-[hsl(188_72%_34%_/0.18)] dark:text-[hsl(188_72%_52%)]'
+                    aria-hidden
+                  >
+                    <Sparkles className='h-[1.35rem] w-[1.35rem]' />
+                  </span>
+                  <div className='min-w-0'>
+                    <p className='font-heading text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-body/78 dark:text-slate-400'>
+                      Approach B
+                    </p>
+                    <h3 className='font-heading text-lg font-bold leading-tight text-heading dark:text-slate-100'>
+                      Bespoke website
+                    </h3>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className='absolute left-[31%] top-[42%] flex -translate-x-1/2 -translate-y-1/2 items-center justify-center'>
-              <div className='flex h-20 w-20 items-center justify-center rounded-full bg-[#183d44] text-[2.25rem] font-heading font-semibold text-white shadow-[0_16px_30px_rgba(16,38,43,0.28)] ring-8 ring-white/90 dark:ring-slate-950/90'>
-                VS
+              <figure className='relative mx-5 mb-5 w-[min(100%,320px)] max-w-full shrink-0 overflow-hidden rounded-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] ring-1 ring-black/15 dark:ring-white/15 sm:mx-auto'>
+                <Image
+                  src={IMG_BESPOKE}
+                  alt='Team collaborating: planning and building a site around real goals.'
+                  width={900}
+                  height={675}
+                  sizes='(max-width: 768px) min(92vw, 320px), 320px'
+                  className='block aspect-[4/3] h-auto w-full object-cover object-center transition-[transform] duration-500 ease-out group-hover:scale-[1.03]'
+                />
+                <div
+                  className='pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[hsl(202_61%_24%_/0.82)] via-[hsl(202_61%_35%_/0.35)] to-transparent dark:from-[hsl(222_47%_8%_/0.7)] dark:via-transparent'
+                  aria-hidden
+                />
+                <figcaption className='absolute inset-x-0 bottom-0 z-[2] p-4'>
+                  <p className='text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-white/88'>
+                    Crafted for your story
+                  </p>
+                  <p className='mt-0.5 font-heading text-[0.95rem] font-bold leading-snug text-white'>
+                    Clean structure. Confident delivery.
+                  </p>
+                </figcaption>
+                <span className='absolute left-3 top-3 z-[2] rounded-full border border-white/30 bg-[hsl(202_61%_37%_/0.92)] px-2.5 py-1 font-heading text-[9px] font-bold uppercase tracking-[0.14em] text-white shadow-md backdrop-blur-sm'>
+                  Bespoke
+                </span>
+              </figure>
+
+              <div className='mt-auto px-5 pb-5'>
+                <ul className='space-y-2.5 border-t border-border/60 pt-4 text-[0.82rem] leading-snug text-body dark:border-border/45 dark:text-slate-400'>
+                  <li className='flex gap-2.5'>
+                    <Check
+                      className='mt-0.5 h-4 w-4 shrink-0 text-[hsl(188_72%_36%)] dark:text-[hsl(188_72%_48%)]'
+                      aria-hidden
+                    />
+                    <span>
+                      <span className='font-medium text-heading/90 dark:text-slate-300'>
+                        Architecture matched
+                      </span>{' '}
+                      to your offer, content, and conversion paths.
+                    </span>
+                  </li>
+                  <li className='flex gap-2.5'>
+                    <Check
+                      className='mt-0.5 h-4 w-4 shrink-0 text-[hsl(188_72%_36%)] dark:text-[hsl(188_72%_48%)]'
+                      aria-hidden
+                    />
+                    <span>
+                      <span className='font-medium text-heading/90 dark:text-slate-300'>
+                        Easier to extend
+                      </span>
+                      : performance, SEO, and integrations without theme debt.
+                    </span>
+                  </li>
+                </ul>
               </div>
-            </div>
+            </article>
+          </div>
 
-            <div className='absolute left-[7%] top-[26%] h-0 w-0 border-b-[22px] border-l-[14px] border-r-[14px] border-b-white border-l-transparent border-r-transparent rotate-[14deg] sm:hidden' />
-            <div className='absolute right-[20%] bottom-[28%] h-0 w-0 border-t-[18px] border-l-[12px] border-r-[12px] border-t-white border-l-transparent border-r-transparent rotate-[26deg] sm:hidden' />
+          <div className='mx-auto mt-8 max-w-xl text-center'>
+            <p className='text-[0.8rem] leading-relaxed text-body/88 dark:text-slate-500'>
+              Both can be done well. The right choice depends on timeline, budget,
+              and how unique your customer journey needs to be. If you want a
+              second opinion, we can talk it through.
+            </p>
+            <Link
+              href='/contact'
+              className='mt-4 inline-flex items-center justify-center gap-2 rounded-xl border border-[hsl(202_61%_37%_/0.35)] bg-[hsl(202_61%_37%)] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_24px_-8px_hsl(202_61%_37%_/0.55)] transition-all hover:bg-[hsl(202_64%_32%)] active:scale-[0.98] dark:border-[hsl(188_72%_42%_/0.4)] dark:bg-[hsl(202_61%_34%)] dark:hover:bg-[hsl(202_61%_38%)]'
+            >
+              Book a discovery call
+              <svg
+                width='16'
+                height='16'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.3'
+                strokeLinecap='round'
+                aria-hidden
+              >
+                <path d='M5 12h14M13 6l6 6-6 6' />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>

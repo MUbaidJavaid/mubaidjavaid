@@ -61,7 +61,7 @@ export const profile: Engineer = {
     "Vercel",
   ],
   principles: [
-    "Strict TypeScript — no `any` hiding in the bushes",
+    "Strict TypeScript   no `any` hiding in the bushes",
     "Measure before memoizing; profile before preaching",
     "Clean code beats clever code in week six of maintenance",
   ],
@@ -81,7 +81,7 @@ Deploy / iteration cycle      [████████████████�
 Business surface area         [████████████████░░░░]  $500K+ revenue impacted (cumulative)
 ```
 
-<sub>That last line is about systems touching real money — not a flex, just scope. If your funnel leaks, we fix the plumbing, not the sticker.</sub>
+<sub>That last line is about systems touching real money not a flex, just scope. If your funnel leaks, we fix the plumbing, not the sticker.</sub>
 
 ---
 
@@ -107,7 +107,7 @@ Business surface area         [████████████████�
 ### `$ open ./featured`
 
 <details>
-<summary><strong>Inventory & support ops platform</strong> — MERN, RBAC, tickets + stock in one surface</summary>
+<summary><strong>Inventory & support ops platform</strong>   MERN, RBAC, tickets + stock in one surface</summary>
 
 Role-aware internal tool: inventory, categories, support/installation tickets, transactions. Replaces spreadsheet chaos with one source of truth.
 
@@ -116,7 +116,7 @@ Role-aware internal tool: inventory, categories, support/installation tickets, t
 </details>
 
 <details>
-<summary><strong>Yalla Dubai travel platform</strong> — Express, EJS, auth, modular routing</summary>
+<summary><strong>Yalla Dubai travel platform</strong>   Express, EJS, auth, modular routing</summary>
 
 Structured Node/Express backend with session auth, organized controllers/routes, and server-rendered views for travel journeys.
 
@@ -125,9 +125,9 @@ Structured Node/Express backend with session auth, organized controllers/routes,
 </details>
 
 <details>
-<summary><strong>Movie discovery frontend</strong> — React, Tailwind, API integration, routed UX</summary>
+<summary><strong>Movie discovery frontend</strong>   React, Tailwind, API integration, routed UX</summary>
 
-SPA that talks to an external movie API with search, listings, and detail routes — explicit loading/error states when the network misbehaves.
+SPA that talks to an external movie API with search, listings, and detail routes explicit loading/error states when the network misbehaves.
 
 [Case study](https://mubaidjavaid.vercel.app/projects/movie-discovery-frontend)
 
@@ -189,12 +189,12 @@ SPA that talks to an external movie API with search, listings, and detail routes
   Neither is importing a new framework because Monday felt quiet.
 ```
 
-**Thanks for reading — ship safely, type strictly, sleep occasionally.**
+**Thanks for reading ship safely, type strictly, sleep occasionally.**
 
 <sub>README · dark theme `#0a0e14` · accents `#00e0ff` / `#00ff9d` · built for humans who read diffs</sub>
 
 </div>
 
 <!--
-  EOF — If you found this comment, you owe yourself a cup of coffee and a `git blame` break.
+  EOF   If you found this comment, you owe yourself a cup of coffee and a `git blame` break.
 -->

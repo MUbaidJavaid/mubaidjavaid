@@ -133,14 +133,14 @@ const groups = [
 const logoItems: LogoItem[] = logos.map(logo => ({
   node: (
     <div
-      className='group flex h-16 items-center justify-center rounded-xl border border-transparent bg-white/60 px-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_10px_24px_-16px_rgba(15,23,42,0.24)] dark:bg-transparent '
+      className='flex items-center justify-center px-1 py-0.5'
       title={logo.name}
     >
       <svg
         role='img'
         aria-label={logo.name}
         viewBox='0 0 24 24'
-        className='h-7 w-auto max-w-[100px] opacity-90 transition-opacity group-hover:opacity-100'
+        className='h-10 w-auto max-w-[132px] opacity-90 transition-all duration-200 group-hover/item:-translate-y-px group-hover/item:opacity-100 sm:h-11 sm:max-w-[148px]'
         style={{ color: `#${logo.icon.hex}` }}
       >
         <title>{logo.name}</title>
@@ -165,8 +165,8 @@ export function LogoStrip () {
         <LogoLoop
           logos={logoItems}
           speed={38}
-          gap={18}
-          logoHeight={74}
+          gap={26}
+          logoHeight={62}
           fadeOut
           pauseOnHover
           scaleOnHover

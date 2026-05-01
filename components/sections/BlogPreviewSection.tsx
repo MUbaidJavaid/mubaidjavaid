@@ -77,15 +77,24 @@ export function BlogPreviewSection () {
                 className='group relative overflow-hidden  border border-white/[.06] bg-gradient-to-br from-[#0F172A] via-[#1B2A3D] to-[#1F5F86] p-7 shadow-[0_8px_40px_rgba(15,23,42,.2)] transition-all duration-200 '
                 aria-label={`Read featured article: ${leadPost.title}`}
               >
+                {/* Chunky rounded squares at corner — wide + clipped (half-cut) */}
+                <span
+                  aria-hidden
+                  className='pointer-events-none absolute -right-8 z-0 aspect-square w-[clamp(9rem,22vw,10.75rem)] max-w-none -rotate-[15deg] rounded-[1.35rem] border border-white/22 bg-gradient-to-br from-white/[0.18] via-white/[0.06] to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] dark:from-white/15 max-sm:-top-16 sm:-top-[4.85rem]'
+                />
+                <span
+                  aria-hidden
+                  className='pointer-events-none absolute -right-2 z-0 aspect-square w-[clamp(4rem,9vw,4.75rem)] -rotate-[10deg] rounded-xl border border-[#98C5E0]/28 bg-transparent opacity-[0.85] max-sm:-top-7 sm:-top-5'
+                />
                 <span className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[.04] to-transparent transition-transform duration-700 group-hover:translate-x-full' />
                 <span
                   aria-hidden
-                  className='pointer-events-none absolute right-4 top-0 select-none font-heading text-[5.5rem] font-extrabold leading-none text-white/[.08]'
+                  className='pointer-events-none absolute right-4 top-0 z-[1] select-none font-heading text-[5.5rem] font-extrabold leading-none text-white/[.08]'
                 >
                   01
                 </span>
 
-                <div className='mb-4 flex flex-wrap items-center gap-2'>
+                <div className='relative z-[2] mb-4 flex flex-wrap items-center gap-2'>
                   <span className=' border border-[#98C5E0]/40 bg-[#1B4F74]/40 px-2.5 py-1 text-[.62rem] font-bold uppercase tracking-[.1em] text-[#D6EAF6]'>
                     {leadPost.category}
                   </span>
@@ -100,19 +109,19 @@ export function BlogPreviewSection () {
                   </span>
                 </div>
 
-                <h3 className='mb-3 font-heading text-[1.25rem] font-extrabold leading-[1.2] tracking-[-0.02em] text-white transition-colors group-hover:text-[#DCEAF3] sm:text-[1.4rem]'>
+                <h3 className='relative z-[2] mb-3 font-heading text-[1.25rem] font-extrabold leading-[1.2] tracking-[-0.02em] text-white transition-colors group-hover:text-[#DCEAF3] sm:text-[1.4rem]'>
                   {leadPost.title}
                 </h3>
-                <p className='mb-2 text-[.78rem] leading-[1.75] text-white/55'>
+                <p className='relative z-[2] mb-2 text-[.78rem] leading-[1.75] text-white/55'>
                   {leadPost.summary}
                 </p>
                 {leadPost.intro && (
-                  <p className='text-[.74rem] leading-[1.7] text-white/40'>
+                  <p className='relative z-[2] text-[.74rem] leading-[1.7] text-white/40'>
                     {leadPost.intro}
                   </p>
                 )}
 
-                <span className='mt-6 inline-flex items-center gap-2 text-[.72rem] font-bold tracking-[.02em] text-[#DCEAF3] transition-all group-hover:gap-3'>
+                <span className='relative z-[2] mt-6 inline-flex items-center gap-2 text-[.72rem] font-bold tracking-[.02em] text-[#DCEAF3] transition-all group-hover:gap-3'>
                   Read featured article
                   <span className='text-[.65rem]'>→</span>
                 </span>
@@ -127,16 +136,24 @@ export function BlogPreviewSection () {
                   className='group relative overflow-hidden border border-[#0F172A]/[.08] surface-panel p-5 shadow-[0_1px_6px_rgba(15,23,42,.04)] transition-all duration-200 hover:border-primary/20 hover:shadow-[0_6px_24px_rgba(15,23,42,.09)] dark:border-border/50 dark:hover:shadow-[0_6px_24px_rgba(0,0,0,0.35)]'
                   aria-label={`Read article: ${post.title}`}
                 >
+                  <span
+                    aria-hidden
+                    className='pointer-events-none absolute -right-6 z-0 aspect-square w-[clamp(7.25rem,18vw,8.75rem)] max-w-none -rotate-[14deg] rounded-[1.25rem] border border-[hsl(202_61%_37%_/0.42)] bg-[linear-gradient(148deg,hsl(202_61%_37%_/0.2),transparent_68%)] dark:border-[hsl(188_72%_42%_/0.5)] dark:bg-[linear-gradient(148deg,hsl(202_61%_37%_/0.28),transparent_68%)] max-sm:-top-14 sm:-top-12'
+                  />
+                  <span
+                    aria-hidden
+                    className='pointer-events-none absolute -right-0.5 z-0 aspect-square w-[clamp(3.35rem,7.5vw,3.85rem)] -rotate-[8deg] rounded-xl border border-[#0F172A]/14 bg-transparent dark:border-white/16 max-sm:-top-6 sm:-top-4'
+                  />
                   <span className='absolute bottom-[15%] left-0 top-[15%] w-[2.5px] origin-center scale-y-0  bg-primary transition-transform duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] group-hover:scale-y-100' />
                   <span className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary/[.04] to-transparent transition-transform duration-500 group-hover:translate-x-full' />
                   <span
                     aria-hidden
-                    className='pointer-events-none absolute right-3 top-0 select-none font-heading text-[3.5rem] font-extrabold leading-none text-[#0F172A]/[.08] dark:text-white/[.10]'
+                    className='pointer-events-none absolute right-3 top-0 z-[1] select-none font-heading text-[3.5rem] font-extrabold leading-none text-[#0F172A]/[.08] dark:text-white/[.10]'
                   >
                     {String(idx + 2).padStart(2, '0')}
                   </span>
 
-                  <div className='mb-2.5 flex flex-wrap items-center gap-2'>
+                  <div className='relative z-[2] mb-2.5 flex flex-wrap items-center gap-2'>
                     <span className='border border-[#0F172A]/[.08] bg-[#F8FAFC] px-2.5 py-1 text-[.6rem] font-bold uppercase tracking-[.1em] text-[#334155] dark:border-border/50 dark:bg-slate-900/80 dark:text-slate-300'>
                       {post.category}
                     </span>
@@ -146,14 +163,14 @@ export function BlogPreviewSection () {
                     </span>
                   </div>
 
-                  <h3 className='mb-1.5 font-heading text-[.95rem] font-bold leading-[1.3] tracking-[-0.01em] text-heading transition-colors group-hover:text-primary'>
+                  <h3 className='relative z-[2] mb-1.5 font-heading text-[.95rem] font-bold leading-[1.3] tracking-[-0.01em] text-heading transition-colors group-hover:text-primary'>
                     {post.title}
                   </h3>
-                  <p className='line-clamp-2 text-[.72rem] leading-[1.65] text-body/55'>
+                  <p className='relative z-[2] line-clamp-2 text-[.72rem] leading-[1.65] text-body/55'>
                     {post.summary}
                   </p>
 
-                  <span className='mt-3 inline-flex items-center gap-1.5 text-[.68rem] font-bold text-primary transition-all group-hover:gap-2.5'>
+                  <span className='relative z-[2] mt-3 inline-flex items-center gap-1.5 text-[.68rem] font-bold text-primary transition-all group-hover:gap-2.5'>
                     Read article <span className='text-[.6rem]'>→</span>
                   </span>
                 </Link>

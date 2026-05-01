@@ -1,6 +1,6 @@
+import { site } from '@/data/site'
 import { contactPayloadSchema } from '@/lib/contact-schema'
 import { escapeHtml } from '@/lib/email-html'
-import { site } from '@/data/site'
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
@@ -51,7 +51,7 @@ function contactEmailHtml (input: {
                   <tr><td style="padding:0 0 8px;"><strong style="color:${brand};font-size:12px;text-transform:uppercase;letter-spacing:0.06em;">Message</strong></td></tr>
                   <tr><td style="padding:12px 14px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;color:#0f172a;font-size:14px;line-height:1.65;">${msg}</td></tr>
                 </table>
-                <p style="margin:24px 0 0;padding-top:16px;border-top:1px solid #e2e8f0;font-size:12px;color:#64748b;">Reply directly to this email to respond — <strong>Reply-To</strong> is set to the sender.</p>
+                <p style="margin:24px 0 0;padding-top:16px;border-top:1px solid #e2e8f0;font-size:12px;color:#64748b;">Reply directly to this email to respond   <strong>Reply-To</strong> is set to the sender.</p>
               </td>
             </tr>
           </table>

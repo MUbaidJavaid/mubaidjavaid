@@ -23,7 +23,7 @@ export default function ContactThankYouPage () {
         subtitle='Message received'
         title={
           <>
-            Thank you —{' '}
+            Thank you{' '}
             <span style={{ color: '#256e99' }}>I&apos;ll be in touch</span>
           </>
         }

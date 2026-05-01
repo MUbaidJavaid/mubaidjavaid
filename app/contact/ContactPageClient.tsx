@@ -2,20 +2,15 @@
 
 import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { ClickSpark } from '@/components/ui/ClickSpark'
+import { contactCta, site } from '@/data/site'
 import {
   BUDGET_OPTIONS,
   contactPayloadSchema,
   type ContactPayload
 } from '@/lib/contact-schema'
-import { contactCta, site } from '@/data/site'
 import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
-import {
-  AlertCircle,
-  CheckCircle2,
-  Linkedin,
-  Loader2
-} from 'lucide-react'
+import { AlertCircle, CheckCircle2, Linkedin, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import type { ReactNode } from 'react'
@@ -99,14 +94,11 @@ export function ContactPageClient () {
   const contactLinks = getContactLinks()
   const [submitting, setSubmitting] = useState(false)
   /** Inline status so users always see accept/reject without relying only on toast */
-  const [submitBanner, setSubmitBanner] = useState<
-    | null
-    | {
-        tone: 'pending' | 'error' | 'success'
-        title: string
-        detail?: string
-      }
-  >(null)
+  const [submitBanner, setSubmitBanner] = useState<null | {
+    tone: 'pending' | 'error' | 'success'
+    title: string
+    detail?: string
+  }>(null)
 
   const SUBMIT_TOAST = 'contact-form-submit'
 
@@ -136,7 +128,7 @@ export function ContactPageClient () {
     setSubmitBanner({
       tone: 'pending',
       title: 'Sending…',
-      detail: 'Contacting server — please wait.'
+      detail: 'Contacting server   please wait.'
     })
     toast.loading('Sending your message…', { id: SUBMIT_TOAST })
     try {
@@ -158,7 +150,9 @@ export function ContactPageClient () {
 
       if (!res.ok) {
         const apiMsg =
-          typeof json.error === 'string' ? json.error : 'Server rejected the request'
+          typeof json.error === 'string'
+            ? json.error
+            : 'Server rejected the request'
         const fields = json.fieldErrors
         const firstField =
           fields &&
@@ -186,7 +180,7 @@ export function ContactPageClient () {
         title: 'Sent successfully',
         detail: 'Redirecting to the thank-you page…'
       })
-      toast.success('Message delivered — opening thank-you page.')
+      toast.success('Message delivered   opening thank-you page.')
 
       reset({
         name: '',
@@ -198,8 +192,7 @@ export function ContactPageClient () {
       router.push('/contact/thank-you')
     } catch {
       toast.dismiss(SUBMIT_TOAST)
-      const msg =
-        'Network error — check your connection or email directly.'
+      const msg = 'Network error   check your connection or email directly.'
       setSubmitBanner({
         tone: 'error',
         title: 'Connection failed',
@@ -357,7 +350,9 @@ export function ContactPageClient () {
                       autoComplete='name'
                       placeholder='Your full name'
                       maxLength={120}
-                      className={`${inputCls} ${errors.name ? inputErrorCls : ''}`}
+                      className={`${inputCls} ${
+                        errors.name ? inputErrorCls : ''
+                      }`}
                       {...register('name')}
                     />
                     {errors.name ? (
@@ -379,7 +374,9 @@ export function ContactPageClient () {
                       autoComplete='email'
                       placeholder='example@company.com'
                       maxLength={254}
-                      className={`${inputCls} ${errors.email ? inputErrorCls : ''}`}
+                      className={`${inputCls} ${
+                        errors.email ? inputErrorCls : ''
+                      }`}
                       {...register('email')}
                     />
                     {errors.email ? (
@@ -402,7 +399,9 @@ export function ContactPageClient () {
                     type='text'
                     placeholder='e.g. Business website, dashboard, full-stack app, API workflow'
                     maxLength={200}
-                    className={`${inputCls} ${errors.projectType ? inputErrorCls : ''}`}
+                    className={`${inputCls} ${
+                      errors.projectType ? inputErrorCls : ''
+                    }`}
                     {...register('projectType')}
                   />
                   {errors.projectType ? (
@@ -424,7 +423,9 @@ export function ContactPageClient () {
                     rows={5}
                     placeholder='Tell me about your project: business goal, users, required features, current blockers, and timeline.'
                     maxLength={8000}
-                    className={`${inputCls} resize-none ${errors.message ? inputErrorCls : ''}`}
+                    className={`${inputCls} resize-none ${
+                      errors.message ? inputErrorCls : ''
+                    }`}
                     {...register('message')}
                   />
                   {errors.message ? (
@@ -515,10 +516,7 @@ export function ContactPageClient () {
                   >
                     {submitting ? (
                       <>
-                        <Loader2
-                          className='h-4 w-4 animate-spin'
-                          aria-hidden
-                        />
+                        <Loader2 className='h-4 w-4 animate-spin' aria-hidden />
                         Sending…
                       </>
                     ) : (

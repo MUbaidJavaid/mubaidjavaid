@@ -13,7 +13,15 @@ import {
 } from 'lucide-react'
 import { useRef } from 'react'
 
-const stepIcons = [Search, Compass, PencilRuler, Layers3, FlaskConical, Rocket, HandshakeIcon]
+const stepIcons = [
+  Search,
+  Compass,
+  PencilRuler,
+  Layers3,
+  FlaskConical,
+  Rocket,
+  HandshakeIcon
+]
 
 const stepDurations = [
   'Week 1',
@@ -28,18 +36,19 @@ const stepDurations = [
 
 export function ProcessSection () {
   const headerRef = useRef<HTMLDivElement>(null)
-  const gridRef   = useRef<HTMLDivElement>(null)
+  const gridRef = useRef<HTMLDivElement>(null)
 
   useGsapReveal(headerRef, { y: 28, stagger: 0.12 })
-  useGsapReveal(gridRef,   { y: 32, stagger: 0.07, start: 'top 85%' })
+  useGsapReveal(gridRef, { y: 32, stagger: 0.07, start: 'top 85%' })
 
   return (
     <section className='section-anchor surface-muted py-16 md:py-20'>
       <div className='container-wide space-y-12'>
-
         {/* Header */}
         <div ref={headerRef} className='max-w-2xl space-y-4'>
-          <p className='section-label' data-reveal>Process</p>
+          <p className='section-label' data-reveal>
+            Process
+          </p>
           <h2 className='section-heading' data-reveal>
             A structured approach from{' '}
             <span className='section-heading-accent'>brief to delivery</span>
@@ -75,14 +84,18 @@ export function ProcessSection () {
                 {/* Icon + title */}
                 <div className='mb-3 flex items-center gap-2.5'>
                   <span className='flex h-7 w-7 items-center justify-center border border-primary/20 bg-primary/6 text-primary'>
-                    <Icon className='h-3.5 w-3.5' strokeWidth={1.8} aria-hidden />
+                    <Icon
+                      className='h-3.5 w-3.5'
+                      strokeWidth={1.8}
+                      aria-hidden
+                    />
                   </span>
                   <h3 className='text-[0.9rem] font-bold tracking-tight text-heading transition-colors group-hover:text-primary'>
                     {item.step}
                   </h3>
                 </div>
 
-                {/* Description — was text-body/45, fixed to readable text-body/80 */}
+                {/* Description   was text-body/45, fixed to readable text-body/80 */}
                 <p className='text-[0.8125rem] leading-[1.75] text-body/80'>
                   {item.description}
                 </p>

@@ -215,13 +215,13 @@ Portfolio demonstrates hands-on experience with:
 
 ```
 INTEGRATIONS
-├─ SumSub (KYC Verification) — NovixPay
-├─ EmailJS (Transactional Email) — NovixPay
-├─ Stripe (Payment Processing) — NovixPay
-├─ Webhooks (Event Processing) — NovixPay
-├─ REST APIs (Third-party) — Multiple projects
-├─ Crypto APIs (Blockchain) — NovixPay
-└─ Form Handling — Multiple projects
+├─ SumSub (KYC Verification)   NovixPay
+├─ EmailJS (Transactional Email)   NovixPay
+├─ Stripe (Payment Processing)   NovixPay
+├─ Webhooks (Event Processing)   NovixPay
+├─ REST APIs (Third-party)   Multiple projects
+├─ Crypto APIs (Blockchain)   NovixPay
+└─ Form Handling   Multiple projects
 
 INFRASTRUCTURE
 ├─ Vercel (Deployment)

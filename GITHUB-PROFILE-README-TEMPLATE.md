@@ -59,10 +59,10 @@ Data-rich admin interface for e-commerce operations featuring real-time analytic
 
 I write about full-stack development, architecture patterns, and practical lessons from building real applications.
 
-- **[How I Structure MERN Stack Projects for Scalability](https://mubaidjavaid.vercel.app/blog/structuring-mern-projects-for-scale)** — Folder organization and separation of concerns for maintainable full-stack apps
-- **[Lessons from Building Real Admin Dashboards](https://mubaidjavaid.vercel.app/blog/lessons-from-building-admin-dashboards)** — Data tables, filters, RBAC, and UX patterns that work
-- **[Why I Choose Next.js for Business Websites](https://mubaidjavaid.vercel.app/blog/why-i-choose-nextjs-for-business-websites)** — SSR/SSG benefits and when Next.js makes sense
-- **[API Design Patterns That Make Frontend Work Easier](https://mubaidjavaid.vercel.app/blog/api-design-patterns-for-frontend-developers)** — Response shaping, error handling, and pagination patterns
+- **[How I Structure MERN Stack Projects for Scalability](https://mubaidjavaid.vercel.app/blog/structuring-mern-projects-for-scale)** Folder organization and separation of concerns for maintainable full-stack apps
+- **[Lessons from Building Real Admin Dashboards](https://mubaidjavaid.vercel.app/blog/lessons-from-building-admin-dashboards)** Data tables, filters, RBAC, and UX patterns that work
+- **[Why I Choose Next.js for Business Websites](https://mubaidjavaid.vercel.app/blog/why-i-choose-nextjs-for-business-websites)** SSR/SSG benefits and when Next.js makes sense
+- **[API Design Patterns That Make Frontend Work Easier](https://mubaidjavaid.vercel.app/blog/api-design-patterns-for-frontend-developers)** Response shaping, error handling, and pagination patterns
 
 ---
 

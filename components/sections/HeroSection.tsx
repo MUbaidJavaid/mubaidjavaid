@@ -214,7 +214,7 @@ export function HeroSection () {
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className='mb-6'
         >
-          {/* Kicker — no emoji, clean label */}
+          {/* Kicker   no emoji, clean label */}
           <p
             className='mb-4 text-[10.5px] font-semibold uppercase tracking-[0.22em]'
             style={{ color: 'hsl(202 61% 38%)' }}
@@ -222,7 +222,7 @@ export function HeroSection () {
             Full-Stack Developer &middot; Multan, Pakistan
           </p>
 
-          {/* Primary name — largest element on the page */}
+          {/* Primary name   largest element on the page */}
           <h1
             className='font-heading font-extrabold leading-none tracking-[-0.03em] text-heading'
             style={{ fontSize: 'clamp(3rem, 8.5vw, 6rem)' }}

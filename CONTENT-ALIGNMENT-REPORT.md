@@ -262,7 +262,7 @@ Copy the `GITHUB-PROFILE-README-TEMPLATE.md` content into your GitHub USERNAME r
 
 ## Summary
 
-All public portfolio content—GitHub profile, portfolio website, project case studies, services, and blog—now presents M Ubaid Javaid as a serious, credible, full-stack developer. The copy emphasizes:
+All public portfolio content GitHub profile, portfolio website, project case studies, services, and blog now presents M Ubaid Javaid as a serious, credible, full-stack developer. The copy emphasizes:
 
 1. **Real work done** with production impact
 2. **Honest technical decisions** with clear tradeoffs

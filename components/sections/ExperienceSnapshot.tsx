@@ -5,10 +5,10 @@ import { experience } from '@/data/site'
 import { useRef } from 'react'
 
 export function ExperienceSnapshot () {
-  const headerRef   = useRef<HTMLDivElement>(null)
+  const headerRef = useRef<HTMLDivElement>(null)
   const timelineRef = useRef<HTMLDivElement>(null)
 
-  useGsapReveal(headerRef,   { y: 24, stagger: 0.12 })
+  useGsapReveal(headerRef, { y: 24, stagger: 0.12 })
   useGsapReveal(timelineRef, { y: 36, stagger: 0.14, start: 'top 85%' })
 
   const sortedRoles = [...experience.roles].sort((a, b) =>
@@ -18,16 +18,18 @@ export function ExperienceSnapshot () {
   return (
     <section className='section-anchor surface-page py-16 md:py-20'>
       <div className='container-wide space-y-12'>
-
         {/* Header */}
         <div ref={headerRef} className='max-w-2xl space-y-4'>
-          <p className='section-label' data-reveal>Professional Journey</p>
+          <p className='section-label' data-reveal>
+            Professional Journey
+          </p>
           <h2 className='section-heading' data-reveal>
-            Experience &amp; <span className='section-heading-accent'>Career</span>
+            Experience &amp;{' '}
+            <span className='section-heading-accent'>Career</span>
           </h2>
           <p className='text-body-base text-body' data-reveal>
             Full-stack developer with hands-on production experience in MERN and
-            Next.js — building scalable applications, leading delivery cycles, and
+            Next.js building scalable applications, leading delivery cycles, and
             shipping maintainable code in real business environments.
           </p>
         </div>
@@ -48,7 +50,10 @@ export function ExperienceSnapshot () {
                 className='group relative border border-border/60 bg-white shadow-sm transition-all duration-200 hover:border-primary/25 hover:shadow-md dark:border-border/50 dark:bg-card'
               >
                 {/* Timeline dot */}
-                <div className='absolute -left-[50px] top-5 hidden sm:block' aria-hidden>
+                <div
+                  className='absolute -left-[50px] top-5 hidden sm:block'
+                  aria-hidden
+                >
                   <div className='relative h-3.5 w-3.5'>
                     <div className='h-3.5 w-3.5 rounded-full border-2 border-white bg-primary shadow-sm dark:border-card' />
                     {role.current && (
@@ -85,11 +90,13 @@ export function ExperienceSnapshot () {
                   <div className='mt-4 grid gap-2 border-t border-border/40 pt-4 text-[0.78rem] sm:grid-cols-3'>
                     {[
                       { label: 'Duration', value: role.duration },
-                      { label: 'Type',     value: role.type },
+                      { label: 'Type', value: role.type },
                       { label: 'Location', value: role.location }
                     ].map(m => (
                       <div key={m.label} className='space-y-0.5'>
-                        <p className='text-[10px] font-semibold uppercase tracking-wider text-body/50'>{m.label}</p>
+                        <p className='text-[10px] font-semibold uppercase tracking-wider text-body/50'>
+                          {m.label}
+                        </p>
                         <p className='font-semibold text-heading'>{m.value}</p>
                       </div>
                     ))}
@@ -108,8 +115,14 @@ export function ExperienceSnapshot () {
                       </p>
                       <ul className='grid gap-x-6 gap-y-1.5 sm:grid-cols-2'>
                         {role.highlights.map((h, i) => (
-                          <li key={i} className='flex items-start gap-2 text-[0.8rem] leading-relaxed text-body/85'>
-                            <span className='mt-[3px] h-1.5 w-1.5 shrink-0 rounded-sm bg-primary/70' aria-hidden />
+                          <li
+                            key={i}
+                            className='flex items-start gap-2 text-[0.8rem] leading-relaxed text-body/85'
+                          >
+                            <span
+                              className='mt-[3px] h-1.5 w-1.5 shrink-0 rounded-sm bg-primary/70'
+                              aria-hidden
+                            />
                             {h}
                           </li>
                         ))}

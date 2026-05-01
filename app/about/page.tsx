@@ -106,9 +106,9 @@ export default function AboutPage () {
       />
 
       <section className='section-anchor relative overflow-hidden surface-page py-10'>
-        <div className='container-wide relative z-10 grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start'>
+        <div className='container-wide relative z-10 grid gap-10 lg:grid-cols-2 lg:items-stretch lg:gap-x-12'>
           {/* ════ LEFT ════ */}
-          <article className='flex flex-col gap-7'>
+          <article className='flex min-w-0 flex-col gap-7 lg:max-w-none'>
             {/* Value propositions */}
             <div className='flex flex-col gap-2.5'>
               {values.map(v => (
@@ -131,16 +131,16 @@ export default function AboutPage () {
               ))}
             </div>
 
-            {/* Stack */}
-            <div>
-              <p className='mb-2.5 text-[.68rem] font-bold uppercase tracking-[.14em] text-body/40'>
+            {/* Stack — full-width grid so pills balance left/right (5+5 on sm+) */}
+            <div className='w-full'>
+              <p className='mb-2.5 text-center text-[.68rem] font-bold uppercase tracking-[.14em] text-body/40 sm:text-left'>
                 Core Stack
               </p>
-              <div className='flex flex-wrap gap-1.5'>
+              <div className='grid w-full grid-cols-2 gap-2 sm:grid-cols-5 sm:gap-x-2 sm:gap-y-2'>
                 {stack.map(s => (
                   <span
                     key={s.label}
-                    className={`rounded-[7px] border px-3 py-1.5 text-[.68rem] font-semibold transition-all duration-150 hover:-translate-y-px ${
+                    className={`inline-flex min-h-[2.35rem] items-center justify-center rounded-[7px] border px-2 py-1.5 text-center text-[.68rem] font-semibold leading-tight transition-all duration-150 hover:-translate-y-px ${
                       s.primary
                         ? 'border-primary/20 bg-primary/[.07] text-primary'
                         : 'border-[#0F172A]/[.09] bg-[#F8FAFC] text-[#334155] hover:border-primary/20 hover:text-primary dark:border-border/50 dark:bg-slate-900/70 dark:text-slate-300 dark:hover:border-primary/35'
@@ -154,7 +154,7 @@ export default function AboutPage () {
           </article>
 
           {/* ════ RIGHT ════ */}
-          <aside className='flex flex-col gap-3.5'>
+          <aside className='flex min-w-0 flex-col gap-3.5 lg:max-w-none'>
             {/* Professional Experience - from site data, current job highlighted */}
             <div className='space-y-4'>
               <p className='text-[7.5px] font-bold uppercase tracking-[.2em] text-body/40'>
