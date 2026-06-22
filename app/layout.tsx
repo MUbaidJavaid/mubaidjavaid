@@ -2,6 +2,7 @@ import { MobileBottomNav } from '@/components/layout/MobileBottomNav'
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { SiteHeader } from '@/components/layout/SiteHeader'
 import { ExperiencePreferences } from '@/components/system/ExperiencePreferences'
+import { GoogleAnalytics } from '@/components/system/GoogleAnalytics'
 import { InitialLoadSplash } from '@/components/system/InitialLoadSplash'
 import { NavigationProgress } from '@/components/system/NavigationProgress'
 import { ScrollProgressIndicator } from '@/components/system/ScrollProgressIndicator'
@@ -112,6 +113,7 @@ export default function RootLayout ({
           }}
         />
         <ThemeProvider>
+          <GoogleAnalytics />
           <Toaster position='top-center' richColors closeButton />
           <Suspense fallback={null}>
             <NavigationProgress />
