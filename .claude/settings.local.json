@@ -4,7 +4,12 @@
       "Bash(npx next:*)",
       "Bash(taskkill //F //IM node.exe)",
       "Bash(rm -f \"D:/Projectes/mubaidjavaid/.next/lock\")",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Bash(npx pdf-parse:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(pip install:*)",
+      "Bash(python -m pdfminer.high_level \"D:/Projectes/mubaidjavaid/public/Projects/SurgiCore_Pro_Case_Study.pdf\")",
+      "Bash(python:*)"
     ]
   }
 }

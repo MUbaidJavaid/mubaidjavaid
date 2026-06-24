@@ -247,6 +247,216 @@ export const projects: Project[] = [
     architectureSummary:
       "React 19 SPA with Vite bundler. Firebase Firestore for multi-tenant NoSQL database with security rules for tenant isolation. Firebase Auth for authentication with session persistence. Zustand for modular client state (12 stores). IndexedDB offline queue for POS transactions with auto-sync. Vercel for hosting with edge API functions for SMTP email and receipt generation. Cloudinary CDN for product images.",
   },
+  {
+    slug: "apex-platinum-fintech-platform",
+    title: "Apex Platinum — Ultra-Premium Fintech Platform",
+    summary:
+      "An institutional-grade fintech portal with SWIFT/SEPA payments, multicurrency accounts, custody visualization, 3D shader effects, and a simulated institutional dashboard for high-net-worth clients.",
+    description:
+      "Ultra-premium EMI marketing and institutional portal built with Next.js 16, Three.js, and GSAP — featuring immersive 3D visuals, dark/light theming, and a full simulated institutional dashboard.",
+    image: "/Projects/Apex-Platinum/Pair 101.svg",
+    imageAlt: "Apex Platinum fintech platform dashboard and landing page",
+    images: [
+      "/Projects/Apex-Platinum/Pair 101.svg",
+      "/Projects/Apex-Platinum/Pair 102.svg",
+      "/Projects/Apex-Platinum/Pair 103.svg",
+      "/Projects/Apex-Platinum/Pair 104.svg",
+      "/Projects/Apex-Platinum/Pair 105.svg",
+      "/Projects/Apex-Platinum/Pair 106.svg",
+      "/Projects/Apex-Platinum/Pair 107.svg",
+      "/Projects/Apex-Platinum/Pair 108.svg",
+      "/Projects/Apex-Platinum/Pair 109.svg",
+      "/Projects/Apex-Platinum/Pair 110.svg",
+      "/Projects/Apex-Platinum/Pair 111.svg",
+      "/Projects/Apex-Platinum/Pair 112.svg",
+    ],
+    githubUrl: "https://github.com/MUbaidJavaid",
+    role: "Full-Stack Development & UI Engineering",
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Three.js",
+      "GSAP",
+      "Framer Motion",
+    ],
+    featured: false,
+    overview:
+      "Apex Platinum is an ultra-premium fintech platform for a licensed Electronic Money Institution (EMI) based in Vilnius, Lithuania. It combines a visually immersive public marketing site with a simulated institutional dashboard — covering SWIFT/SEPA payments, correspondent banking, merchant acquiring, crypto exchange IBANs, multicurrency accounts, and a private wealth concierge experience.",
+    problem:
+      "Institutional fintech platforms need to convey trust, sophistication, and regulatory credibility while delivering complex financial data in an intuitive interface. Off-the-shelf templates fail to communicate the premium positioning required for high-net-worth and institutional clients.",
+    goal: "Build a visually stunning, enterprise-grade fintech portal that serves as both a conversion-optimized marketing site and a simulated institutional dashboard — showcasing portfolio management, vault custody, market terminals, and concierge advisory.",
+    myRole:
+      "Architected and built the entire platform — from 3D shader backgrounds and Hyperspeed effects to the institutional dashboard with portfolio visualization, vault custody ledger, and market terminal. Implemented dark/light theming, smooth scroll, and page transitions.",
+    keyFeatures: [
+      "Immersive landing with shader backgrounds, Hyperspeed effect, and Lightfall particles",
+      "7 solution pages covering payments, banking, accounts, e-shop, financing, and crypto",
+      "4-tier pricing (Business, Business Plus, Business Exclusive, Individual)",
+      "Simulated institutional dashboard with Portfolio ($142.8M AUM), Markets, and Vault",
+      "3-step login flow with MFA simulation and AES-256 decryption animation",
+      "3D VaultOrb with custody visualization and sovereign vault access",
+      "Concierge advisory interface with dedicated wealth strategist",
+      "Dark/light theme with localStorage persistence",
+      "GSAP scroll animations, Three.js/OGL shader backgrounds, Framer Motion transitions",
+      "Full responsive design with mobile navigation",
+    ],
+    technicalDecisions:
+      "Used Next.js 16 App Router for SSR marketing pages and client-rendered dashboard. Three.js and OGL for 3D shader effects with dynamic imports to avoid SSR issues. GSAP for scroll-triggered animations. Lenis for smooth scrolling. HSL-based design tokens for platinum/gold/neon-cyan color system.",
+    challenges:
+      "Balancing heavy 3D visuals (Three.js, OGL, postprocessing) with page performance — required careful dynamic imports with ssr: false. Creating a design system that feels genuinely premium and institutional rather than template-like.",
+    outcome:
+      "Delivered a production-ready fintech platform with 14+ routes, immersive 3D visuals, and a complete institutional dashboard simulation that convincingly demonstrates wealth management capabilities.",
+    learned:
+      "Premium fintech UI requires obsessive attention to micro-interactions, typography, and color — small details (metallic shine, brushed platinum textures, scan line animations) create the perception of institutional quality. Dynamic imports are essential for Three.js-heavy pages.",
+    impact: [
+      "14+ fully functional routes across marketing and dashboard",
+      "Complete institutional dashboard with portfolio, vault, and market views",
+      "3D shader effects and immersive animations throughout",
+      "Dark/light theming with consistent premium design system",
+    ],
+    architectureSummary:
+      "Next.js 16 App Router with server-rendered marketing pages and client-rendered dashboard. Three.js/OGL for 3D backgrounds and VaultOrb. GSAP + Framer Motion for animations. Lenis smooth scroll. HSL-based design tokens with dark/light persistence. Component-per-page architecture with centralized content files. Dynamic imports for heavy 3D components.",
+  },
+  {
+    slug: "surgicore-pro-surgical-management",
+    title: "SurgiCore Pro — Surgical Management Platform",
+    summary:
+      "An enterprise-grade surgical operations platform with OR scheduling, case tracking, patient management, billing, inventory, sterilization tracking, and deep surgical analytics.",
+    description:
+      "Full-stack enterprise surgical management platform built with React 18, TypeScript, shadcn/ui, and Recharts — serving multi-specialty hospitals with 8 dashboard modules and 9 public pages.",
+    image: "/Projects/Surgi-Core/Pair 113.svg",
+    imageAlt: "SurgiCore Pro surgical dashboard and OR scheduling interface",
+    images: [
+      "/Projects/Surgi-Core/Pair 113.svg",
+      "/Projects/Surgi-Core/Pair 114.svg",
+      "/Projects/Surgi-Core/Pair 115.svg",
+      "/Projects/Surgi-Core/Pair 116.svg",
+      "/Projects/Surgi-Core/Pair 117.svg",
+      "/Projects/Surgi-Core/Pair 118.svg",
+      "/Projects/Surgi-Core/Pair 119.svg",
+      "/Projects/Surgi-Core/Pair 120.svg",
+      "/Projects/Surgi-Core/Pair 121.svg",
+      "/Projects/Surgi-Core/Pair 122.svg",
+    ],
+    githubUrl: "https://github.com/MUbaidJavaid",
+    role: "Full-Stack Development & Architecture",
+    stack: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Recharts",
+      "Framer Motion",
+      "GSAP",
+    ],
+    featured: false,
+    overview:
+      "SurgiCore Pro is an enterprise-grade surgical management platform for multi-specialty hospitals and surgical centers. It provides a comprehensive suite of tools for OR scheduling, surgical case tracking, patient management, billing, inventory with sterilization cycles, staff coordination, and deep surgical analytics — all within a single, unified web application with 17+ routes and 50+ reusable components.",
+    problem:
+      "Surgical centers face OR underutilization, scheduling conflicts, compliance tracking gaps, and fragmented data across multiple disconnected systems. No single platform addresses the full surgical operations lifecycle from lead generation to daily case management.",
+    goal: "Build a complete, production-ready surgical management platform covering both the public-facing marketing funnel and the internal operational dashboard — with enterprise-grade UI, HIPAA compliance messaging, and rich surgical analytics.",
+    myRole:
+      "Designed and built the full platform end-to-end: 9 public marketing pages with conversion-optimized CTAs, 8 dashboard modules with rich data visualizations, authentication system, comprehensive mock data engine, and a complete HSL-based design system.",
+    keyFeatures: [
+      "Complete surgery registry with advanced filtering and status management",
+      "Multi-OR calendar scheduling with conflict detection and availability heatmaps",
+      "Patient directory with surgical history, consent management, and pre-op assessments",
+      "Procedure-based billing with insurance claims pipeline and revenue breakdown",
+      "Surgical inventory with sterilization cycle tracking and expiry alerts",
+      "Surgeon benchmarking with comparative metrics and OR utilization deep-dive",
+      "Case duration trend analysis with 12-month Recharts visualizations",
+      "Conversion-optimized marketing site with timed lead-capture modals",
+      "HIPAA, ISO 27001, SOC 2 compliance trust signals throughout",
+      "Authentication guard with protected dashboard routes",
+    ],
+    technicalDecisions:
+      "Used React 18 with Vite for fast SPA development. shadcn/ui + Radix UI for accessible enterprise components. Recharts for surgical KPI visualization. React Context for auth state. TanStack Query pattern for server state readiness. HSL-based semantic design tokens with Deep Teal (#0F766E) primary.",
+    challenges:
+      "Creating a clinically sophisticated design system that feels trustworthy for healthcare without being sterile. Building comprehensive mock data that realistically represents surgical workflows across 8 dashboard modules.",
+    outcome:
+      "Delivered a production-ready platform with 17+ routes, 50+ reusable components, 8 dashboard modules, and a complete conversion-optimized marketing funnel — demonstrating full-stack healthcare domain expertise.",
+    learned:
+      "Healthcare enterprise UI demands a higher standard of trust signals and professional polish. HSL-based design tokens with semantic naming make it possible to maintain consistency across 50+ components. Recharts provides excellent flexibility for domain-specific surgical analytics.",
+    impact: [
+      "17+ fully functional routes with nested layouts",
+      "50+ reusable UI components with enterprise styling",
+      "8 dashboard modules covering complete surgical operations",
+      "Full SEO implementation with OG images and structured data readiness",
+    ],
+    architectureSummary:
+      "React 18 SPA with Vite bundler. React Router v6 with nested layouts (PublicLayout + DashboardLayout). shadcn/ui + Radix UI component library. Recharts for surgical analytics. React Context for authentication. Comprehensive mock data engine with realistic surgical records. HSL-based semantic design tokens. Framer Motion + GSAP for animations. Full responsive design with collapsible dashboard sidebar.",
+  },
+  {
+    slug: "vitalis-health-healthcare-platform",
+    title: "Vitalis Health — Healthcare Web Application",
+    summary:
+      "A full-stack healthcare platform with public-facing website and admin dashboard — featuring appointment booking, patient management, billing with auto-calculated invoices, and staff management with CRUD operations.",
+    description:
+      "Full-featured healthcare web application built with React 18, TypeScript, and Tailwind CSS — serving as both a patient-facing website and an admin operations dashboard.",
+    image: "/Projects/Vitalis-Health/Pair 149.svg",
+    imageAlt: "Vitalis Health dashboard and appointment management interface",
+    images: [
+      "/Projects/Vitalis-Health/Pair 149.svg",
+      "/Projects/Vitalis-Health/Pair 150.svg",
+      "/Projects/Vitalis-Health/Pair 151.svg",
+      "/Projects/Vitalis-Health/Pair 152.svg",
+      "/Projects/Vitalis-Health/Pair 153.svg",
+      "/Projects/Vitalis-Health/Pair 154.svg",
+      "/Projects/Vitalis-Health/Pair 155.svg",
+      "/Projects/Vitalis-Health/Pair 156.svg",
+      "/Projects/Vitalis-Health/Pair 157.svg",
+      "/Projects/Vitalis-Health/Pair 158.svg",
+    ],
+    githubUrl: "https://github.com/MUbaidJavaid",
+    role: "Full-Stack Development",
+    stack: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Recharts",
+      "Framer Motion",
+    ],
+    featured: false,
+    overview:
+      "Vitalis Health is a full-stack healthcare web application with two primary interfaces: a public-facing website for patients (services, doctors, blog, appointment booking) and an admin dashboard with full CRUD functionality for managing appointments, patients, billing, staff, and settings — all powered by React Context state management.",
+    problem:
+      "Healthcare providers need a unified digital presence that serves both patient engagement (booking, information) and internal operations (scheduling, billing, staff management). Most solutions address only one side, forcing clinics to manage multiple disconnected tools.",
+    goal: "Build a complete healthcare platform that seamlessly connects the patient-facing website with internal admin operations — enabling online booking, patient management, billing with auto-calculated invoices, and staff coordination from a single application.",
+    myRole:
+      "Built the entire application end-to-end: responsive public website with 7 pages, admin dashboard with 6 management modules, React Context-based CRUD state management, and real-time KPI dashboard with Recharts visualizations.",
+    keyFeatures: [
+      "Public website with hero, services, doctors, testimonials, blog, and contact pages",
+      "Appointment booking form with success feedback",
+      "Admin dashboard with real-time KPIs (patients, revenue, appointments)",
+      "Full appointment management — add, update status, delete",
+      "Patient registry with search, details, and registration",
+      "Billing module with auto-calculated invoice totals",
+      "Staff management with role-based access (Admin/Manager/Customer)",
+      "Settings with profile editing synced to navbar and notification preferences",
+      "Inventory management within settings module",
+      "React Context CRUD — changes reflect instantly across all dashboard pages",
+    ],
+    technicalDecisions:
+      "Used React 18 with Vite for fast SPA builds. Tailwind CSS + shadcn/ui for consistent healthcare UI. React Context with array state operations (push/filter/map) for CRUD — keeping the app self-contained without external APIs. Recharts for dashboard KPIs. Framer Motion + GSAP for smooth animations.",
+    challenges:
+      "Designing a React Context-based state management system that handles CRUD operations across 6 dashboard modules while keeping instant cross-page reactivity. Building a healthcare UI that feels professional and trustworthy for both patients and admin staff.",
+    outcome:
+      "Delivered a complete healthcare platform with 7 public pages and 6 admin modules — fully functional CRUD operations, real-time dashboard KPIs, and a cohesive Teal-branded design system.",
+    learned:
+      "React Context with well-structured array operations can effectively power a full CRUD dashboard without external state libraries. Healthcare UX benefits from a calming, trust-building color palette (Teal #0F766E) and clear information hierarchy.",
+    impact: [
+      "Complete dual-interface platform (public site + admin dashboard)",
+      "6 admin modules with full CRUD functionality",
+      "Real-time KPI dashboard with Recharts visualizations",
+      "Instant cross-page reactivity via React Context state management",
+    ],
+    architectureSummary:
+      "React 18 SPA with Vite bundler. React Router DOM v6 for routing. React Context (AuthContext + DataContext) for authentication and CRUD state management. shadcn/ui component library. Recharts for dashboard analytics. Tailwind CSS with Teal (#0F766E) primary branding. Framer Motion + GSAP for animations. Mock data seeding via data/mockData.ts.",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {

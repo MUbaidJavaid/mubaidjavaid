@@ -51,12 +51,15 @@ export default async function ProjectDetailPage ({
     notFound()
   }
 
-  const previewPath =
-    project.slug === 'inventory-management-support-ticket-system'
-      ? 'app.internal / operations'
-      : project.slug === 'yalla-dubai-travel-platform'
-      ? 'travel.example / browse'
-      : 'movies.app / discover'
+  const previewPaths: Record<string, string> = {
+    'hsms-housing-society-management': 'hsms.app / dashboard',
+    'naaz-wears-ecommerce': 'naazwears.pk / shop',
+    'quikpos-saas-point-of-sale': 'quikpos.app / checkout',
+    'apex-platinum-fintech-platform': 'apex-platinum.com / portfolio',
+    'surgicore-pro-surgical-management': 'surgicore.pro / dashboard',
+    'vitalis-health-healthcare-platform': 'vitalis.health / admin',
+  }
+  const previewPath = previewPaths[project.slug] ?? 'app.preview / demo'
 
   return (
     <div className='surface-page'>
