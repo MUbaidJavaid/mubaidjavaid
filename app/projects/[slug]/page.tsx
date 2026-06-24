@@ -1,10 +1,10 @@
 import { ProjectDetailBody } from '@/components/projects/ProjectDetailBody'
+import { ProjectImageSlider } from '@/components/projects/ProjectImageSlider'
 import { BrowserFrame } from '@/components/ui/BrowserFrame'
 import { getProjectBySlug, projects } from '@/data/projects'
 import { pageMetadata } from '@/lib/seo'
 import { ArrowUpRight, ChevronLeft, ExternalLink, Github } from 'lucide-react'
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -126,16 +126,10 @@ export default async function ProjectDetailPage ({
 
       <div className='container-wide mt-10'>
         <BrowserFrame url={previewPath}>
-          <div className='relative aspect-[21/10] w-full sm:aspect-[16/7]'>
-            <Image
-              src={project.image}
-              alt={`${project.title} - product preview`}
-              fill
-              sizes='(max-width: 1240px) 100vw, 1240px'
-              className='object-cover object-top'
-              priority
-            />
-          </div>
+          <ProjectImageSlider
+            images={project.images?.length ? project.images : [project.image]}
+            title={project.title}
+          />
         </BrowserFrame>
         <p className='mt-3 text-center text-xs text-body/50'>
           Structured preview - artwork represents UI direction for this case

@@ -26,252 +26,226 @@ export type Project = {
   learned: string;
   /** 2-4 outcome bullets - honest, observable effects (no fabricated %) */
   impact: string[];
-  /** One short paragraph for “architecture at a glance” on the case study */
+  /** One short paragraph for "architecture at a glance" on the case study */
   architectureSummary: string;
 };
 
 export const projects: Project[] = [
   {
-    slug: "inventory-management-support-ticket-system",
-    title: "Inventory Management & Support Ticket System",
+    slug: "hsms-housing-society-management",
+    title: "HSMS — Housing Society Management System",
     summary:
-      "A custom full-stack workflow system for inventory operations, item and category management, support tickets, installation tracking, and transaction handling.",
+      "A comprehensive multi-tenant SaaS platform for housing society operations — plot lifecycle, billing, visitor management, AI agents, and PLRA compliance built for the Pakistani market.",
     description:
-      "Role-aware internal tool combining inventory management with support ticket workflows, designed to replace scattered spreadsheets and ad-hoc processes.",
-    image: "/Projects/Elder-Guard-Health/Elder-Guard-Health-08.svg",
-    imageAlt: "Inventory dashboard and support ticket overview for operations",
+      "Dynamic, privacy-first, AI-augmented housing society management platform with 25+ modules covering everything from plot allotment to committee handover.",
+    image: "/Projects/HSMS/Pair 89.svg",
+    imageAlt: "HSMS housing society management dashboard and modules",
     images: [
-      "/Projects/Elder-Guard-Health/Elder-Guard-Health-08.svg",
-      "/Projects/Elder-Guard-Health/Elder-Guard-Health-03.svg",
-      "/Projects/Elder-Guard-Health/Elder-Guard-Health-10.svg",
+      "/Projects/HSMS/Pair 89.svg",
+      "/Projects/HSMS/Pair 90.svg",
+      "/Projects/HSMS/Pair 91.svg",
+      "/Projects/HSMS/Pair 92.svg",
+      "/Projects/HSMS/Pair 93.svg",
+      "/Projects/HSMS/Pair 94.svg",
+      "/Projects/HSMS/Pair 95.svg",
+      "/Projects/HSMS/Pair 96.svg",
+      "/Projects/HSMS/Pair 97.svg",
+      "/Projects/HSMS/Pair 98.svg",
+      "/Projects/HSMS/Pair 99.svg",
+      "/Projects/HSMS/Pair 100.svg",
     ],
     githubUrl: "https://github.com/MUbaidJavaid",
-    role: "Full-Stack Development",
-    stack: ["React", "Node.js", "Express.js", "MongoDB", "Material UI"],
-    featured: true,
-    overview:
-      "An internal web application that centralizes inventory data, ticketing workflows, and related operational tracking for a small team.",
-    problem:
-      "The team was managing inventory, tickets, and installation work across multiple spreadsheets and messages, making it easy to lose context and hard to see the current state of operations.",
-    goal: "Provide a single application to manage items, categories, tickets, and transactions with clear visibility, basic audit history, and predictable workflows.",
-    myRole:
-      "Designed and implemented the React frontend, Express.js API, MongoDB data models, and role-aware routes, focusing on practical, maintainable workflows.",
-    keyFeatures: [
-      "Role-based views for administrators and operational staff",
-      "Item and category management with structured data",
-      "Support and installation ticket workflows with status tracking",
-      "Transaction handling for basic inventory changes",
-      "Admin-focused interface for day-to-day operational work",
-    ],
-    technicalDecisions:
-      "Chose a MERN-style stack for familiarity and speed. Used Express.js routes grouped by feature, simple JWT-based authentication, and MongoDB collections for items, tickets, and transactions. On the frontend, composed reusable table and form components to keep screens consistent.",
-    challenges:
-      "Keeping inventory changes and ticket updates in sync so operators had a clear picture of current stock and open work, while still keeping the codebase straightforward.",
-    outcome:
-      "Replaced informal tracking with a single web application, making it easier for the team to see current inventory, open tickets, and recent changes without jumping across tools.",
-    learned:
-      "The importance of aligning data modeling with real workflows, and of designing admin interfaces to be calm and straightforward instead of feature-heavy.",
-    impact: [
-      "Single source of truth for stock, tickets, and related actions",
-      "Fewer handoffs between spreadsheets and chat threads",
-      "Role-based access reduced accidental edits across departments",
-      "Easier onboarding for new operators with consistent screens",
-    ],
-    architectureSummary:
-      "Browser clients talk to a REST API on Express. Auth issues short-lived JWTs; MongoDB holds normalized collections for items, tickets, and transactions with indexes aligned to list screens. The React app is organized by feature routes with shared table/form primitives.",
-  },
-  {
-    slug: "yalla-dubai-travel-platform",
-    title: "Yalla Dubai Travel Platform",
-    summary:
-      "A structured web application for travel-oriented workflows with authentication, modular backend routing, and user-facing interaction flows.",
-    description:
-      "Server-rendered Node.js/Express application with EJS views, authentication, and modular routing to support travel-related user journeys.",
-    image: "/Projects/Mind-Weave-Clinic/mind-weare-clinic02.svg",
-    imageAlt: "Travel listings and booking UI for a travel platform",
-    images: [
-      "/Projects/Mind-Weave-Clinic/mind-weare-clinic02.svg",
-      "/Projects/Mind-Weave-Clinic/Desktop - 101.svg",
-    ],
-    githubUrl: "https://github.com/MUbaidJavaid",
-    role: "Full-Stack Development",
-    stack: ["Node.js", "Express.js", "EJS", "JavaScript", "Authentication"],
-    featured: true,
-    overview:
-      "A travel-focused application that organizes backend logic into clear modules and supports authenticated user flows for browsing and interacting with travel content.",
-    problem:
-      "The platform needed a more structured backend and authentication layer so travel-related features could be implemented consistently instead of as isolated scripts.",
-    goal: "Create a maintainable backend with organized controllers, routes, and models, along with server-rendered views and protected routes for logged-in users.",
-    myRole:
-      "Implemented backend structure, authentication workflows, route organization, and EJS-based views for core flows.",
-    keyFeatures: [
-      "Modular backend structure with controllers, routes, and models",
-      "Session-based authentication with protected routes",
-      "Server-rendered pages using EJS templates",
-      "Organized route handling for travel-related flows",
-      "Middleware for common concerns like access checks and validation",
-    ],
-    technicalDecisions:
-      "Organized the backend into feature folders (for example, auth and travel flows) with separate controllers and models. Used Express middleware for authentication checks and EJS for rendering pages where SEO and simplicity were important.",
-    challenges:
-      "Keeping routing and authentication logic simple enough to maintain while supporting multiple different travel flows and page types.",
-    outcome:
-      "Delivered a more maintainable backend and view layer that could be extended with additional travel features without rewriting core plumbing.",
-    learned:
-      "How a clear separation between routing, controllers, models, and views improves long-term maintainability in Node.js applications.",
-    impact: [
-      "Feature work could follow existing module boundaries",
-      "Auth and session handling centralized in middleware",
-      "Server-rendered pages kept SEO-friendly travel content simple to ship",
-      "Reduced duplicate route logic across similar flows",
-    ],
-    architectureSummary:
-      "Classic MVC on Express: routers delegate to controllers, models encapsulate persistence, EJS renders HTML on the server. Session store backs authenticated journeys; middleware handles cross-cutting validation and access checks before handlers run.",
-  },
-  {
-    slug: "movie-discovery-frontend",
-    title: "Movie Discovery Frontend",
-    summary:
-      "A responsive frontend application that integrates with an external movie database API to fetch and display content through a clean browsing experience.",
-    description:
-      "React-based movie discovery interface that uses an external API to power routed views, search, and detail pages with a focus on layout and clarity.",
-    image: "/Projects/Mind-Weave-Clinic/Desktop - 110.svg",
-    imageAlt: "Movie discovery app card grid and detail layout",
-    images: [
-      "/Projects/Mind-Weave-Clinic/Desktop - 110.svg",
-      "/Projects/Mind-Weave-Clinic/Desktop - 109.svg",
-    ],
-    githubUrl: "https://github.com/MUbaidJavaid",
-    role: "Frontend Development",
+    role: "Full-Stack Development & Architecture",
     stack: [
+      "Next.js",
       "React",
-      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
       "Tailwind CSS",
-      "React Router",
-      "API Integration",
+      "AI/Groq",
+      "PWA",
     ],
     featured: true,
     overview:
-      "A single-page React application for browsing movies from an external API, with views for listings, search results, and detail pages.",
+      "HSMS V2.0 is a market-leading, multi-tenant SaaS platform managing all aspects of housing society operations — from plot lifecycle and financial management to AI-augmented intelligence and PLRA/LDA regulatory compliance. It supports 25+ modules with a metadata-driven architecture where workflows, forms, and business rules are configurable via UI.",
     problem:
-      "The UI needed a clear information hierarchy for search, listings, and detail views while handling an unreliable third-party API - slow responses and occasional errors - without confusing end users.",
-    goal: "Build a polished frontend that demonstrates API integration, routed navigation, and a calm layout for media content, with explicit loading and error states.",
+      "Housing societies in Pakistan manage operations across spreadsheets, WhatsApp groups, and paper registers. Existing solutions like MyGate and ADDA lack plot lifecycle management, PLRA compliance, and Pakistan-specific features like installment plans and dealer portals.",
+    goal: "Build a comprehensive, dynamic platform that replaces manual processes with a centralized digital solution — supporting multi-tenancy, AI agents, privacy dashboards, gamification, and offline-first PWA capabilities.",
     myRole:
-      "Implemented the React components, routing, styling, and API integration, focusing on predictable layouts and loading states.",
+      "Architected the full-stack system from database design to frontend components. Built the dynamic configuration engine, AI intelligence layer, RBAC+ABAC permission model, and 25+ functional modules.",
     keyFeatures: [
-      "API-driven movie listings and detail views",
-      "Routed browsing experience with React Router",
-      "Responsive layout for desktop and mobile",
-      "Reusable card and layout components",
-      "Basic loading and error handling states",
+      "Dynamic Configuration Engine with Visual Workflow Builder",
+      "AI-Augmented Intelligence with role-based agents and anomaly detection",
+      "Complete plot lifecycle — allotment, possession, transfer, registry",
+      "Financial management with installment plans and defaulter tracking",
+      "Visitor & security management with guard app",
+      "PLRA/LDA regulatory integration for Pakistan compliance",
+      "Privacy Dashboard with resident data sovereignty",
+      "Gamification Engine with points, rewards, and leaderboards",
+      "Custom Form Builder for any entity",
+      "Offline-First PWA with background sync",
+      "Vendor Marketplace and Dealer Portal",
+      "Workforce management with geo-tagged attendance",
     ],
     technicalDecisions:
-      "Used React Router for navigation, Tailwind CSS for styling, and a simple data fetching layer around the external API. Kept components focused on presentation with data fetching handled in a small number of containers.",
+      "Adopted a metadata-driven architecture so societies can adapt the system without code changes. Used Next.js App Router for SSR and SEO, MongoDB for flexible multi-tenant document storage, and integrated Groq AI for intelligent agents. Built a hybrid RBAC+ABAC permission model for granular access control.",
     challenges:
-      "Designing loading and error states that kept the experience smooth when the external API was slow or temporarily unavailable.",
+      "Designing a truly dynamic system where workflows, forms, and business rules are stored in the database rather than hard-coded — while maintaining performance and type safety across 25+ modules.",
     outcome:
-      "A focused frontend that showcases API consumption, routed UI, and a clean component structure for a media-heavy interface.",
+      "Delivered a platform with 10+ features no competitor offers (AI agents, plot lifecycle, PLRA integration, gamification, custom forms, workflows) while covering all standard housing society needs.",
     learned:
-      "Reinforced practical patterns for API-based UIs: clear loading states, limited global state, and components that stay readable as features grow.",
+      "Building metadata-driven systems requires careful balance between flexibility and performance. Pakistan-specific domain knowledge (PLRA, installment culture, committee dynamics) is essential for product-market fit.",
     impact: [
-      "Predictable navigation between list, search, and detail routes",
-      "Reusable cards reduced layout drift across screens",
-      "Error and loading UI prevented blank states during API delays",
-      "Mobile-friendly grid and typography for long browsing sessions",
+      "10+ unique features no competitor in the market offers",
+      "25+ modules covering complete society operations",
+      "Multi-tenant architecture supporting unlimited societies",
+      "AI-native platform with predictive analytics and anomaly detection",
     ],
     architectureSummary:
-      "Client-only SPA: route-level containers fetch from the movie API; presentational components receive props and stay free of side effects. Global state stays minimal; URL drives primary navigation state.",
+      "Next.js App Router frontend with Express.js API layer. MongoDB multi-tenant collections with society-level data isolation. Dynamic configuration engine stores workflows and forms as database documents. AI layer powered by Groq for role-based agents. RBAC+ABAC hybrid permission model with JWT authentication. Offline-first PWA with service worker and IndexedDB sync.",
   },
   {
-    slug: "elder-guard-health",
-    title: "Elder Guard Health",
+    slug: "naaz-wears-ecommerce",
+    title: "Naaz Wears — Premium Pakistani Fashion",
     summary:
-      "A healthcare platform for elder care coordination, appointments, and remote monitoring dashboards.",
+      "A complete D2C e-commerce platform for women's fashion with product catalog, 3-step checkout, order tracking, admin panel, PWA support, and thermal receipt generation.",
     description:
-      "A focused product for coordinating care, scheduling, and simple remote monitoring intended for small clinics and home-care teams.",
-    image: "/Projects/Elder-Guard-Health/Elder-Guard-Health-00.svg",
-    imageAlt: "Elder Guard Health landing and dashboard screenshots",
+      "Full-featured e-commerce platform built with Next.js 15 and Convex real-time backend, serving the Pakistani women's fashion market with COD-first payment flow.",
+    image: "/Projects/Naaz-Werars/Pair 59.svg",
+    imageAlt: "Naaz Wears e-commerce product catalog and checkout screens",
     images: [
-      "/Projects/Elder-Guard-Health/Elder-Guard-Health-00.svg",
-      "/Projects/Elder-Guard-Health/Elder-Guard-Health-04.svg",
-      "/Projects/Elder-Guard-Health/Elder-Guard-Health-12.svg",
+      "/Projects/Naaz-Werars/Pair 59.svg",
+      "/Projects/Naaz-Werars/Pair 60.svg",
+      "/Projects/Naaz-Werars/Pair 61.svg",
+      "/Projects/Naaz-Werars/Pair 62.svg",
+      "/Projects/Naaz-Werars/Pair 63.svg",
+      "/Projects/Naaz-Werars/Pair 64.svg",
+      "/Projects/Naaz-Werars/Pair 65.svg",
+      "/Projects/Naaz-Werars/Pair 66.svg",
+      "/Projects/Naaz-Werars/Pair 67.svg",
+      "/Projects/Naaz-Werars/Pair 68.svg",
+      "/Projects/Naaz-Werars/Pair 69.svg",
+      "/Projects/Naaz-Werars/Pair 70.svg",
     ],
-    githubUrl: undefined,
+    liveUrl: "https://naazwears.vercel.app/",
+    githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development",
-    stack: ["React", "Next.js", "Node.js"],
-    featured: false,
+    stack: [
+      "Next.js 15",
+      "React 19",
+      "Convex",
+      "Tailwind CSS",
+      "Cloudinary",
+      "PWA",
+    ],
+    featured: true,
     overview:
-      "A lightweight care coordination app with appointment scheduling, simple monitoring dashboards, and caregiver messaging.",
+      "Naaz Wears is a direct-to-consumer e-commerce platform for Pakistani women's fashion. Built with Next.js 15 App Router and Convex real-time BaaS, it features a full product catalog, 3-step checkout, 5-stage order tracking, admin panel with CRM, and installable PWA with offline support.",
     problem:
-      "Local clinics lacked an easy-to-use interface for coordinating elder care across multiple caregivers and family members.",
-    goal: "Ship a minimal, maintainable web app that surfaces appointments, patient notes, and simple health metrics to caregivers.",
+      "Pakistani fashion brands need a modern, mobile-first e-commerce presence with COD as primary payment, fast product browsing, and an admin panel that non-technical staff can operate.",
+    goal: "Deliver a complete e-commerce solution with customer-facing store, full admin panel, PWA capabilities, and thermal receipt generation — optimized for the Pakistani D2C fashion market.",
     myRole:
-      "Led frontend implementation with Next.js and built REST endpoints for basic scheduling and notifications.",
+      "Built the entire platform end-to-end: Next.js frontend with SSR, Convex backend with real-time queries, Cloudinary image pipeline, admin panel with 11 management sections, and PWA with APK generation.",
     keyFeatures: [
-      "Appointment scheduling",
-      "Care team notes",
-      "Simple vitals dashboard",
+      "Product catalog with filtering by category, fabric, season, occasion, and price",
+      "3-step checkout flow: Contact, Shipping, Payment (COD, Easypaisa, Card)",
+      "5-stage order tracking: Confirmed → Packed → Shipped → Out for Delivery → Delivered",
+      "Full admin panel with dashboard KPIs, product/order/customer management",
+      "Customer CRM with tier system (Regular/VIP/Loyal) and lifetime spend tracking",
+      "Review moderation system with photo uploads",
+      "Installable PWA with offline support and APK generation",
+      "80mm thermal receipt PDF generation",
+      "Newsletter management and banner system",
+      "Staff management with role-based access (Admin/Manager/Customer)",
     ],
     technicalDecisions:
-      "Chose server-rendered pages for better SEO where relevant and client-side navigation for interactive dashboards.",
+      "Chose Convex for real-time data and zero-config backend, Next.js 15 App Router for SSR and SEO, Cloudinary for image CDN, and pdfkit for thermal receipt generation. Implemented session-based cart with account sync for logged-in users.",
     challenges:
-      "Balancing simple UX with the need to capture structured caregiving data without overwhelming users.",
+      "Balancing real-time data sync (Convex) with SSR requirements (Next.js), and building a CRM-capable admin panel that remains intuitive for non-technical store operators.",
     outcome:
-      "Delivered a small, maintainable product that reduced scheduling friction and centralized care notes.",
+      "Launched a production e-commerce platform at naazwears.vercel.app with complete storefront, admin operations, and PWA capabilities serving real customers.",
     learned:
-      "Small, focused features win adoption faster than large all-in-one systems in caregiving contexts.",
+      "Convex's real-time capabilities dramatically simplify e-commerce state management. COD-first checkout flows require different UX patterns than card-first Western e-commerce.",
     impact: [
-      "Simplified scheduling for caregivers",
-      "Centralized patient notes",
-      "Reduced missed appointments",
+      "Live production platform serving real customers",
+      "Complete admin panel with 11 management sections",
+      "PWA installable on mobile with offline support",
+      "Automated thermal receipt generation for order fulfillment",
     ],
     architectureSummary:
-      "Next.js frontend with lightweight API routes for scheduling and messaging, backed by a simple document store.",
+      "Next.js 15 App Router with SSR for SEO-critical pages. Convex real-time BaaS handles data, auth (JWT sessions), and serverless functions. Cloudinary CDN for product images with Convex Storage as fallback. Vercel serverless hosting with auto-scaling. PWA with service worker for offline-first experience.",
   },
   {
-    slug: "mind-weave-clinic",
-    title: "Mind Weave Clinic",
+    slug: "quikpos-saas-point-of-sale",
+    title: "QuikPOS — Multi-Tenant Point-of-Sale SaaS",
     summary:
-      "A responsive clinic website and patient portal for therapy scheduling and resources.",
+      "A cloud-based, multi-tenant POS system for Pakistani retail — featuring barcode scanning, Udhaar/Khata credit tracking, FBR compliance, offline mode, and bilingual Urdu/English support.",
     description:
-      "An approachable web presence paired with a simple portal for booking and managing therapy sessions.",
-    image: "/Projects/Mind-Weave-Clinic/mind-weare-clinic01.svg",
-    imageAlt: "Mind Weave Clinic website and booking interface screenshots",
+      "Enterprise-grade POS SaaS built with React 19, Firebase, and Zustand — serving the Pakistani retail market with offline-first architecture and FBR tax compliance.",
+    image: "/Projects/Quik-POS/Pair 41.svg",
+    imageAlt: "QuikPOS point of sale checkout and inventory management screens",
     images: [
-      "/Projects/Mind-Weave-Clinic/mind-weare-clinic01.svg",
-      "/Projects/Mind-Weave-Clinic/mind-weare-clinic03.svg",
-      "/Projects/Mind-Weave-Clinic/Desktop - 112.svg",
+      "/Projects/Quik-POS/Pair 41.svg",
+      "/Projects/Quik-POS/Pair 42.svg",
+      "/Projects/Quik-POS/Pair 43.svg",
+      "/Projects/Quik-POS/Pair 44.svg",
+      "/Projects/Quik-POS/Pair 46.svg",
+      "/Projects/Quik-POS/Pair 48.svg",
+      "/Projects/Quik-POS/Pair 50.svg",
+      "/Projects/Quik-POS/Pair 51.svg",
+      "/Projects/Quik-POS/Pair 52.svg",
+      "/Projects/Quik-POS/Pair 54.svg",
     ],
-    githubUrl: undefined,
-    role: "Frontend & UX",
-    stack: ["React", "Tailwind CSS"],
-    featured: false,
+    liveUrl: "https://pos-saas-kappa.vercel.app/",
+    githubUrl: "https://github.com/MUbaidJavaid",
+    role: "Full-Stack Development & Architecture",
+    stack: [
+      "React 19",
+      "Vite",
+      "Firebase",
+      "Zustand",
+      "Tailwind CSS",
+      "Cloudinary",
+    ],
+    featured: true,
     overview:
-      "Marketing site plus lightweight portal for session bookings and client resources.",
+      "QuikPOS is a cloud-based, multi-tenant Point-of-Sale SaaS designed for the Pakistani retail market. Built with React 19 and Firebase, it features real-time checkout with barcode scanning, Udhaar (credit) tracking with Khata ledgers, FBR-compliant invoicing, offline mode, and full bilingual support (English/Urdu with RTL).",
     problem:
-      "The clinic needed a modern, accessible website and a streamlined booking flow for clients.",
-    goal: "Provide a friendly web experience and a simple portal to reduce administrative overhead for bookings.",
-    myRole: "Designed and implemented the site frontend and booking interface.",
+      "Pakistani retailers manage sales on paper registers, track credit (Udhaar) in physical notebooks, and have no easy way to comply with FBR tax requirements. Existing POS solutions are expensive, English-only, and don't support local payment methods like JazzCash and Easypaisa.",
+    goal: "Build an affordable, Pakistan-first POS SaaS with multi-tenant architecture, offline capabilities, Udhaar/Khata credit management, FBR compliance, and full Urdu support.",
+    myRole:
+      "Designed the multi-tenant architecture on Firebase, built 146 React components organized by feature, implemented 12 Zustand stores, offline queue system, and the complete superadmin platform.",
     keyFeatures: [
-      "Accessible copy and layout",
-      "Booking calendar integration",
-      "Resource library",
+      "Real-time POS checkout with barcode scanning and keyboard shortcuts",
+      "Multi-payment support: Cash, JazzCash, EasyPaisa, Raast, Card, Bank Transfer, Udhaar",
+      "Udhaar (credit) management with Khata ledger and ageing analysis (0-30, 31-60, 61-90, 90+ days)",
+      "FBR-compliant invoicing with QR codes and NTN tracking",
+      "Offline-first architecture with IndexedDB transaction queuing and auto-sync",
+      "Full Urdu/English bilingual support with RTL layout (1,700+ translation keys)",
+      "Multi-tenant platform with Superadmin, Admin, Manager, Cashier roles",
+      "Inventory management with batch tracking, expiry alerts, and stock audit trail",
+      "Customer loyalty points with accrual and redemption",
+      "Thermal receipt PDF generation and email delivery",
+      "Cash register sessions with opening/closing balance and variance tracking",
+      "Platform-level analytics and store management for superadmins",
     ],
     technicalDecisions:
-      "Focused on a minimal frontend with progressive enhancement and clear accessibility patterns.",
+      "Used Firebase Firestore for multi-tenant NoSQL storage with security rules for data isolation. React 19 with Vite for fast SPA builds. Zustand for modular state management across 12 domain stores. IndexedDB for offline transaction queuing. Cloudinary for product image CDN.",
     challenges:
-      "Designing an empathetic UX while keeping the technical surface minimal for maintainability.",
+      "Implementing reliable offline-to-online sync for POS transactions while maintaining data consistency across multi-tenant Firestore collections, and building a complete bilingual system with RTL support for 1,700+ strings.",
     outcome:
-      "Improved conversion for new clients and a simpler booking process for administrators.",
+      "Launched a production POS platform at pos-saas-kappa.vercel.app with complete retail operations, offline capabilities, and Pakistan-specific features serving real stores.",
     learned:
-      "Small UX decisions (microcopy, spacing) significantly affect trust for healthcare sites.",
+      "Pakistan-specific POS requirements (Udhaar credit culture, FBR compliance, Urdu-first UX, JazzCash/Easypaisa) require deep domain knowledge. Offline-first architecture is essential for Pakistani retail where internet connectivity is unreliable.",
     impact: [
-      "Higher booking conversion",
-      "Easier admin workflows",
-      "Clear client-facing resources",
+      "Live production platform with multi-tenant architecture",
+      "146 components and 12 state stores for complete retail coverage",
+      "Full Urdu/English bilingual with 1,700+ translation keys",
+      "Offline-first POS ensures sales continue without internet",
     ],
     architectureSummary:
-      "Static-first site with simple booking endpoints and accessible UI components.",
+      "React 19 SPA with Vite bundler. Firebase Firestore for multi-tenant NoSQL database with security rules for tenant isolation. Firebase Auth for authentication with session persistence. Zustand for modular client state (12 stores). IndexedDB offline queue for POS transactions with auto-sync. Vercel for hosting with edge API functions for SMTP email and receipt generation. Cloudinary CDN for product images.",
   },
 ];
 

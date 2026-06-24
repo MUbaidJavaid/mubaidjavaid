@@ -138,14 +138,27 @@ export function ProjectCardsGridSkeleton ({ count = 6 }: { count?: number }) {
       {Array.from({ length: count }).map((_, i) => (
         <div
           key={i}
-          className='overflow-hidden border border-border/60 surface-panel shadow-card dark:border-border/50'
+          className='overflow-hidden rounded-xl border border-border/60 surface-panel shadow-card dark:border-border/50'
         >
-          <Skeleton className='aspect-[16/10] w-full' />
-          <div className='space-y-3 p-6'>
-            <Skeleton className='h-3 w-20' />
-            <Skeleton className='h-5 w-4/5' />
-            <Skeleton className='h-12 w-full' />
-            <Skeleton className='h-4 w-24' />
+          <Skeleton className='h-56 w-full sm:h-64' />
+          <div className='space-y-3 p-5'>
+            <div className='flex items-center justify-between'>
+              <Skeleton className='h-3 w-24' />
+              <Skeleton className='h-3.5 w-3.5' />
+            </div>
+            <Skeleton className='h-6 w-[85%]' />
+            <Skeleton className='h-4 w-full' />
+            <Skeleton className='h-4 w-[90%]' />
+            <Skeleton className='h-4 w-3/4' />
+            <Skeleton className='mt-1 h-6 w-40 rounded-sm' />
+            <div className='flex items-center justify-between border-t border-border/60 pt-3'>
+              <div className='flex gap-1.5'>
+                <Skeleton className='h-5 w-14 rounded-full' />
+                <Skeleton className='h-5 w-12 rounded-full' />
+                <Skeleton className='h-5 w-10 rounded-full' />
+              </div>
+              <Skeleton className='h-4 w-20' />
+            </div>
           </div>
         </div>
       ))}

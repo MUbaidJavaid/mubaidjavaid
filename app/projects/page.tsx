@@ -41,7 +41,7 @@ export default function ProjectsPage () {
 
       <section className='section-anchor surface-page py-10'>
         <div className='container-wide relative z-10 space-y-6'>
-          <div className='grid gap-4 md:grid-cols-3'>
+          <div className='grid gap-4 md:grid-cols-3 mb-20'>
             <div className='md:border-r md:border-border/70'>
               <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
                 What you will see

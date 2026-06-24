@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx next:*)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(rm -f \"D:/Projectes/mubaidjavaid/.next/lock\")",
+      "Bash(xargs grep:*)"
+    ]
+  }
+}

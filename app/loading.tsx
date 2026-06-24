@@ -1,5 +1,5 @@
-import { GlobalRouteLoadingShell } from '@/components/system/page-skeletons'
+import { PageLoadingSkeleton } from '@/components/system/page-skeletons'
 
 export default function Loading () {
-  return <GlobalRouteLoadingShell />
+  return <PageLoadingSkeleton />
 }
