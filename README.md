@@ -80,7 +80,7 @@
 
 |     | Role                               | Company                      | Period              |
 | :-: | :--------------------------------- | :--------------------------- | :------------------ |
-| 🔵  | **MERN-Stack & Next.js Developer** | **Evolvo-Technologies*       | Feb 2026 → Present  |
+| 🔵  | **MERN-Stack & Next.js Developer** | **Evolvo-Technologies**      | Feb 2026 → Present  |
 | ⚪  | **MERN-Stack Developer**           | **Fiesta Content Solutions** | Jul 2024 → Jan 2026 |
 
 </div>
