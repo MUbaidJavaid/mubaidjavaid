@@ -60,7 +60,7 @@ interface Project {
 
 The home page displays **3 strongest projects** filtered by `featured: true`:
 
-1. Evolvo Platform
+1. Evolvo-Technologies Platform
 2. NovixPay
 3. Commit4 Solutions
 
@@ -73,10 +73,10 @@ These are the first impression for recruiters and clients.
 The portfolio generates **dynamic routes** for each project:
 
 - `/projects` – Lists all 5 projects
-- `/projects/evolvo-platform` – Evolvo Platform case study
+- `/projects/Evolvo-Technologies-platform` – Evolvo-Technologies Platform case study
 - `/projects/novixpay` – NovixPay case study
 - `/projects/commit4-solutions` – Commit4 Solutions case study
-- `/projects/evolvo-landing-page` – Evolvo Landing case study
+- `/projects/Evolvo-Technologies-landing-page` – Evolvo-Technologies Landing case study
 - `/projects/housing-society-management` – Housing Society case study
 
 Each project page includes:
@@ -158,7 +158,7 @@ Chosen for professional, trust-focused appeal:
 - Specialization: "MERN Stack | Next.js"
 - Tagline: "Building production-ready web applications..."
 - CTA: "View Projects" | "Get in Touch"
-- Trust line: "Currently at Evolvo..."
+- Trust line: "Currently at Evolvo-Technologies..."
 
 ### Featured Projects
 
@@ -232,7 +232,7 @@ Positioned as professional developer story:
 Includes:
 
 - Professional photo (when available)
-- Current employment info (Evolvo)
+- Current employment info (Evolvo-Technologies)
 - Experience highlights
 - Technical expertise summary
 
@@ -403,7 +403,7 @@ Located on `/contact` page:
 1. **Real Work:** All projects are deployed, in production, or verifiable
 2. **Specific Details:** Case studies include real metrics and outcomes
 3. **Professional Tone:** No marketing hype, no fake claims
-4. **Current Employment:** Up-to-date with Evolvo position
+4. **Current Employment:** Up-to-date with Evolvo-Technologies position
 5. **Complete Case Studies:** Every project shows problem-solution-outcome
 6. **Technical Depth:** Explains architecture and technical decisions
 7. **Live Links:** Projects have working URLs

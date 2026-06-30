@@ -1,0 +1,209 @@
+.grid {
+  display: grid;
+  gap: 1rem 0.875rem;
+  grid-template-columns: 1fr;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.75rem 2.25rem;
+  }
+}
+
+.card {
+  --process-bg: hsl(var(--muted));
+  --process-border: hsl(var(--card));
+  --process-accent: hsl(var(--primary));
+  --process-accent-dark: hsl(202 64% 27%);
+  --process-title: hsl(var(--heading));
+  --process-body: hsl(var(--body));
+  --process-icon: hsl(var(--primary));
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--process-bg);
+  text-align: center;
+  border-top-left-radius: 4rem;
+  border: 1px solid hsl(var(--border) / 0.35);
+  position: relative;
+  overflow: visible;
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-float);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 120px;
+  background-color: var(--process-accent);
+  top: 32px;
+  right: -2.5px;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+:global(.dark) .card {
+  --process-bg: hsl(var(--card));
+  --process-border: hsl(var(--card));
+  --process-accent-dark: hsl(202 64% 22%);
+  --process-body: hsl(var(--body) / 0.88);
+  border-color: hsl(var(--border) / 0.45);
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem 1rem;
+  max-width: 32ch;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--process-icon);
+}
+
+.icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.title {
+  font-family: var(--font-heading, inherit);
+  font-weight: 800;
+  color: var(--process-title);
+  font-size: 1.25rem;
+  margin-block: 1.5rem 0.75rem;
+  line-height: 1.25;
+}
+
+.paragraph {
+  flex: 1;
+  color: var(--process-body);
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.duration {
+  margin-top: 1rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsl(var(--primary) / 0.72);
+}
+
+.cardFooter {
+  margin-top: auto;
+  flex-shrink: 0;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.ribbon {
+  margin-top: 1.5rem;
+  display: grid;
+  place-items: center;
+  height: 50px;
+  background-color: var(--process-accent);
+  position: relative;
+  width: 110%;
+  left: -5%;
+  top: 10px;
+  border-radius: 0 0 2rem 2rem;
+}
+
+.ribbon::after,
+.ribbon::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  bottom: 100%;
+  z-index: -2;
+  background-color: var(--process-accent-dark);
+}
+
+.ribbon::before {
+  left: 0;
+  transform-origin: left bottom;
+  transform: rotate(45deg);
+}
+
+.ribbon::after {
+  right: 0;
+  transform-origin: right bottom;
+  transform: rotate(-45deg);
+}
+
+.ribbonLabel {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--process-border);
+  position: relative;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 8px solid var(--process-accent);
+  font-family: var(--font-heading, inherit);
+  font-weight: 900;
+  line-height: 1;
+  font-size: 1.5rem;
+  color: var(--process-accent);
+}
+
+.ribbonLabel::before,
+.ribbonLabel::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  bottom: 50%;
+}
+
+.ribbonLabel::before {
+  right: calc(100% + 4px);
+  border-bottom-right-radius: 20px;
+  box-shadow: 5px 5px 0 var(--process-accent);
+}
+
+.ribbonLabel::after {
+  left: calc(100% + 4px);
+  border-bottom-left-radius: 20px;
+  box-shadow: -5px 5px 0 var(--process-accent);
+}
+
+@media (max-width: 1023px) {
+  .ribbonLabel {
+    width: 72px;
+    font-size: 1.25rem;
+    border-width: 7px;
+  }
+
+  .ribbon {
+    height: 46px;
+  }
+}

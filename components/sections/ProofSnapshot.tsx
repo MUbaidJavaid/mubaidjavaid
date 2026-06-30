@@ -1,7 +1,11 @@
+import {
+  ProofRotatingCards,
+  type ProofStat
+} from '@/components/sections/ProofRotatingCards'
 import { posts } from '@/data/posts'
 import { projects, type Project } from '@/data/projects'
 import { site } from '@/data/site'
-import { ArrowUpRight, BookOpen, FolderGit2, Timer } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
 function countWithRepos (list: Project[]) {
@@ -17,39 +21,33 @@ export function ProofSnapshot () {
   const articles = posts.length
   const reposLinked = countWithRepos(projects)
 
-  const stats = [
+  const stats: ProofStat[] = [
     {
       label: 'Case studies',
       value: String(caseStudies),
       hint: 'Documented builds',
-      icon: FolderGit2,
-      accent: 'from-sky-500/20 via-sky-500/8 to-transparent',
-      ring: 'border-sky-500/15',
-      glow: 'bg-sky-500/8'
+      icon: 'folder-git2',
+      href: '/projects'
     },
     {
       label: 'Engineering articles',
       value: String(articles),
       hint: 'Implementation depth',
-      icon: BookOpen,
-      accent: 'from-teal-500/20 via-teal-500/8 to-transparent',
-      ring: 'border-teal-500/15',
-      glow: 'bg-teal-500/8'
+      icon: 'book-open',
+      href: '/blog'
     },
     {
       label: 'Response target',
       value: '24h',
       hint: 'First reply on inquiries',
-      icon: Timer,
-      accent: 'from-amber-500/20 via-amber-500/8 to-transparent',
-      ring: 'border-amber-500/15',
-      glow: 'bg-amber-500/8'
+      icon: 'timer',
+      href: '/contact'
     }
   ]
 
   return (
     <section
-      className='section-anchor relative overflow-hidden surface-page'
+      className='section-anchor relative surface-page'
       aria-labelledby='proof-snapshot-heading'
     >
       {/* Softer atmosphere (less visual noise) */}
@@ -111,65 +109,9 @@ export function ProofSnapshot () {
               </div>
             </div>
 
-            {/* Stats */}
-            <div className='grid gap-3 sm:grid-cols-2 xl:grid-cols-3 sm:gap-3.5'>
-              {stats.map((s, i) => {
-                const Icon = s.icon
-                return (
-                  <div
-                    key={s.label}
-                    className={`group relative flex min-h-[156px] flex-col overflow-hidden border surface-panel p-3 shadow-[0_1px_2px_rgba(15,23,42,.04)] ring-1 ring-black/[0.015] transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:ring-white/[0.04] sm:min-h-[170px] sm:p-4 ${
-                      s.ring
-                    } ${i === 1 ? 'xl:translate-y-3' : ''}`}
-                    style={{ animationDelay: `${i * 70}ms` }}
-                  >
-                    <div
-                      className={`pointer-events-none absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${s.accent}`}
-                      aria-hidden
-                    />
-                    <div
-                      className={`pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full ${s.glow} blur-3xl transition-opacity duration-300 group-hover:opacity-80`}
-                      aria-hidden
-                    />
-                    <div
-                      className='pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100'
-                      aria-hidden
-                      style={{
-                        background:
-                          'radial-gradient(circle at 0% 0%, hsl(var(--primary) / 0.06), transparent 38%)'
-                      }}
-                    />
-
-                    <div className='mb-4 flex items-center gap-2 sm:gap-2.5'>
-                      <div className='inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border/50 bg-white/85 text-primary shadow-sm transition-all duration-300 group-hover:border-primary/25 group-hover:bg-primary/5 dark:border-border/60 dark:bg-slate-900/70 sm:h-9 sm:w-9 lg:h-10 lg:w-10'>
-                        <Icon
-                          className='h-4.5 w-4.5'
-                          strokeWidth={2}
-                          aria-hidden
-                        />
-                      </div>
-                      <p className='tabular-nums-pro whitespace-nowrap font-heading text-[1.6rem] font-extrabold leading-none tracking-tight text-heading sm:text-[2.15rem]'>
-                        {s.value}
-                      </p>
-                    </div>
-                    <div className='space-y-1.5'>
-                      <p className='text-[10px] font-bold uppercase tracking-[0.17em] text-body/55'>
-                        {s.label}
-                      </p>
-                    </div>
-
-                    <div className='mt-auto pt-4'>
-                      <div
-                        className='h-px w-full bg-gradient-to-r from-border/50 via-border/20 to-transparent'
-                        aria-hidden
-                      />
-                      <p className='mt-2.5 text-xs leading-relaxed text-body/68'>
-                        {s.hint}
-                      </p>
-                    </div>
-                  </div>
-                )
-              })}
+            {/* Rotating proof cards */}
+            <div className='flex items-center justify-center overflow-visible px-2 py-4 lg:justify-end'>
+              <ProofRotatingCards stats={stats} />
             </div>
           </div>
 
