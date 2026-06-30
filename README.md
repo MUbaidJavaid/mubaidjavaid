@@ -169,47 +169,92 @@ _Real products, real users not just tutorials._
 <br/>
 
 <details>
-<summary>📦 &ensp;<b>Inventory Management & Support Ticket System</b>&ensp; &ensp;Full-Stack App</summary>
+<summary>🏘️ &ensp;<b>HSMS — Housing Society Management System</b>&ensp; &ensp;Full-Stack SaaS</summary>
 
 <br/>
 
-> **The Problem:** A business needed one place to manage their stock, handle customer support tickets, track installations, and process transactions instead of juggling spreadsheets and emails.
+> **The Problem:** Housing societies in Pakistan manage operations across spreadsheets, WhatsApp groups, and paper registers. Existing solutions lack plot lifecycle management, PLRA compliance, and Pakistan-specific features.
 >
-> **What I Built:** A complete workflow system where everything connects inventory, tickets, categories, and transactions all in one dashboard. One source of truth, no more chaos.
+> **What I Built:** A 25+ module multi-tenant SaaS platform with AI-powered agents, dynamic configuration engine, plot lifecycle management (allotment → possession → transfer → registry), PLRA/LDA compliance, privacy dashboards, gamification engine, and offline-first PWA.
 >
-> **Tech Used:** `React` · `Node.js` · `Express.js` · `MongoDB`
+> **Tech Used:** `Next.js` · `React` · `Node.js` · `Express.js` · `MongoDB` · `AI/Groq` · `PWA`
 >
-> 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/inventory-management-support-ticket-system)
+> 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/hsms-housing-society-management)
 
 </details>
 
 <details>
-<summary>✈️ &ensp;<b>Yalla Dubai   Travel Booking Platform</b>&ensp; &ensp;Full-Stack App</summary>
+<summary>👗 &ensp;<b>Naaz Wears — Premium Pakistani Fashion E-Commerce</b>&ensp; &ensp;Full-Stack App</summary>
 
 <br/>
 
-> **The Problem:** A travel company needed a structured web platform for their Dubai packages with user accounts, booking flows, and organized content.
+> **The Problem:** Pakistani fashion brands need a modern, mobile-first e-commerce presence with COD as primary payment, fast product browsing, and an admin panel that non-technical staff can operate.
 >
-> **What I Built:** A modular travel platform with authentication, clean routing, and user-facing booking interactions built so the team can easily add new destinations and features.
+> **What I Built:** A complete D2C e-commerce platform with real-time product catalog, 3-step checkout (COD, Easypaisa, Card), 5-stage order tracking, full admin panel with CRM, customer tier system, review moderation, thermal receipt generation, and installable PWA.
 >
-> **Tech Used:** `Node.js` · `Express.js` · `EJS` · `JavaScript`
+> **Tech Used:** `Next.js 15` · `React 19` · `Convex` · `Cloudinary` · `PWA`
 >
-> 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/yalla-dubai-travel-platform)
+> 🌐 **Live:** [naazwears.vercel.app](https://naazwears.vercel.app/) &ensp;|&ensp; 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/naaz-wears-ecommerce)
 
 </details>
 
 <details>
-<summary>🎬 &ensp;<b>Movie Discovery App</b>&ensp; &ensp;Frontend Application</summary>
+<summary>🧾 &ensp;<b>QuikPOS — Multi-Tenant Point-of-Sale SaaS</b>&ensp; &ensp;Full-Stack App</summary>
 
 <br/>
 
-> **The Problem:** Create a smooth, fast way for users to browse, search, and explore movies with real data from an external database.
+> **The Problem:** Pakistani retailers manage sales on paper registers, track credit (Udhaar) in physical notebooks, and have no easy way to comply with FBR tax requirements. Existing POS solutions are expensive, English-only, and don't support local payment methods.
 >
-> **What I Built:** A responsive movie browsing app with clean navigation between lists, search results, and detailed movie pages focused on speed and user experience.
+> **What I Built:** A cloud-based, multi-tenant POS with barcode scanning, Udhaar/Khata credit tracking with ageing analysis, FBR-compliant invoicing with QR codes, offline-first architecture with auto-sync, full Urdu/English bilingual support (1,700+ translation keys), and 146 components across 12 state stores.
 >
-> **Tech Used:** `React` · `JavaScript` · `Tailwind CSS` · `React Router`
+> **Tech Used:** `React 19` · `Vite` · `Firebase` · `Zustand` · `Tailwind CSS` · `Cloudinary`
 >
-> 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/movie-discovery-frontend)
+> 🌐 **Live:** [pos-saas-kappa.vercel.app](https://pos-saas-kappa.vercel.app/) &ensp;|&ensp; 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/quikpos-saas-point-of-sale)
+
+</details>
+
+<details>
+<summary>💎 &ensp;<b>Apex Platinum — Ultra-Premium Fintech Platform</b>&ensp; &ensp;Full-Stack App</summary>
+
+<br/>
+
+> **The Problem:** Institutional fintech platforms need to convey trust, sophistication, and regulatory credibility while delivering complex financial data in an intuitive interface for high-net-worth and institutional clients.
+>
+> **What I Built:** An ultra-premium EMI portal with immersive 3D shader backgrounds, Hyperspeed effects, 7 solution pages (SWIFT/SEPA, banking, crypto), 4-tier pricing, simulated institutional dashboard ($142.8M AUM portfolio, vault custody, market terminal), 3D VaultOrb, concierge advisory, and dark/light theming.
+>
+> **Tech Used:** `Next.js 16` · `React 19` · `Three.js` · `GSAP` · `Framer Motion` · `TypeScript` · `Tailwind CSS 4`
+>
+> 🌐 **Live:** [apex-platinum.vercel.app](https://apex-platinum.vercel.app/) &ensp;|&ensp; 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/apex-platinum-fintech-platform)
+
+</details>
+
+<details>
+<summary>🏥 &ensp;<b>SurgiCore Pro — Surgical Management Platform</b>&ensp; &ensp;Full-Stack App</summary>
+
+<br/>
+
+> **The Problem:** Surgical centers face OR underutilization, scheduling conflicts, compliance tracking gaps, and fragmented data across multiple disconnected systems.
+>
+> **What I Built:** An enterprise-grade surgical operations platform with OR scheduling (conflict detection & availability heatmaps), patient management with consent tracking, procedure-based billing with insurance claims, surgical inventory with sterilization cycle tracking, surgeon benchmarking, 8 dashboard modules, 50+ reusable components, and conversion-optimized marketing site.
+>
+> **Tech Used:** `React 18` · `TypeScript` · `Vite` · `Tailwind CSS` · `shadcn/ui` · `Recharts` · `Framer Motion` · `GSAP`
+>
+> 🌐 **Live:** [surgi-core-opal.vercel.app](https://surgi-core-opal.vercel.app/) &ensp;|&ensp; 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/surgicore-pro-surgical-management)
+
+</details>
+
+<details>
+<summary>💚 &ensp;<b>Vitalis Health — Healthcare Web Application</b>&ensp; &ensp;Full-Stack App</summary>
+
+<br/>
+
+> **The Problem:** Healthcare providers need a unified digital presence that serves both patient engagement (booking, information) and internal operations (scheduling, billing, staff management) — most solutions address only one side.
+>
+> **What I Built:** A full-stack healthcare platform with dual interfaces — patient-facing website (services, doctors, blog, appointment booking) and admin dashboard with full CRUD for appointments, patients, billing, staff, inventory, and settings. Real-time KPI dashboard with auto-calculated invoices and instant cross-page reactivity via React Context.
+>
+> **Tech Used:** `React 18` · `TypeScript` · `Vite` · `Tailwind CSS` · `shadcn/ui` · `Recharts` · `Framer Motion`
+>
+> 🌐 **Live:** [vitalis-health-indol.vercel.app](https://vitalis-health-indol.vercel.app/) &ensp;|&ensp; 🔗 [Read the full case study →](https://mubaidjavaid-ten.vercel.app/projects/vitalis-health-healthcare-platform)
 
 </details>
 
