@@ -80,14 +80,14 @@
 
 |     | Role                               | Company                      | Period              |
 | :-: | :--------------------------------- | :--------------------------- | :------------------ |
-| 🔵  | **MERN-Stack & Next.js Developer** | **Evolvo**                   | Feb 2026 → Present  |
+| 🔵  | **MERN-Stack & Next.js Developer** | **Evolvo-Technologies*       | Feb 2026 → Present  |
 | ⚪  | **MERN-Stack Developer**           | **Fiesta Content Solutions** | Jul 2024 → Jan 2026 |
 
 </div>
 
 <br/>
 
-> **At Evolvo**, I lead full-stack implementation across web products frontend architecture, API integration, performance optimization, and working closely with design and product teams to deliver features that actually ship and perform.
+> **At Evolvo-Technologies**, I lead full-stack implementation across web products frontend architecture, API integration, performance optimization, and working closely with design and product teams to deliver features that actually ship and perform.
 >
 > **At Fiesta**, I built responsive interfaces, backend logic, and integration workflows across multiple MERN projects strengthening my delivery discipline and ability to write maintainable production code.
 
