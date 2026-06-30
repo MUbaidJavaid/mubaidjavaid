@@ -270,6 +270,7 @@ export const projects: Project[] = [
       "/Projects/Apex-Platinum/Pair 111.svg",
       "/Projects/Apex-Platinum/Pair 112.svg",
     ],
+    liveUrl: "https://apex-platinum.vercel.app/",
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development & UI Engineering",
     stack: [
@@ -339,6 +340,7 @@ export const projects: Project[] = [
       "/Projects/Surgi-Core/Pair 121.svg",
       "/Projects/Surgi-Core/Pair 122.svg",
     ],
+    liveUrl: "https://surgi-core-opal.vercel.app/",
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development & Architecture",
     stack: [
@@ -409,6 +411,7 @@ export const projects: Project[] = [
       "/Projects/Vitalis-Health/Pair 157.svg",
       "/Projects/Vitalis-Health/Pair 158.svg",
     ],
+    liveUrl: "https://vitalis-health-indol.vercel.app/",
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development",
     stack: [
