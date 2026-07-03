@@ -4,7 +4,7 @@
 
 ### 1. Employment Information Updated ✅
 
-- [x] Current employment: Full Stack Developer at **Evolvo** (Feb 2026 – Present)
+- [x] Current employment: Full Stack Developer at **Evolvo-Technologies** (Feb 2026 – Present)
 - [x] Previous employment: MERN-Stack Developer at Fiesta Content Solutions (Jul 2024 – Jan 2026)
 - [x] Role updated in About section
 - [x] Experience section reflects current role
@@ -12,7 +12,7 @@
 
 ### 2. Real Projects Rebuilt ✅
 
-- [x] **Evolvo Platform** – Internal SaaS for healthcare app development
+- [x] **Evolvo-Technologies Platform** – Internal SaaS for healthcare app development
   - Full-stack developer role
   - Architecture, APIs, React/Next.js frontend
   - Real-time collaboration, HIPAA compliance
@@ -27,8 +27,8 @@
   - Website architecture, case studies, conversion optimization
   - Results: 65% organic growth, 12% case study conversion
 
-- [x] **Evolvo Landing Page** – Healthcare marketing
-  - Live: https://evolvo-landing-page-2.vercel.app/
+- [x] **Evolvo-Technologies Landing Page** – Healthcare marketing
+  - Live: https://Evolvo-Technologies-landing-page-2.vercel.app/
   - HIPAA-focused landing page design
   - 8% form submission conversion
 
@@ -39,7 +39,7 @@
 
 ### 3. Featured Projects on Homepage ✅
 
-- [x] Evolvo Platform (featured)
+- [x] Evolvo-Technologies Platform (featured)
 - [x] NovixPay (featured)
 - [x] Commit4 Solutions (featured)
 - [x] Projects display with: images, titles, descriptions, tech stack, links
@@ -60,7 +60,7 @@
 
 - [x] `siteConfig.ts` – Brand info, home content, about, current role
 - [x] `projects.ts` – 5 real projects with full case studies, interfaces updated
-- [x] `aboutContent` – Evolvo employment, professional positioning
+- [x] `aboutContent` – Evolvo-Technologies employment, professional positioning
 - [x] `homeContent` – Updated stats, messaging, availability
 - [x] All data TypeScript-typed
 
@@ -71,7 +71,7 @@
 - [x] Tone: Professional, credible, no hype
 - [x] Claims: Only real, verifiable outcomes
 - [x] No fake metrics, no inflated experience
-- [x] Clear current employment (Evolvo)
+- [x] Clear current employment (Evolvo-Technologies)
 
 ### 7. Portfolio Design ✅
 
@@ -185,10 +185,10 @@ Routes: 16/16 Generated
 
 ## What Makes This Portfolio Shine
 
-1. **Real Projects** – NovixPay, Commit4, Evolvo Live examples
+1. **Real Projects** – NovixPay, Commit4, Evolvo-Technologies Live examples
 2. **Specific Outcomes** – Measurable impact (28% conversion, 60% efficiency gain)
 3. **Full-Stack Credibility** – React to Node.js to MongoDB
-4. **Current Engineering** – Working at Evolvo February 2026
+4. **Current Engineering** – Working at Evolvo-Technologies February 2026
 5. **Third-party Integration** – SumSub, EmailJS, webhooks, crypto APIs
 6. **Professional Design** – SaaS-style without being flashy
 7. **Case Study Depth** – Problem → Solution → Outcome for every project
@@ -240,7 +240,7 @@ git push      # Deploy via Vercel (auto-deploy)
 
 | Item          | Status                       |
 | ------------- | ---------------------------- |
-| Employment    | ✅ Current (Evolvo Feb 2026) |
+| Employment    | ✅ Current (Evolvo-Technologies Feb 2026) |
 | Projects      | ✅ 5 Real, Verified          |
 | Pages         | ✅ All 7 Functional          |
 | Build         | ✅ Successful                |
@@ -283,4 +283,4 @@ git push      # Deploy via Vercel (auto-deploy)
 
 **Portfolio rebuild is COMPLETE and PRODUCTION-READY.**
 
-Deploy whenever ready. Portfolio accurately represents M Ubaid Javaid as a serious, production-focused full-stack developer currently working at Evolvo.
+Deploy whenever ready. Portfolio accurately represents M Ubaid Javaid as a serious, production-focused full-stack developer currently working at Evolvo-Technologies.

@@ -24,7 +24,7 @@ export function AboutPersonJsonLd () {
     ],
     worksFor: {
       '@type': 'Organization',
-      name: experience.roles.find(r => r.current)?.company ?? 'Evolvo'
+      name: experience.roles.find(r => r.current)?.company ?? 'Evolvo-Technologies'
     }
   }
 

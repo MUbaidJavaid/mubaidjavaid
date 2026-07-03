@@ -1,3 +1,4 @@
+import { LinkedInProfileBadge } from '@/components/social/LinkedInProfileBadge'
 import { site } from '@/data/site'
 import Link from 'next/link'
 
@@ -107,6 +108,14 @@ export function SiteFooter () {
               >
                 LinkedIn
               </Link>
+            ) : null}
+            {typeof site.linkedinVanity === 'string' &&
+            site.linkedinVanity.trim() ? (
+              <LinkedInProfileBadge
+                size='medium'
+                layout='VERTICAL'
+                className='pt-1'
+              />
             ) : null}
           </div>
         </div>

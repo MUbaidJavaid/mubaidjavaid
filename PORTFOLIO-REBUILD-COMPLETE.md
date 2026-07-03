@@ -13,7 +13,7 @@
 
 ### Employment Update
 
-- **Current:** Full Stack Developer at **Evolvo** (Feb 2026 – Present)
+- **Current:** Full Stack Developer at **Evolvo-Technologies** (Feb 2026 – Present)
 - **Previous:** MERN-Stack Developer at Fiesta Content Solutions (Jul 2024 – Jan 2026)
 - **Location:** Multan, Pakistan | Remote-ready
 
@@ -21,10 +21,10 @@
 
 The portfolio now showcases **5 real, verifiable projects** replacing placeholder projects:
 
-#### 1. **Evolvo Platform** ⭐ Featured
+#### 1. **Evolvo-Technologies Platform** ⭐ Featured
 
 - Internal SaaS for healthcare app development project management
-- **Live:** Internal use at Evolvo
+- **Live:** Internal use at Evolvo-Technologies
 - **Role:** Full stack developer (architecture, APIs, frontend)
 - **Tech:** React, Next.js, Node.js, Express, MongoDB, TypeScript
 - **Focus:** Real-time collaboration, HIPAA compliance, team efficiency
@@ -44,9 +44,9 @@ The portfolio now showcases **5 real, verifiable projects** replacing placeholde
 - **Tech:** Next.js, React, TypeScript, Tailwind CSS
 - **Impact:** 65% organic traffic growth, 12% case study conversion
 
-#### 4. **Evolvo Landing Page**
+#### 4. **Evolvo-Technologies Landing Page**
 
-- **Live:** https://evolvo-landing-page-2.vercel.app/
+- **Live:** https://Evolvo-Technologies-landing-page-2.vercel.app/
 - **Focus:** Healthcare-focused landing, HIPAA compliance messaging
 - **Tech:** Next.js, React, TypeScript, EmailJS
 - **Impact:** ~8% form submission conversion from qualified healthcare orgs
@@ -79,7 +79,7 @@ The portfolio now showcases **5 real, verifiable projects** replacing placeholde
 
 - ✅ `siteConfig.ts` – Current employment, brand info, home content
 - ✅ `projects.ts` – 5 real projects with full case studies
-- ✅ `aboutContent` – Evolvo employment, professional positioning
+- ✅ `aboutContent` – Evolvo-Technologies employment, professional positioning
 - ✅ `homeContent` – Updated stats, messaging, CTA
 
 ---
@@ -97,7 +97,7 @@ _Building production-ready web applications with solid architecture and reliable
 
 ### Current Role
 
-**Full Stack Developer at Evolvo** (Feb 2026 – Present)
+**Full Stack Developer at Evolvo-Technologies** (Feb 2026 – Present)
 
 - Healthcare app development focus
 - Full-stack platform development
@@ -118,7 +118,7 @@ _Building production-ready web applications with solid architecture and reliable
 
 The home page displays 3 featured projects to immediately showcase capabilities:
 
-1. **Evolvo Platform** – Internal SaaS
+1. **Evolvo-Technologies Platform** – Internal SaaS
 2. **NovixPay** – Fintech (live site)
 3. **Commit4 Solutions** – Agency website (live site)
 
@@ -191,7 +191,7 @@ npm run build && npm start
 
 ### On About Page
 
-- Current role at Evolvo with healthcare tech focus
+- Current role at Evolvo-Technologies with healthcare tech focus
 - Real technical experience with examples
 - Professional tone emphasizing production reliability
 
@@ -216,7 +216,7 @@ npm run build && npm start
 - [ ] Add screenshots/images for each project
 - [ ] Link GitHub repos where applicable
 - [ ] Update blog with recent technical articles
-- [ ] Add testimonials from Evolvo or past clients
+- [ ] Add testimonials from Evolvo-Technologies or past clients
 - [ ] Setup analytics tracking (Google Analytics)
 
 ### Deployment
@@ -242,7 +242,7 @@ npm run build && npm start
 2. **Professional Tone:** No hype, no fake metrics
 3. **Complete Case Studies:** Detailed problem → solution → outcome
 4. **Trust Focus:** Emphasizes production reliability and real impact
-5. **Current Positioning:** Accurately reflects Evolvo employment and healthcare tech focus
+5. **Current Positioning:** Accurately reflects Evolvo-Technologies employment and healthcare tech focus
 6. **Clean Design:** Premium SaaS style without being flashy
 7. **All Pages Working:** No broken navigation or missing routes
 
