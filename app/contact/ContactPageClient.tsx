@@ -1,5 +1,6 @@
 'use client'
 
+import { LinkedInProfileBadge } from '@/components/social/LinkedInProfileBadge'
 import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { ClickSpark } from '@/components/ui/ClickSpark'
 import { contactCta, site } from '@/data/site'
@@ -316,6 +317,19 @@ export function ContactPageClient () {
                   </Link>
                 ))}
               </div>
+
+              {typeof site.linkedinVanity === 'string' &&
+              site.linkedinVanity.trim() ? (
+                <div className='border border-border/30 surface-panel p-4 dark:border-border/50'>
+                  <p className='mb-3 text-[10px] font-bold uppercase tracking-[0.14em] text-body/50'>
+                    LinkedIn profile
+                  </p>
+                  <LinkedInProfileBadge
+                    size='large'
+                    layout='HORIZONTAL'
+                  />
+                </div>
+              ) : null}
             </div>
 
             <div className='min-w-0 border border-border/30 surface-panel p-4 sm:p-7 lg:p-9 dark:border-border/50'>

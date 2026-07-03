@@ -4,8 +4,9 @@ export const site = {
   location: "Multan, Pakistan",
   email: "mubaidjavaid97@gmail.com",
   github: "https://github.com/MUbaidJavaid",
-  /** Add your public profile URL when ready; footer hides the link if empty */
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/m-ubaid-javaid-260735407",
+  /** Vanity slug for LinkedIn public profile badge embed */
+  linkedinVanity: "m-ubaid-javaid-260735407",
   url: "https://mubaidjavaid.vercel.app/",
   description:
     "M Ubaid Javaid is a full-stack developer in Multan, Pakistan, helping businesses build conversion-focused websites and product-grade web applications with React, Next.js, Node.js, Express, and MongoDB. The focus is practical delivery: clear architecture, stable backend workflows, measurable performance, and user experiences that support business goals.",
@@ -221,9 +222,9 @@ export const experience = {
   title: "Professional Experience",
   roles: [
     {
-      id: "evolvo",
+      id: "Evolvo-Technologies",
       role: "MERN-STACK & NEXT.JS Developer",
-      company: "Evolvo",
+      company: "Evolvo-Technologies",
       duration: "Feb 2026 - Present",
       location: "On-site",
       type: "Full-time",

@@ -10,10 +10,10 @@
 
 ```
 PREVIOUS  → Jul 2024 – Jan 2026 @ Fiesta Content Solutions
-CURRENT   → Feb 2026 – Present @ Evolvo
+CURRENT   → Feb 2026 – Present @ Evolvo-Technologies
 ```
 
-All portfolio sections now reflect current Evolvo employment.
+All portfolio sections now reflect current Evolvo-Technologies employment.
 
 ---
 
@@ -22,7 +22,7 @@ All portfolio sections now reflect current Evolvo employment.
 #### ⭐ Featured on Homepage (3)
 
 ```
-1. EVOLVO PLATFORM
+1. Evolvo-Technologies PLATFORM
    Internal SaaS for healthcare app development
    Full-stack: React | Next.js | Node.js | MongoDB
    → Real-time project management, HIPAA compliance
@@ -43,9 +43,9 @@ All portfolio sections now reflect current Evolvo employment.
 #### 📋 Additional Projects (2)
 
 ```
-4. EVOLVO LANDING PAGE
+4. Evolvo-Technologies LANDING PAGE
    Healthcare-focused marketing landing
-   Live: https://evolvo-landing-page-2.vercel.app/
+   Live: https://Evolvo-Technologies-landing-page-2.vercel.app/
    → 8% form submission conversion
 
 5. HOUSING SOCIETY MANAGEMENT SYSTEM
@@ -82,7 +82,7 @@ IDENTITY
 ├─ Role: Full-Stack Developer
 ├─ Specialization: MERN Stack | Next.js
 ├─ Location: Multan, Pakistan (Remote-Ready)
-└─ Current: Evolvo (Feb 2026 – Present)
+└─ Current: Evolvo-Technologies (Feb 2026 – Present)
 
 HEADLINE
 "Building production-ready web applications with solid
@@ -197,7 +197,7 @@ $ git push origin main
    - Third-party API integrations
 
 ✅ PRODUCTION FOCUS
-   - Current role at real tech company (Evolvo)
+   - Current role at real tech company (Evolvo-Technologies)
    - Emphasis on reliability and scalability
    - Real-world constraints considered
 
@@ -274,7 +274,7 @@ PROJECT PAGES
 └─ Tech stack listed
 
 ABOUT PAGE
-├─ Current role: Evolvo
+├─ Current role: Evolvo-Technologies
 ├─ Professional summary
 ├─ Experience highlights
 └─ Technical focus
@@ -314,7 +314,7 @@ git push origin main
 
 ## Final Checklist
 
-- [x] Employment updated (Evolvo Feb 2026 – Present)
+- [x] Employment updated (Evolvo-Technologies Feb 2026 – Present)
 - [x] 5 real projects with details
 - [x] 3 featured on homepage
 - [x] All 7 pages working
@@ -337,7 +337,7 @@ git push origin main
 
 ## Result
 
-**Your portfolio now presents you as a serious, production-focused full-stack developer with real shipped work, current employment at Evolvo, and measurable outcomes.**
+**Your portfolio now presents you as a serious, production-focused full-stack developer with real shipped work, current employment at Evolvo-Technologies, and measurable outcomes.**
 
 ✅ **READY FOR RECRUITMENT & CLIENT INQUIRIES**
 
