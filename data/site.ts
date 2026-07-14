@@ -187,9 +187,7 @@ export const heroContent = {
 export const aboutPreview = {
   title: "Building practical web products with clean engineering and clear UX",
   bodyOne:
-    "I am a full-stack developer focused on practical digital products that solve real business and user problems. Beyond writing code, I think through scope, information structure, user flow, data handling, and long-term maintainability so teams can keep shipping without repeatedly rebuilding core foundations.",
-  bodyTwo:
-    "My goal is not to deliver visually polished screens only. I build complete product experiences that load fast, communicate clearly, and behave reliably across devices, while keeping the codebase readable for future contributors and feature growth.",
+    "Full-stack developer focused on fast, maintainable web products — from MVP to production.",
 } as const;
 
 export const whyPartnerWithMe = [
@@ -214,7 +212,7 @@ export const whyPartnerWithMe = [
 /** How I work (not a client testimonial - keeps the code card honest) */
 export const workPhilosophy = {
   statement:
-    "Clear scope, transparent communication, and systems that stay maintainable when priorities change. The objective is sustainable delivery quality, not short-term speed that creates future instability.",
+    "Clear scope, honest updates, and code that stays maintainable when priorities shift.",
   label: "Working style",
 } as const;
 
@@ -228,7 +226,7 @@ export const experience = {
       duration: "Feb 2026 - Present",
       location: "On-site",
       type: "Full-time",
-      copy: "Leading full-stack implementation across modern web products using Next.js and MERN technologies. My role includes frontend architecture, API integration, performance optimization, and collaboration with design and product stakeholders to deliver features that are production-ready and measurable.",
+      copy: "Full-stack delivery with Next.js and MERN — architecture, APIs, performance, and production releases.",
       highlights: [
         "Developing full-stack applications with Next.js and React",
         "Implementing server-side rendering and static site generation",
@@ -246,7 +244,7 @@ export const experience = {
       duration: "Jul 2024 - Jan 2026",
       location: "On-site",
       type: "Full-time",
-      copy: "Contributed to MERN-based product development across multiple practical projects, building responsive interfaces, backend logic, and integration workflows. This role strengthened my foundations in delivery discipline, collaboration, and writing maintainable code for active production use.",
+      copy: "Built MERN products end-to-end — responsive UI, APIs, MongoDB schemas, and team delivery.",
       highlights: [
         "Built responsive web applications using React.js and Tailwind CSS",
         "Developed RESTful APIs with Node.js and Express.js",
@@ -265,59 +263,59 @@ export const process = [
   {
     step: "Discovery",
     description:
-      "We begin by understanding business goals, user expectations, current constraints, and success metrics. This creates a shared definition of what must be built first and what can be phased later.",
+      "Goals, users, constraints, and what ships first.",
   },
   {
     step: "Planning",
     description:
-      "The product scope is translated into implementation structure: key features, technical approach, data flow, priorities, and milestones. This keeps execution focused and avoids expensive mid-project confusion.",
+      "Scope, architecture, milestones, and priorities.",
   },
   {
     step: "Interface & Structure",
     description:
-      "User journeys, screen structure, and component boundaries are defined before full implementation. This ensures the interface remains clear for users and scalable for future product expansion.",
+      "Flows, layouts, and component boundaries before build.",
   },
   {
     step: "Development",
     description:
-      "Frontend, backend, and integrations are developed with maintainable conventions, predictable state handling, and reliable API contracts so the product remains stable under real-world usage.",
+      "Frontend, backend, and integrations with clean conventions.",
   },
   {
     step: "Testing",
     description:
-      "Cross-device checks, functional validation, UX review, and integration testing are performed to catch regressions before release and improve confidence in production behavior.",
+      "Cross-device checks and validation before release.",
   },
   {
     step: "Launch",
     description:
-      "Deployment includes environment verification, performance checks, and release readiness validation so the product launches smoothly and is observable from day one.",
+      "Deploy, verify performance, and go live with confidence.",
   },
   {
     step: "Handover & Documentation",
     description:
-      "A structured handover includes technical documentation, key workflows, and maintainability notes so your team can confidently operate, extend, and support the product after release.",
+      "Docs and handover so your team can extend the product.",
   },
   {
     step: "Support",
     description:
-      "Post-launch support focuses on iterative improvements, issue resolution, feature expansion, and technical refinement based on usage data and stakeholder feedback.",
+      "Fixes, improvements, and iteration after launch.",
   },
 ] as const;
 
 export const codeQuality = {
   title: "Code Quality & Development Approach",
-  copy: "Code quality is treated as a delivery strategy, not a slogan. I prioritize maintainable architecture, reusable component systems, clean API boundaries, and practical documentation so teams can move faster with fewer regressions as the product grows.",
+  copy: "Maintainable architecture, reusable components, and clear APIs — built to scale without slowing the team down.",
 } as const;
 
 export const contactCta = {
   title: "Let’s build something solid",
-  body: "If you are building a new product, improving an existing platform, or hiring for full-stack ownership, I can help you move from unclear requirements to production-ready execution.",
+  body: "New product, platform upgrade, or full-stack hire — share your scope and timeline.",
   support:
-    "You can reach out for freelance and contract projects, long-term collaboration, or full-time roles. Share your scope, timeline, and goals, and I will propose a practical implementation path with clear next steps.",
+    "Freelance, contract, and full-time. I’ll reply with clear next steps.",
 } as const;
 
 export const blogPreview = {
   title: "Blog",
   description:
-    "I publish practical engineering notes on full-stack architecture, frontend quality, API design, performance, and delivery trade-offs from real project work so teams can learn from implementation-level decisions, not surface-level summaries.",
+    "Notes on full-stack delivery, architecture, and shipping production-ready web apps.",
 } as const;

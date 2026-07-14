@@ -32,18 +32,14 @@ export function SiteHeader () {
       <div className='container-wide flex h-[70px] items-center justify-between gap-4'>
         <Link
           href='/'
-          className='flex min-w-0 items-center gap-3 leading-tight'
+          className='flex min-w-0 items-center gap-2.5 leading-tight'
+          aria-label={`${site.name} home`}
         >
-          <span className='inline-flex h-9 w-9 items-center justify-center bg-[linear-gradient(140deg,#246b96,hsl(202_64%_27%))] text-sm font-bold text-white shadow-card ring-1 ring-white/15'>
-            MU
+          <span className='inline-flex h-9 shrink-0 items-center justify-center bg-[linear-gradient(140deg,#246b96,hsl(202_64%_27%))] px-2.5 font-mono text-sm font-bold text-white shadow-card ring-1 ring-white/15'>
+            {'>_'}
           </span>
-          <span className='min-w-0'>
-            <span className='block truncate font-heading text-sm font-semibold tracking-wide text-heading'>
-              {site.name}
-            </span>
-            <span className='block truncate text-[11px] text-body'>
-              Full-Stack Developer
-            </span>
+          <span className='truncate font-mono text-[22px] font-bold tracking-tight text-primary'>
+            {'UBAID.DEV'}
           </span>
         </Link>
         <nav className='hidden items-center gap-6 lg:flex'>
@@ -56,7 +52,7 @@ export function SiteHeader () {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'relative pb-1 text-[13px] font-medium text-body transition-colors hover:text-primary',
+                  'relative pb-1 text-[15px] font-medium text-body transition-colors hover:text-primary',
                   isActive && 'text-heading'
                 )}
               >
@@ -107,7 +103,7 @@ export function SiteHeader () {
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    'block  px-3.5 py-2.5 text-sm font-medium text-body transition-colors hover:bg-secondary hover:text-heading',
+                    'block  px-3.5 py-2.5 text-[15px] font-medium text-body transition-colors hover:bg-secondary hover:text-heading',
                     isActive && 'bg-slate-900 text-white hover:text-white'
                   )}
                 >

@@ -1,3 +1,5 @@
+import { SectionDisplayTag } from '@/components/ui/SectionDisplayTag'
+
 const stackGroups = [
   {
     title: 'Frontend',
@@ -53,12 +55,8 @@ export function TechStackSection () {
   return (
     <section className='section-anchor section-padding surface-page'>
       <div className='container-wide space-y-6'>
-        <div className='space-y-2'>
-          <p className='section-label'>Tech Stack</p>
-          <h2 className='section-heading text-2xl sm:text-3xl lg:text-4xl'>
-            Organized tooling for{' '}
-            <span className='section-heading-accent'>reliable delivery</span>
-          </h2>
+        <div className='section-header'>
+          <SectionDisplayTag tag='Stack' pattern='pipe' />
         </div>
         <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
           {stackGroups.map(group => (
@@ -66,7 +64,7 @@ export function TechStackSection () {
               key={group.title}
               className='card-surface p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-float'
             >
-              <h3 className='text-base font-semibold text-heading'>
+              <h3 className='text-base font-semibold uppercase tracking-[0.04em] text-heading'>
                 {group.title}
               </h3>
               <div className='mt-3 flex flex-wrap gap-2'>

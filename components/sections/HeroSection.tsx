@@ -1,54 +1,11 @@
 'use client'
 
+import { HeroCodeDecor } from '@/components/hero/HeroCodeDecor'
 import { TypingTagline } from '@/components/hero/TypingTagline'
 import { DiscoveryCallModal } from '@/components/system/DiscoveryCallModal'
 import { heroTaglines } from '@/data/site'
 import { motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
-
-/* ── Floating tilted geometric square ── */
-function FloatingTile ({
-  size,
-  style,
-  rotate,
-  delay = 0,
-  opacity = 0.35,
-  blur = 0
-}: {
-  size: number
-  style?: React.CSSProperties
-  rotate: number
-  delay?: number
-  opacity?: number
-  blur?: number
-}) {
-  return (
-    <motion.div
-      className='pointer-events-none absolute rounded-xl border-2'
-      style={{
-        width: size,
-        height: size,
-        rotate: `${rotate}deg`,
-        opacity,
-        filter: blur ? `blur(${blur}px)` : undefined,
-        borderColor: '#256e99',
-        background: 'linear-gradient(135deg, #256e99 / 0.15, #1e5a82 / 0.08)',
-        ...style
-      }}
-      animate={{
-        y: [0, -15, 0],
-        x: [0, 5, 0],
-        rotate: [`${rotate}deg`, `${rotate + 8}deg`, `${rotate}deg`]
-      }}
-      transition={{
-        duration: 12 + delay,
-        repeat: Infinity,
-        ease: 'easeInOut',
-        delay
-      }}
-    />
-  )
-}
 
 const STACK = [
   'React',
@@ -107,103 +64,7 @@ export function HeroSection () {
         }}
       />
 
-      {/* Floating decorative tiles */}
-      {!reduce && (
-        <>
-          {/* Top left area */}
-          <FloatingTile
-            size={104}
-            style={{ top: '7%', left: '2%' }}
-            rotate={14}
-            delay={0}
-            opacity={0.4}
-            blur={0}
-          />
-          <FloatingTile
-            size={64}
-            style={{ top: '22%', left: '11%' }}
-            rotate={-7}
-            delay={1.6}
-            opacity={0.35}
-            blur={0}
-          />
-
-          {/* Top right area */}
-          <FloatingTile
-            size={128}
-            style={{ top: '5%', right: '3%' }}
-            rotate={-19}
-            delay={0.9}
-            opacity={0.38}
-            blur={0}
-          />
-          <FloatingTile
-            size={76}
-            style={{ top: '30%', right: '1%' }}
-            rotate={11}
-            delay={2.3}
-            opacity={0.36}
-            blur={0}
-          />
-
-          {/* Left side */}
-          <FloatingTile
-            size={52}
-            style={{ top: '60%', left: '2%' }}
-            rotate={23}
-            delay={1}
-            opacity={0.33}
-            blur={0}
-          />
-
-          {/* Right side */}
-          <FloatingTile
-            size={82}
-            style={{ top: '66%', right: '6%' }}
-            rotate={-13}
-            delay={3}
-            opacity={0.34}
-            blur={0}
-          />
-
-          {/* Additional boxes for more scattered effect */}
-          <FloatingTile
-            size={68}
-            style={{ top: '15%', left: '35%' }}
-            rotate={45}
-            delay={2}
-            opacity={0.32}
-            blur={0}
-          />
-
-          <FloatingTile
-            size={56}
-            style={{ top: '50%', right: '22%' }}
-            rotate={-25}
-            delay={1.2}
-            opacity={0.33}
-            blur={0}
-          />
-
-          <FloatingTile
-            size={48}
-            style={{ bottom: '20%', left: '18%' }}
-            rotate={60}
-            delay={2.5}
-            opacity={0.31}
-            blur={0}
-          />
-
-          <FloatingTile
-            size={92}
-            style={{ top: '45%', left: '65%' }}
-            rotate={-40}
-            delay={1.8}
-            opacity={0.35}
-            blur={0}
-          />
-        </>
-      )}
+      <HeroCodeDecor />
 
       {/* ── Content ── */}
       <div className='container-wide relative z-10 flex min-w-0 flex-col items-center justify-center pb-20 pt-10 text-center sm:pt-16 lg:pt-20'>
@@ -216,17 +77,14 @@ export function HeroSection () {
         >
           {/* Kicker   no emoji, clean label */}
           <p
-            className='mb-4 text-[10.5px] font-semibold uppercase tracking-[0.22em]'
+            className='display-kicker mb-4 tracking-[0.22em]'
             style={{ color: 'hsl(202 61% 38%)' }}
           >
             Full-Stack Developer &middot; Multan, Pakistan
           </p>
 
-          {/* Primary name   largest element on the page */}
-          <h1
-            className='font-heading font-extrabold leading-none tracking-[-0.03em] text-heading'
-            style={{ fontSize: 'clamp(3rem, 8.5vw, 6rem)' }}
-          >
+          {/* Primary name — fluid up to 144px on large screens */}
+          <h1 className='font-heading font-black leading-none tracking-[-0.03em] text-[rgb(12,12,12)] dark:text-heading'>
             M Ubaid Javaid
           </h1>
 
@@ -239,7 +97,7 @@ export function HeroSection () {
             />
             <TypingTagline
               phrases={heroTaglines}
-              className='text-[1rem] font-semibold tracking-wide text-primary sm:text-[1.08rem]'
+              className='text-fluid-base font-semibold tracking-wide text-primary'
             />
             <span
               className='block h-px w-7 flex-shrink-0'
@@ -259,7 +117,7 @@ export function HeroSection () {
           {STACK.map(tech => (
             <span
               key={tech}
-              className='rounded-full border px-3 py-1 text-[11px] font-medium tracking-wide'
+              className='text-fluid-xs rounded-full border px-3 py-1 font-medium tracking-wide'
               style={{
                 borderColor: 'hsl(202 61% 37% / 0.22)',
                 background: 'hsl(202 61% 37% / 0.05)',
@@ -273,7 +131,7 @@ export function HeroSection () {
 
         {/* ── Value proposition ── */}
         <motion.p
-          className='mx-auto max-w-[54ch] text-[1.02rem] leading-[1.88] text-body sm:text-[1.06rem]'
+          className='text-fluid-base mx-auto max-w-[54ch] leading-[1.88] text-body'
           initial={reduce ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.18 }}
@@ -293,7 +151,7 @@ export function HeroSection () {
           <Link
             href='/contact'
             id='hero-cta-hire'
-            className='inline-flex items-center gap-2 rounded-none px-7 py-3 text-[0.88rem] font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-px hover:shadow-lg active:scale-[0.98]'
+            className='text-fluid-sm inline-flex items-center gap-2 rounded-none px-7 py-3 font-semibold text-white shadow-md transition-all duration-200 hover:-translate-y-px hover:shadow-lg active:scale-[0.98]'
             style={{
               background:
                 'linear-gradient(160deg, hsl(202 61% 37%), hsl(202 64% 27%))',
@@ -319,7 +177,7 @@ export function HeroSection () {
           <Link
             href='/projects'
             id='hero-cta-work'
-            className='inline-flex items-center gap-2 rounded-none border px-7 py-3 text-[0.88rem] font-semibold transition-all duration-200 hover:-translate-y-px hover:bg-primary/[0.06] active:scale-[0.98]'
+            className='text-fluid-sm inline-flex items-center gap-2 rounded-none border px-7 py-3 font-semibold transition-all duration-200 hover:-translate-y-px hover:bg-primary/[0.06] active:scale-[0.98]'
             style={{
               borderColor: 'hsl(202 61% 37% / 0.32)',
               color: 'hsl(202 61% 37%)'

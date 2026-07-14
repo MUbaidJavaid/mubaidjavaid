@@ -174,16 +174,16 @@ export function LogoStrip () {
           className='w-full py-2'
         />
 
-        <div className='mt-7 flex flex-wrap items-center justify-center gap-2.5'>
+        <div className='mt-7 flex flex-wrap items-center justify-center gap-3'>
           {groups.map(group => {
             const count = logos.filter(logo => logo.group === group).length
             return (
               <span
                 key={group}
-                className='inline-flex items-center gap-1.5 rounded-full border border-border/55 bg-white/85 px-3 py-1 text-xs font-semibold text-body/75 dark:border-border/50 dark:bg-slate-900/30 dark:text-slate-300'
+                className='inline-flex items-center gap-2 rounded-full border border-border/55 bg-white/85 px-4 py-2 text-sm font-semibold text-body/80 dark:border-border/50 dark:bg-slate-900/30 dark:text-slate-300 sm:px-5 sm:py-2.5 sm:text-base'
               >
                 {group}
-                <span className='rounded-full bg-primary/10 px-1.5 py-0.5 text-[10px] font-bold text-primary'>
+                <span className='rounded-full bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary sm:px-2.5 sm:text-sm'>
                   {count}
                 </span>
               </span>

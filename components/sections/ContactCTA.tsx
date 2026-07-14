@@ -1,4 +1,5 @@
 import { contactCta, site } from '@/data/site'
+import { SectionDisplayTag } from '@/components/ui/SectionDisplayTag'
 import {
   Boxes,
   Github,
@@ -29,7 +30,7 @@ export function ContactCTA () {
     <section className='section-anchor surface-page py-12 md:py-16'>
       <div className='container-wide'>
         <div className='relative overflow-hidden  border border-white/10 bg-[linear-gradient(145deg,#0B1220_0%,#152A3D_42%,#1a4d6e_88%,#246b96_140%)] p-px text-white shadow-[0_28px_64px_-20px_rgba(15,23,42,0.45)] ring-1 ring-black/5'>
-          <div className='relative grid gap-8 overflow-hidden  bg-[linear-gradient(165deg,#0B1220_0%,#122535_55%,#163449_100%)] px-6 py-10 sm:gap-10 sm:px-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.92fr)] lg:px-12 lg:py-12'>
+          <div className='relative flex flex-col gap-8 overflow-hidden  bg-[linear-gradient(165deg,#0B1220_0%,#122535_55%,#163449_100%)] px-6 py-10 sm:gap-10 sm:px-10 lg:px-12 lg:py-12'>
             {/* Shell corner accents (half-cut squares, like blog cards) */}
             <span
               aria-hidden
@@ -47,21 +48,15 @@ export function ContactCTA () {
             />
 
             {/* Left column */}
-            <div className='relative z-[1] min-w-0'>
-              <p className='section-label text-[#CBDDE9] [&::before]:bg-[#7DD3FC]'>
-                Contact
-              </p>
-              <h2 className='section-heading mt-2 text-2xl text-white sm:text-3xl lg:text-4xl'>
-                <span className='text-white'> Let&apos;s build</span>{' '}
-                <span className='text-[#7DD3FC]'>something solid</span>
-              </h2>
-              <p className='mt-4 max-w-2xl text-sm text-slate-200 sm:text-base'>
+            <div className='section-header relative z-[1] min-w-0'>
+              <SectionDisplayTag tag='Contact' pattern='terminal' variant='light' />
+              <p className='section-lead text-slate-200'>
                 {contactCta.body}
               </p>
-              <p className='mt-2 max-w-3xl text-sm text-slate-300'>
+              <p className='text-fluid-sm text-center text-slate-300/90'>
                 {contactCta.support}
               </p>
-              <div className='mt-6 flex flex-wrap gap-3'>
+              <div className='flex flex-wrap justify-center gap-3'>
                 <Link
                   href='/contact'
                   className=' bg-white px-5 py-2.5 text-sm font-semibold text-[#0F172A] shadow-[0_6px_20px_-6px_rgba(15,23,42,0.35)] transition-all duration-200 hover:bg-[#CBDDE9] active:scale-[0.98]'

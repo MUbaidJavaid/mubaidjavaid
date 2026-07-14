@@ -1,6 +1,7 @@
 import { EmptyState } from '@/components/system/EmptyState'
 import { posts } from '@/data/posts'
 import { blogPreview } from '@/data/site'
+import { SectionDisplayTag } from '@/components/ui/SectionDisplayTag'
 import { BookOpen } from 'lucide-react'
 import Link from 'next/link'
 
@@ -33,23 +34,14 @@ export function BlogPreviewSection () {
       </div>
 
       <div className='container-wide relative z-10 space-y-8'>
-        <div className='flex flex-wrap items-end justify-between gap-5'>
-          <div>
-            <p className='section-label'>{blogPreview.title}</p>
-            <h2 className='section-heading mt-2 text-[1.75rem] sm:text-[2.2rem]'>
-              Insights on{' '}
-              <span className='section-heading-accent'>
-                full-stack development
-              </span>
-            </h2>
-            <p className='mt-2 max-w-[540px] text-sm leading-[1.75] text-body/70'>
-              {blogPreview.description ||
-                'Practical articles on React, Next.js, Node.js, and shipping production-ready web applications.'}
-            </p>
-          </div>
+        <div className='section-header'>
+          <SectionDisplayTag tag={blogPreview.title} pattern='scope' />
+          <p className='section-lead text-body/70'>
+            {blogPreview.description}
+          </p>
           <Link
             href='/blog'
-            className='group inline-flex items-center gap-2 border border-[#0F172A]/10 bg-white px-5 py-2 text-sm font-semibold text-heading shadow-[0_1px_4px_rgba(15,23,42,.05)] transition-all hover:-translate-y-px hover:border-primary/30 hover:text-primary hover:shadow-[0_4px_12px_rgba(15,23,42,.08)] dark:border-border/50 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-primary/40'
+            className='group inline-flex items-center gap-2 border border-[#0F172A]/10 bg-white px-5 py-2 text-body-sm font-semibold text-heading shadow-[0_1px_4px_rgba(15,23,42,.05)] transition-all hover:-translate-y-px hover:border-primary/30 hover:text-primary hover:shadow-[0_4px_12px_rgba(15,23,42,.08)] dark:border-border/50 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-primary/40'
           >
             View all articles
             <span className='text-[.68rem] transition-transform group-hover:translate-x-0.5'>
@@ -70,7 +62,7 @@ export function BlogPreviewSection () {
             />
           </div>
         ) : (
-          <div className='grid gap-4 lg:grid-cols-[1.08fr_0.92fr]'>
+          <div className='flex flex-col gap-4'>
             {leadPost ? (
               <Link
                 href={`/blog/${leadPost.slug}`}
@@ -109,10 +101,10 @@ export function BlogPreviewSection () {
                   </span>
                 </div>
 
-                <h3 className='relative z-[2] mb-3 font-heading text-[1.25rem] font-extrabold leading-[1.2] tracking-[-0.02em] text-white transition-colors group-hover:text-[#DCEAF3] sm:text-[1.4rem]'>
+                <h3 className='text-fluid-lg relative z-[2] mb-3 font-heading !font-semibold uppercase leading-[1.25] tracking-[0.04em] text-white transition-colors group-hover:text-[#DCEAF3]'>
                   {leadPost.title}
                 </h3>
-                <p className='relative z-[2] mb-2 text-[.78rem] leading-[1.75] text-white/55'>
+                <p className='relative z-[2] mb-2 section-copy text-white/55'>
                   {leadPost.summary}
                 </p>
                 {leadPost.intro && (
@@ -163,10 +155,10 @@ export function BlogPreviewSection () {
                     </span>
                   </div>
 
-                  <h3 className='relative z-[2] mb-1.5 font-heading text-[.95rem] font-bold leading-[1.3] tracking-[-0.01em] text-heading transition-colors group-hover:text-primary'>
+                  <h3 className='text-fluid-base relative z-[2] mb-1.5 font-heading !font-semibold uppercase leading-[1.3] tracking-[0.04em] text-heading transition-colors group-hover:text-primary'>
                     {post.title}
                   </h3>
-                  <p className='relative z-[2] line-clamp-2 text-[.72rem] leading-[1.65] text-body/55'>
+                  <p className='relative z-[2] line-clamp-2 section-copy text-body/55'>
                     {post.summary}
                   </p>
 

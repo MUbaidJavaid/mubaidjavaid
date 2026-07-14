@@ -7,10 +7,10 @@
   align-items: center;
   justify-content: center;
   margin-inline: auto;
-  --w-card: 196px;
-  --h-card: 248px;
+  --w-card: 248px;
+  --h-card: 310px;
   --rotate-card: 12deg;
-  --insetX-card: 34px;
+  --insetX-card: 42px;
   --t-card: calc(var(--insetX-card) * 1.15);
   --w-wrap-card: calc(var(--w-card) * 2);
   --h-wrap: calc(var(--h-card) + var(--t-card) + 12px);
@@ -115,8 +115,8 @@
   position: relative;
   z-index: 1;
   display: flex;
-  height: 2.75rem;
-  width: 2.75rem;
+  height: 3.25rem;
+  width: 3.25rem;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -130,7 +130,7 @@
   position: relative;
   z-index: 1;
   font-family: var(--font-heading, inherit);
-  font-size: clamp(1.75rem, 4.5vw, 2.15rem);
+  font-size: clamp(2rem, 5vw, 2.45rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -141,10 +141,10 @@
 .contentLabel {
   position: relative;
   z-index: 1;
-  max-width: 11.5rem;
+  max-width: 13.5rem;
   text-align: center;
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 500;
   line-height: 1.35;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -155,9 +155,9 @@
 .contentHint {
   position: relative;
   z-index: 1;
-  max-width: 11.5rem;
+  max-width: 13.5rem;
   text-align: center;
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.68);
   text-wrap: balance;
@@ -463,9 +463,9 @@
 
 @media (max-width: 520px) {
   .proofWrap {
-    --w-card: 168px;
-    --h-card: 220px;
-    --insetX-card: 24px;
+    --w-card: 200px;
+    --h-card: 260px;
+    --insetX-card: 30px;
   }
 
   .proofWrap:hover {
@@ -474,7 +474,7 @@
 
   .contentLabel,
   .contentHint {
-    max-width: 9.5rem;
+    max-width: 11rem;
   }
 
   @media (prefers-reduced-motion: reduce) {

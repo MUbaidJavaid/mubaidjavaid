@@ -1,50 +1,7 @@
 'use client'
 
+import { HeroCodeDecor } from '@/components/hero/HeroCodeDecor'
 import { motion, useReducedMotion } from 'framer-motion'
-
-/* ── Floating tilted geometric square ── */
-function FloatingTile ({
-  size,
-  style,
-  rotate,
-  delay = 0,
-  opacity = 0.35,
-  blur = 0
-}: {
-  size: number
-  style?: React.CSSProperties
-  rotate: number
-  delay?: number
-  opacity?: number
-  blur?: number
-}) {
-  return (
-    <motion.div
-      className='pointer-events-none absolute rounded-xl border-2'
-      style={{
-        width: size,
-        height: size,
-        rotate: `${rotate}deg`,
-        opacity,
-        filter: blur ? `blur(${blur}px)` : undefined,
-        borderColor: '#256e99',
-        background: 'linear-gradient(135deg, #256e99 / 0.15, #1e5a82 / 0.08)',
-        ...style
-      }}
-      animate={{
-        y: [0, -15, 0],
-        x: [0, 5, 0],
-        rotate: [`${rotate}deg`, `${rotate + 8}deg`, `${rotate}deg`]
-      }}
-      transition={{
-        duration: 12 + delay,
-        repeat: Infinity,
-        ease: 'easeInOut',
-        delay
-      }}
-    />
-  )
-}
 
 interface PageHeroHeaderProps {
   title: string | React.ReactNode
@@ -102,76 +59,7 @@ export function PageHeroHeader ({
         }}
       />
 
-      {/* Floating decorative tiles */}
-      {!reduce && (
-        <>
-          {/* Top left area */}
-          <FloatingTile
-            size={104}
-            style={{ top: '5%', left: '2%' }}
-            rotate={14}
-            delay={0}
-            opacity={0.32}
-            blur={0}
-          />
-          <FloatingTile
-            size={64}
-            style={{ top: '18%', left: '12%' }}
-            rotate={-7}
-            delay={1.6}
-            opacity={0.28}
-            blur={0}
-          />
-
-          {/* Top right area */}
-          <FloatingTile
-            size={128}
-            style={{ top: '3%', right: '4%' }}
-            rotate={-19}
-            delay={0.9}
-            opacity={0.3}
-            blur={0}
-          />
-          <FloatingTile
-            size={76}
-            style={{ top: '28%', right: '2%' }}
-            rotate={11}
-            delay={2.3}
-            opacity={0.27}
-            blur={0}
-          />
-
-          {/* Left side */}
-          <FloatingTile
-            size={52}
-            style={{ top: '55%', left: '3%' }}
-            rotate={23}
-            delay={1}
-            opacity={0.25}
-            blur={0}
-          />
-
-          {/* Right side */}
-          <FloatingTile
-            size={82}
-            style={{ top: '60%', right: '5%' }}
-            rotate={-13}
-            delay={3}
-            opacity={0.26}
-            blur={0}
-          />
-
-          {/* Center area */}
-          <FloatingTile
-            size={68}
-            style={{ top: '12%', left: '50%', transform: 'translateX(-50%)' }}
-            rotate={45}
-            delay={2}
-            opacity={0.24}
-            blur={0}
-          />
-        </>
-      )}
+      <HeroCodeDecor />
 
       {/* Content */}
       <div className='container-wide relative z-10 flex justify-center'>
@@ -196,8 +84,7 @@ export function PageHeroHeader ({
 
           {/* Main heading */}
           <motion.h1
-            className='font-heading font-extrabold leading-none tracking-[-0.03em] text-heading'
-            style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)' }}
+            className='text-fluid-display font-heading font-black leading-none tracking-[-0.03em] text-[rgb(12,12,12)] dark:text-heading'
             initial={reduce ? false : { opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
@@ -208,7 +95,7 @@ export function PageHeroHeader ({
           {/* Description */}
           {description && (
             <motion.p
-              className='mx-auto max-w-2xl text-base leading-[1.8] text-body sm:text-lg'
+              className='text-fluid-base mx-auto max-w-2xl leading-[1.8] text-body'
               initial={reduce ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}

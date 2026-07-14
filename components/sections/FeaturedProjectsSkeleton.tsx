@@ -1,27 +1,36 @@
-import { ProjectCardsGridSkeleton } from '@/components/system/page-skeletons'
 import { Skeleton } from '@/components/ui/skeleton'
 
-/** Shown while the Featured Projects chunk loads: skeletons only in this section, not on the global splash. */
+/** Shown while the Featured Projects chunk loads. */
 export function FeaturedProjectsSkeleton () {
   return (
-    <section className='section-anchor relative overflow-hidden surface-muted py-10'>
-      <div className='absolute inset-0'>
-        <div className='absolute left-0 top-0 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl' />
-        <div className='absolute bottom-0 right-0 h-96 w-96 translate-x-1/3 translate-y-1/3 rounded-full bg-primary/[0.06] blur-3xl' />
-      </div>
-
-      <div className='container-wide relative z-10 space-y-10 py-16 lg:py-20'>
-        <div className='flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end'>
-          <div className='max-w-3xl space-y-4'>
-            <Skeleton className='h-3 w-28' />
-            <Skeleton className='h-9 max-w-md sm:h-10' />
-            <Skeleton className='h-4 max-w-2xl' />
-            <Skeleton className='h-4 max-w-xl' />
-          </div>
-          <Skeleton className='h-11 w-44 rounded-full' />
+    <section className='section-anchor surface-muted py-12 md:py-14'>
+      <div className='container-wide space-y-8'>
+        <div className='section-header gap-4'>
+          <Skeleton className='mx-auto h-10 w-48' />
+          <Skeleton className='mx-auto h-4 max-w-md' />
+          <Skeleton className='mx-auto h-9 w-28' />
         </div>
-
-        <ProjectCardsGridSkeleton count={3} />
+        <div className='flex flex-wrap justify-center gap-2'>
+          <Skeleton className='h-8 w-24' />
+          <Skeleton className='h-8 w-28' />
+          <Skeleton className='h-8 w-20' />
+        </div>
+        <div className='overflow-hidden border border-border/70 dark:border-border/50'>
+          <div className='grid lg:grid-cols-2'>
+            <Skeleton className='aspect-[16/11] w-full rounded-none lg:min-h-[280px]' />
+            <div className='space-y-3 p-5 sm:p-6'>
+              <Skeleton className='h-3 w-28' />
+              <Skeleton className='h-7 w-4/5' />
+              <Skeleton className='h-4 w-full' />
+              <Skeleton className='h-4 w-5/6' />
+              <Skeleton className='mt-4 h-20 w-full' />
+              <div className='flex gap-2 pt-2'>
+                <Skeleton className='h-9 w-28' />
+                <Skeleton className='h-9 w-20' />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

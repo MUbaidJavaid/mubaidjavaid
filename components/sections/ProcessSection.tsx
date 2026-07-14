@@ -1,6 +1,7 @@
 'use client'
 
 import { useGsapReveal } from '@/components/motion/useGsapReveal'
+import { SectionDisplayTag } from '@/components/ui/SectionDisplayTag'
 import { process } from '@/data/site'
 import {
   Compass,
@@ -46,26 +47,18 @@ export function ProcessSection () {
   useGsapReveal(gridRef, { y: 32, stagger: 0.07, start: 'top 85%' })
 
   return (
-    <section className='section-anchor surface-muted py-14 md:py-16'>
-      <div className='container-wide space-y-8'>
+    <section className='section-anchor surface-muted pb-14 pt-8 md:pb-16 md:pt-10'>
+      <div className='container-wide'>
         {/* Header */}
-        <div ref={headerRef} className='max-w-2xl space-y-4'>
-          <p className='section-label' data-reveal>
-            Process
-          </p>
-          <h2 className='section-heading' data-reveal>
-            A structured approach from{' '}
-            <span className='section-heading-accent'>brief to delivery</span>
-          </h2>
-          <p className='text-body-base text-body' data-reveal>
-            Every engagement follows a clear sequence: understand the goal, plan
-            the architecture, build with quality checks, and launch with full
-            documentation so you maintain momentum after handover.
+        <div ref={headerRef} className='section-header -mt-1'>
+          <SectionDisplayTag tag='Process' pattern='jsx' />
+          <p className='section-lead' data-reveal>
+            From brief to launch — clear steps, no guesswork.
           </p>
         </div>
 
         {/* Steps grid */}
-        <div ref={gridRef} className={styles.grid}>
+        <div ref={gridRef} className={`${styles.grid} mt-16 md:mt-24 lg:mt-28`}>
           {process.map((item, index) => {
             const Icon = stepIcons[index % stepIcons.length]
             const stepNumber = String(index + 1).padStart(2, '0')
@@ -77,7 +70,7 @@ export function ProcessSection () {
                     <Icon strokeWidth={1.5} aria-hidden />
                   </div>
 
-                  <h3 className={styles.title}>{item.step}</h3>
+                  <h5 className={styles.title}>{item.step}</h5>
                   <p className={styles.paragraph}>{item.description}</p>
                   <p className={styles.duration}>
                     {stepDurations[index] ?? `Phase ${index + 1}`}

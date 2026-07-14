@@ -2,6 +2,7 @@
 
 import { useGsapReveal } from '@/components/motion/useGsapReveal'
 import { WhyPartnerCodeCard } from '@/components/ui/CodeStyleCard'
+import { SectionDisplayTag } from '@/components/ui/SectionDisplayTag'
 import { aboutPreview, whyPartnerWithMe, workPhilosophy } from '@/data/site'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
@@ -23,35 +24,29 @@ export function AboutPreview () {
 
   return (
     <section className='section-anchor surface-page py-16 md:py-20'>
-      <div className='container-wide grid gap-12 lg:grid-cols-[1.1fr_0.9fr]'>
+      <div className='container-wide flex flex-col gap-12'>
 
         {/* Left column */}
-        <div ref={leftRef} className='space-y-6'>
-          <p className='section-label' data-reveal>About</p>
-          <h2 className='section-heading' data-reveal>
-            Building practical web products with{' '}
-            <span className='section-heading-accent'>clean engineering</span>{' '}
-            and clear UX
-          </h2>
-          <p className='text-body-base leading-relaxed text-body' data-reveal>
+        <div ref={leftRef} className='section-header mx-auto max-w-5xl space-y-6'>
+          <div data-reveal>
+            <SectionDisplayTag tag='About Me' pattern='jsx' />
+          </div>
+          <p className='section-lead' data-reveal>
             {aboutPreview.bodyOne}
-          </p>
-          <p className='text-body-base leading-relaxed text-body' data-reveal>
-            {aboutPreview.bodyTwo}
           </p>
 
           {/* Availability preferences */}
-          <div className='grid grid-cols-2 gap-2 pt-1' data-reveal>
+          <div className='mx-auto grid max-w-md grid-cols-2 gap-2 pt-1' data-reveal>
             {preferences.map(pref => (
-              <div key={pref} className='flex items-center gap-2.5 py-1.5'>
+              <div key={pref} className='flex items-center justify-center gap-2.5 py-1.5 sm:justify-start'>
                 <CheckCircle2 className='h-3.5 w-3.5 shrink-0 text-primary' strokeWidth={2} />
-                <span className='text-[0.82rem] font-medium text-body'>{pref}</span>
+                <span className='text-body-sm font-medium text-body'>{pref}</span>
               </div>
             ))}
           </div>
 
           {/* CTAs */}
-          <div className='flex flex-wrap gap-3 pt-2' data-reveal>
+          <div className='flex flex-wrap justify-center gap-3 pt-2' data-reveal>
             <Link
               href='/about'
               className='group inline-flex items-center gap-2 bg-heading px-6 py-3 text-[0.875rem] font-semibold text-white transition-all duration-200 hover:bg-primary'
@@ -71,7 +66,7 @@ export function AboutPreview () {
           {/* Availability callout */}
           <div
             data-reveal
-            className='border border-border/50 bg-white p-5 dark:border-border/50 dark:bg-card'
+            className='mx-auto w-full max-w-md border border-border/50 bg-white p-5 text-center dark:border-border/50 dark:bg-card'
           >
             <div className='flex items-center gap-3'>
               <div className='flex h-8 w-8 items-center justify-center rounded-full bg-emerald-50 dark:bg-emerald-950/30'>
@@ -103,7 +98,7 @@ export function AboutPreview () {
         </div>
 
         {/* Right column */}
-        <aside ref={rightRef} className='space-y-6'>
+        <aside ref={rightRef} className='mx-auto w-full max-w-2xl space-y-6'>
           <WhyPartnerCodeCard
             approach={whyPartnerWithMe}
             philosophy={workPhilosophy}

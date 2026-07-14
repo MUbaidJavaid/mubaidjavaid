@@ -9,7 +9,6 @@ import { LogoStrip } from '@/components/sections/LogoStrip'
 import { ProcessSection } from '@/components/sections/ProcessSection'
 import { ProofSnapshot } from '@/components/sections/ProofSnapshot'
 import { ServicesPreview } from '@/components/sections/ServicesPreview'
-import { TrustStrip } from '@/components/sections/TrustStrip'
 import { pageMetadata } from '@/lib/seo'
 import type { Metadata } from 'next'
 
@@ -27,7 +26,6 @@ export default function HomePage () {
   return (
     <>
       <HeroSection />
-      <TrustStrip />
       <FeaturedProjects />
       <ProofSnapshot />
 

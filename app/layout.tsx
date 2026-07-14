@@ -12,7 +12,7 @@ import { site } from '@/data/site'
 import { Toaster } from 'sonner'
 import { personJsonLd, websiteJsonLd } from '@/lib/seo'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Manrope } from 'next/font/google'
+import { Inter, Kanit } from 'next/font/google'
 import { Suspense } from 'react'
 import './globals.css'
 
@@ -22,8 +22,9 @@ const inter = Inter({
   display: 'swap'
 })
 
-const manrope = Manrope({
+const kanit = Kanit({
   subsets: ['latin'],
+  weight: ['900'],
   variable: '--font-heading',
   display: 'swap'
 })
@@ -101,7 +102,7 @@ export default function RootLayout ({
   return (
     <html lang='en' suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${manrope.variable} flex min-h-screen flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] font-body lg:pb-0`}
+        className={`${inter.variable} ${kanit.variable} flex min-h-screen flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] font-body lg:pb-0`}
       >
         <script
           dangerouslySetInnerHTML={{ __html: themeInitScript }}

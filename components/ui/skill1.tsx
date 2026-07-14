@@ -1,6 +1,56 @@
 'use client'
 
+import { SectionDisplayTag } from '@/components/ui/SectionDisplayTag'
 import { useEffect, useRef } from 'react'
+
+const TAG_LOGO: Record<string, string> = {
+  React: '/logos/react.svg',
+  'Next.js': '/logos/nextjs.svg',
+  TypeScript: '/logos/typescript.svg',
+  'Tailwind CSS': '/logos/tailwind.svg',
+  JavaScript: '/logos/javascript.svg',
+  'Redux Toolkit': '/logos/redux.svg',
+  'Framer Motion': '/logos/framer-motion.svg',
+  'ShadCN UI': '/logos/shadcn.svg',
+  'TanStack Query': '/logos/tanstack-query.svg',
+  'React Hook Form': '/logos/react-hook-form.svg',
+  'Material UI': '/logos/material-ui.svg',
+  EmailJS: '/logos/emailjs.svg',
+  'Payment APIs': '/logos/payment-gateways.svg',
+  SumSub: '/logos/sumsub.svg',
+  'Node.js': '/logos/nodejs.svg',
+  'Express.js': '/logos/express.svg',
+  'JWT Auth': '/logos/jwt.svg',
+  Redis: '/logos/redis.svg',
+  Webhooks: '/logos/webhooks.svg',
+  MongoDB: '/logos/mongodb.svg',
+  PostgreSQL: '/logos/postgresql.svg',
+  MySQL: '/logos/mysql.svg',
+  SQL: '/logos/sql.svg',
+  Git: '/logos/git.svg',
+  GitHub: '/logos/github.svg',
+  'VS Code': '/logos/vscode.svg',
+  Postman: '/logos/postman.svg',
+  Docker: '/logos/docker.svg',
+  Vercel: '/logos/vercel.svg',
+  Netlify: '/logos/netlify.svg',
+  Render: '/logos/render.svg'
+}
+
+function renderLogoRow (tags: string[]) {
+  const logos = tags.filter(tag => TAG_LOGO[tag])
+  if (logos.length === 0) return ''
+
+  return logos
+    .map(
+      tag => `
+        <div title="${tag}" style="width:44px;height:44px;border-radius:12px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 14px rgba(15,23,42,.18)">
+          <img src="${TAG_LOGO[tag]}" alt="${tag}" width="44" height="44" style="display:block;width:100%;height:100%;object-fit:cover" />
+        </div>
+      `
+    )
+    .join('')
+}
 
 const CATS = [
   {
@@ -121,12 +171,7 @@ export function TechStackSection1 () {
         blobCount.textContent = cat.tags.length + ' tools'
         ttHead.textContent = cat.name
         ttHead.style.color = cat.color
-        ttTags.innerHTML = cat.tags
-          .map(
-            t =>
-              `<span style="font-family:DM Mono,monospace;font-size:.62rem;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.1);display:inline-block">${t}</span>`
-          )
-          .join(' ')
+        ttTags.innerHTML = `<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center">${renderLogoRow(cat.tags)}</div>`
         tooltip.style.opacity = '1'
         div.style.transform = 'translate(-50%,-50%) scale(1.12)'
         // highlight tags
@@ -221,137 +266,134 @@ export function TechStackSection1 () {
         @keyframes floatTag{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
         @keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.35)}70%{box-shadow:0 0 0 6px transparent}}
       `}</style>
-
-      <div
-        ref={stageRef}
-        className='container-wide relative min-h-[480px] min-[400px]:min-h-[520px] sm:h-[560px] md:h-[600px] lg:h-[620px] overflow-hidden'
-      >
-        {/* Subtle dot grid */}
-        <div
-          className='pointer-events-none absolute inset-0'
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, rgba(15,23,42,.06) 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-            maskImage:
-              'radial-gradient(ellipse 85% 85% at 50% 50%, black, transparent 75%)'
-          }}
-        />
-
-        {/* Soft mesh gradient */}
-        <div
-          className='pointer-events-none absolute inset-0'
-          style={{
-            background: `
-              radial-gradient(ellipse 55% 45% at 25% 45%, rgba(40,114,161,.06) 0%, transparent 65%),
-              radial-gradient(ellipse 45% 55% at 75% 55%, rgba(15,23,42,.04) 0%, transparent 65%)
-            `
-          }}
-        />
-
-        {/* Header - responsive typography */}
-        <div className='absolute left-5 top-0 z-30 '>
-          <p className='section-label mb-1.5 sm:mb-2'>Tech Stack</p>
-          <h2 className='section-heading text-2xl sm:text-3xl lg:text-4xl'>
-            Skills in <span className='section-heading-accent'>Motion</span>
-          </h2>
-          <p className='max-w-2xl text-base leading-[1.8] text-body sm:text-[1.05rem]'>
+      <div className='container-wide'>
+        <div className='section-header mb-8 md:mb-10'>
+          <SectionDisplayTag tag='Skill' pattern='terminal' />
+          <p className='section-lead'>
             Hover categories to explore tools by domain.
           </p>
         </div>
 
-        {/* Center morphing blob - responsive size */}
         <div
-          className='pointer-events-none absolute left-1/2 top-[calc(50%-20px)] z-10 w-[130px] -translate-x-1/2 -translate-y-1/2 xs:w-[150px] xs:top-[calc(50%-25px)] sm:w-[170px] sm:top-[calc(50%-30px)] md:w-[190px] lg:w-[200px]'
-          style={{ aspectRatio: '1' }}
+          ref={stageRef}
+          className='relative min-h-[480px] min-[400px]:min-h-[520px] sm:h-[560px] md:h-[600px] lg:h-[720px] overflow-visible'
         >
+          {/* Subtle dot grid */}
           <div
-            className='absolute -inset-3 rounded-full border border-dashed border-primary/90 xs:-inset-4 sm:-inset-20'
-            style={{ animation: 'spinR 20s linear infinite' }}
-          />
-          <div
-            className='absolute -inset-1 rounded-full border border-primary/60 min-[400px]:-inset-8.5'
-            style={{ animation: 'spinL 12s linear infinite' }}
-          />
-          <div
-            className='absolute inset-0 flex flex-col items-center justify-center gap-0.5'
+            className='pointer-events-none absolute inset-0'
             style={{
-              background:
-                'linear-gradient(145deg, #0F172A 0%, #1e3a5f 45%, #2872A1 100%)',
-              borderRadius: '60% 40% 55% 45% / 45% 55% 40% 60%',
-              animation: 'morphBlob 8s ease-in-out infinite',
-              boxShadow:
-                '0 0 0 1px rgba(255,255,255,.06), 0 0 0 8px rgba(40,114,161,.05), 0 0 0 16px rgba(40,114,161,.02), 0 12px 40px -8px rgba(15,23,42,.2)'
+              backgroundImage:
+                'radial-gradient(circle, rgba(15,23,42,.06) 1px, transparent 1px)',
+              backgroundSize: '40px 40px',
+              maskImage:
+                'radial-gradient(ellipse 85% 85% at 50% 50%, black, transparent 75%)'
+            }}
+          />
+
+          {/* Soft mesh gradient */}
+          <div
+            className='pointer-events-none absolute inset-0'
+            style={{
+              background: `
+              radial-gradient(ellipse 55% 45% at 25% 45%, rgba(40,114,161,.06) 0%, transparent 65%),
+              radial-gradient(ellipse 45% 55% at 75% 55%, rgba(15,23,42,.04) 0%, transparent 65%)
+            `
+            }}
+          />
+
+          {/* Center morphing blob - responsive size */}
+          <div
+            className='pointer-events-none absolute left-1/2 top-[calc(50%-20px)] z-10 w-[130px] -translate-x-1/2 -translate-y-1/2 xs:w-[150px] xs:top-[calc(50%-25px)] sm:w-[170px] sm:top-[calc(50%-30px)] md:w-[190px] lg:w-[200px]'
+            style={{ aspectRatio: '1' }}
+          >
+            <div
+              className='absolute -inset-3 rounded-full border border-dashed border-primary/90 xs:-inset-4 sm:-inset-20'
+              style={{ animation: 'spinR 20s linear infinite' }}
+            />
+            <div
+              className='absolute -inset-1 rounded-full border border-primary/60 min-[400px]:-inset-8.5'
+              style={{ animation: 'spinL 12s linear infinite' }}
+            />
+            <div
+              className='absolute inset-0 flex flex-col items-center justify-center gap-0.5'
+              style={{
+                background:
+                  'linear-gradient(145deg, #0F172A 0%, #1e3a5f 45%, #2872A1 100%)',
+                borderRadius: '60% 40% 55% 45% / 45% 55% 40% 60%',
+                animation: 'morphBlob 8s ease-in-out infinite',
+                boxShadow:
+                  '0 0 0 1px rgba(255,255,255,.06), 0 0 0 8px rgba(40,114,161,.05), 0 0 0 16px rgba(40,114,161,.02), 0 12px 40px -8px rgba(15,23,42,.2)'
+              }}
+            >
+              <span className='text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-white/50 min-[400px]:text-[0.6rem]'>
+                Full-Stack
+              </span>
+              <span
+                id='blobName'
+                className='text-[0.8rem] font-bold tracking-tight text-white min-[400px]:text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem]'
+              >
+                Developer
+              </span>
+              <span
+                id='blobCount'
+                className='mt-0.5 font-mono text-[0.5rem] tracking-wider text-white/45 min-[400px]:text-[0.55rem] sm:text-[0.6rem]'
+              >
+                40+ tools
+              </span>
+            </div>
+          </div>
+
+          {/* Tooltip - skill logos on hover */}
+          <div
+            id='tooltip'
+            className='pointer-events-none absolute z-40 min-w-[200px] max-w-[92vw] rounded-2xl border border-border/40 bg-white/95 px-3 py-3 shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-slate-950/90 sm:max-w-[520px] sm:px-4 sm:py-3.5'
+            style={{
+              opacity: 0,
+              transform: 'translate(-50%, -115%)',
+              transition: 'opacity 0.2s ease'
             }}
           >
-            <span className='text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-white/50 min-[400px]:text-[0.6rem]'>
-              Full-Stack
-            </span>
-            <span
-              id='blobName'
-              className='text-[0.8rem] font-bold tracking-tight text-white min-[400px]:text-[0.9rem] sm:text-[0.95rem] md:text-[1.05rem]'
-            >
-              Developer
-            </span>
-            <span
-              id='blobCount'
-              className='mt-0.5 font-mono text-[0.5rem] tracking-wider text-white/45 min-[400px]:text-[0.55rem] sm:text-[0.6rem]'
-            >
-              40+ tools
-            </span>
-          </div>
-        </div>
-
-        {/* Tooltip - responsive */}
-        <div
-          id='tooltip'
-          className='pointer-events-none absolute z-40 min-w-[160px] max-w-[90vw] rounded-xl border border-white/10 bg-slate-900/95 px-3 py-2.5 shadow-xl backdrop-blur-sm min-[400px]:min-w-[200px] min-[400px]:max-w-[280px] min-[400px]:px-4 min-[400px]:py-3'
-          style={{
-            opacity: 0,
-            transform: 'translate(-50%, -115%)',
-            transition: 'opacity 0.2s ease'
-          }}
-        >
-          <div
-            id='ttHead'
-            className='mb-1.5 text-[0.6rem] font-bold uppercase tracking-[0.18em] min-[400px]:mb-2 min-[400px]:text-[0.65rem]'
-          />
-          <div
-            id='ttTags'
-            className='flex flex-wrap gap-1 text-[0.58rem] min-[400px]:gap-1.5 min-[400px]:text-[0.62rem]'
-          />
-        </div>
-
-        {/* Stats bar - fully responsive */}
-        <div className='absolute bottom-1 left-1/2 z-30 flex w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 overflow-hidden  backdrop-blur-sm   min-[400px]:w-full '>
-          {[
-            ['40+', 'Tools'],
-            ['5', 'Domains'],
-            ['3+', 'Years'],
-            ['20+', 'Projects']
-          ].map(([n, l], i) => (
             <div
-              key={l}
-              className={`flex-1 px-2 py-2 text-center min-[400px]:px-3 min-[400px]:py-2.5 sm:px-4 sm:py-3 md:px-5 ${
-                i > 0 ? 'border-l border-border/50' : ''
-              }`}
-            >
-              <div className='font-heading text-base font-bold leading-none tracking-tight text-heading min-[400px]:text-lg sm:text-xl'>
-                {n}
-              </div>
-              <div className='mt-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-body/60 min-[400px]:mt-1 min-[400px]:text-[0.65rem] min-[400px]:tracking-[0.16em]'>
-                {l}
-              </div>
-            </div>
-          ))}
-          <div className='flex items-center gap-1.5 border-l border-border/50 px-2 py-2 min-[400px]:gap-2 min-[400px]:px-3 min-[400px]:py-2.5 sm:px-4 sm:py-3 md:px-5'>
-            <span
-              className='h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500 min-[400px]:h-2 min-[400px]:w-2'
-              style={{ animation: 'glow 2s ease-in-out infinite' }}
+              id='ttHead'
+              className='mb-2 text-center text-[0.6rem] font-bold uppercase tracking-[0.18em] text-body/55 min-[400px]:text-[0.65rem]'
             />
-            <span className='whitespace-nowrap text-[0.65rem] font-semibold text-body/70 min-[400px]:text-[0.7rem]'>
-              Available now
-            </span>
+            <div
+              id='ttTags'
+              className='flex flex-wrap items-center justify-center gap-2.5 min-[400px]:gap-3'
+            />
+          </div>
+
+          {/* Stats bar - fully responsive */}
+          <div className='absolute bottom-1 left-1/2 z-30 flex w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 overflow-hidden backdrop-blur-sm min-[400px]:w-full'>
+            {[
+              ['40+', 'Tools'],
+              ['5', 'Domains'],
+              ['3+', 'Years'],
+              ['20+', 'Projects']
+            ].map(([n, l], i) => (
+              <div
+                key={l}
+                className={`flex-1 px-2 py-2 text-center min-[400px]:px-3 min-[400px]:py-2.5 sm:px-4 sm:py-3 md:px-5 ${
+                  i > 0 ? 'border-l border-border/50' : ''
+                }`}
+              >
+                <div className='font-heading text-xl font-bold leading-none tracking-tight text-heading min-[400px]:text-2xl sm:text-3xl'>
+                  {n}
+                </div>
+                <div className='mt-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-body/65 min-[400px]:mt-1.5 min-[400px]:text-[0.8rem] min-[400px]:tracking-[0.14em] sm:text-[0.85rem]'>
+                  {l}
+                </div>
+              </div>
+            ))}
+            <div className='flex items-center gap-1.5 border-l border-border/50 px-2 py-2 min-[400px]:gap-2 min-[400px]:px-3 min-[400px]:py-2.5 sm:px-4 sm:py-3 md:px-5'>
+              <span
+                className='h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500 min-[400px]:h-2 min-[400px]:w-2'
+                style={{ animation: 'glow 2s ease-in-out infinite' }}
+              />
+              <span className='whitespace-nowrap text-[0.8rem] font-semibold text-body/75 min-[400px]:text-[0.9rem] sm:text-base'>
+                Available now
+              </span>
+            </div>
           </div>
         </div>
       </div>

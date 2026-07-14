@@ -5,6 +5,7 @@ import {
 import { posts } from '@/data/posts'
 import { projects, type Project } from '@/data/projects'
 import { site } from '@/data/site'
+import { SectionDisplayTag } from '@/components/ui/SectionDisplayTag'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -66,52 +67,39 @@ export function ProofSnapshot () {
 
       <div className='container-wide relative z-10 py-14 lg:py-16'>
         <div className='  md:p-8 lg:p-9'>
-          <div className='grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:items-center lg:gap-10'>
+          <div className='flex flex-col gap-8'>
             {/* Copy column */}
-            <div className='relative flex flex-col justify-center'>
-              <div
-                className='absolute -left-3 top-1 hidden h-[min(100%,8.5rem)] w-px bg-gradient-to-b from-primary/55 via-primary/20 to-transparent lg:block'
-                aria-hidden
+            <div className='section-header'>
+              <SectionDisplayTag
+                id='proof-snapshot-heading'
+                tag='Proof'
+                pattern='brace'
               />
-              <div className='lg:pl-5'>
-                <p className='section-label'>Proof</p>
-                <h2
-                  id='proof-snapshot-heading'
-                  className='section-heading mt-2.5 text-balance text-[1.95rem] leading-[1.12] sm:text-[2.2rem] lg:text-[2.35rem]'
-                >
-                  Built for{' '}
-                  <span className='section-heading-accent'>
-                    reliable delivery
-                  </span>
-                  , not just demos
-                </h2>
-                <p className='mt-4 max-w-md text-sm leading-[1.8] text-body/85 md:max-w-lg'>
-                  I document how systems are structured, how trade-offs were
-                  made, and what shipped. Public code and deep-dive writing are
-                  how you verify substance before we ever get on a call.
-                </p>
-                <div className='mt-6 flex flex-wrap gap-2.5'>
-                  <Link
-                    href='/projects'
-                    className='inline-flex items-center gap-2  bg-[#0F172A] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_12px_rgba(30, 43, 75, 0.18)] transition-all duration-200  hover:bg-[#1e293b]'
-                  >
-                    Review case studies
-                    <ArrowUpRight className='h-4 w-4 opacity-90' aria-hidden />
-                  </Link>
-                  <Link
-                    href='/blog'
-                    className='inline-flex items-center gap-2 border border-border/90 surface-panel px-5 py-2.5 text-sm font-semibold text-heading shadow-sm transition-all hover:border-primary/35 hover:text-primary dark:border-border/50'
-                  >
-                    Read the blog
-                    <ArrowUpRight className='h-4 w-4' aria-hidden />
-                  </Link>
-                </div>
-              </div>
+              <p className='section-lead text-body/85'>
+                Case studies, code, and writing — verify the work before we talk.
+              </p>
             </div>
 
             {/* Rotating proof cards */}
-            <div className='flex items-center justify-center overflow-visible px-2 py-4 lg:justify-end'>
+            <div className='flex items-center justify-center overflow-visible px-2 py-6'>
               <ProofRotatingCards stats={stats} />
+            </div>
+
+            <div className='flex flex-wrap justify-center gap-2.5'>
+              <Link
+                href='/projects'
+                className='inline-flex items-center gap-2 bg-[#0F172A] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_12px_rgba(30,43,75,0.18)] transition-all duration-200 hover:bg-[#1e293b]'
+              >
+                Review case studies
+                <ArrowUpRight className='h-4 w-4 opacity-90' aria-hidden />
+              </Link>
+              <Link
+                href='/blog'
+                className='inline-flex items-center gap-2 border border-border/90 surface-panel px-5 py-2.5 text-sm font-semibold text-heading shadow-sm transition-all hover:border-primary/35 hover:text-primary dark:border-border/50'
+              >
+                Read the blog
+                <ArrowUpRight className='h-4 w-4' aria-hidden />
+              </Link>
             </div>
           </div>
 
@@ -123,7 +111,7 @@ export function ProofSnapshot () {
                   className='hidden w-1 shrink-0 self-stretch rounded-full bg-gradient-to-b from-primary to-primary/40 sm:block'
                   aria-hidden
                 />
-                <p className='text-sm leading-relaxed text-body/85'>
+                <p className='section-copy leading-relaxed text-body/85'>
                   <span className='font-semibold text-heading'>
                     Source code:{' '}
                   </span>

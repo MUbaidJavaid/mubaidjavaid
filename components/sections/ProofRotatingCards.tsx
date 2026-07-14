@@ -46,7 +46,7 @@ export function ProofRotatingCards ({ stats }: ProofRotatingCardsProps) {
               <div className={styles.content}>
                 <span aria-hidden>{ghost}</span>
                 <div className={styles.contentIcon} aria-hidden>
-                  <Icon strokeWidth={2} className='h-8 w-8' />
+                  <Icon strokeWidth={2} className='h-9 w-9' />
                 </div>
                 <p className={styles.contentValue}>{stat.value}</p>
                 <p className={styles.contentLabel}>{stat.label}</p>
