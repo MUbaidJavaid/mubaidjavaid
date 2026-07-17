@@ -38,7 +38,7 @@ export function SiteHeader () {
           <span className='inline-flex h-9 shrink-0 items-center justify-center bg-[linear-gradient(140deg,#246b96,hsl(202_64%_27%))] px-2.5 font-mono text-sm font-bold text-white shadow-card ring-1 ring-white/15'>
             {'>_'}
           </span>
-          <span className='truncate font-mono text-[22px] font-bold tracking-tight text-primary'>
+          <span className='truncate font-mono text-[28px] font-black tracking-tight text-primary'>
             {'UBAID.DEV'}
           </span>
         </Link>

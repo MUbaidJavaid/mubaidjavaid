@@ -1,6 +1,6 @@
 .proofWrap {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: var(--w-wrap-card);
   height: var(--h-wrap);
   display: flex;
@@ -14,59 +14,20 @@
   --t-card: calc(var(--insetX-card) * 1.15);
   --w-wrap-card: calc(var(--w-card) * 2);
   --h-wrap: calc(var(--h-card) + var(--t-card) + 12px);
-  transition:
-    transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
-    width 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
-    height 0.45s cubic-bezier(0.34, 1.2, 0.64, 1);
-  transform-origin: center center;
 }
 
-.proofWrap:hover {
-  overflow: visible;
-  --w-wrap-card: calc(var(--w-card) * 2.65);
-  --h-wrap: calc(var(--h-card) + 20px);
-  transform: scale(1.04);
-}
-
-.proofWrap:hover .card {
-  animation-play-state: paused;
-  transition:
-    top 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
-    left 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
-    right 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
-    transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
-    z-index 0s;
-}
-
-/* Hover: fan out — full card faces visible, no clipping */
-.proofWrap:hover .card:nth-child(1) {
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: auto;
-  transform: rotate(calc(var(--rotate-card) * -0.65));
-}
-
-.proofWrap:hover .card:nth-child(2) {
-  z-index: 3;
-  top: 0;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%) rotate(0deg);
-}
-
-.proofWrap:hover .card:nth-child(3) {
-  z-index: 2;
-  top: 0;
-  left: auto;
-  right: 0;
-  transform: rotate(calc(var(--rotate-card) * 0.65));
-}
-
+/* Pause rotation; do not fan out or resize the wrap */
+.proofWrap:hover .card,
 .proofWrap:hover .content > span,
 .proofWrap:hover .contentIcon {
   animation-play-state: paused;
-  opacity: 0;
+}
+
+/* Hovered card zooms in place (CSS scale ≠ transform, keeps rotate/position) */
+.card:hover,
+.card:focus-visible {
+  scale: 1.07;
+  z-index: 10 !important;
 }
 
 .content {
@@ -206,6 +167,8 @@
   left: var(--l1);
   right: var(--r1);
   transform: var(--trans1);
+  scale: 1;
+  transition: scale 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   box-shadow:
     0 18px 40px -18px rgba(15, 23, 42, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.22);
@@ -426,8 +389,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .proofWrap:hover {
-    transform: none;
+  .card:hover,
+  .card:focus-visible {
+    scale: 1.03;
   }
 
   .card {
@@ -466,10 +430,6 @@
     --w-card: 200px;
     --h-card: 260px;
     --insetX-card: 30px;
-  }
-
-  .proofWrap:hover {
-    --w-wrap-card: calc(var(--w-card) * 2.35);
   }
 
   .contentLabel,

@@ -16,6 +16,13 @@ const STACK = [
   'TypeScript'
 ] as const
 
+const TRUST_ITEMS = [
+  'MERN Stack + Next.js',
+  'End-to-End Product Delivery',
+  'Business-Focused Engineering',
+  'Scalable Architecture'
+] as const
+
 export function HeroSection () {
   const reduce = useReducedMotion()
 
@@ -216,31 +223,62 @@ export function HeroSection () {
 
         {/* ── Trust strip ── */}
         <motion.div
-          className='mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-3 border-t border-border/50 pt-5 sm:mt-14 sm:gap-x-4 sm:pt-6'
-          initial={reduce ? false : { opacity: 0, y: 6 }}
+          className='mt-12 w-full max-w-5xl sm:mt-16'
+          initial={reduce ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.46 }}
-          role='list'
-          aria-label='Core strengths'
+          transition={{ duration: 0.55, delay: 0.46 }}
         >
-          {[
-            'MERN Stack + Next.js',
-            'End-to-End Product Delivery',
-            'Business-Focused Engineering',
-            'Scalable Architecture'
-          ].map(item => (
-            <span
-              key={item}
-              role='listitem'
-              className='inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/75 px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-body/68 shadow-sm backdrop-blur-sm transition-colors duration-200 hover:border-primary/25 hover:text-primary dark:border-border/50 dark:bg-slate-900/60 dark:hover:border-primary/35'
-            >
-              <span
-                className='h-1.5 w-1.5 rounded-full bg-primary/35'
-                aria-hidden
-              />
-              {item}
+          <div className='mx-auto mb-6 flex items-center justify-center gap-3 sm:mb-8' aria-hidden>
+            <span className='h-px w-10 bg-gradient-to-r from-transparent to-border/80 sm:w-14' />
+            <span className='font-mono text-[9px] font-bold uppercase tracking-[0.28em] text-primary/55'>
+              Focus
             </span>
-          ))}
+            <span className='h-px w-10 bg-gradient-to-l from-transparent to-border/80 sm:w-14' />
+          </div>
+
+          <ul
+            className='grid grid-cols-2 sm:grid-cols-4'
+            aria-label='Core strengths'
+          >
+            {TRUST_ITEMS.map((item, index) => (
+              <li
+                key={item}
+                className='group relative flex flex-col items-center px-3 py-4 text-center sm:px-5 sm:py-1'
+              >
+                {/* Desktop vertical rules between columns */}
+                {index > 0 && (
+                  <span
+                    className='pointer-events-none absolute left-0 top-1/2 hidden h-10 w-px -translate-y-1/2 bg-border/55 sm:block'
+                    aria-hidden
+                  />
+                )}
+                {/* Mobile horizontal rules under top row */}
+                {index < 2 && (
+                  <span
+                    className='pointer-events-none absolute inset-x-4 bottom-0 h-px bg-border/45 sm:hidden'
+                    aria-hidden
+                  />
+                )}
+                {index % 2 === 1 && (
+                  <span
+                    className='pointer-events-none absolute left-0 top-3 bottom-3 w-px bg-border/45 sm:hidden'
+                    aria-hidden
+                  />
+                )}
+
+                <span className='mb-2.5 font-mono text-[10px] font-bold tabular-nums tracking-[0.2em] text-primary/50 transition-colors duration-300 group-hover:text-primary'>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <span className='max-w-[16ch] text-balance text-[11px] font-semibold uppercase leading-[1.45] tracking-[0.1em] text-body/70 transition-colors duration-300 group-hover:text-heading sm:max-w-[18ch] sm:text-[11.5px]'>
+                  {item}
+                </span>
+                <span
+                  className='mt-3 h-0.5 w-0 rounded-full bg-primary/50 transition-all duration-300 ease-out group-hover:w-8'
+                  aria-hidden
+                />
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
 

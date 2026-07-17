@@ -5,7 +5,6 @@ import { ContactCTA } from '@/components/sections/ContactCTA'
 import { ExperienceSnapshot } from '@/components/sections/ExperienceSnapshot'
 import { FeaturedProjects } from '@/components/sections/FeaturedProjects'
 import { HeroSection } from '@/components/sections/HeroSection'
-import { LogoStrip } from '@/components/sections/LogoStrip'
 import { ProcessSection } from '@/components/sections/ProcessSection'
 import { ProofSnapshot } from '@/components/sections/ProofSnapshot'
 import { ServicesPreview } from '@/components/sections/ServicesPreview'
@@ -33,7 +32,6 @@ export default function HomePage () {
       <ExperienceSnapshot />
       <ServicesPreview />
       <TechStackSectionDynamic />
-      <LogoStrip />
       <ProcessSection />
       <BlogPreviewSection />
       <ContactCTA />

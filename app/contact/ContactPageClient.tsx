@@ -209,6 +209,7 @@ export function ContactPageClient () {
     <>
       <PageHeroHeader
         subtitle='Contact'
+        tagPattern='terminal'
         title={
           <>
             Let&apos;s turn your scope into{' '}

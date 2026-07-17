@@ -1,20 +1,27 @@
 'use client'
 
 import { HeroCodeDecor } from '@/components/hero/HeroCodeDecor'
+import {
+  SectionDisplayTag,
+  type SectionDisplayPattern
+} from '@/components/ui/SectionDisplayTag'
 import { motion, useReducedMotion } from 'framer-motion'
 
 interface PageHeroHeaderProps {
   title: string | React.ReactNode
-  subtitle?: string | React.ReactNode
+  subtitle?: string
   description?: string | React.ReactNode
   children?: React.ReactNode
+  /** Code-style frame around the page label — defaults to [BRACKETS] */
+  tagPattern?: SectionDisplayPattern
 }
 
 export function PageHeroHeader ({
   title,
   subtitle,
   description,
-  children
+  children,
+  tagPattern = 'bracket'
 }: PageHeroHeaderProps) {
   const reduce = useReducedMotion()
 
@@ -69,28 +76,31 @@ export function PageHeroHeader ({
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className='mx-auto flex w-full min-w-0 max-w-4xl flex-col items-center space-y-4 text-center md:space-y-6'
         >
-          {/* Kicker/Label */}
-          {subtitle && (
-            <motion.p
-              className='text-xs font-semibold uppercase tracking-[0.22em]'
-              style={{ color: '#256e99' }}
+          {/* Mega bold page label — same weight as home section tags */}
+          {subtitle ? (
+            <motion.div
               initial={reduce ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className='w-full'
             >
-              {subtitle}
-            </motion.p>
-          )}
+              <SectionDisplayTag
+                as='h1'
+                tag={subtitle}
+                pattern={tagPattern}
+              />
+            </motion.div>
+          ) : null}
 
-          {/* Main heading */}
-          <motion.h1
-            className='text-fluid-display font-heading font-black leading-none tracking-[-0.03em] text-[rgb(12,12,12)] dark:text-heading'
+          {/* Supporting line — smaller / lighter */}
+          <motion.p
+            className='text-fluid-xl font-heading font-semibold leading-[1.2] tracking-[-0.02em] text-[rgb(12,12,12)] dark:text-heading'
             initial={reduce ? false : { opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
             {title}
-          </motion.h1>
+          </motion.p>
 
           {/* Description */}
           {description && (

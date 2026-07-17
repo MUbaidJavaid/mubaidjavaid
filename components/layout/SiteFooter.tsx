@@ -5,20 +5,35 @@ import Link from 'next/link'
 export function SiteFooter () {
   return (
     <footer className='section-anchor relative overflow-hidden surface-muted'>
-      {/* Large background name - hidden on mobile, visible from sm and up */}
+      {/* Background outline wordmark — full footer width */}
       <div
-        className='pointer-events-none absolute inset-0 hidden items-center justify-center overflow-visible px-4 py-8 select-none sm:flex sm:px-6'
+        className='pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden select-none'
         aria-hidden
       >
-        <span
-          className='whitespace-nowrap font-heading font-extrabold leading-none tracking-tighter text-slate-300/[0.07] dark:text-slate-500/[0.08]'
-          style={{
-            letterSpacing: '-0.02em',
-            fontSize: 'clamp(11.68rem, min(22vw, 12vh), 13rem)'
-          }}
+        <svg
+          viewBox='0 0 1000 320'
+          className='h-[72%] min-h-[7.5rem] w-[112%] max-w-none text-heading/[0.11] dark:text-slate-100/[0.12] sm:h-[85%] sm:w-full'
+          preserveAspectRatio='none'
         >
-          {site.name}
-        </span>
+          <text
+            x='500'
+            y='255'
+            textAnchor='middle'
+            textLength='960'
+            lengthAdjust='spacingAndGlyphs'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='1.75'
+            style={{
+              fontFamily: 'var(--font-heading), system-ui, sans-serif',
+              fontWeight: 900,
+              fontSize: '290px',
+              letterSpacing: '-0.04em'
+            }}
+          >
+            UBAID
+          </text>
+        </svg>
       </div>
 
       {/* Availability CTA row */}
@@ -44,8 +59,9 @@ export function SiteFooter () {
       {/* Main footer grid */}
       <div className='container-wide relative z-10 grid gap-7 py-10 md:grid-cols-[1.6fr_1fr_1fr]'>
         <div className='space-y-3'>
-          <p className='font-heading text-lg font-semibold text-heading'>
-            {site.name}
+          <p className='font-mono text-xl font-black tracking-tight text-heading sm:text-2xl'>
+            <span className='text-primary'>{'>_'}</span>
+            UBAID.DEV
           </p>
           <p className='text-[0.69rem] font-semibold uppercase tracking-[0.14em] text-primary'>
             Full-Stack Developer · MERN Stack · Next.js

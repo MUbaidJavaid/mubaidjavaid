@@ -75,6 +75,7 @@ export default function BlogPage () {
 
       <PageHeroHeader
         subtitle='Blog'
+        tagPattern='scope'
         title={
           <>
             Engineering articles on{' '}

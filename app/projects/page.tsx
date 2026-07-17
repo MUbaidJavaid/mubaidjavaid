@@ -30,6 +30,7 @@ export default function ProjectsPage () {
     <>
       <PageHeroHeader
         subtitle='Projects'
+        tagPattern='bracket'
         title={
           <>
             Project <span style={{ color: '#256e99' }}>portfolio</span> with

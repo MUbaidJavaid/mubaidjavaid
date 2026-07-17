@@ -20,6 +20,7 @@ export default function ServicesPage () {
     <>
       <PageHeroHeader
         subtitle='Services'
+        tagPattern='angle'
         title={
           <>
             Development support built for real{' '}

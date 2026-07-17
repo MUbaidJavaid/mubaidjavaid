@@ -226,8 +226,12 @@
     @apply font-heading text-heading tracking-tight;
   }
 
-  /* Main titles (h1) stay black; other section headings match service-style caps */
+  /* Page titles stay medium-bold; home hero + section display tags opt into heavier weight */
   h1 {
+    @apply font-semibold;
+  }
+
+  h1.section-display-tag {
     @apply font-black;
   }
   h2,
@@ -427,7 +431,7 @@
   }
 
   .section-heading {
-    @apply font-heading font-black text-balance text-[rgb(12,12,12)] dark:text-heading;
+    @apply font-heading font-semibold text-balance text-[rgb(12,12,12)] dark:text-heading;
     font-size: var(--fluid-text-3xl);
     line-height: 1.08;
     letter-spacing: -0.025em;

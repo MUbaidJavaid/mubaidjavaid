@@ -25,7 +25,7 @@ type ProofRotatingCardsProps = {
   stats: ProofStat[]
 }
 
-/** Rotating proof cards — pauses + zooms on hover; brand gradients. */
+/** Rotating proof cards — pause in place + slight zoom on hover. */
 export function ProofRotatingCards ({ stats }: ProofRotatingCardsProps) {
   const items = stats.slice(0, 3)
 

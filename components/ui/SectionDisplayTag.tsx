@@ -18,6 +18,7 @@ type SectionDisplayTagProps = {
   variant?: 'default' | 'light'
   className?: string
   id?: string
+  as?: 'h1' | 'h2' | 'p'
 }
 
 function normalizeTag (tag: string) {
@@ -30,7 +31,8 @@ export function SectionDisplayTag ({
   pattern = 'jsx',
   variant = 'default',
   className,
-  id
+  id,
+  as: Tag = 'h2'
 }: SectionDisplayTagProps) {
   const label = normalizeTag(tag)
   const isCompact = label.length > 9
@@ -161,7 +163,7 @@ export function SectionDisplayTag ({
   }
 
   return (
-    <h2
+    <Tag
       id={id}
       className={cn(
         'section-display-tag',
@@ -171,6 +173,6 @@ export function SectionDisplayTag ({
       aria-label={tag}
     >
       {renderPattern()}
-    </h2>
+    </Tag>
   )
 }

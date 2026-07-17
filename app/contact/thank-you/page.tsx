@@ -20,7 +20,8 @@ export default function ContactThankYouPage () {
   return (
     <>
       <PageHeroHeader
-        subtitle='Message received'
+        subtitle='Thanks'
+        tagPattern='brace'
         title={
           <>
             Thank you{' '}
