@@ -1,0 +1,36 @@
+<svg width="528" height="320" viewBox="0 0 528 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .h { font-family: Helvetica Neue, Arial, sans-serif; }
+      .kicker { font-size: 10.5px; fill: #5B6172; letter-spacing: 1.5px; }
+      .title { font-size: 18px; font-weight: 600; fill: #F4F5F7; }
+      .label { font-size: 10px; fill: #5B5BD6; letter-spacing: 1.5px; }
+      .body { font-size: 12px; fill: #A9AFBC; }
+      .stack { font-size: 11.5px; fill: #7C8494; }
+      .impact { font-size: 12.5px; fill: #4FD1C5; }
+    </style>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="527" height="319" rx="14" fill="#0D0F14" stroke="#FFFFFF" stroke-opacity="0.07"/>
+  <rect x="0" y="0" width="4" height="320" rx="2" fill="#5B5BD6"/>
+
+  <text x="28" y="34" class="h kicker">02 / 04</text>
+  <text x="28" y="62" class="h title">Multi-Tenant Auth Service</text>
+  <line x1="28" y1="76" x2="500" y2="76" stroke="#FFFFFF" stroke-opacity="0.06"/>
+
+  <text x="28" y="100" class="h label">PROBLEM</text>
+  <text x="28" y="120" class="h body">A shared platform needed per-organization data isolation</text>
+  <text x="28" y="136" class="h body">and role-based access without per-tenant databases.</text>
+
+  <text x="28" y="164" class="h label">SOLUTION</text>
+  <text x="28" y="184" class="h body">JWTs scoped to tenant + role, refresh tokens rotated and</text>
+  <text x="28" y="200" class="h body">stored hashed in Redis, and middleware that injects tenant</text>
+  <text x="28" y="216" class="h body">context into every downstream query automatically.</text>
+
+  <text x="28" y="244" class="h label">STACK</text>
+  <text x="28" y="264" class="h stack">Node.js &#183; Express &#183; MongoDB &#183; Redis &#183; TypeScript</text>
+
+  <line x1="28" y1="280" x2="500" y2="280" stroke="#FFFFFF" stroke-opacity="0.06"/>
+  <circle cx="34" cy="298" r="3" fill="#4FD1C5"/>
+  <text x="46" y="302" class="h impact">New tenants onboarded with zero schema changes</text>
+</svg>

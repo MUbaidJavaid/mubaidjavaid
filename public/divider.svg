@@ -1,0 +1,23 @@
+<svg width="1200" height="28" viewBox="0 0 1200 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3B6FE0" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#5B5BD6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#4FD1C5" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glowDot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7FA8FF" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7FA8FF" stop-opacity="0"/>
+    </radialGradient>
+    <path id="dividerPath" d="M 0 14 H 1200"/>
+  </defs>
+
+  <rect x="0" y="13" width="1200" height="1" fill="#7C8494" opacity="0.18"/>
+  <rect x="0" y="13" width="1200" height="1.5" fill="url(#lineGrad)"/>
+
+  <circle r="10" fill="url(#glowDot)">
+    <animateMotion dur="4.5s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#dividerPath"/>
+    </animateMotion>
+  </circle>
+</svg>

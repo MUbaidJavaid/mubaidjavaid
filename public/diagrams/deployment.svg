@@ -1,0 +1,64 @@
+<svg width="1100" height="260" viewBox="0 0 1100 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="depBg" x1="0" y1="0" x2="1100" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B0D12"/>
+      <stop offset="100%" stop-color="#0E1016"/>
+    </linearGradient>
+    <radialGradient id="pipeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#5B5BD6" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#5B5BD6" stop-opacity="0"/>
+    </radialGradient>
+    <path id="pipe" d="M120 110 H 1000"/>
+  </defs>
+
+  <rect width="1100" height="260" fill="url(#depBg)" rx="16"/>
+  <rect x="0.5" y="0.5" width="1099" height="259" rx="16" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
+  <text x="30" y="40" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#7C8494" letter-spacing="2">DEPLOYMENT PIPELINE</text>
+
+  <line x1="120" y1="110" x2="1000" y2="110" stroke="#3B6FE0" stroke-opacity="0.25" stroke-width="1.4"/>
+
+  <g font-family="Helvetica Neue, Arial, sans-serif" font-size="12" fill="#E7E9EE" text-anchor="middle">
+    <g transform="translate(60,86)">
+      <circle cx="30" cy="24" r="30" fill="#12141B" stroke="#3B6FE0" stroke-width="1.3"/>
+      <text x="30" y="28">Commit</text>
+    </g>
+    <g transform="translate(210,86)">
+      <circle cx="30" cy="24" r="30" fill="#12141B" stroke="#3B6FE0" stroke-width="1.3"/>
+      <text x="30" y="28">Lint</text>
+    </g>
+    <g transform="translate(360,86)">
+      <circle cx="30" cy="24" r="30" fill="#12141B" stroke="#3B6FE0" stroke-width="1.3"/>
+      <text x="30" y="28">Test</text>
+    </g>
+    <g transform="translate(510,86)">
+      <circle cx="30" cy="24" r="30" fill="#12141B" stroke="#4FD1C5" stroke-width="1.3" stroke-opacity="0.8"/>
+      <text x="30" y="28">Build</text>
+    </g>
+    <g transform="translate(660,86)">
+      <circle cx="30" cy="24" r="30" fill="#12141B" stroke="#4FD1C5" stroke-width="1.3" stroke-opacity="0.8"/>
+      <text x="30" y="24">Preview</text>
+      <text x="30" y="38" font-size="9.5" fill="#7C8494">deploy</text>
+    </g>
+    <g transform="translate(810,86)">
+      <circle cx="30" cy="24" r="30" fill="#12141B" stroke="#5B5BD6" stroke-width="1.3" stroke-opacity="0.85"/>
+      <text x="30" y="28">Prod</text>
+    </g>
+    <g transform="translate(960,86)">
+      <circle cx="30" cy="24" r="30" fill="#12141B" stroke="#5B5BD6" stroke-width="1.3" stroke-opacity="0.85"/>
+      <text x="30" y="24">Monitor</text>
+      <text x="30" y="38" font-size="9.5" fill="#7C8494">&amp; rollback</text>
+    </g>
+  </g>
+
+  <circle r="5" fill="url(#pipeGlow)">
+    <animateMotion dur="4.5s" repeatCount="indefinite"><mpath href="#pipe"/></animateMotion>
+  </circle>
+  <circle r="5" fill="url(#pipeGlow)" opacity="0.6">
+    <animateMotion dur="4.5s" begin="1.5s" repeatCount="indefinite"><mpath href="#pipe"/></animateMotion>
+  </circle>
+  <circle r="5" fill="url(#pipeGlow)" opacity="0.35">
+    <animateMotion dur="4.5s" begin="3s" repeatCount="indefinite"><mpath href="#pipe"/></animateMotion>
+  </circle>
+
+  <text x="30" y="220" font-family="Helvetica Neue, Arial, sans-serif" font-size="11.5" fill="#5B6172">Every merge to main runs the full suite before a canary deploy; production promotion is gated on health checks, not manual sign-off.</text>
+</svg>
