@@ -383,3 +383,271 @@ Whether you're launching a new product, fixing a broken one, or need a reliable 
 <sub>`© 2024 · M Ubaid Javaid · Full-Stack Developer · Multan, Pakistan`</sub>
 
 </div>
+
+
+
+
+<!--
+  SETUP — replace before publishing:
+  · GitHub username used below: mubaidjavaid  (swap in yours for the stats/trophy embeds)
+  · Contact links in the footer table are placeholders — point them at your real profiles.
+  · Assets live in /assets — everything renders straight from this repo, no external hosting needed.
+-->
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
+  <img src="./assets/hero-dark.svg" alt="M Ubaid Javaid — Full-Stack Software Engineer" width="100%">
+</picture>
+
+</div>
+
+<br>
+
+<div align="center">
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-14161A?style=for-the-badge&logoColor=white)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-14161A?style=for-the-badge&logo=linkedin&logoColor=4FD1C5)](#)
+[![Email](https://img.shields.io/badge/Email-14161A?style=for-the-badge&logo=gmail&logoColor=4FD1C5)](#)
+[![Resume](https://img.shields.io/badge/Resume-14161A?style=for-the-badge&logoColor=white)](#)
+
+</div>
+
+<img src="./assets/divider.svg" width="100%">
+
+## Philosophy
+
+> Software is a liability the moment it ships. The job is to make sure it's a liability worth carrying — readable, testable, and boring in the parts that should be boring.
+
+I build full-stack products end to end: schema design, API contracts, auth, billing, and the UI layer that sits on top of all of it. My interest isn't in using every tool available — it's in choosing the smallest set of tools that solves the problem correctly and stays maintainable eighteen months later.
+
+Three things guide most of my decisions:
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**Correctness before speed**
+Fast software that returns wrong data is worse than slow software that doesn't ship. I optimize the second time, not the first.
+
+</td>
+<td width="33%" valign="top">
+
+**Boundaries over cleverness**
+Clear module boundaries and typed contracts outlast clever one-off abstractions. TypeScript is a design tool, not a linter.
+
+</td>
+<td width="33%" valign="top">
+
+**Operate what you build**
+Code that isn't monitored isn't finished. Logging, alerting, and rollback paths are part of the feature, not an afterthought.
+
+</td>
+</tr>
+</table>
+
+<img src="./assets/divider.svg" width="100%">
+
+## About
+
+I'm a full-stack engineer specializing in the MERN stack, with a focus on the systems that sit underneath a product's surface — authentication, subscription billing, rate-limited APIs, and the data models that have to hold up once real users start writing to them.
+
+Most of my work falls into one of three categories:
+
+- **SaaS foundations** — multi-tenant auth, role-based access, subscription and metered billing, webhooks that don't silently drop events.
+- **API design** — REST services with explicit versioning, input validation at the boundary, and predictable error shapes.
+- **Interface engineering** — React and Next.js front ends where state management and data-fetching strategy are decided before the first component is written, not after the third refactor.
+
+I read incident reports and postmortems from engineering teams the way some people read tech blogs — the failure modes are usually more instructive than the success stories.
+
+<img src="./assets/divider.svg" width="100%">
+
+## Experience
+
+<table>
+<tr>
+<td width="90" valign="top"><b>2024 — Now</b></td>
+<td>
+
+**Full-Stack Engineer — Independent / Contract**
+Design and build SaaS backends and dashboards for early-stage products: authentication systems, Stripe-based billing, and REST APIs consumed by React front ends. Own projects from data model through deployment.
+
+</td>
+</tr>
+<tr>
+<td width="90" valign="top"><b>2022 — 2024</b></td>
+<td>
+
+**Full-Stack Developer — MERN Applications**
+Built and shipped production features across the MERN stack: authentication flows, admin dashboards, and third-party API integrations. Focused on reducing response times and cutting redundant database calls in high-traffic endpoints.
+
+</td>
+</tr>
+<tr>
+<td width="90" valign="top"><b>Earlier</b></td>
+<td>
+
+**Foundations**
+Started with vanilla JavaScript and PHP, moved into React and Node as the ecosystem matured. Spent a disproportionate amount of that time reading source code of libraries I depended on — it remains the fastest way I know to actually understand a tool.
+
+</td>
+</tr>
+</table>
+
+<img src="./assets/divider.svg" width="100%">
+
+## Featured Work
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Metered SaaS Billing Platform
+
+**Problem** — Subscription tiers needed usage-based overage charges without double-billing customers when webhooks arrived out of order or were replayed.
+
+**Solution** — Idempotent webhook ingestion keyed on Stripe event IDs, a reconciliation job that diffs internal usage counters against Stripe's reported totals nightly, and a dead-letter queue for events that fail processing.
+
+**Stack** — Next.js · Node.js · Express · MongoDB · Stripe · Redis
+
+**Impact** — Zero duplicate charges across three billing cycles in production; webhook processing latency held under 400ms at p95.
+
+</td>
+<td width="50%" valign="top">
+
+### Multi-Tenant Auth Service
+
+**Problem** — A shared platform needed per-organization data isolation and role-based permissions without standing up separate databases per tenant.
+
+**Solution** — JWT access tokens scoped to tenant + role, refresh tokens rotated and stored hashed in Redis, and a middleware layer that injects tenant context into every downstream query — no manual `WHERE tenant_id = ?` left to human memory.
+
+**Stack** — Node.js · Express · MongoDB · Redis · TypeScript
+
+**Impact** — Onboarded new tenants without schema changes; eliminated an entire class of cross-tenant data leak bugs by construction.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### Realtime Ops Dashboard
+
+**Problem** — An internal team was checking three separate tools to understand system health, which meant incidents were noticed late.
+
+**Solution** — A single React dashboard aggregating API latency, queue depth, and error rates via a lightweight polling layer, with threshold-based visual alerts instead of a wall of raw numbers.
+
+**Stack** — React · TypeScript · Node.js · REST APIs · Recharts
+
+**Impact** — Cut mean time-to-notice for degraded endpoints from ~20 minutes to under 2.
+
+</td>
+<td width="50%" valign="top">
+
+### Public REST API + Developer Docs
+
+**Problem** — An internal API was being handed to external partners with no versioning strategy or contract guarantees, making every change a coordination fire drill.
+
+**Solution** — Explicit `/v1` versioning, schema validation at the request boundary, consistent error envelopes, and generated documentation kept in sync with the actual route definitions.
+
+**Stack** — Node.js · Express · MongoDB · OpenAPI
+
+**Impact** — Partner integration time dropped from days of back-and-forth to a single afternoon.
+
+</td>
+</tr>
+</table>
+
+<img src="./assets/divider.svg" width="100%">
+
+## Architecture
+
+<div align="center"><img src="./assets/diagrams/architecture.svg" width="100%"></div>
+<br>
+<div align="center"><img src="./assets/diagrams/auth-flow.svg" width="100%"></div>
+<br>
+<div align="center"><img src="./assets/diagrams/deployment.svg" width="100%"></div>
+
+<img src="./assets/divider.svg" width="100%">
+
+## Engineering Principles
+
+- **Types are contracts, not paperwork.** If a shape can be wrong at runtime, it should be impossible at compile time.
+- **A migration you can't reverse isn't a migration.** Every schema change ships with a rollback path before it ships with a feature.
+- **Errors are part of the API.** A 500 with no context is a debugging tax charged to whoever's on call.
+- **Cache invalidation is a design decision, made early.** Not a patch applied after the first stale-data bug report.
+- **Tests describe behavior, not implementation.** A refactor shouldn't break a test suite that the feature itself didn't break.
+
+<img src="./assets/divider.svg" width="100%">
+
+## Tech Stack
+
+<div align="center">
+
+**Languages & Runtime**
+
+![TypeScript](https://img.shields.io/badge/TypeScript-14161A?style=flat-square&logo=typescript&logoColor=3B6FE0)
+![JavaScript](https://img.shields.io/badge/JavaScript-14161A?style=flat-square&logo=javascript&logoColor=4FD1C5)
+![Node.js](https://img.shields.io/badge/Node.js-14161A?style=flat-square&logo=node.js&logoColor=5B5BD6)
+
+**Frontend**
+
+![React](https://img.shields.io/badge/React-14161A?style=flat-square&logo=react&logoColor=3B6FE0)
+![Next.js](https://img.shields.io/badge/Next.js-14161A?style=flat-square&logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-14161A?style=flat-square&logo=tailwindcss&logoColor=4FD1C5)
+
+**Backend & Data**
+
+![Express](https://img.shields.io/badge/Express-14161A?style=flat-square&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-14161A?style=flat-square&logo=mongodb&logoColor=5B5BD6)
+![Redis](https://img.shields.io/badge/Redis-14161A?style=flat-square&logo=redis&logoColor=4FD1C5)
+
+**Platform & Tooling**
+
+![Docker](https://img.shields.io/badge/Docker-14161A?style=flat-square&logo=docker&logoColor=3B6FE0)
+![Vercel](https://img.shields.io/badge/Vercel-14161A?style=flat-square&logo=vercel&logoColor=white)
+![Stripe](https://img.shields.io/badge/Stripe-14161A?style=flat-square&logo=stripe&logoColor=5B5BD6)
+![Git](https://img.shields.io/badge/Git-14161A?style=flat-square&logo=git&logoColor=4FD1C5)
+
+</div>
+
+<img src="./assets/divider.svg" width="100%">
+
+## GitHub Activity
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=mubaidjavaid&show_icons=true&hide_border=true&bg_color=0D0F14&title_color=F4F5F7&text_color=A9AFBC&icon_color=4FD1C5&count_private=true" width="49%">
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mubaidjavaid&layout=compact&hide_border=true&bg_color=0D0F14&title_color=F4F5F7&text_color=A9AFBC&langs_count=8" width="43%">
+
+<img src="https://streak-stats.demolab.com/?user=mubaidjavaid&hide_border=true&background=0D0F14&stroke=0D0F14&ring=3B6FE0&fire=4FD1C5&currStreakLabel=F4F5F7&sideLabels=A9AFBC&dates=5B6172" width="70%">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=mubaidjavaid&custom_title=Contribution%20Activity&bg_color=0D0F14&color=4FD1C5&line=3B6FE0&point=F4F5F7&area=true&hide_border=true" width="90%">
+
+</div>
+
+<img src="./assets/divider.svg" width="100%">
+
+## Current Focus
+
+| | |
+|---|---|
+| **Building** | Usage-based billing patterns that stay correct under webhook replay and network partition |
+| **Deepening** | System design for multi-tenant SaaS at scale — sharding, tenant isolation, and read/write splitting |
+| **Exploring** | Edge runtimes for authentication middleware to cut cold-start latency on serverless deployments |
+| **Reading** | Postmortems and incident retrospectives from infrastructure teams — the failure modes teach faster than the docs |
+
+<img src="./assets/divider.svg" width="100%">
+
+## Get in Touch
+
+<div align="center">
+<img src="./assets/footer-dark.svg" width="100%">
+</div>
+
+<div align="center">
+
+<sub>Designed and built as a single-repo system — every visual above is a real, editable SVG in <code>/assets</code>, not a screenshot.</sub>
+
+</div>
