@@ -389,9 +389,10 @@ Whether you're launching a new product, fixing a broken one, or need a reliable 
 
 <!--
   SETUP — replace before publishing:
-  · GitHub username used below: mubaidjavaid  (swap in yours for the stats/trophy embeds)
-  · Contact links in the footer table are placeholders — point them at your real profiles.
-  · Assets live in /assets — everything renders straight from this repo, no external hosting needed.
+  · GitHub username used below: mubaidjavaid  (swap in yours for the two stat embeds)
+  · Contact links in contact-strip.svg / footer-dark.svg are visual placeholders — wrap them
+    in real <a href> tags around the <img> in this file once you have the URLs.
+  · Everything else renders straight from /assets — no external hosting, no build step.
 -->
 
 <div align="center">
@@ -402,20 +403,17 @@ Whether you're launching a new product, fixing a broken one, or need a reliable 
   <img src="./assets/hero-dark.svg" alt="M Ubaid Javaid — Full-Stack Software Engineer" width="100%">
 </picture>
 
+<br><br>
+
+<img src="./assets/contact-strip.svg" alt="Portfolio · LinkedIn · Email · Resume">
+
 </div>
 
 <br>
 
-<div align="center">
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-14161A?style=for-the-badge&logoColor=white)](#)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-14161A?style=for-the-badge&logo=linkedin&logoColor=4FD1C5)](#)
-[![Email](https://img.shields.io/badge/Email-14161A?style=for-the-badge&logo=gmail&logoColor=4FD1C5)](#)
-[![Resume](https://img.shields.io/badge/Resume-14161A?style=for-the-badge&logoColor=white)](#)
-
-</div>
-
 <img src="./assets/divider.svg" width="100%">
+
+<br>
 
 ## Philosophy
 
@@ -448,7 +446,7 @@ Code that isn't monitored isn't finished. Logging, alerting, and rollback paths 
 </tr>
 </table>
 
-<img src="./assets/divider.svg" width="100%">
+<br>
 
 ## About
 
@@ -462,7 +460,7 @@ Most of my work falls into one of three categories:
 
 I read incident reports and postmortems from engineering teams the way some people read tech blogs — the failure modes are usually more instructive than the success stories.
 
-<img src="./assets/divider.svg" width="100%">
+<br>
 
 ## Experience
 
@@ -496,70 +494,23 @@ Started with vanilla JavaScript and PHP, moved into React and Node as the ecosys
 </tr>
 </table>
 
-<img src="./assets/divider.svg" width="100%">
+<br>
 
-## Featured Work
+<img src="./assets/kicker-work.svg" width="100%">
 
-<table>
-<tr>
-<td width="50%" valign="top">
+<br>
 
-### Metered SaaS Billing Platform
+<div align="center">
+<img src="./assets/cards/card-billing.svg" width="49%">
+<img src="./assets/cards/card-auth.svg" width="49%">
+</div>
+<br>
+<div align="center">
+<img src="./assets/cards/card-dashboard.svg" width="49%">
+<img src="./assets/cards/card-api.svg" width="49%">
+</div>
 
-**Problem** — Subscription tiers needed usage-based overage charges without double-billing customers when webhooks arrived out of order or were replayed.
-
-**Solution** — Idempotent webhook ingestion keyed on Stripe event IDs, a reconciliation job that diffs internal usage counters against Stripe's reported totals nightly, and a dead-letter queue for events that fail processing.
-
-**Stack** — Next.js · Node.js · Express · MongoDB · Stripe · Redis
-
-**Impact** — Zero duplicate charges across three billing cycles in production; webhook processing latency held under 400ms at p95.
-
-</td>
-<td width="50%" valign="top">
-
-### Multi-Tenant Auth Service
-
-**Problem** — A shared platform needed per-organization data isolation and role-based permissions without standing up separate databases per tenant.
-
-**Solution** — JWT access tokens scoped to tenant + role, refresh tokens rotated and stored hashed in Redis, and a middleware layer that injects tenant context into every downstream query — no manual `WHERE tenant_id = ?` left to human memory.
-
-**Stack** — Node.js · Express · MongoDB · Redis · TypeScript
-
-**Impact** — Onboarded new tenants without schema changes; eliminated an entire class of cross-tenant data leak bugs by construction.
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### Realtime Ops Dashboard
-
-**Problem** — An internal team was checking three separate tools to understand system health, which meant incidents were noticed late.
-
-**Solution** — A single React dashboard aggregating API latency, queue depth, and error rates via a lightweight polling layer, with threshold-based visual alerts instead of a wall of raw numbers.
-
-**Stack** — React · TypeScript · Node.js · REST APIs · Recharts
-
-**Impact** — Cut mean time-to-notice for degraded endpoints from ~20 minutes to under 2.
-
-</td>
-<td width="50%" valign="top">
-
-### Public REST API + Developer Docs
-
-**Problem** — An internal API was being handed to external partners with no versioning strategy or contract guarantees, making every change a coordination fire drill.
-
-**Solution** — Explicit `/v1` versioning, schema validation at the request boundary, consistent error envelopes, and generated documentation kept in sync with the actual route definitions.
-
-**Stack** — Node.js · Express · MongoDB · OpenAPI
-
-**Impact** — Partner integration time dropped from days of back-and-forth to a single afternoon.
-
-</td>
-</tr>
-</table>
-
-<img src="./assets/divider.svg" width="100%">
+<br>
 
 ## Architecture
 
@@ -569,7 +520,7 @@ Started with vanilla JavaScript and PHP, moved into React and Node as the ecosys
 <br>
 <div align="center"><img src="./assets/diagrams/deployment.svg" width="100%"></div>
 
-<img src="./assets/divider.svg" width="100%">
+<br>
 
 ## Engineering Principles
 
@@ -579,55 +530,30 @@ Started with vanilla JavaScript and PHP, moved into React and Node as the ecosys
 - **Cache invalidation is a design decision, made early.** Not a patch applied after the first stale-data bug report.
 - **Tests describe behavior, not implementation.** A refactor shouldn't break a test suite that the feature itself didn't break.
 
-<img src="./assets/divider.svg" width="100%">
+<br>
 
-## Tech Stack
+<img src="./assets/kicker-stack.svg" width="100%">
 
-<div align="center">
+<br>
 
-**Languages & Runtime**
+<img src="./assets/stack-strip.svg" width="100%">
 
-![TypeScript](https://img.shields.io/badge/TypeScript-14161A?style=flat-square&logo=typescript&logoColor=3B6FE0)
-![JavaScript](https://img.shields.io/badge/JavaScript-14161A?style=flat-square&logo=javascript&logoColor=4FD1C5)
-![Node.js](https://img.shields.io/badge/Node.js-14161A?style=flat-square&logo=node.js&logoColor=5B5BD6)
+<br><br>
 
-**Frontend**
+<img src="./assets/kicker-signal.svg" width="100%">
 
-![React](https://img.shields.io/badge/React-14161A?style=flat-square&logo=react&logoColor=3B6FE0)
-![Next.js](https://img.shields.io/badge/Next.js-14161A?style=flat-square&logo=next.js&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-14161A?style=flat-square&logo=tailwindcss&logoColor=4FD1C5)
-
-**Backend & Data**
-
-![Express](https://img.shields.io/badge/Express-14161A?style=flat-square&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-14161A?style=flat-square&logo=mongodb&logoColor=5B5BD6)
-![Redis](https://img.shields.io/badge/Redis-14161A?style=flat-square&logo=redis&logoColor=4FD1C5)
-
-**Platform & Tooling**
-
-![Docker](https://img.shields.io/badge/Docker-14161A?style=flat-square&logo=docker&logoColor=3B6FE0)
-![Vercel](https://img.shields.io/badge/Vercel-14161A?style=flat-square&logo=vercel&logoColor=white)
-![Stripe](https://img.shields.io/badge/Stripe-14161A?style=flat-square&logo=stripe&logoColor=5B5BD6)
-![Git](https://img.shields.io/badge/Git-14161A?style=flat-square&logo=git&logoColor=4FD1C5)
-
-</div>
-
-<img src="./assets/divider.svg" width="100%">
-
-## GitHub Activity
+<br>
 
 <div align="center">
 
 <img src="https://github-readme-stats.vercel.app/api?username=mubaidjavaid&show_icons=true&hide_border=true&bg_color=0D0F14&title_color=F4F5F7&text_color=A9AFBC&icon_color=4FD1C5&count_private=true" width="49%">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mubaidjavaid&layout=compact&hide_border=true&bg_color=0D0F14&title_color=F4F5F7&text_color=A9AFBC&langs_count=8" width="43%">
 
-<img src="https://streak-stats.demolab.com/?user=mubaidjavaid&hide_border=true&background=0D0F14&stroke=0D0F14&ring=3B6FE0&fire=4FD1C5&currStreakLabel=F4F5F7&sideLabels=A9AFBC&dates=5B6172" width="70%">
-
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=mubaidjavaid&custom_title=Contribution%20Activity&bg_color=0D0F14&color=4FD1C5&line=3B6FE0&point=F4F5F7&area=true&hide_border=true" width="90%">
 
 </div>
 
-<img src="./assets/divider.svg" width="100%">
+<br>
 
 ## Current Focus
 
@@ -638,16 +564,14 @@ Started with vanilla JavaScript and PHP, moved into React and Node as the ecosys
 | **Exploring** | Edge runtimes for authentication middleware to cut cold-start latency on serverless deployments |
 | **Reading** | Postmortems and incident retrospectives from infrastructure teams — the failure modes teach faster than the docs |
 
-<img src="./assets/divider.svg" width="100%">
+<br>
 
-## Get in Touch
+<img src="./assets/divider.svg" width="100%">
 
 <div align="center">
 <img src="./assets/footer-dark.svg" width="100%">
 </div>
 
 <div align="center">
-
-<sub>Designed and built as a single-repo system — every visual above is a real, editable SVG in <code>/assets</code>, not a screenshot.</sub>
-
+<sub>Every visual above is a real, editable SVG in <code>/assets</code> — no screenshots, no external image hosting.</sub>
 </div>
