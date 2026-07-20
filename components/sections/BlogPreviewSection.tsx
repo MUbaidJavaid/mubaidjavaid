@@ -1,8 +1,11 @@
+'use client'
+
 import { EmptyState } from '@/components/system/EmptyState'
 import { posts } from '@/data/posts'
 import { blogPreview } from '@/data/site'
 import { SectionDisplayTag } from '@/components/ui/SectionDisplayTag'
-import { BookOpen } from 'lucide-react'
+import { motion, useReducedMotion } from 'framer-motion'
+import { ArrowRight, BookOpen } from 'lucide-react'
 import Link from 'next/link'
 
 function formatDate (iso: string) {
@@ -14,44 +17,33 @@ function formatDate (iso: string) {
 }
 
 export function BlogPreviewSection () {
-  const [leadPost, ...supportingPosts] = posts.slice(0, 3)
+  const preview = posts.slice(0, 3)
+  const [leadPost, ...rest] = preview
   const isEmpty = posts.length === 0
+  const reduce = useReducedMotion()
 
   return (
-    <section className='section-anchor relative overflow-hidden surface-page py-20'>
-      <div className='pointer-events-none absolute inset-0'>
-        <div className='absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_0%,rgba(40,114,161,.05),transparent_65%)] dark:bg-[radial-gradient(ellipse_50%_60%_at_100%_0%,rgba(56,189,248,.06),transparent_65%)]' />
-        <div
-          className='absolute inset-0 dark:opacity-[0.45]'
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(15,23,42,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.022) 1px,transparent 1px)',
-            backgroundSize: '44px 44px',
-            maskImage:
-              'radial-gradient(ellipse 90% 80% at 50% 50%,black 0%,transparent 80%)'
-          }}
-        />
-      </div>
+    <section className='section-anchor relative overflow-hidden surface-page py-12 md:py-16'>
+      <div
+        className='pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_0%,hsl(202_61%_42%/0.09),transparent_68%)]'
+        aria-hidden
+      />
 
-      <div className='container-wide relative z-10 space-y-8'>
-        <div className='section-header'>
+      <div className='container-wide relative z-10 space-y-8 md:space-y-10'>
+        <header className='section-header gap-3'>
           <SectionDisplayTag tag={blogPreview.title} pattern='scope' />
-          <p className='section-lead text-body/70'>
-            {blogPreview.description}
-          </p>
+          <p className='section-lead'>{blogPreview.description}</p>
           <Link
             href='/blog'
-            className='group inline-flex items-center gap-2 border border-[#0F172A]/10 bg-white px-5 py-2 text-body-sm font-semibold text-heading shadow-[0_1px_4px_rgba(15,23,42,.05)] transition-all hover:-translate-y-px hover:border-primary/30 hover:text-primary hover:shadow-[0_4px_12px_rgba(15,23,42,.08)] dark:border-border/50 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-primary/40'
+            className='group inline-flex items-center gap-2 border border-border/70 surface-panel px-4 py-2 text-sm font-semibold text-heading transition-colors hover:border-primary/30 hover:text-primary dark:border-border/50'
           >
             View all articles
-            <span className='text-[.68rem] transition-transform group-hover:translate-x-0.5'>
-              →
-            </span>
+            <ArrowRight className='h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5' />
           </Link>
-        </div>
+        </header>
 
         {isEmpty ? (
-          <div className='flex justify-center pt-2'>
+          <div className='flex justify-center'>
             <EmptyState
               icon={BookOpen}
               title='Articles coming soon'
@@ -62,111 +54,137 @@ export function BlogPreviewSection () {
             />
           </div>
         ) : (
-          <div className='flex flex-col gap-4'>
+          <div className='mx-auto grid max-w-5xl gap-4 lg:grid-cols-[1.2fr_0.8fr] lg:gap-0 lg:overflow-hidden lg:border lg:border-border/60 lg:bg-card lg:shadow-[0_18px_44px_-26px_rgba(15,23,42,0.35)] dark:lg:border-border/45 dark:lg:shadow-[0_18px_44px_-26px_rgba(0,0,0,0.55)]'>
+            {/* Featured */}
             {leadPost ? (
-              <Link
-                href={`/blog/${leadPost.slug}`}
-                className='group relative overflow-hidden  border border-white/[.06] bg-gradient-to-br from-[#0F172A] via-[#1B2A3D] to-[#1F5F86] p-7 shadow-[0_8px_40px_rgba(15,23,42,.2)] transition-all duration-200 '
-                aria-label={`Read featured article: ${leadPost.title}`}
+              <motion.div
+                initial={reduce ? false : { opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className='lg:border-r lg:border-border/55 dark:lg:border-border/40'
               >
-                {/* Chunky rounded squares at corner — wide + clipped (half-cut) */}
-                <span
-                  aria-hidden
-                  className='pointer-events-none absolute -right-8 z-0 aspect-square w-[clamp(9rem,22vw,10.75rem)] max-w-none -rotate-[15deg] rounded-[1.35rem] border border-white/22 bg-gradient-to-br from-white/[0.18] via-white/[0.06] to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] dark:from-white/15 max-sm:-top-16 sm:-top-[4.85rem]'
-                />
-                <span
-                  aria-hidden
-                  className='pointer-events-none absolute -right-2 z-0 aspect-square w-[clamp(4rem,9vw,4.75rem)] -rotate-[10deg] rounded-xl border border-[#98C5E0]/28 bg-transparent opacity-[0.85] max-sm:-top-7 sm:-top-5'
-                />
-                <span className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[.04] to-transparent transition-transform duration-700 group-hover:translate-x-full' />
-                <span
-                  aria-hidden
-                  className='pointer-events-none absolute right-4 top-0 z-[1] select-none font-heading text-[5.5rem] font-extrabold leading-none text-white/[.08]'
-                >
-                  01
-                </span>
-
-                <div className='relative z-[2] mb-4 flex flex-wrap items-center gap-2'>
-                  <span className=' border border-[#98C5E0]/40 bg-[#1B4F74]/40 px-2.5 py-1 text-[.62rem] font-bold uppercase tracking-[.1em] text-[#D6EAF6]'>
-                    {leadPost.category}
-                  </span>
-                  <span className='text-[.63rem] text-white/40'>
-                    <time dateTime={leadPost.publishedAt}>
-                      {formatDate(leadPost.publishedAt)}
-                    </time>
-                  </span>
-                  <span className='h-[3px] w-[3px]  bg-white/20' />
-                  <span className='text-[.63rem] text-white/35'>
-                    {leadPost.readTime}
-                  </span>
-                </div>
-
-                <h3 className='text-fluid-lg relative z-[2] mb-3 font-heading !font-semibold uppercase leading-[1.25] tracking-[0.04em] text-white transition-colors group-hover:text-[#DCEAF3]'>
-                  {leadPost.title}
-                </h3>
-                <p className='relative z-[2] mb-2 section-copy text-white/55'>
-                  {leadPost.summary}
-                </p>
-                {leadPost.intro && (
-                  <p className='relative z-[2] text-[.74rem] leading-[1.7] text-white/40'>
-                    {leadPost.intro}
-                  </p>
-                )}
-
-                <span className='relative z-[2] mt-6 inline-flex items-center gap-2 text-[.72rem] font-bold tracking-[.02em] text-[#DCEAF3] transition-all group-hover:gap-3'>
-                  Read featured article
-                  <span className='text-[.65rem]'>→</span>
-                </span>
-              </Link>
-            ) : null}
-
-            <div className='flex flex-col gap-3'>
-              {supportingPosts.map((post, idx) => (
                 <Link
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  className='group relative overflow-hidden border border-[#0F172A]/[.08] surface-panel p-5 shadow-[0_1px_6px_rgba(15,23,42,.04)] transition-all duration-200 hover:border-primary/20 hover:shadow-[0_6px_24px_rgba(15,23,42,.09)] dark:border-border/50 dark:hover:shadow-[0_6px_24px_rgba(0,0,0,0.35)]'
-                  aria-label={`Read article: ${post.title}`}
+                  href={`/blog/${leadPost.slug}`}
+                  className='group relative flex h-full min-h-[280px] flex-col overflow-hidden border border-border/60 bg-[linear-gradient(155deg,#0F172A_0%,#152B40_52%,#1F5F86_100%)] p-6 text-white transition-colors sm:p-7 lg:border-0'
+                  aria-label={`Read featured article: ${leadPost.title}`}
                 >
                   <span
+                    className='pointer-events-none absolute inset-0 opacity-[0.1]'
                     aria-hidden
-                    className='pointer-events-none absolute -right-6 z-0 aspect-square w-[clamp(7.25rem,18vw,8.75rem)] max-w-none -rotate-[14deg] rounded-[1.25rem] border border-[hsl(202_61%_37%_/0.42)] bg-[linear-gradient(148deg,hsl(202_61%_37%_/0.2),transparent_68%)] dark:border-[hsl(188_72%_42%_/0.5)] dark:bg-[linear-gradient(148deg,hsl(202_61%_37%_/0.28),transparent_68%)] max-sm:-top-14 sm:-top-12'
+                    style={{
+                      backgroundImage:
+                        'linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px)',
+                      backgroundSize: '32px 32px'
+                    }}
                   />
                   <span
+                    className='pointer-events-none absolute bottom-2 right-3 select-none font-heading text-[4.5rem] font-black leading-none tracking-tighter text-white/[0.07] sm:text-[5.25rem]'
                     aria-hidden
-                    className='pointer-events-none absolute -right-0.5 z-0 aspect-square w-[clamp(3.35rem,7.5vw,3.85rem)] -rotate-[8deg] rounded-xl border border-[#0F172A]/14 bg-transparent dark:border-white/16 max-sm:-top-6 sm:-top-4'
-                  />
-                  <span className='absolute bottom-[15%] left-0 top-[15%] w-[2.5px] origin-center scale-y-0  bg-primary transition-transform duration-300 ease-[cubic-bezier(.34,1.56,.64,1)] group-hover:scale-y-100' />
-                  <span className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary/[.04] to-transparent transition-transform duration-500 group-hover:translate-x-full' />
-                  <span
-                    aria-hidden
-                    className='pointer-events-none absolute right-3 top-0 z-[1] select-none font-heading text-[3.5rem] font-extrabold leading-none text-[#0F172A]/[.08] dark:text-white/[.10]'
                   >
-                    {String(idx + 2).padStart(2, '0')}
+                    01
                   </span>
 
-                  <div className='relative z-[2] mb-2.5 flex flex-wrap items-center gap-2'>
-                    <span className='border border-[#0F172A]/[.08] bg-[#F8FAFC] px-2.5 py-1 text-[.6rem] font-bold uppercase tracking-[.1em] text-[#334155] dark:border-border/50 dark:bg-slate-900/80 dark:text-slate-300'>
-                      {post.category}
+                  <div className='relative z-[1] flex flex-wrap items-center gap-2'>
+                    <span className='border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white/95'>
+                      Featured
                     </span>
-                    <span className='h-[2px] w-[2px]  bg-[#CBD5E1]' />
-                    <span className='text-[.63rem] text-body/50'>
-                      {post.readTime}
+                    <span className='border border-white/15 bg-black/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#C8E6F5]'>
+                      {leadPost.category}
                     </span>
                   </div>
 
-                  <h3 className='text-fluid-base relative z-[2] mb-1.5 font-heading !font-semibold uppercase leading-[1.3] tracking-[0.04em] text-heading transition-colors group-hover:text-primary'>
-                    {post.title}
+                  <h3 className='relative z-[1] mt-5 font-heading !font-semibold uppercase text-[1.15rem] leading-snug tracking-[0.03em] text-white transition-colors group-hover:text-[#DCEAF3] sm:text-[1.3rem]'>
+                    {leadPost.title}
                   </h3>
-                  <p className='relative z-[2] line-clamp-2 section-copy text-body/55'>
-                    {post.summary}
+
+                  <p className='relative z-[1] mt-3 line-clamp-3 text-[13px] leading-relaxed text-white/65'>
+                    {leadPost.summary}
                   </p>
 
-                  <span className='relative z-[2] mt-3 inline-flex items-center gap-1.5 text-[.68rem] font-bold text-primary transition-all group-hover:gap-2.5'>
-                    Read article <span className='text-[.6rem]'>→</span>
-                  </span>
+                  <div className='relative z-[1] mt-auto flex flex-wrap items-center justify-between gap-3 pt-8'>
+                    <div className='flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-medium text-white/45'>
+                      <time dateTime={leadPost.publishedAt}>
+                        {formatDate(leadPost.publishedAt)}
+                      </time>
+                      <span className='h-px w-3 bg-white/25' aria-hidden />
+                      <span>{leadPost.readTime}</span>
+                    </div>
+                    <span className='inline-flex items-center gap-1.5 text-[12px] font-bold text-[#DCEAF3] transition-all group-hover:gap-2.5'>
+                      Read article
+                      <ArrowRight className='h-3.5 w-3.5' />
+                    </span>
+                  </div>
                 </Link>
-              ))}
+              </motion.div>
+            ) : null}
+
+            {/* Supporting */}
+            <div className='flex flex-col gap-3 lg:gap-0'>
+              {rest.map((post, idx) => {
+                const num = String(idx + 2).padStart(2, '0')
+                const isLast = idx === rest.length - 1
+
+                return (
+                  <motion.div
+                    key={post.slug}
+                    initial={reduce ? false : { opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-30px' }}
+                    transition={{
+                      duration: 0.35,
+                      delay: 0.05 * (idx + 1),
+                      ease: [0.22, 1, 0.36, 1]
+                    }}
+                    className='flex-1'
+                  >
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className={`group relative flex h-full flex-col overflow-hidden border border-border/60 bg-card p-5 transition-colors hover:bg-muted/30 dark:border-border/45 dark:hover:bg-slate-900/40 sm:p-5 lg:border-0 ${
+                        !isLast
+                          ? 'lg:border-b lg:border-border/55 dark:lg:border-border/40'
+                          : ''
+                      }`}
+                      aria-label={`Read article: ${post.title}`}
+                    >
+                      <span
+                        className='absolute bottom-[20%] left-0 top-[20%] w-[2px] origin-center scale-y-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-y-100'
+                        aria-hidden
+                      />
+                      <span
+                        className='pointer-events-none absolute right-3 top-1 select-none font-heading text-[2.5rem] font-black leading-none tracking-tighter text-heading/[0.05] dark:text-white/[0.07]'
+                        aria-hidden
+                      >
+                        {num}
+                      </span>
+
+                      <div className='relative z-[1] flex flex-wrap items-center gap-2'>
+                        <span className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
+                          {num}
+                        </span>
+                        <span className='border border-border/55 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-body/65 dark:border-border/40'>
+                          {post.category}
+                        </span>
+                        <span className='text-[11px] text-body/45'>
+                          {post.readTime}
+                        </span>
+                      </div>
+
+                      <h3 className='relative z-[1] mt-2.5 font-heading !font-semibold uppercase text-[0.98rem] leading-snug tracking-[0.03em] text-heading transition-colors group-hover:text-primary sm:text-[1.05rem]'>
+                        {post.title}
+                      </h3>
+                      <p className='relative z-[1] mt-2 line-clamp-2 text-[12.5px] leading-relaxed text-body/65'>
+                        {post.summary}
+                      </p>
+
+                      <span className='relative z-[1] mt-auto inline-flex items-center gap-1.5 pt-4 text-[12px] font-bold text-primary transition-all group-hover:gap-2.5'>
+                        Read article
+                        <ArrowRight className='h-3 w-3' />
+                      </span>
+                    </Link>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         )}

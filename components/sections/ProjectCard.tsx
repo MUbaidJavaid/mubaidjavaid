@@ -34,7 +34,7 @@ export function ProjectCard ({ project }: { project: Project }) {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Image area with auto-rotate on hover */}
-      <div className='relative h-44 w-full overflow-hidden bg-secondary sm:h-48'>
+      <div className='relative h-48 w-full overflow-hidden bg-secondary sm:h-52'>
         {images.slice(0, 5).map((img, i) => (
           <Image
             key={img}
@@ -42,7 +42,7 @@ export function ProjectCard ({ project }: { project: Project }) {
             alt={i === 0 ? (project.imageAlt || project.title) : `${project.title} screenshot ${i + 1}`}
             fill
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            className={`object-contain p-1.5 transition-opacity duration-500 ${
+            className={`object-cover object-center transition-opacity duration-500 ${
               i === imgIdx ? 'opacity-100' : 'opacity-0'
             }`}
             priority={i === 0}

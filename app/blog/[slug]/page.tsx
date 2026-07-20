@@ -1,6 +1,9 @@
+import { BlogPostHero } from '@/components/blog/BlogPostHero'
+import { BlogReadingAside } from '@/components/blog/BlogReadingAside'
 import { getPostBySlug, posts } from '@/data/posts'
 import { site } from '@/data/site'
 import { pageMetadata } from '@/lib/seo'
+import { ArrowRight, ChevronLeft } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -96,258 +99,261 @@ export default async function BlogPostPage ({
   }
 
   const currentIndex = posts.findIndex(p => p.slug === post.slug)
+  const noteNo = String(currentIndex + 1).padStart(2, '0')
   const nextPost =
     currentIndex >= 0 && currentIndex < posts.length - 1
       ? posts[currentIndex + 1]
       : null
+  const [leadTakeaway, ...restTakeaways] = post.keyTakeaways
 
   return (
-    <article className='section-anchor relative min-w-0 overflow-hidden surface-page py-8 sm:py-10'>
-      <div className='pointer-events-none absolute inset-0'>
-        <div className='absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_100%_0%,rgba(40,114,161,.05),transparent_65%),radial-gradient(ellipse_40%_50%_at_0%_100%,rgba(15,23,42,.025),transparent_65%)]' />
-      </div>
-      <div className='container-wide relative z-10 grid min-w-0 gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,18rem)] lg:items-start'>
-        <div className='min-w-0'>
-          <script
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-          />
-          <div className='relative min-w-0 overflow-hidden border border-[#0F172A]/[.08] surface-panel p-3 sm:p-6 lg:p-10 dark:border-border/50'>
-            <div className='absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent' />
+    <article className='surface-page'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+
+      <BlogPostHero
+        title={post.title}
+        subtitle={post.subtitle}
+        summary={post.summary}
+        category={post.category}
+        publishedAt={post.publishedAt}
+        readTime={post.readTime}
+        noteNo={noteNo}
+        tags={post.tags}
+      />
+
+      <div className='border-t border-border/55 dark:border-border/40'>
+        <div className='container-wide grid gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-14 lg:py-16'>
+          <div id='article-body' className='min-w-0 scroll-mt-28 space-y-12'>
+            {/* Mobile TOC */}
             <nav
               aria-label='On this page'
-              className='mb-6 border border-border surface-muted-soft p-3 sm:p-4 lg:hidden dark:border-border/50'
+              className='border border-border/60 p-4 lg:hidden dark:border-border/45'
             >
-              <p className='section-label mb-3'>On this page</p>
-              <div className='flex max-h-[min(40vh,14rem)] flex-col gap-1 overflow-y-auto overscroll-y-contain text-sm'>
-                {post.sections.map(section => (
+              <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
+                ON THIS PAGE
+              </p>
+              <div className='mt-3 flex max-h-[min(40vh,14rem)] flex-col gap-1 overflow-y-auto text-sm'>
+                {post.sections.map((section, i) => (
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className='rounded-md px-2 py-1.5 text-body transition-colors hover:bg-primary/10 hover:text-primary'
+                    className='px-1 py-1.5 text-body transition-colors hover:text-primary'
                   >
+                    <span className='mr-2 font-mono text-[10px] text-primary/60'>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                     {section.title}
                   </a>
                 ))}
                 <a
                   href='#key-takeaways'
-                  className='rounded-md px-2 py-1.5 font-semibold text-heading transition-colors hover:bg-primary/10 hover:text-primary'
+                  className='px-1 py-1.5 font-semibold text-heading transition-colors hover:text-primary'
                 >
                   Key takeaways
                 </a>
                 <a
                   href='#conclusion'
-                  className='rounded-md px-2 py-1.5 font-semibold text-heading transition-colors hover:bg-primary/10 hover:text-primary'
+                  className='px-1 py-1.5 font-semibold text-heading transition-colors hover:text-primary'
                 >
                   Conclusion
                 </a>
               </div>
             </nav>
-            <header className='space-y-5'>
-              <Link
-                href='/blog'
-                className='inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary-hover'
-              >
-                <span aria-hidden>←</span> Back to blog
-              </Link>
-              <div className='flex flex-wrap items-center gap-2 text-xs text-body'>
-                <span className='rounded-full border border-[#BFD7E6] bg-[#EFF6FB] px-2.5 py-1 font-semibold text-primary'>
-                  {post.category}
-                </span>
-                <span>
-                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                    month: 'long',
-                    day: 'numeric',
-                    year: 'numeric'
-                  })}
-                </span>
-                <span>{post.readTime}</span>
-              </div>
-              <h1 className='section-heading text-balance text-[clamp(1.35rem,4.2vw+0.5rem,2.45rem)]'>
-                {post.title}
-              </h1>
-              {post.subtitle ? (
-                <p className='w-full max-w-3xl text-base font-medium text-primary/90 sm:text-lg'>
-                  {post.subtitle}
-                </p>
-              ) : null}
-              <p className='w-full max-w-3xl text-sm leading-[1.8] text-body sm:text-base'>
-                {post.summary}
-              </p>
-              <div className='flex flex-wrap gap-2'>
-                {post.tags.map(tag => (
-                  <span
-                    key={tag}
-                    className='rounded-full border border-border surface-muted-soft px-3 py-1 text-xs text-body dark:border-border/50'
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </header>
 
-            <div className='mt-8 min-w-0 space-y-10'>
-              <p className='w-full max-w-3xl text-sm leading-[1.85] text-body sm:text-base'>
+            {/* Intro */}
+            <section>
+              <p className='font-mono text-[10px] font-bold tracking-[0.18em] text-primary'>
+                INTRO
+              </p>
+              <p className='mt-4 max-w-[42rem] text-[15px] leading-[1.9] text-body/80 md:text-base'>
                 {post.intro}
               </p>
-              {post.sections.map(section => (
-                <section
-                  key={section.id}
-                  id={section.id}
-                  className='scroll-mt-28 space-y-4'
-                >
-                  <h2 className='section-heading text-lg sm:text-xl lg:text-2xl'>
-                    {section.title}
-                  </h2>
-                  <div className='space-y-4'>
-                    {section.paragraphs.map((paragraph, index) => (
-                      <p
-                        key={`${section.id}-${index}`}
-                        className='text-sm leading-[1.85] text-body sm:text-base'
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                  {section.codeExample ? (
-                    <figure className='mt-5 space-y-2'>
-                      {section.codeExample.caption ? (
-                        <figcaption className='text-xs font-semibold uppercase tracking-[0.12em] text-body/60'>
-                          {section.codeExample.caption}
-                        </figcaption>
-                      ) : null}
-                      <div className='overflow-hidden rounded-2xl border border-[#0F172A]/20 bg-[#0B1220] shadow-[0_20px_44px_-26px_rgba(15,23,42,0.85)]'>
-                        <div className='flex items-center justify-between border-b border-white/10 bg-[#0F172A] px-4 py-2.5'>
-                          <div className='flex items-center gap-2'>
-                            <span className='h-2.5 w-2.5 rounded-full bg-[#FF5F57]' />
-                            <span className='h-2.5 w-2.5 rounded-full bg-[#FEBC2E]' />
-                            <span className='h-2.5 w-2.5 rounded-full bg-[#28C840]' />
-                          </div>
-                          <p className='font-mono text-[11px] text-slate-300/90'>
-                            code-snippet.{section.codeExample.language}
-                          </p>
-                        </div>
-                        <pre className='overflow-x-auto p-4 text-left text-[12px] leading-relaxed text-slate-100 sm:p-5 sm:text-[13px]'>
-                          <code className='font-mono text-[12px] sm:text-[13px]'>
-                            {section.codeExample.code}
-                          </code>
-                        </pre>
-                      </div>
-                    </figure>
-                  ) : null}
-                </section>
-              ))}
+            </section>
 
+            {/* Sections */}
+            {post.sections.map((section, i) => (
               <section
-                id='key-takeaways'
-                className='scroll-mt-28 space-y-4 border border-primary/10 bg-[#EFF6FB] p-4 sm:p-6 md:p-8'
+                key={section.id}
+                id={section.id}
+                className='scroll-mt-28 space-y-4'
               >
-                <h2 className='section-heading text-lg sm:text-xl lg:text-2xl'>
-                  Key takeaways
+                <div className='flex items-center gap-3'>
+                  <span className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span
+                    className='h-px flex-1 bg-border/55 dark:bg-border/40'
+                    aria-hidden
+                  />
+                </div>
+                <h2 className='font-heading !font-semibold uppercase text-[1.2rem] leading-snug tracking-[0.03em] text-heading sm:text-[1.35rem]'>
+                  {section.title}
                 </h2>
-                <ul className='list-inside list-disc space-y-2.5 break-words text-body marker:text-primary'>
-                  {post.keyTakeaways.map((item, i) => (
+                <div className='space-y-4'>
+                  {section.paragraphs.map((paragraph, index) => (
+                    <p
+                      key={`${section.id}-${index}`}
+                      className='max-w-[42rem] text-[15px] leading-[1.9] text-body/80'
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+                {section.codeExample ? (
+                  <figure className='mt-5 space-y-2'>
+                    {section.codeExample.caption ? (
+                      <figcaption className='text-[10px] font-bold uppercase tracking-[0.14em] text-body/50'>
+                        {section.codeExample.caption}
+                      </figcaption>
+                    ) : null}
+                    <div className='overflow-hidden border border-[#0F172A]/25 bg-[#0B1220] shadow-[0_18px_40px_-24px_rgba(15,23,42,0.8)] dark:border-border/50'>
+                      <div className='flex items-center justify-between border-b border-white/10 bg-[#0F172A] px-4 py-2.5'>
+                        <div className='flex items-center gap-1.5' aria-hidden>
+                          <span className='h-2.5 w-2.5 bg-[#FF5F57]' />
+                          <span className='h-2.5 w-2.5 bg-[#FEBC2E]' />
+                          <span className='h-2.5 w-2.5 bg-[#28C840]' />
+                        </div>
+                        <p className='font-mono text-[11px] text-slate-300/90'>
+                          code-snippet.{section.codeExample.language}
+                        </p>
+                      </div>
+                      <pre className='overflow-x-auto p-4 text-left text-[12px] leading-relaxed text-slate-100 sm:p-5 sm:text-[13px]'>
+                        <code className='font-mono text-[12px] sm:text-[13px]'>
+                          {section.codeExample.code}
+                        </code>
+                      </pre>
+                    </div>
+                  </figure>
+                ) : null}
+              </section>
+            ))}
+
+            {/* Takeaways */}
+            <section
+              id='key-takeaways'
+              className='scroll-mt-28 border-l-[3px] border-primary bg-[linear-gradient(90deg,hsl(202_61%_42%/0.06),transparent_70%)] py-2 pl-5 sm:pl-6'
+            >
+              <p className='font-mono text-[10px] font-bold tracking-[0.18em] text-primary'>
+                KEY TAKEAWAYS
+              </p>
+              {leadTakeaway ? (
+                <p className='mt-4 max-w-3xl font-heading text-[1.25rem] font-semibold leading-snug text-heading sm:text-[1.45rem]'>
+                  “{leadTakeaway}”
+                </p>
+              ) : null}
+              {restTakeaways.length > 0 ? (
+                <ul className='mt-5 max-w-3xl space-y-0 divide-y divide-border/50 dark:divide-border/40'>
+                  {restTakeaways.map((item, i) => (
                     <li
                       key={i}
-                      className='pl-1 text-sm leading-[1.8] sm:text-base'
+                      className='flex gap-4 py-3.5 first:pt-0 last:pb-0'
                     >
-                      {item}
+                      <span className='font-mono text-[11px] font-bold tracking-[0.14em] text-primary'>
+                        {String(i + 2).padStart(2, '0')}
+                      </span>
+                      <p className='text-[14px] leading-[1.75] text-body/80'>
+                        {item}
+                      </p>
                     </li>
                   ))}
                 </ul>
-              </section>
-
-              <section id='conclusion' className='scroll-mt-28 space-y-4'>
-                <h2 className='section-heading text-lg sm:text-xl lg:text-2xl'>
-                  Conclusion
-                </h2>
-                <p className='text-sm leading-[1.85] text-body sm:text-base'>
-                  {post.conclusion}
-                </p>
-              </section>
-            </div>
-          </div>
-
-          <section className='mt-6 border border-border surface-muted p-4 sm:p-6 dark:border-border/50'>
-            <div className='space-y-4'>
-              <p className='section-label'>Continue Exploring</p>
-              <h2 className='section-heading text-lg sm:text-xl'>
-                Related pages inside the portfolio
-              </h2>
-              <div className='flex flex-wrap gap-3'>
-                {post.relatedLinks.map(link => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className='border border-border surface-panel px-4 py-2 text-sm font-semibold text-heading transition-colors hover:border-primary hover:text-primary dark:border-border/50'
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {nextPost && (
-            <section className='mt-6 p-4 sm:p-6'>
-              <p className='section-label'>Up Next</p>
-              <h2 className='mt-2 section-heading text-lg sm:text-xl'>
-                Continue reading
-              </h2>
-              <Link
-                href={`/blog/${nextPost.slug}`}
-                className='group mt-4 block border border-[#0F172A]/[.08] surface-muted-soft p-5 transition-all hover:border-primary/25 hover:shadow-[0_8px_20px_rgba(15,23,42,.08)] dark:border-border/50 dark:hover:shadow-[0_8px_20px_rgba(0,0,0,0.35)]'
-              >
-                <div className='mb-2 flex flex-wrap items-center gap-2 text-xs text-body/60'>
-                  <span className='rounded-full border border-[#0F172A]/[.08] surface-panel px-2.5 py-1 font-semibold text-heading dark:border-border/50'>
-                    {nextPost.category}
-                  </span>
-                  <span>{nextPost.readTime}</span>
-                </div>
-                <h3 className='font-heading text-base font-semibold text-heading transition-colors group-hover:text-primary'>
-                  {nextPost.title}
-                </h3>
-                <p className='mt-2 line-clamp-2 text-sm leading-relaxed text-body'>
-                  {nextPost.summary}
-                </p>
-                <span className='mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-primary'>
-                  Read next article <span aria-hidden>→</span>
-                </span>
-              </Link>
+              ) : null}
             </section>
-          )}
-        </div>
 
-        <aside className='hidden min-w-0 lg:block lg:sticky lg:top-28'>
-          <div className='border border-border surface-muted p-5 lg:p-6 dark:border-border/50'>
-            <div className='space-y-4'>
-              <p className='section-label'>On This Page</p>
-              <nav className='space-y-3 text-sm text-body'>
-                {post.sections.map(section => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className='block transition-colors hover:text-primary'
-                  >
-                    {section.title}
-                  </a>
-                ))}
-                <a
-                  href='#key-takeaways'
-                  className='block font-semibold text-heading transition-colors hover:text-primary'
+            {/* Conclusion */}
+            <section id='conclusion' className='scroll-mt-28 space-y-4'>
+              <p className='font-mono text-[10px] font-bold tracking-[0.18em] text-primary'>
+                CONCLUSION
+              </p>
+              <h2 className='font-heading !font-semibold uppercase text-[1.2rem] tracking-[0.03em] text-heading sm:text-[1.35rem]'>
+                Closing thought
+              </h2>
+              <p className='max-w-[42rem] text-[15px] leading-[1.9] text-body/80'>
+                {post.conclusion}
+              </p>
+            </section>
+
+            {/* Related */}
+            {post.relatedLinks.length > 0 ? (
+              <section className='border-t border-border/55 pt-8 dark:border-border/40'>
+                <p className='font-mono text-[10px] font-bold tracking-[0.18em] text-primary'>
+                  CONTINUE
+                </p>
+                <h2 className='mt-2 font-heading !font-semibold uppercase text-[1.1rem] tracking-[0.03em] text-heading'>
+                  Related pages
+                </h2>
+                <div className='mt-4 flex flex-wrap gap-2'>
+                  {post.relatedLinks.map(link => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className='border border-border/65 px-4 py-2 text-sm font-semibold text-heading transition-colors hover:border-primary/35 hover:text-primary dark:border-border/50'
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
+            {/* Next */}
+            {nextPost ? (
+              <section className='border-t border-border/55 pt-8 dark:border-border/40'>
+                <p className='font-mono text-[10px] font-bold tracking-[0.18em] text-primary'>
+                  UP NEXT
+                </p>
+                <Link
+                  href={`/blog/${nextPost.slug}`}
+                  className='group mt-4 block border border-border/60 bg-card p-6 transition-colors hover:border-primary/30 dark:border-border/45'
                 >
-                  Key takeaways
-                </a>
-                <a
-                  href='#conclusion'
-                  className='block font-semibold text-heading transition-colors hover:text-primary'
-                >
-                  Conclusion
-                </a>
-              </nav>
+                  <div className='flex flex-wrap items-center gap-2 text-[11px] text-body/50'>
+                    <span className='border border-border/55 px-2 py-0.5 font-bold uppercase tracking-[0.1em] text-body/65 dark:border-border/40'>
+                      {nextPost.category}
+                    </span>
+                    <span>{nextPost.readTime}</span>
+                  </div>
+                  <h3 className='mt-3 font-heading !font-semibold uppercase text-[1.05rem] leading-snug tracking-[0.03em] text-heading transition-colors group-hover:text-primary sm:text-[1.15rem]'>
+                    {nextPost.title}
+                  </h3>
+                  <p className='mt-2 line-clamp-2 text-[13px] leading-relaxed text-body/65'>
+                    {nextPost.summary}
+                  </p>
+                  <span className='mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary transition-all group-hover:gap-3'>
+                    Read next article
+                    <ArrowRight className='h-3.5 w-3.5' />
+                  </span>
+                </Link>
+              </section>
+            ) : null}
+
+            <div className='flex flex-wrap gap-3 border-t border-border/55 pt-8 dark:border-border/40'>
+              <Link
+                href='/blog'
+                className='inline-flex items-center gap-2 border border-border/70 px-4 py-2.5 text-sm font-semibold text-heading transition-colors hover:border-primary/30 hover:text-primary dark:border-border/50'
+              >
+                <ChevronLeft className='h-4 w-4' aria-hidden />
+                All articles
+              </Link>
+              <Link
+                href='/contact'
+                className='inline-flex items-center gap-2 bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover'
+              >
+                Start a conversation
+                <ArrowRight className='h-3.5 w-3.5' aria-hidden />
+              </Link>
             </div>
           </div>
-        </aside>
+
+          <BlogReadingAside
+            noteNo={noteNo}
+            category={post.category}
+            readTime={post.readTime}
+            sections={post.sections}
+          />
+        </div>
       </div>
     </article>
   )

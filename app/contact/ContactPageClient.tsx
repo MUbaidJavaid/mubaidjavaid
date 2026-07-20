@@ -1,9 +1,10 @@
 'use client'
 
-import { LinkedInProfileBadge } from '@/components/social/LinkedInProfileBadge'
 import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { ClickSpark } from '@/components/ui/ClickSpark'
+import { LottiePlayer } from '@/components/ui/LottiePlayer'
 import { contactCta, site } from '@/data/site'
+import { lottieAssets } from '@/lib/lottie-assets'
 import {
   BUDGET_OPTIONS,
   contactPayloadSchema,
@@ -11,10 +12,16 @@ import {
 } from '@/lib/contact-schema'
 import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { AlertCircle, CheckCircle2, Linkedin, Loader2 } from 'lucide-react'
+import {
+  AlertCircle,
+  ArrowRight,
+  Github,
+  Linkedin,
+  Loader2,
+  Mail
+} from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import type { ReactNode } from 'react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -24,7 +31,7 @@ type ContactLinkItem = {
   label: string
   href: string
   external?: boolean
-  icon: ReactNode
+  icon: typeof Mail
 }
 
 function getContactLinks (): ContactLinkItem[] {
@@ -33,59 +40,30 @@ function getContactLinks (): ContactLinkItem[] {
       kicker: 'Email',
       label: site.email,
       href: `mailto:${site.email}`,
-      icon: (
-        <svg
-          viewBox='0 0 24 24'
-          fill='none'
-          strokeWidth='1.8'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          className='h-5 w-5 stroke-primary transition-colors group-hover/link:stroke-white'
-        >
-          <rect x='2' y='4' width='20' height='16' rx='2' />
-          <path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7' />
-        </svg>
-      )
+      icon: Mail
     },
     {
       kicker: 'GitHub',
-      label: 'View profile',
+      label: 'github.com profile',
       href: site.github,
       external: true,
-      icon: (
-        <svg
-          viewBox='0 0 24 24'
-          fill='none'
-          strokeWidth='1.8'
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          className='h-5 w-5 stroke-primary transition-colors group-hover/link:stroke-white'
-        >
-          <path d='M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S9.1 17.44 9 18v4' />
-          <path d='M9 18c-4.51 2-5-2-7-2' />
-        </svg>
-      )
+      icon: Github
     }
   ]
   if (typeof site.linkedin === 'string' && site.linkedin.trim()) {
     links.push({
       kicker: 'LinkedIn',
-      label: 'Connect on LinkedIn',
+      label: 'Connect professionally',
       href: site.linkedin.trim(),
       external: true,
-      icon: (
-        <Linkedin
-          className='h-5 w-5 stroke-primary text-primary transition-colors group-hover/link:text-white'
-          strokeWidth={1.8}
-        />
-      )
+      icon: Linkedin
     })
   }
   return links
 }
 
 const inputCls =
-  'w-full border border-border surface-panel px-4 py-3 text-sm text-heading outline-none transition-all duration-200 placeholder:text-body/50 hover:border-body/40 focus:border-primary focus:ring-2 focus:ring-primary/15 dark:border-border/50 dark:placeholder:text-slate-500 dark:focus:ring-primary/25'
+  'w-full border border-border/55 bg-transparent px-4 py-3 text-sm text-heading outline-none transition-colors duration-200 placeholder:text-body/40 hover:border-primary/25 focus:border-primary focus:ring-1 focus:ring-primary/20 dark:border-border/40'
 
 const inputErrorCls =
   'border-red-400 focus:border-red-500 focus:ring-red-500/20 dark:border-red-500/60'
@@ -94,7 +72,6 @@ export function ContactPageClient () {
   const router = useRouter()
   const contactLinks = getContactLinks()
   const [submitting, setSubmitting] = useState(false)
-  /** Inline status so users always see accept/reject without relying only on toast */
   const [submitBanner, setSubmitBanner] = useState<null | {
     tone: 'pending' | 'error' | 'success'
     title: string
@@ -129,7 +106,7 @@ export function ContactPageClient () {
     setSubmitBanner({
       tone: 'pending',
       title: 'Sending…',
-      detail: 'Contacting server   please wait.'
+      detail: 'Please wait a moment.'
     })
     toast.loading('Sending your message…', { id: SUBMIT_TOAST })
     try {
@@ -170,7 +147,7 @@ export function ContactPageClient () {
 
       if (!json.delivered || !json.id) {
         const msg =
-          'Could not confirm delivery. Check email configuration or email directly.'
+          'Could not confirm delivery. Try emailing directly if this continues.'
         setSubmitBanner({ tone: 'error', title: 'Not confirmed', detail: msg })
         toast.error(msg)
         return
@@ -179,9 +156,9 @@ export function ContactPageClient () {
       setSubmitBanner({
         tone: 'success',
         title: 'Sent successfully',
-        detail: 'Redirecting to the thank-you page…'
+        detail: 'Opening thank-you…'
       })
-      toast.success('Message delivered   opening thank-you page.')
+      toast.success('Message delivered.')
 
       reset({
         name: '',
@@ -190,10 +167,12 @@ export function ContactPageClient () {
         message: '',
         budget: BUDGET_OPTIONS[0]
       })
-      router.push('/contact/thank-you')
+      window.setTimeout(() => {
+        router.push('/contact/thank-you')
+      }, 900)
     } catch {
       toast.dismiss(SUBMIT_TOAST)
-      const msg = 'Network error   check your connection or email directly.'
+      const msg = 'Network error — check your connection or email directly.'
       setSubmitBanner({
         tone: 'error',
         title: 'Connection failed',
@@ -219,135 +198,123 @@ export function ContactPageClient () {
         description={contactCta.body}
       />
 
-      <section className='section-anchor relative overflow-hidden surface-page py-8 sm:py-10'>
-        <div className='container-wide relative z-10 space-y-8 lg:space-y-10'>
-          <div className='grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4'>
-            <div className='min-w-0 border border-border/30 surface-panel p-4 shadow-sm sm:p-5 dark:border-border/50'>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                Response
-              </p>
-              <p className='mt-2 text-2xl font-black tracking-[-0.03em] text-heading'>
-                24h
-              </p>
-              <p className='mt-1 text-sm leading-relaxed text-body/75'>
-                I review scope and reply with a practical next step.
-              </p>
-            </div>
-            <div className='min-w-0 border border-border/30 surface-panel p-4 shadow-sm sm:p-5 dark:border-border/50'>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                Focus
-              </p>
-              <p className='mt-2 text-2xl font-black tracking-[-0.03em] text-heading'>
-                Product
-              </p>
-              <p className='mt-1 text-sm leading-relaxed text-body/75'>
-                Business sites, dashboards, APIs, and full-stack builds.
-              </p>
-            </div>
-            <div className='min-w-0 border border-border/30 surface-panel p-4 shadow-sm sm:p-5 dark:border-border/50'>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                Model
-              </p>
-              <p className='mt-2 text-2xl font-black tracking-[-0.03em] text-heading'>
-                Flexible
-              </p>
-              <p className='mt-1 text-sm leading-relaxed text-body/75'>
-                Freelance, contract, remote, or full-time collaboration.
-              </p>
-            </div>
-            <div className='min-w-0 border border-border/30 bg-[#256e99]/[0.08] p-4 shadow-sm sm:p-5 dark:border-border/50'>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                Status
-              </p>
-              <p className='mt-2 text-2xl font-black tracking-[-0.03em] text-heading'>
-                Open
-              </p>
-              <p className='mt-1 text-sm leading-relaxed text-body/75'>
-                Available for new projects and scoped engagements.
-              </p>
-            </div>
-          </div>
-
-          <div className='grid min-w-0 gap-6 sm:gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-10'>
-            <div className='min-w-0 space-y-5'>
-              <div className='border border-border/30 bg-white/90 p-5 sm:p-6 shadow-sm backdrop-blur-sm dark:border-border/50 dark:bg-slate-900/85'>
-                <div className='flex items-center gap-3'>
-                  <div className='rounded-full bg-green-500/10 p-2'>
-                    <span className='block h-2 w-2 rounded-full bg-green-500 animate-pulse' />
-                  </div>
-                  <div>
-                    <p className='font-semibold text-heading'>
-                      Available for new projects
-                    </p>
-                    <p className='text-xs text-body/60'>
-                      Freelance · Contract · Remote · Full-time
-                    </p>
-                  </div>
-                </div>
-                <p className='mt-4 text-sm leading-relaxed text-body/75'>
-                  Share the outcome you want, what exists today, and any hard
-                  constraints. I&apos;ll come back with the most direct way to
-                  move forward.
+      <section className='section-anchor relative surface-page pb-16 pt-4 md:pb-20 md:pt-6'>
+        <div className='container-wide relative z-10 space-y-10 md:space-y-12'>
+          {/* Quiet trust strip */}
+          <div className='grid gap-6 border-y border-border/50 py-5 dark:border-border/35 md:grid-cols-3 md:gap-0 md:py-6'>
+            {[
+              { n: '01', t: '24h reply', d: 'Practical next step, not a generic auto-response.' },
+              { n: '02', t: 'Product focus', d: 'Sites, dashboards, APIs, and full-stack builds.' },
+              { n: '03', t: 'Flexible model', d: 'Freelance, contract, remote, or full-time.' }
+            ].map((item, i) => (
+              <div
+                key={item.n}
+                className={cn(
+                  'md:px-6',
+                  i > 0 && 'md:border-l md:border-border/50 dark:md:border-border/35',
+                  i === 0 && 'md:pl-0',
+                  i === 2 && 'md:pr-0'
+                )}
+              >
+                <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary/75'>
+                  {item.n}
+                </p>
+                <p className='mt-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-heading'>
+                  {item.t}
+                </p>
+                <p className='mt-1.5 text-[13px] leading-relaxed text-body/65'>
+                  {item.d}
                 </p>
               </div>
+            ))}
+          </div>
 
-              <div className='grid gap-3'>
-                {contactLinks.map(link => (
-                  <Link
-                    key={link.kicker}
-                    href={link.href}
-                    {...(link.external
-                      ? { target: '_blank', rel: 'noreferrer' }
-                      : {})}
-                    className='group/link flex items-center gap-4 border border-border/30 surface-panel p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_12px_30px_rgba(37,110,153,.08)] dark:border-border/50'
-                  >
-                    <div className='flex h-12 w-12 flex-shrink-0 items-center justify-center border border-border/60 bg-[#F8FAFC] transition-all duration-200 group-hover/link:border-primary group-hover/link:bg-primary dark:border-border/50 dark:bg-slate-900/80'>
-                      {link.icon}
-                    </div>
-                    <div className='min-w-0 flex-1'>
-                      <p className='text-[10px] font-bold uppercase tracking-[0.14em] text-body/50'>
-                        {link.kicker}
-                      </p>
-                      <p className='mt-0.5 break-words text-sm font-semibold text-heading transition-colors group-hover/link:text-primary'>
-                        {link.label}
-                      </p>
-                    </div>
-                    <span className='flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border border-border/50 bg-[#F8FAFC] text-heading/40 transition-all group-hover/link:border-primary/30 group-hover/link:bg-primary/10 group-hover/link:text-primary dark:border-border/50 dark:bg-slate-900/60'>
-                      →
-                    </span>
-                  </Link>
-                ))}
-              </div>
-
-              {typeof site.linkedinVanity === 'string' &&
-              site.linkedinVanity.trim() ? (
-                <div className='border border-border/30 surface-panel p-4 dark:border-border/50'>
-                  <p className='mb-3 text-[10px] font-bold uppercase tracking-[0.14em] text-body/50'>
-                    LinkedIn profile
+          {/* Main composition: sidebar + form */}
+          <div className='grid min-w-0 gap-8 lg:grid-cols-[minmax(0,17.5rem)_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] xl:gap-14'>
+            {/* Sidebar */}
+            <aside className='min-w-0 space-y-6 lg:sticky lg:top-28 lg:self-start'>
+              <div className='border border-border/55 p-5 dark:border-border/40'>
+                <div className='flex items-center gap-2'>
+                  <span
+                    className='h-2 w-2 bg-emerald-500'
+                    aria-hidden
+                  />
+                  <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
+                    AVAILABLE
                   </p>
-                  <LinkedInProfileBadge
-                    size='large'
-                    layout='HORIZONTAL'
+                </div>
+                <p className='mt-3 text-[15px] font-semibold leading-snug text-heading'>
+                  Open for new scoped work
+                </p>
+                <p className='mt-2 text-[13px] leading-relaxed text-body/65'>
+                  Share goals, constraints, and timeline — I&apos;ll reply with
+                  the clearest path forward.
+                </p>
+                <div className='mt-4 border-t border-border/45 pt-4 dark:border-border/35'>
+                  <LottiePlayer
+                    src={lottieAssets.contactMail}
+                    className='mx-auto h-[140px] w-full max-w-[200px]'
+                    aria-label='Email outreach animation'
+                    speed={0.85}
                   />
                 </div>
-              ) : null}
-            </div>
+              </div>
 
-            <div className='min-w-0 border border-border/30 surface-panel p-4 sm:p-7 lg:p-9 dark:border-border/50'>
-              <div className='mb-6 space-y-2 text-center lg:text-left'>
-                <p className='display-kicker'>Project inquiry</p>
-                <h2 className='section-heading text-xl sm:text-2xl'>
+              <div>
+                <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-body/45'>
+                  DIRECT
+                </p>
+                <ul className='mt-3 space-y-2'>
+                  {contactLinks.map(link => {
+                    const Icon = link.icon
+                    return (
+                      <li key={link.kicker}>
+                        <Link
+                          href={link.href}
+                          {...(link.external
+                            ? { target: '_blank', rel: 'noreferrer' }
+                            : {})}
+                          className='group flex items-center gap-3 border border-border/50 px-3.5 py-3 transition-colors hover:border-primary/30 dark:border-border/35'
+                        >
+                          <Icon
+                            className='h-4 w-4 shrink-0 text-primary'
+                            strokeWidth={1.75}
+                            aria-hidden
+                          />
+                          <span className='min-w-0 flex-1'>
+                            <span className='block text-[10px] font-bold uppercase tracking-[0.12em] text-body/45'>
+                              {link.kicker}
+                            </span>
+                            <span className='mt-0.5 block truncate text-[13px] font-semibold text-heading transition-colors group-hover:text-primary'>
+                              {link.label}
+                            </span>
+                          </span>
+                          <ArrowRight className='h-3.5 w-3.5 shrink-0 text-body/30 transition-transform group-hover:translate-x-0.5 group-hover:text-primary' />
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
+            </aside>
+
+            {/* Form */}
+            <div className='min-w-0 border border-border/55 dark:border-border/40'>
+              <div className='border-b border-border/50 px-5 py-5 dark:border-border/35 sm:px-8 sm:py-6'>
+                <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
+                  PROJECT INQUIRY
+                </p>
+                <h2 className='mt-2 font-heading text-[1.2rem] font-semibold uppercase tracking-[0.03em] text-heading sm:text-[1.3rem]'>
                   Send a message
                 </h2>
-                <p className='mx-auto max-w-xl text-sm leading-relaxed text-body/80 lg:mx-0'>
-                  I&apos;ll review your requirements and respond within 24 hours
-                  with the clearest next step for scope, timeline, and
-                  implementation.
+                <p className='mt-2 max-w-xl text-[13px] leading-relaxed text-body/65 sm:text-sm'>
+                  Include outcome, current state, and any hard constraints. I
+                  reply within 24 hours.
                 </p>
               </div>
 
               <form
-                className='relative flex flex-col gap-5'
+                className='flex flex-col gap-5 px-5 py-6 sm:gap-6 sm:px-8 sm:py-8'
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
               >
@@ -355,7 +322,7 @@ export function ContactPageClient () {
                   <div className='space-y-1.5'>
                     <label
                       htmlFor='contact-name'
-                      className='text-xs font-semibold tracking-[0.04em] text-body/70'
+                      className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'
                     >
                       Full name
                     </label>
@@ -365,9 +332,7 @@ export function ContactPageClient () {
                       autoComplete='name'
                       placeholder='Your full name'
                       maxLength={120}
-                      className={`${inputCls} ${
-                        errors.name ? inputErrorCls : ''
-                      }`}
+                      className={cn(inputCls, errors.name && inputErrorCls)}
                       {...register('name')}
                     />
                     {errors.name ? (
@@ -379,7 +344,7 @@ export function ContactPageClient () {
                   <div className='space-y-1.5'>
                     <label
                       htmlFor='contact-email'
-                      className='text-xs font-semibold tracking-[0.04em] text-body/70'
+                      className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'
                     >
                       Email address
                     </label>
@@ -387,11 +352,9 @@ export function ContactPageClient () {
                       id='contact-email'
                       type='email'
                       autoComplete='email'
-                      placeholder='example@company.com'
+                      placeholder='you@company.com'
                       maxLength={254}
-                      className={`${inputCls} ${
-                        errors.email ? inputErrorCls : ''
-                      }`}
+                      className={cn(inputCls, errors.email && inputErrorCls)}
                       {...register('email')}
                     />
                     {errors.email ? (
@@ -405,18 +368,16 @@ export function ContactPageClient () {
                 <div className='space-y-1.5'>
                   <label
                     htmlFor='contact-type'
-                    className='text-xs font-semibold tracking-[0.04em] text-body/70'
+                    className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'
                   >
                     Project type
                   </label>
                   <input
                     id='contact-type'
                     type='text'
-                    placeholder='e.g. Business website, dashboard, full-stack app, API workflow'
+                    placeholder='Business website, dashboard, API, full-stack app…'
                     maxLength={200}
-                    className={`${inputCls} ${
-                      errors.projectType ? inputErrorCls : ''
-                    }`}
+                    className={cn(inputCls, errors.projectType && inputErrorCls)}
                     {...register('projectType')}
                   />
                   {errors.projectType ? (
@@ -429,18 +390,20 @@ export function ContactPageClient () {
                 <div className='space-y-1.5'>
                   <label
                     htmlFor='contact-message'
-                    className='text-xs font-semibold tracking-[0.04em] text-body/70'
+                    className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'
                   >
                     Message
                   </label>
                   <textarea
                     id='contact-message'
-                    rows={5}
-                    placeholder='Tell me about your project: business goal, users, required features, current blockers, and timeline.'
+                    rows={6}
+                    placeholder='Goal, users, must-haves, blockers, and timeline.'
                     maxLength={8000}
-                    className={`${inputCls} resize-none ${
-                      errors.message ? inputErrorCls : ''
-                    }`}
+                    className={cn(
+                      inputCls,
+                      'resize-y min-h-[140px]',
+                      errors.message && inputErrorCls
+                    )}
                     {...register('message')}
                   />
                   {errors.message ? (
@@ -450,8 +413,8 @@ export function ContactPageClient () {
                   ) : null}
                 </div>
 
-                <div className='space-y-2'>
-                  <p className='text-xs font-semibold tracking-[0.04em] text-body/70'>
+                <div className='space-y-2.5'>
+                  <p className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'>
                     Budget range
                   </p>
                   <div className='flex flex-wrap gap-2'>
@@ -466,7 +429,7 @@ export function ContactPageClient () {
                             form.setValue('budget', b, { shouldValidate: true })
                           }
                         />
-                        <span className='block border border-border surface-panel px-3.5 py-2 text-xs font-semibold text-body/70 transition-all duration-150 hover:border-primary/30 hover:text-heading peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground dark:border-border/50 dark:peer-checked:text-primary-foreground'>
+                        <span className='block border border-border/55 px-3 py-2 text-xs font-semibold text-body/65 transition-colors hover:border-primary/30 hover:text-heading peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground dark:border-border/40'>
                           {b}
                         </span>
                       </label>
@@ -484,41 +447,60 @@ export function ContactPageClient () {
                     role='status'
                     aria-live='polite'
                     className={cn(
-                      'flex gap-3 rounded-xl border px-4 py-3 text-left text-sm',
+                      'border text-sm',
                       submitBanner.tone === 'pending' &&
-                        'border-primary/35 bg-primary/[0.07] text-heading dark:bg-primary/10',
+                        'flex gap-3 border-primary/30 bg-primary/[0.05] px-4 py-3',
                       submitBanner.tone === 'error' &&
-                        'border-red-400/60 bg-red-500/[0.06] text-heading dark:border-red-500/45 dark:bg-red-950/40',
+                        'flex gap-3 border-red-400/50 bg-red-500/[0.05] px-4 py-3 dark:border-red-500/40',
                       submitBanner.tone === 'success' &&
-                        'border-emerald-500/45 bg-emerald-500/[0.07] text-heading dark:bg-emerald-950/35'
+                        'flex flex-col items-center gap-3 border-border/50 px-4 py-5 sm:flex-row sm:items-center'
                     )}
                   >
-                    {submitBanner.tone === 'pending' ? (
-                      <Loader2
-                        className='mt-0.5 h-5 w-5 shrink-0 animate-spin text-primary'
-                        aria-hidden
-                      />
-                    ) : submitBanner.tone === 'success' ? (
-                      <CheckCircle2
-                        className='mt-0.5 h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-400'
-                        aria-hidden
-                      />
+                    {submitBanner.tone === 'success' ? (
+                      <>
+                        <LottiePlayer
+                          src={lottieAssets.thankYou}
+                          className='h-[96px] w-[96px] shrink-0'
+                          aria-label='Thank you animation'
+                          loop
+                          speed={1}
+                        />
+                        <div className='text-center sm:text-left'>
+                          <p className='font-semibold text-heading'>
+                            {submitBanner.title}
+                          </p>
+                          {submitBanner.detail ? (
+                            <p className='mt-1 text-body/65'>
+                              {submitBanner.detail}
+                            </p>
+                          ) : null}
+                        </div>
+                      </>
                     ) : (
-                      <AlertCircle
-                        className='mt-0.5 h-5 w-5 shrink-0 text-red-600 dark:text-red-400'
-                        aria-hidden
-                      />
+                      <>
+                        {submitBanner.tone === 'pending' ? (
+                          <Loader2
+                            className='mt-0.5 h-5 w-5 shrink-0 animate-spin text-primary'
+                            aria-hidden
+                          />
+                        ) : (
+                          <AlertCircle
+                            className='mt-0.5 h-5 w-5 shrink-0 text-red-600 dark:text-red-400'
+                            aria-hidden
+                          />
+                        )}
+                        <div className='min-w-0'>
+                          <p className='font-semibold text-heading'>
+                            {submitBanner.title}
+                          </p>
+                          {submitBanner.detail ? (
+                            <p className='mt-1 text-body/70'>
+                              {submitBanner.detail}
+                            </p>
+                          ) : null}
+                        </div>
+                      </>
                     )}
-                    <div className='min-w-0'>
-                      <p className='font-semibold text-heading'>
-                        {submitBanner.title}
-                      </p>
-                      {submitBanner.detail ? (
-                        <p className='mt-1 text-body leading-relaxed'>
-                          {submitBanner.detail}
-                        </p>
-                      ) : null}
-                    </div>
                   </div>
                 ) : null}
 
@@ -527,7 +509,7 @@ export function ContactPageClient () {
                     type='submit'
                     disabled={submitting}
                     aria-busy={submitting}
-                    className='group relative mt-2 flex w-full items-center justify-center gap-2 overflow-hidden bg-primary py-3.5 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(37,110,153,.22)] transition-all duration-200 hover:bg-[#1e5a82] hover:shadow-[0_14px_36px_rgba(37,110,153,.28)] active:scale-[0.99] disabled:pointer-events-none disabled:opacity-60'
+                    className='group mt-1 flex w-full items-center justify-center gap-2 bg-primary py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover active:scale-[0.99] disabled:pointer-events-none disabled:opacity-60'
                   >
                     {submitting ? (
                       <>
@@ -535,12 +517,11 @@ export function ContactPageClient () {
                         Sending…
                       </>
                     ) : (
-                      <>Send message</>
+                      <>
+                        Send message
+                        <ArrowRight className='h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5' />
+                      </>
                     )}
-                    <span className='transition-transform duration-200 group-hover:translate-x-0.5'>
-                      →
-                    </span>
-                    <span className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-500 group-hover:translate-x-full' />
                   </button>
                 </ClickSpark>
               </form>

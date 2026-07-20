@@ -17,29 +17,8 @@ export const metadata: Metadata = pageMetadata({
   path: '/blog'
 })
 
-function formatDate (iso: string, style: 'long' | 'short' = 'short') {
-  return new Date(iso).toLocaleDateString('en-US', {
-    month: style === 'long' ? 'long' : 'short',
-    day: 'numeric',
-    year: 'numeric'
-  })
-}
-
-function averageReadMinutes (list: typeof posts) {
-  if (!list.length) return '-'
-  const total = list.reduce(
-    (acc, p) => acc + (parseInt(p.readTime, 10) || 0),
-    0
-  )
-  return `${Math.max(1, Math.round(total / list.length))} min`
-}
-
 export default function BlogPage () {
   const [featuredPost, ...otherPosts] = posts
-  const avgRead = averageReadMinutes(posts)
-  const lastUpdated = posts[0]?.publishedAt
-    ? formatDate(posts[0].publishedAt, 'short')
-    : '-'
   const isEmpty = posts.length === 0
 
   return (
@@ -86,42 +65,54 @@ export default function BlogPage () {
       />
 
       <section
-        className='section-anchor relative overflow-hidden surface-page py-20'
+        className='section-anchor relative overflow-hidden surface-page py-12 md:py-16'
         aria-labelledby='blog-page-heading'
       >
-        <div className='container-wide relative z-10 space-y-8'>
-          <div className='grid gap-4  md:grid-cols-3 '>
-            <div className='md:border-r md:border-border/55'>
-              <p className='text-xs  font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                What these posts cover
-              </p>
-              <p className='mt-2 text-sm leading-relaxed text-body/75'>
-                Implementation decisions, architecture trade-offs, and
-                production constraints across frontend and backend workflows.
-              </p>
-            </div>
-            <div className='md:border-r md:border-border/55'>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                Who this is for
-              </p>
-              <p className='mt-2 text-sm leading-relaxed text-body/75'>
-                Founders, teams, and engineers who want practical technical
-                clarity instead of surface-level trend summaries.
-              </p>
-            </div>
-            <div>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                How to use it
-              </p>
-              <p className='mt-2 text-sm leading-relaxed text-body/75'>
-                Start with featured deep-dives, then scan the article library by
-                category and apply relevant patterns to your product context.
-              </p>
-            </div>
+        <div
+          className='pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_0%,hsl(202_61%_42%/0.08),transparent_68%)]'
+          aria-hidden
+        />
+        <div
+          className='pointer-events-none absolute -right-24 top-32 h-64 w-64 rounded-full bg-primary/10 blur-3xl'
+          aria-hidden
+        />
+
+        <div className='container-wide relative z-10 space-y-10 md:space-y-12'>
+          {/* Editorial context strip */}
+          <div className='grid gap-8 border-y border-border/55 py-6 dark:border-border/40 md:grid-cols-3 md:gap-0'>
+            {[
+              {
+                label: 'What these posts cover',
+                body: 'Implementation decisions, architecture trade-offs, and production constraints across frontend and backend workflows.'
+              },
+              {
+                label: 'Who this is for',
+                body: 'Founders, teams, and engineers who want practical technical clarity instead of surface-level trend summaries.'
+              },
+              {
+                label: 'How to use it',
+                body: 'Start with the featured deep-dive, then scan the library by category and apply patterns to your product context.'
+              }
+            ].map((item, i) => (
+              <div
+                key={item.label}
+                className={`md:px-6 ${i > 0 ? 'md:border-l md:border-border/55 dark:md:border-border/40' : ''} ${i === 0 ? 'md:pl-0' : ''} ${i === 2 ? 'md:pr-0' : ''}`}
+              >
+                <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary/80'>
+                  {String(i + 1).padStart(2, '0')}
+                </p>
+                <p className='mt-2 text-[11px] font-bold uppercase tracking-[0.12em] text-heading/70'>
+                  {item.label}
+                </p>
+                <p className='mt-2 text-sm leading-relaxed text-body/70'>
+                  {item.body}
+                </p>
+              </div>
+            ))}
           </div>
 
           {isEmpty ? (
-            <div className='flex justify-center pt-4'>
+            <div className='flex justify-center pt-2'>
               <EmptyState
                 icon={BookOpen}
                 title='No articles yet'
@@ -135,7 +126,6 @@ export default function BlogPage () {
             <BlogArticlesSection
               featuredPost={featuredPost}
               otherPosts={otherPosts}
-              formatDate={formatDate}
             />
           )}
         </div>

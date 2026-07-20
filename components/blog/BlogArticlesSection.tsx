@@ -1,153 +1,217 @@
+'use client'
+
 import type { BlogPost } from '@/data/posts'
+import { LottiePlayer } from '@/components/ui/LottiePlayer'
+import { lottieAssets } from '@/lib/lottie-assets'
+import { motion, useReducedMotion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 type BlogArticlesSectionProps = {
   featuredPost?: BlogPost
   otherPosts: BlogPost[]
-  formatDate: (iso: string, style?: 'long' | 'short') => string
 }
 
+function formatDate (iso: string, style: 'long' | 'short' = 'short') {
+  return new Date(iso).toLocaleDateString('en-US', {
+    month: style === 'long' ? 'long' : 'short',
+    day: 'numeric',
+    year: 'numeric'
+  })
+}
+
+const ease = [0.22, 1, 0.36, 1] as const
+
+/** Editorial library — Lottie-powered featured band + motion grid. */
 export function BlogArticlesSection ({
   featuredPost,
-  otherPosts,
-  formatDate
+  otherPosts
 }: BlogArticlesSectionProps) {
+  const reduce = useReducedMotion()
+
   return (
-    <div className='space-y-12 lg:space-y-14'>
+    <div className='space-y-14 lg:space-y-16'>
       {featuredPost ? (
-        <article className='group relative overflow-hidden border border-[#0F172A]/[.06] surface-panel shadow-[0_8px_40px_rgba(15,23,42,.07)] transition-shadow duration-300 dark:border-border/50 dark:shadow-[0_8px_40px_rgba(0,0,0,0.35)]'>
-          <div className='absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent' />
-          <div className='flex flex-col lg:min-h-[min(100%,320px)] lg:flex-row'>
-            <div className='relative flex min-h-[220px] flex-1 flex-col justify-between overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#152B40] to-[hsl(var(--primary))] p-7 sm:p-8 text-white lg:max-w-[46%] xl:max-w-[44%]'>
-              <div
-                aria-hidden
-                className='pointer-events-none absolute inset-0 opacity-[0.14]'
-                style={{
-                  backgroundImage:
-                    'linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px)',
-                  backgroundSize: '28px 28px'
-                }}
-              />
-              <div className='pointer-events-none absolute -right-8 -top-10 h-40 w-40 bg-white/[0.06] blur-2xl' />
-              <div className='relative flex flex-wrap items-center gap-2'>
-                <span className='inline-flex items-center gap-1.5 border border-white/15 bg-white/10 px-2.5 py-1 text-[.62rem] font-bold uppercase tracking-[.14em] text-white/95'>
-                  <span className='h-1.5 w-1.5 rounded-full bg-emerald-300' />
-                  Featured
-                </span>
-                <span className='border border-white/20 bg-black/10 px-2.5 py-1 text-[.62rem] font-bold uppercase tracking-[.1em] text-[#C8E6F5]'>
-                  {featuredPost.category}
-                </span>
-              </div>
-              <div className='relative mt-6'>
-                <h2 className='font-heading text-white text-[1.35rem] font-extrabold leading-[1.15] tracking-[-0.03em] sm:text-[1.55rem] lg:text-[1.65rem]'>
+        <motion.article
+          initial={reduce ? false : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.65, ease }}
+          className='relative overflow-hidden border border-border/60 bg-[linear-gradient(145deg,#0B1220_0%,#132A40_48%,#1A4A6B_100%)] text-white shadow-[0_28px_60px_-28px_rgba(15,23,42,0.65)] dark:border-border/45'
+        >
+          <div
+            className='pointer-events-none absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-[#256e99]/25 blur-3xl'
+            aria-hidden
+          />
+          <div
+            className='pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-[#7DD3FC]/10 blur-3xl'
+            aria-hidden
+          />
+          <div
+            className='pointer-events-none absolute inset-0 opacity-[0.1]'
+            aria-hidden
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px)',
+              backgroundSize: '28px 28px'
+            }}
+          />
+
+          <div className='relative z-[1] grid lg:grid-cols-[1.05fr_0.95fr]'>
+            <div className='flex flex-col justify-between gap-8 border-b border-white/10 p-7 sm:p-8 lg:border-b-0 lg:border-r lg:border-white/10 lg:p-10'>
+              <div>
+                <div className='flex flex-wrap items-center gap-2'>
+                  <span className='font-mono text-[10px] font-bold tracking-[0.18em] text-[#7DD3FC]'>
+                    FEATURED NOTE
+                  </span>
+                  <span className='h-px w-6 bg-white/25' aria-hidden />
+                  <span className='border border-white/20 bg-white/5 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#C8E6F5]'>
+                    {featuredPost.category}
+                  </span>
+                  <span className='border border-emerald-400/35 bg-emerald-400/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-200'>
+                    Live
+                  </span>
+                </div>
+
+                <h2 className='mt-5 font-heading !font-semibold uppercase text-[1.4rem] leading-snug tracking-[0.02em] text-white sm:text-[1.7rem] lg:text-[1.85rem]'>
                   {featuredPost.title}
                 </h2>
-                <p className='mt-3 max-w-xl text-sm leading-relaxed text-white/72'>
+                <p className='mt-4 max-w-xl text-[14px] leading-relaxed text-white/65 sm:text-[15px]'>
                   {featuredPost.summary}
                 </p>
               </div>
-              <div className='relative mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-medium text-white/55'>
-                <time dateTime={featuredPost.publishedAt}>
-                  {formatDate(featuredPost.publishedAt, 'long')}
-                </time>
-                <span className='hidden h-1 w-1  bg-white/35 sm:inline' />
-                <span>{featuredPost.readTime}</span>
+
+              <div className='flex flex-wrap items-center justify-between gap-4'>
+                <div className='flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] text-white/45'>
+                  <time dateTime={featuredPost.publishedAt}>
+                    {formatDate(featuredPost.publishedAt, 'long')}
+                  </time>
+                  <span className='h-px w-4 bg-white/20' aria-hidden />
+                  <span>{featuredPost.readTime}</span>
+                </div>
+                <Link
+                  href={`/blog/${featuredPost.slug}`}
+                  className='group inline-flex items-center gap-2 bg-white px-5 py-2.5 text-sm font-semibold text-[#0F172A] transition-transform hover:bg-[#E8F1F7] active:scale-[0.98]'
+                  aria-label={`Read full article: ${featuredPost.title}`}
+                >
+                  Read deep-dive
+                  <ArrowRight className='h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5' />
+                </Link>
               </div>
             </div>
 
-            <div className='flex flex-1 flex-col justify-center gap-5 border-t border-[#0F172A]/[.05] bg-[#FAFBFC] p-7 sm:p-8 lg:border-l lg:border-t-0 lg:bg-white dark:border-border/50 dark:bg-slate-900/50 dark:lg:bg-card'>
-              {featuredPost.intro ? (
-                <p className='text-sm leading-[1.8] text-body/80'>
-                  {featuredPost.intro}
+            <div className='relative flex min-h-[260px] flex-col justify-between gap-4 overflow-hidden bg-black/20 p-6 sm:min-h-[300px] lg:p-8'>
+              <div className='relative z-[1] flex items-center justify-between gap-3'>
+                <p className='font-mono text-[10px] font-bold tracking-[0.2em] text-[#7DD3FC]/80'>
+                  ARTICLE FRAME
                 </p>
-              ) : (
-                <p className='text-sm leading-[1.8] text-body/60'>
-                  {featuredPost.summary}
-                </p>
-              )}
-              {featuredPost.tags?.length ? (
-                <div className='flex flex-wrap gap-2'>
-                  {featuredPost.tags.slice(0, 6).map(tag => (
-                    <span
-                      key={tag}
-                      className='border border-[#0F172A]/[.06] surface-panel px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.06em] text-body/70 dark:border-border/50'
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-              <Link
-                href={`/blog/${featuredPost.slug}`}
-                className='group/cta relative inline-flex w-fit items-center gap-2 overflow-hidden  bg-[#0F172A] px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(15,23,42,.18)] transition-all hover:gap-3 hover:bg-[#1e293b] hover:shadow-[0_8px_24px_rgba(15,23,42,.22)]'
-                aria-label={`Read full article: ${featuredPost.title}`}
-              >
-                <span className='pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[.08] to-transparent transition-transform duration-500 group-hover/cta:translate-x-full' />
-                Read full article
-                <span className='text-xs transition-transform group-hover/cta:translate-x-0.5'>
-                  →
+                <span className='font-mono text-[10px] text-white/35'>
+                  {featuredPost.readTime}
                 </span>
-              </Link>
+              </div>
+              <LottiePlayer
+                src={lottieAssets.blogDoc}
+                className='relative z-[1] mx-auto h-[170px] w-full max-w-[280px] sm:h-[200px]'
+                aria-label='Article document animation'
+                speed={0.85}
+              />
+              <p className='relative z-[1] line-clamp-3 text-[12px] leading-relaxed text-white/50'>
+                {(featuredPost.intro || featuredPost.summary).slice(0, 140)}
+                …
+              </p>
             </div>
           </div>
-        </article>
+        </motion.article>
       ) : null}
 
       {otherPosts.length > 0 ? (
-        <div className='space-y-6'>
-          <div className='flex flex-wrap items-end justify-between gap-4 border-b border-border/55 pb-4'>
+        <div className='space-y-7'>
+          <div className='flex flex-wrap items-end justify-between gap-4 border-b border-border/55 pb-4 dark:border-border/40'>
             <div>
-              <p className='text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/85'>
-                Library
+              <p className='font-mono text-[10px] font-bold tracking-[0.18em] text-primary'>
+                LIBRARY
               </p>
-              <h2 className='mt-1 font-heading text-lg font-bold text-heading sm:text-xl'>
-                More articles
+              <h2 className='mt-2 font-heading !font-semibold uppercase text-[1.2rem] tracking-[0.03em] text-heading sm:text-[1.35rem]'>
+                More engineering notes
               </h2>
-              <p className='mt-1 max-w-lg text-sm text-body/60'>
-                Shortlist what matters quickly, then open full posts for
-                technical depth, implementation context, and decision rationale.
-              </p>
             </div>
-            <span className='bg-secondary px-3 py-1 text-xs font-semibold text-body/70'>
-              {otherPosts.length} post
-              {otherPosts.length === 1 ? '' : 's'}
-            </span>
+            <div className='flex items-center gap-3'>
+              <LottiePlayer
+                src={lottieAssets.blogType}
+                className='hidden h-14 w-14 sm:block'
+                aria-label='Writing animation'
+                speed={1}
+              />
+              <span className='font-mono text-[11px] text-body/45'>
+                {String(otherPosts.length).padStart(2, '0')} notes
+              </span>
+            </div>
           </div>
 
-          <ul className='grid list-none gap-px overflow-hidden bg-border/70 sm:grid-cols-2 xl:grid-cols-3'>
-            {otherPosts.map(post => (
-              <li key={post.slug}>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className='group relative flex h-full min-h-[200px] flex-col overflow-hidden bg-background p-6 transition-all duration-500 hover:bg-card active:scale-[0.98]'
-                  aria-label={`Read article: ${post.title}`}
+          <ul className='grid list-none gap-4 sm:grid-cols-2 xl:grid-cols-3'>
+            {otherPosts.map((post, idx) => {
+              const num = String(idx + 2).padStart(2, '0')
+              return (
+                <motion.li
+                  key={post.slug}
+                  initial={reduce ? false : { opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-20px' }}
+                  transition={{
+                    duration: 0.45,
+                    delay: Math.min(idx * 0.06, 0.3),
+                    ease
+                  }}
                 >
-                  <div className='mb-3 flex flex-wrap items-center gap-2'>
-                    <span className='border border-[#0F172A]/[.06] bg-[#F8FAFC] px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-[#475569] dark:border-border/50 dark:bg-slate-900/70 dark:text-slate-400'>
-                      {post.category}
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className='group relative flex h-full min-h-[230px] flex-col overflow-hidden border border-border/60 bg-card p-5 transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_18px_40px_-28px_hsl(202_61%_37%/0.45)] dark:border-border/45 sm:p-6'
+                    aria-label={`Read article: ${post.title}`}
+                  >
+                    <span
+                      className='pointer-events-none absolute -right-1 -top-2 select-none font-heading text-[3.25rem] font-black leading-none tracking-tighter text-heading/[0.04] transition-colors group-hover:text-primary/[0.08] dark:text-white/[0.06]'
+                      aria-hidden
+                    >
+                      {num}
                     </span>
-                    <span className='text-xs text-body/45'>
-                      <time dateTime={post.publishedAt}>
-                        {formatDate(post.publishedAt)}
-                      </time>
-                      <span className='mx-1.5 text-border'>·</span>
-                      {post.readTime}
-                    </span>
-                  </div>
-                  <h3 className='font-heading text-base font-bold leading-snug tracking-[-0.02em] text-heading transition-colors group-hover:text-primary'>
-                    {post.title}
-                  </h3>
-                  <p className='mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-body/60'>
-                    {post.summary}
-                  </p>
-                  <span className='mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all group-hover:gap-3'>
-                    Continue reading
-                    <span aria-hidden>→</span>
-                  </span>
-                  <div className='absolute bottom-0 left-0 right-0 h-[2px] origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100' />
-                </Link>
-              </li>
-            ))}
+                    <span
+                      className='absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100'
+                      aria-hidden
+                    />
+
+                    <div className='relative z-[1] flex flex-wrap items-center gap-2'>
+                      <span className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
+                        {num}
+                      </span>
+                      <span className='border border-border/55 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-body/60 dark:border-border/40'>
+                        {post.category}
+                      </span>
+                    </div>
+
+                    <h3 className='relative z-[1] mt-3 font-heading !font-semibold uppercase text-[1rem] leading-snug tracking-[0.03em] text-heading transition-colors group-hover:text-primary sm:text-[1.08rem]'>
+                      {post.title}
+                    </h3>
+                    <p className='relative z-[1] mt-2 line-clamp-3 flex-1 text-[12.5px] leading-relaxed text-body/65'>
+                      {post.summary}
+                    </p>
+
+                    <div className='relative z-[1] mt-5 flex items-center justify-between gap-3 text-[11px] text-body/45'>
+                      <span>
+                        <time dateTime={post.publishedAt}>
+                          {formatDate(post.publishedAt)}
+                        </time>
+                        {' · '}
+                        {post.readTime}
+                      </span>
+                      <span className='inline-flex items-center gap-1 font-bold text-primary transition-all group-hover:gap-2'>
+                        Open
+                        <ArrowRight className='h-3 w-3' />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.li>
+              )
+            })}
           </ul>
         </div>
       ) : null}
