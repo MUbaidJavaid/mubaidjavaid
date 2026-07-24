@@ -1,0 +1,150 @@
+<svg width="1200" height="460" viewBox="0 0 1200 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradDark" x1="0" y1="0" x2="1200" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A0C10"/>
+      <stop offset="55%" stop-color="#0D0F14"/>
+      <stop offset="100%" stop-color="#0B0E13"/>
+    </linearGradient>
+
+    <radialGradient id="blobBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(220 120) rotate(35) scale(420 300)">
+      <stop offset="0%" stop-color="#3B6FE0" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#3B6FE0" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="blobIndigo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(980 360) rotate(-25) scale(380 260)">
+      <stop offset="0%" stop-color="#5B5BD6" stop-opacity="0.52"/>
+      <stop offset="100%" stop-color="#5B5BD6" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="blobCyan" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(760 40) rotate(10) scale(300 180)">
+      <stop offset="0%" stop-color="#4FD1C5" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#4FD1C5" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+
+    <filter id="noiseFilter" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 1
+                0 0 0 0 1
+                0 0 0 0.02 0"/>
+    </filter>
+
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#FFFFFF" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+
+    <linearGradient id="underlineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3B6FE0"/>
+      <stop offset="50%" stop-color="#5B5BD6"/>
+      <stop offset="100%" stop-color="#4FD1C5"/>
+    </linearGradient>
+
+    <linearGradient id="textFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F4F5F7"/>
+      <stop offset="100%" stop-color="#F4F5F7"/>
+    </linearGradient>
+
+    <clipPath id="revealClip">
+      <rect x="0" y="0" width="0" height="200">
+        <animate attributeName="width" from="0" to="760" dur="1.1s" begin="0.15s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="460" fill="url(#bgGradDark)"/>
+  <rect width="1200" height="460" fill="url(#grid)"/>
+
+  <g filter="url(#softBlur)">
+    <rect width="1200" height="460" fill="url(#blobBlue)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 22 14; -10 20; 0 0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
+    <rect width="1200" height="460" fill="url(#blobIndigo)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -18 -10; 14 12; 0 0" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
+    <rect width="1200" height="460" fill="url(#blobCyan)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 12 -16; -16 8; 0 0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
+  </g>
+
+  <rect width="1200" height="460" filter="url(#noiseFilter)"/>
+
+  <!-- circuit motif: bespoke background signature -->
+  <g opacity="0.22" stroke="#4FD1C5" stroke-width="1" fill="none">
+    <path id="circuitA" d="M 700 60 H 900 V 160 H 1080"/>
+    <path id="circuitB" d="M 760 340 H 940 V 240 H 1000 V 130"/>
+    <path id="circuitC" d="M 640 400 H 820 V 300 H 1150"/>
+  </g>
+  <g fill="#4FD1C5">
+    <circle cx="700" cy="60" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="0s" repeatCount="indefinite"/></circle>
+    <circle cx="900" cy="160" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="0.8s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="160" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="1.6s" repeatCount="indefinite"/></circle>
+    <circle cx="940" cy="240" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" begin="0.4s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="300" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" begin="1.2s" repeatCount="indefinite"/></circle>
+  </g>
+  <circle r="3.5" fill="#7FA8FF">
+    <animateMotion dur="5s" begin="0.3s" repeatCount="indefinite"><mpath href="#circuitA"/></animateMotion>
+  </circle>
+  <circle r="3.5" fill="#7FA8FF" opacity="0.8">
+    <animateMotion dur="6s" begin="1.4s" repeatCount="indefinite"><mpath href="#circuitB"/></animateMotion>
+  </circle>
+  <circle r="3.5" fill="#7FA8FF" opacity="0.6">
+    <animateMotion dur="5.5s" begin="2.2s" repeatCount="indefinite"><mpath href="#circuitC"/></animateMotion>
+  </circle>
+
+  <rect x="0.5" y="0.5" width="1199" height="459" rx="18" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
+
+  <!-- Monogram mark -->
+  <g transform="translate(64,56)">
+    <rect x="0" y="0" width="52" height="52" rx="14" fill="none" stroke="url(#underlineGrad)" stroke-width="1.4" opacity="0.9"/>
+    <path d="M14 36 L14 16 L26 30 L38 16 L38 36" fill="none" stroke="#F4F5F7" stroke-width="2.4"
+          stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="90" stroke-dashoffset="90">
+      <animate attributeName="stroke-dashoffset" from="90" to="0" dur="1.4s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1"/>
+    </path>
+  </g>
+
+  <!-- Name -->
+  <g clip-path="url(#revealClip)">
+    <text x="64" y="216" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="58" font-weight="700" fill="url(#textFade)" letter-spacing="0">
+      M UBAID JAVAID
+    </text>
+  </g>
+
+  <!-- Role -->
+  <text x="66" y="256" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="400" fill="#8A91A1" letter-spacing="0.2" opacity="0">
+    Full&#8211;Stack Software Engineer &#8212; Next.js / React / Node.js / TypeScript
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.05s" fill="freeze"/>
+  </text>
+
+  <!-- underline -->
+  <rect x="66" y="274" width="0" height="3" rx="1.5" fill="url(#underlineGrad)">
+    <animate attributeName="width" from="0" to="560" dur="1s" begin="1.2s" fill="freeze" calcMode="spline" keySplines="0.16 1 0.3 1"/>
+  </rect>
+
+  <!-- tagline -->
+  <text x="66" y="322" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#7C8494" opacity="0">
+    Designing and shipping production SaaS systems &#8212; from auth and payments to
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.5s" fill="freeze"/>
+  </text>
+  <text x="66" y="346" font-family="Helvetica Neue, Arial, sans-serif" font-size="16" fill="#7C8494" opacity="0">
+    infrastructure that holds up under real traffic.
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.6s" fill="freeze"/>
+  </text>
+
+  <!-- status pill -->
+  <g transform="translate(66,380)" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="1.8s" fill="freeze"/>
+    <rect width="230" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.05" stroke="#FFFFFF" stroke-opacity="0.08"/>
+    <circle cx="18" cy="17" r="4" fill="#4FD1C5">
+      <animate attributeName="opacity" values="1;0.35;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="32" y="22" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" fill="#C7CBD4">Currently building scalable SaaS</text>
+  </g>
+</svg>
