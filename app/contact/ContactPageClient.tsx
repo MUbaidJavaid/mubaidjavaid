@@ -1,10 +1,7 @@
 'use client'
 
-import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { ClickSpark } from '@/components/ui/ClickSpark'
-import { LottiePlayer } from '@/components/ui/LottiePlayer'
 import { contactCta, site } from '@/data/site'
-import { lottieAssets } from '@/lib/lottie-assets'
 import {
   BUDGET_OPTIONS,
   contactPayloadSchema,
@@ -15,6 +12,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import {
   AlertCircle,
   ArrowRight,
+  ArrowUpRight,
   Github,
   Linkedin,
   Loader2,
@@ -44,7 +42,7 @@ function getContactLinks (): ContactLinkItem[] {
     },
     {
       kicker: 'GitHub',
-      label: 'github.com profile',
+      label: 'github.com/MUbaidJavaid',
       href: site.github,
       external: true,
       icon: Github
@@ -63,10 +61,10 @@ function getContactLinks (): ContactLinkItem[] {
 }
 
 const inputCls =
-  'w-full border border-border/55 bg-transparent px-4 py-3 text-sm text-heading outline-none transition-colors duration-200 placeholder:text-body/40 hover:border-primary/25 focus:border-primary focus:ring-1 focus:ring-primary/20 dark:border-border/40'
+  'w-full border border-heading/15 bg-transparent px-4 py-3 text-sm text-heading outline-none transition-colors duration-200 placeholder:text-muted-foreground hover:border-heading/35 focus:border-[hsl(211_48%_42%)] focus:ring-2 focus:ring-[hsl(211_48%_42%/0.15)]'
 
 const inputErrorCls =
-  'border-red-400 focus:border-red-500 focus:ring-red-500/20 dark:border-red-500/60'
+  'border-red-400 focus:border-red-500 focus:ring-red-500/20'
 
 export function ContactPageClient () {
   const router = useRouter()
@@ -185,350 +183,312 @@ export function ContactPageClient () {
   }
 
   return (
-    <>
-      <PageHeroHeader
-        subtitle='Contact'
-        tagPattern='terminal'
-        title={
-          <>
-            Let&apos;s turn your scope into{' '}
-            <span style={{ color: '#256e99' }}>production-ready delivery</span>
-          </>
-        }
-        description={contactCta.body}
-      />
+    <section className='relative isolate bg-[hsl(214_28%_98%)] px-3 py-8 sm:px-4 md:px-5 md:py-12 lg:px-6 lg:py-16'>
+      <div className='relative mx-auto w-full max-w-[1400px] overflow-hidden rounded-[1.75rem] bg-[hsl(215_48%_13%)] md:rounded-[2.25rem]'>
+        <div
+          className='pointer-events-none absolute left-8 top-8 h-28 w-44 opacity-20'
+          aria-hidden
+          style={{
+            backgroundImage:
+              'radial-gradient(circle, hsl(211 70% 72% / 0.7) 1px, transparent 1.1px)',
+            backgroundSize: '10px 10px'
+          }}
+        />
 
-      <section className='section-anchor relative surface-page pb-16 pt-4 md:pb-20 md:pt-6'>
-        <div className='container-wide relative z-10 space-y-10 md:space-y-12'>
-          {/* Quiet trust strip */}
-          <div className='grid gap-6 border-y border-border/50 py-5 dark:border-border/35 md:grid-cols-3 md:gap-0 md:py-6'>
-            {[
-              { n: '01', t: '24h reply', d: 'Practical next step, not a generic auto-response.' },
-              { n: '02', t: 'Product focus', d: 'Sites, dashboards, APIs, and full-stack builds.' },
-              { n: '03', t: 'Flexible model', d: 'Freelance, contract, remote, or full-time.' }
-            ].map((item, i) => (
-              <div
-                key={item.n}
-                className={cn(
-                  'md:px-6',
-                  i > 0 && 'md:border-l md:border-border/50 dark:md:border-border/35',
-                  i === 0 && 'md:pl-0',
-                  i === 2 && 'md:pr-0'
-                )}
-              >
-                <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary/75'>
-                  {item.n}
-                </p>
-                <p className='mt-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-heading'>
-                  {item.t}
-                </p>
-                <p className='mt-1.5 text-[13px] leading-relaxed text-body/65'>
-                  {item.d}
-                </p>
-              </div>
-            ))}
-          </div>
+        <div className='grid lg:grid-cols-[0.86fr_1.14fr]'>
+          <aside className='relative px-6 py-12 text-white sm:px-8 md:px-12 md:py-16 lg:min-h-[760px] lg:px-14 lg:py-20'>
+            <p className='font-mono text-[0.625rem] uppercase tracking-[0.22em] text-[hsl(211_70%_72%)]'>
+              Let&apos;s work together
+            </p>
+            <h1 className='mt-5 max-w-[10ch] font-display text-[clamp(2.65rem,5vw,4.9rem)] font-bold leading-[0.94] tracking-[-0.045em] text-white'>
+              Your vision.
+              <span className='block text-[hsl(211_55%_68%)]'>
+                My commitment.
+              </span>
+            </h1>
+            <p className='mt-6 max-w-[38ch] text-sm leading-relaxed text-white/65 md:text-base'>
+              {contactCta.body}
+            </p>
 
-          {/* Main composition: sidebar + form */}
-          <div className='grid min-w-0 gap-8 lg:grid-cols-[minmax(0,17.5rem)_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] xl:gap-14'>
-            {/* Sidebar */}
-            <aside className='min-w-0 space-y-6 lg:sticky lg:top-28 lg:self-start'>
-              <div className='border border-border/55 p-5 dark:border-border/40'>
-                <div className='flex items-center gap-2'>
-                  <span
-                    className='h-2 w-2 bg-emerald-500'
-                    aria-hidden
-                  />
-                  <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
-                    AVAILABLE
-                  </p>
-                </div>
-                <p className='mt-3 text-[15px] font-semibold leading-snug text-heading'>
-                  Open for new scoped work
-                </p>
-                <p className='mt-2 text-[13px] leading-relaxed text-body/65'>
-                  Share goals, constraints, and timeline — I&apos;ll reply with
-                  the clearest path forward.
-                </p>
-                <div className='mt-4 border-t border-border/45 pt-4 dark:border-border/35'>
-                  <LottiePlayer
-                    src={lottieAssets.contactMail}
-                    className='mx-auto h-[140px] w-full max-w-[200px]'
-                    aria-label='Email outreach animation'
-                    speed={0.85}
-                  />
-                </div>
-              </div>
+            <div className='mt-10 flex items-center gap-3 border-y border-white/10 py-4'>
+              <span className='relative flex h-2.5 w-2.5'>
+                <span className='absolute -inset-1 rounded-full border border-emerald-400/30' />
+                <span className='relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400' />
+              </span>
+              <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-white/50'>
+                {contactCta.support}
+              </p>
+            </div>
 
+            <p className='mt-10 font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-[hsl(211_70%_72%)]'>
+              Direct channels
+            </p>
+            <ul className='mt-3 divide-y divide-white/10 border-y border-white/10'>
+              {contactLinks.map(link => {
+                const Icon = link.icon
+                return (
+                  <li key={link.kicker}>
+                    <Link
+                      href={link.href}
+                      {...(link.external
+                        ? { target: '_blank', rel: 'noreferrer' }
+                        : {})}
+                      className='group flex min-h-16 items-center gap-4 py-4'
+                    >
+                      <span className='flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[hsl(211_70%_72%)] transition-colors group-hover:border-white/50 group-hover:bg-white/5'>
+                        <Icon size={16} strokeWidth={1.7} aria-hidden />
+                      </span>
+                      <span className='min-w-0 flex-1'>
+                        <span className='block font-mono text-[0.5rem] uppercase tracking-[0.14em] text-white/35'>
+                          {link.kicker}
+                        </span>
+                        <span className='mt-1 block truncate text-sm font-semibold text-white/85 transition-colors group-hover:text-white'>
+                          {link.label}
+                        </span>
+                      </span>
+                      <ArrowUpRight
+                        size={15}
+                        className='text-white/25 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white'
+                        aria-hidden
+                      />
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+
+            <div className='mt-8 border-l-2 border-[hsl(211_55%_68%)] pl-4'>
+              <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-[hsl(211_70%_72%)]'>
+                What to include
+              </p>
+              <p className='mt-2 max-w-[40ch] text-sm leading-relaxed text-white/55'>
+                Outcome, current state, hard constraints, and timeline. That is
+                enough to start a useful reply.
+              </p>
+            </div>
+          </aside>
+
+          <div className='relative bg-[hsl(214_32%_97%)] px-6 py-12 sm:px-8 md:px-12 md:py-16 lg:min-h-[760px] lg:px-16 lg:py-20'>
+            <svg
+              className='pointer-events-none absolute -left-[4.75rem] top-0 hidden h-full w-20 lg:block'
+              viewBox='0 0 80 760'
+              preserveAspectRatio='none'
+              aria-hidden
+            >
+              <path
+                d='M80 0H55C8 58 72 104 45 164C18 222 74 271 38 337C4 401 78 453 34 522C5 568 64 631 48 684C39 714 47 740 59 760H80Z'
+                fill='hsl(214 32% 97%)'
+              />
+            </svg>
+            <p
+              className='pointer-events-none absolute right-5 top-2 select-none font-display text-[clamp(5rem,12vw,10rem)] font-bold leading-none tracking-[-0.08em] text-heading/[0.025]'
+              aria-hidden
+            >
+              SAY
+            </p>
+            <div className='flex items-end justify-between gap-4 border-b border-heading/10 pb-5'>
               <div>
-                <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-body/45'>
-                  DIRECT
+                <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-[hsl(211_48%_42%)]'>
+                  Project inquiry
                 </p>
-                <ul className='mt-3 space-y-2'>
-                  {contactLinks.map(link => {
-                    const Icon = link.icon
-                    return (
-                      <li key={link.kicker}>
-                        <Link
-                          href={link.href}
-                          {...(link.external
-                            ? { target: '_blank', rel: 'noreferrer' }
-                            : {})}
-                          className='group flex items-center gap-3 border border-border/50 px-3.5 py-3 transition-colors hover:border-primary/30 dark:border-border/35'
-                        >
-                          <Icon
-                            className='h-4 w-4 shrink-0 text-primary'
-                            strokeWidth={1.75}
-                            aria-hidden
-                          />
-                          <span className='min-w-0 flex-1'>
-                            <span className='block text-[10px] font-bold uppercase tracking-[0.12em] text-body/45'>
-                              {link.kicker}
-                            </span>
-                            <span className='mt-0.5 block truncate text-[13px] font-semibold text-heading transition-colors group-hover:text-primary'>
-                              {link.label}
-                            </span>
-                          </span>
-                          <ArrowRight className='h-3.5 w-3.5 shrink-0 text-body/30 transition-transform group-hover:translate-x-0.5 group-hover:text-primary' />
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            </aside>
-
-            {/* Form */}
-            <div className='min-w-0 border border-border/55 dark:border-border/40'>
-              <div className='border-b border-border/50 px-5 py-5 dark:border-border/35 sm:px-8 sm:py-6'>
-                <p className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
-                  PROJECT INQUIRY
-                </p>
-                <h2 className='mt-2 font-heading text-[1.2rem] font-semibold uppercase tracking-[0.03em] text-heading sm:text-[1.3rem]'>
+                <h2 className='mt-3 font-display text-2xl font-semibold tracking-tight text-heading md:text-3xl'>
                   Send a message
                 </h2>
-                <p className='mt-2 max-w-xl text-[13px] leading-relaxed text-body/65 sm:text-sm'>
-                  Include outcome, current state, and any hard constraints. I
-                  reply within 24 hours.
-                </p>
               </div>
+              <p className='hidden font-mono text-[0.5rem] uppercase tracking-[0.14em] text-heading/[0.3] sm:block'>
+                Reply within 24h
+              </p>
+            </div>
 
-              <form
-                className='flex flex-col gap-5 px-5 py-6 sm:gap-6 sm:px-8 sm:py-8'
-                onSubmit={handleSubmit(onSubmit)}
-                noValidate
-              >
-                <div className='grid gap-4 sm:grid-cols-2 sm:gap-5'>
-                  <div className='space-y-1.5'>
-                    <label
-                      htmlFor='contact-name'
-                      className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'
-                    >
-                      Full name
-                    </label>
-                    <input
-                      id='contact-name'
-                      type='text'
-                      autoComplete='name'
-                      placeholder='Your full name'
-                      maxLength={120}
-                      className={cn(inputCls, errors.name && inputErrorCls)}
-                      {...register('name')}
-                    />
-                    {errors.name ? (
-                      <p className='text-xs text-red-600 dark:text-red-400'>
-                        {errors.name.message}
-                      </p>
-                    ) : null}
-                  </div>
-                  <div className='space-y-1.5'>
-                    <label
-                      htmlFor='contact-email'
-                      className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'
-                    >
-                      Email address
-                    </label>
-                    <input
-                      id='contact-email'
-                      type='email'
-                      autoComplete='email'
-                      placeholder='you@company.com'
-                      maxLength={254}
-                      className={cn(inputCls, errors.email && inputErrorCls)}
-                      {...register('email')}
-                    />
-                    {errors.email ? (
-                      <p className='text-xs text-red-600 dark:text-red-400'>
-                        {errors.email.message}
-                      </p>
-                    ) : null}
-                  </div>
-                </div>
-
+            <form
+              className='mt-8 flex flex-col gap-5 sm:gap-6'
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
+            >
+              <div className='grid gap-4 sm:grid-cols-2 sm:gap-5'>
                 <div className='space-y-1.5'>
                   <label
-                    htmlFor='contact-type'
-                    className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'
+                    htmlFor='contact-name'
+                    className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'
                   >
-                    Project type
+                    Full name
                   </label>
                   <input
-                    id='contact-type'
+                    id='contact-name'
                     type='text'
-                    placeholder='Business website, dashboard, API, full-stack app…'
-                    maxLength={200}
-                    className={cn(inputCls, errors.projectType && inputErrorCls)}
-                    {...register('projectType')}
+                    autoComplete='name'
+                    placeholder='Your full name'
+                    maxLength={120}
+                    className={cn(inputCls, errors.name && inputErrorCls)}
+                    {...register('name')}
                   />
-                  {errors.projectType ? (
-                    <p className='text-xs text-red-600 dark:text-red-400'>
-                      {errors.projectType.message}
-                    </p>
+                  {errors.name ? (
+                    <p className='text-xs text-red-600'>{errors.name.message}</p>
                   ) : null}
                 </div>
-
                 <div className='space-y-1.5'>
                   <label
-                    htmlFor='contact-message'
-                    className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'
+                    htmlFor='contact-email'
+                    className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'
                   >
-                    Message
+                    Email address
                   </label>
-                  <textarea
-                    id='contact-message'
-                    rows={6}
-                    placeholder='Goal, users, must-haves, blockers, and timeline.'
-                    maxLength={8000}
-                    className={cn(
-                      inputCls,
-                      'resize-y min-h-[140px]',
-                      errors.message && inputErrorCls
-                    )}
-                    {...register('message')}
+                  <input
+                    id='contact-email'
+                    type='email'
+                    autoComplete='email'
+                    placeholder='you@company.com'
+                    maxLength={254}
+                    className={cn(inputCls, errors.email && inputErrorCls)}
+                    {...register('email')}
                   />
-                  {errors.message ? (
-                    <p className='text-xs text-red-600 dark:text-red-400'>
-                      {errors.message.message}
+                  {errors.email ? (
+                    <p className='text-xs text-red-600'>
+                      {errors.email.message}
                     </p>
                   ) : null}
                 </div>
+              </div>
 
-                <div className='space-y-2.5'>
-                  <p className='text-[11px] font-bold uppercase tracking-[0.08em] text-body/55'>
-                    Budget range
+              <div className='space-y-1.5'>
+                <label
+                  htmlFor='contact-type'
+                  className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'
+                >
+                  Project type
+                </label>
+                <input
+                  id='contact-type'
+                  type='text'
+                  placeholder='Business website, dashboard, API, full-stack app…'
+                  maxLength={200}
+                  className={cn(inputCls, errors.projectType && inputErrorCls)}
+                  {...register('projectType')}
+                />
+                {errors.projectType ? (
+                  <p className='text-xs text-red-600'>
+                    {errors.projectType.message}
                   </p>
-                  <div className='flex flex-wrap gap-2'>
-                    {BUDGET_OPTIONS.map(b => (
-                      <label key={b} className='cursor-pointer'>
-                        <input
-                          type='radio'
-                          value={b}
-                          className='peer sr-only'
-                          checked={budgetValue === b}
-                          onChange={() =>
-                            form.setValue('budget', b, { shouldValidate: true })
-                          }
-                        />
-                        <span className='block border border-border/55 px-3 py-2 text-xs font-semibold text-body/65 transition-colors hover:border-primary/30 hover:text-heading peer-checked:border-primary peer-checked:bg-primary peer-checked:text-primary-foreground dark:border-border/40'>
-                          {b}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                  {errors.budget ? (
-                    <p className='text-xs text-red-600 dark:text-red-400'>
-                      {errors.budget.message}
-                    </p>
-                  ) : null}
-                </div>
-
-                {submitBanner ? (
-                  <div
-                    role='status'
-                    aria-live='polite'
-                    className={cn(
-                      'border text-sm',
-                      submitBanner.tone === 'pending' &&
-                        'flex gap-3 border-primary/30 bg-primary/[0.05] px-4 py-3',
-                      submitBanner.tone === 'error' &&
-                        'flex gap-3 border-red-400/50 bg-red-500/[0.05] px-4 py-3 dark:border-red-500/40',
-                      submitBanner.tone === 'success' &&
-                        'flex flex-col items-center gap-3 border-border/50 px-4 py-5 sm:flex-row sm:items-center'
-                    )}
-                  >
-                    {submitBanner.tone === 'success' ? (
-                      <>
-                        <LottiePlayer
-                          src={lottieAssets.thankYou}
-                          className='h-[96px] w-[96px] shrink-0'
-                          aria-label='Thank you animation'
-                          loop
-                          speed={1}
-                        />
-                        <div className='text-center sm:text-left'>
-                          <p className='font-semibold text-heading'>
-                            {submitBanner.title}
-                          </p>
-                          {submitBanner.detail ? (
-                            <p className='mt-1 text-body/65'>
-                              {submitBanner.detail}
-                            </p>
-                          ) : null}
-                        </div>
-                      </>
-                    ) : (
-                      <>
-                        {submitBanner.tone === 'pending' ? (
-                          <Loader2
-                            className='mt-0.5 h-5 w-5 shrink-0 animate-spin text-primary'
-                            aria-hidden
-                          />
-                        ) : (
-                          <AlertCircle
-                            className='mt-0.5 h-5 w-5 shrink-0 text-red-600 dark:text-red-400'
-                            aria-hidden
-                          />
-                        )}
-                        <div className='min-w-0'>
-                          <p className='font-semibold text-heading'>
-                            {submitBanner.title}
-                          </p>
-                          {submitBanner.detail ? (
-                            <p className='mt-1 text-body/70'>
-                              {submitBanner.detail}
-                            </p>
-                          ) : null}
-                        </div>
-                      </>
-                    )}
-                  </div>
                 ) : null}
+              </div>
 
-                <ClickSpark>
-                  <button
-                    type='submit'
-                    disabled={submitting}
-                    aria-busy={submitting}
-                    className='group mt-1 flex w-full items-center justify-center gap-2 bg-primary py-3.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover active:scale-[0.99] disabled:pointer-events-none disabled:opacity-60'
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 className='h-4 w-4 animate-spin' aria-hidden />
-                        Sending…
-                      </>
-                    ) : (
-                      <>
-                        Send message
-                        <ArrowRight className='h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5' />
-                      </>
-                    )}
-                  </button>
-                </ClickSpark>
-              </form>
-            </div>
+              <div className='space-y-1.5'>
+                <label
+                  htmlFor='contact-message'
+                  className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'
+                >
+                  Message
+                </label>
+                <textarea
+                  id='contact-message'
+                  rows={6}
+                  placeholder='Goal, users, must-haves, blockers, and timeline.'
+                  maxLength={8000}
+                  className={cn(
+                    inputCls,
+                    'min-h-[140px] resize-y',
+                    errors.message && inputErrorCls
+                  )}
+                  {...register('message')}
+                />
+                {errors.message ? (
+                  <p className='text-xs text-red-600'>
+                    {errors.message.message}
+                  </p>
+                ) : null}
+              </div>
+
+              <div className='space-y-2.5'>
+                <p className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'>
+                  Budget range
+                </p>
+                <div className='flex flex-wrap gap-2'>
+                  {BUDGET_OPTIONS.map(b => (
+                    <label key={b} className='cursor-pointer'>
+                      <input
+                        type='radio'
+                        value={b}
+                        className='peer sr-only'
+                        checked={budgetValue === b}
+                        onChange={() =>
+                          form.setValue('budget', b, { shouldValidate: true })
+                        }
+                      />
+                      <span className='block border border-heading/15 px-3 py-2 text-xs font-semibold text-body transition-colors hover:border-[hsl(211_48%_42%/0.4)] hover:text-heading peer-checked:border-[hsl(211_48%_42%)] peer-checked:bg-primary peer-checked:text-primary-foreground peer-focus-visible:ring-2 peer-focus-visible:ring-[hsl(211_48%_42%/0.25)]'>
+                        {b}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+                {errors.budget ? (
+                  <p className='text-xs text-red-600'>
+                    {errors.budget.message}
+                  </p>
+                ) : null}
+              </div>
+
+              {submitBanner ? (
+                <div
+                  role='status'
+                  aria-live='polite'
+                  className={cn(
+                    'flex gap-3 border px-4 py-3 text-sm',
+                    submitBanner.tone === 'pending' &&
+                      'border-[hsl(211_48%_42%/0.3)] bg-[hsl(211_48%_42%/0.05)]',
+                    submitBanner.tone === 'error' &&
+                      'border-red-400/50 bg-red-500/[0.05]',
+                    submitBanner.tone === 'success' &&
+                      'border-heading/15 bg-[hsl(214_28%_98%)]'
+                  )}
+                >
+                  {submitBanner.tone === 'pending' ? (
+                    <Loader2
+                      className='mt-0.5 h-5 w-5 shrink-0 animate-spin text-[hsl(211_48%_42%)]'
+                      aria-hidden
+                    />
+                  ) : submitBanner.tone === 'error' ? (
+                    <AlertCircle
+                      className='mt-0.5 h-5 w-5 shrink-0 text-red-600'
+                      aria-hidden
+                    />
+                  ) : (
+                    <span className='mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[hsl(152_48%_42%)]' />
+                  )}
+                  <div className='min-w-0'>
+                    <p className='font-semibold text-heading'>
+                      {submitBanner.title}
+                    </p>
+                    {submitBanner.detail ? (
+                      <p className='mt-1 text-body'>{submitBanner.detail}</p>
+                    ) : null}
+                  </div>
+                </div>
+              ) : null}
+
+              <ClickSpark>
+                <button
+                  type='submit'
+                  disabled={submitting}
+                  aria-busy={submitting}
+                  className='group mt-1 flex w-full items-center justify-center gap-2 bg-primary py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover active:scale-[0.99] disabled:pointer-events-none disabled:opacity-60'
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className='h-4 w-4 animate-spin' aria-hidden />
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      Send message
+                      <ArrowRight className='h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5' />
+                    </>
+                  )}
+                </button>
+              </ClickSpark>
+            </form>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

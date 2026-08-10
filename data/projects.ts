@@ -28,7 +28,26 @@ export type Project = {
   impact: string[];
   /** One short paragraph for "architecture at a glance" on the case study */
   architectureSummary: string;
+  /** Optional narrative beats — derived from existing copy when omitted */
+  research?: string;
+  strategy?: string;
+  ux?: string;
+  development?: string;
+  businessImpact?: string;
 };
+
+/** Editorial case-study narrative from real project copy (no invented claims). */
+export function getProjectNarrative (project: Project) {
+  return {
+    research: project.research,
+    strategy: project.strategy ?? project.goal,
+    ux:
+      project.ux ??
+      `Interface and workflow priorities: ${project.keyFeatures.slice(0, 3).join('; ')}.`,
+    development: project.development ?? project.myRole,
+    businessImpact: project.businessImpact ?? project.outcome
+  }
+}
 
 export const projects: Project[] = [
   {
@@ -104,6 +123,16 @@ export const projects: Project[] = [
     ],
     architectureSummary:
       "Next.js App Router frontend with Express.js API layer. MongoDB multi-tenant collections with society-level data isolation. Dynamic configuration engine stores workflows and forms as database documents. AI layer powered by Groq for role-based agents. RBAC+ABAC hybrid permission model with JWT authentication. Offline-first PWA with service worker and IndexedDB sync.",
+    research:
+      "Mapped Pakistani society operations across spreadsheets, WhatsApp, and paper — plus gaps in MyGate/ADDA around plot lifecycle, PLRA, and installment culture.",
+    strategy:
+      "Ship a metadata-driven multi-tenant platform so societies configure workflows without code, while keeping AI and compliance as first-class modules.",
+    ux:
+      "Role-aware surfaces for admins, dealers, guards, and residents — plot lifecycle, billing, visitors, and privacy controls without burying critical actions.",
+    development:
+      "Architected database tenancy, dynamic config engine, hybrid RBAC+ABAC, and 25+ modules across Next.js and Express.",
+    businessImpact:
+      "A market-differentiated platform with 10+ capabilities competitors lack, spanning complete society operations in one system.",
   },
   {
     slug: "naaz-wears-ecommerce",
@@ -175,6 +204,16 @@ export const projects: Project[] = [
     ],
     architectureSummary:
       "Next.js 15 App Router with SSR for SEO-critical pages. Convex real-time BaaS handles data, auth (JWT sessions), and serverless functions. Cloudinary CDN for product images with Convex Storage as fallback. Vercel serverless hosting with auto-scaling. PWA with service worker for offline-first experience.",
+    research:
+      "Studied Pakistani D2C fashion checkout habits — COD-first payment, mobile browsing, and admin tooling usable by non-technical staff.",
+    strategy:
+      "Ship a complete storefront plus admin CRM on Next.js 15 and Convex, optimized for COD and PWA installability.",
+    ux:
+      "3-step checkout, 5-stage order tracking, and an admin panel with eleven operational sections for daily store management.",
+    development:
+      "Built end-to-end: SSR storefront, Convex real-time backend, Cloudinary pipeline, admin CRM, and PWA packaging.",
+    businessImpact:
+      "Live production platform at naazwears.vercel.app serving real customers with full fulfillment tooling.",
   },
   {
     slug: "quikpos-saas-point-of-sale",
@@ -246,6 +285,16 @@ export const projects: Project[] = [
     ],
     architectureSummary:
       "React 19 SPA with Vite bundler. Firebase Firestore for multi-tenant NoSQL database with security rules for tenant isolation. Firebase Auth for authentication with session persistence. Zustand for modular client state (12 stores). IndexedDB offline queue for POS transactions with auto-sync. Vercel for hosting with edge API functions for SMTP email and receipt generation. Cloudinary CDN for product images.",
+    research:
+      "Mapped Pakistani retail POS needs — barcode scanning, Udhaar/Khata credit, FBR compliance, offline sales, and Urdu/English bilingual operation.",
+    strategy:
+      "Build multi-tenant SaaS with offline-first queues and tenant isolation so shops keep selling without reliable connectivity.",
+    ux:
+      "Fast checkout surfaces, bilingual UI, and credit/inventory flows designed for counter-speed retail use.",
+    development:
+      "Implemented React 19 + Firebase tenancy, Zustand stores, IndexedDB sync, and edge helpers for receipts and email.",
+    businessImpact:
+      "Live multi-tenant POS platform with offline resilience and Pakistan-specific compliance features.",
   },
   {
     slug: "apex-platinum-fintech-platform",

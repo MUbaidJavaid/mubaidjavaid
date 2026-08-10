@@ -1,141 +1,93 @@
 'use client'
 
-import { HeroCodeDecor } from '@/components/hero/HeroCodeDecor'
-import {
-  SectionDisplayTag,
-  type SectionDisplayPattern
-} from '@/components/ui/SectionDisplayTag'
+import { brandMotion } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
+import type { ReactNode } from 'react'
 
 interface PageHeroHeaderProps {
-  title: string | React.ReactNode
+  title: string | ReactNode
   subtitle?: string
-  description?: string | React.ReactNode
-  children?: React.ReactNode
-  /** Code-style frame around the page label — defaults to [BRACKETS] */
-  tagPattern?: SectionDisplayPattern
+  description?: string | ReactNode
+  children?: ReactNode
+  /** Soft watermark glyph / word in the hero */
+  watermark?: string
+  className?: string
+  /** @deprecated Kept for call-site compat — ignored in editorial brand */
+  tagPattern?: string
 }
 
+/**
+ * Shared editorial page hero for depth routes.
+ * Same typography/spacing tokens as the homepage brand system —
+ * layout varies per page via children and optional watermark.
+ */
 export function PageHeroHeader ({
   title,
   subtitle,
   description,
   children,
-  tagPattern = 'bracket'
+  watermark,
+  className
 }: PageHeroHeaderProps) {
   const reduce = useReducedMotion()
 
   return (
-    <section className='relative overflow-hidden surface-page py-16 md:py-24'>
-      {/* Primary radial gradient - centered top */}
+    <section
+      className={cn(
+        'relative isolate overflow-hidden border-b border-border/70 bg-[hsl(214_28%_98%)]',
+        className
+      )}
+    >
       <div
-        className='pointer-events-none absolute inset-0'
+        className='pointer-events-none absolute inset-0 opacity-[0.28]'
         aria-hidden
         style={{
-          background:
-            'radial-gradient(ellipse 110% 90% at 50% -5%, #256e99 / 0.25, transparent 65%)'
+          backgroundImage:
+            'linear-gradient(hsl(215 24% 70% / 0.14) 1px, transparent 1px), linear-gradient(90deg, hsl(215 24% 70% / 0.14) 1px, transparent 1px)',
+          backgroundSize: '72px 72px',
+          maskImage:
+            'radial-gradient(ellipse 80% 70% at 70% 20%, black 10%, transparent 72%)'
         }}
       />
-
-      {/* Secondary accent gradients - corners */}
       <div
-        className='pointer-events-none absolute inset-0'
+        className='pointer-events-none absolute -right-28 top-[-20%] h-[22rem] w-[22rem] rounded-full bg-[hsl(211_70%_58%/0.08)] blur-3xl'
         aria-hidden
-        style={{
-          background:
-            'radial-gradient(ellipse 70% 70% at 100% 80%, #1e5a82 / 0.12, transparent 60%),' +
-            'radial-gradient(ellipse 60% 60% at 0% 70%, #256e99 / 0.1, transparent 65%)'
-        }}
       />
-
-      {/* Animated gradient wave effect */}
-      <motion.div
-        className='pointer-events-none absolute inset-0'
-        aria-hidden
-        animate={{
-          opacity: [0.4, 0.6, 0.4]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut'
-        }}
-        style={{
-          background:
-            'radial-gradient(circle at 50% 50%, #256e99 / 0.06, transparent 70%)'
-        }}
-      />
-
-      <HeroCodeDecor />
-
-      {/* Content */}
-      <div className='container-wide relative z-10 flex justify-center'>
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className='mx-auto flex w-full min-w-0 max-w-4xl flex-col items-center space-y-4 text-center md:space-y-6'
+      {watermark ? (
+        <p
+          className='pointer-events-none absolute -right-[0.04em] top-[0.02em] select-none font-display text-[clamp(5rem,16vw,12rem)] font-bold leading-none tracking-[-0.08em] text-heading/[0.03]'
+          aria-hidden
         >
-          {/* Mega bold page label — same weight as home section tags */}
+          {watermark}
+        </p>
+      ) : null}
+
+      <div className='relative z-10 container-wide py-20 md:py-28'>
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: brandMotion.durationSlow,
+            ease: brandMotion.ease
+          }}
+        >
           {subtitle ? (
-            <motion.div
-              initial={reduce ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className='w-full'
-            >
-              <SectionDisplayTag
-                as='h1'
-                tag={subtitle}
-                pattern={tagPattern}
-              />
-            </motion.div>
+            <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_48%_42%)]'>
+              {subtitle}
+            </p>
           ) : null}
-
-          {/* Supporting line — smaller / lighter */}
-          <motion.p
-            className='text-fluid-xl font-heading font-semibold leading-[1.2] tracking-[-0.02em] text-[rgb(12,12,12)] dark:text-heading'
-            initial={reduce ? false : { opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
+          <h1 className='mt-5 max-w-[16ch] font-display text-[clamp(2.6rem,6vw,5.2rem)] font-bold leading-[0.94] tracking-[-0.045em] text-heading'>
             {title}
-          </motion.p>
-
-          {/* Description */}
-          {description && (
-            <motion.p
-              className='text-fluid-base mx-auto max-w-2xl leading-[1.8] text-body'
-              initial={reduce ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+          </h1>
+          {description ? (
+            <div className='mt-7 max-w-xl text-sm leading-relaxed text-body md:text-base'>
               {description}
-            </motion.p>
-          )}
-
-          {/* Additional children */}
-          {children && (
-            <motion.div
-              initial={reduce ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-            >
-              {children}
-            </motion.div>
-          )}
+            </div>
+          ) : null}
+          {children ? <div className='mt-10'>{children}</div> : null}
         </motion.div>
       </div>
-
-      {/* Bottom fade */}
-      <div
-        className='pointer-events-none absolute inset-x-0 bottom-0 h-16'
-        aria-hidden
-        style={{
-          background:
-            'linear-gradient(to bottom, transparent, hsl(var(--background) / 0.6))'
-        }}
-      />
     </section>
   )
 }

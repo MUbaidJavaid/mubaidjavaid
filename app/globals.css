@@ -3,139 +3,77 @@
 @tailwind utilities;
 
 /*
-  Design tokens - premium SaaS + engineer portfolio
-  • 8px spatial rhythm: prefer Tailwind spacing scale (4=16px, 6=24px, 8=32px…)
-  • Primary: #246b96 blue-teal (trust, clarity on white)
-  • Highlight / accent: teal for CTAs and emphasis (use sparingly)
+  Brand Visual System — see lib/brand-system.ts
+
+  Composition: BrandSection + BrandSplit + BrandCopy + BrandStage
+  Stage media (one per stage): product | diagram | motion | code
+  Stage tones: paper | muted | ink
+  Motion media roles only: craft | write | connect
+  Diagram language: NetworkGraph + WorkflowPath (same stroke family)
 */
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    /*
+      Premium trust palette — cool paper + deep navy (Stripe/Linear calm, not black/white).
+      Accent: steel blue used sparingly for links/focus.
+    */
+    --background: 214 32% 98%;
+    --foreground: 215 42% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 215 42% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 215 42% 12%;
 
-    /* Primary - #246b96 (clear blue-teal; stronger on white than indigo) */
-    --primary: 202 61% 37%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 202 64% 29%;
+    /* Trust navy — primary CTAs */
+    --primary: 215 48% 18%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 215 46% 24%;
 
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 214 28% 94%;
+    --secondary-foreground: 215 42% 14%;
 
-    --muted: 210 24% 96%;
-    --muted-foreground: 215 16% 38%;
+    --muted: 214 26% 95%;
+    --muted-foreground: 215 16% 40%;
 
-    /* UI accent (soft - cards, hovers) */
-    --accent: 214 36% 92%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 214 28% 94%;
+    --accent-foreground: 215 42% 14%;
 
-    /* Brand highlight - teal for links, badges, secondary CTAs */
-    --highlight: 188 72% 34%;
+    /* Steel blue highlight */
+    --highlight: 211 48% 42%;
     --highlight-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 88%;
-    --input: 214 32% 88%;
-    --ring: 202 61% 37%;
+    --border: 214 22% 88%;
+    --input: 214 22% 88%;
+    --ring: 215 48% 18%;
 
-    --radius: 0.9rem;
-    --heading: 222 47% 11%;
-    --body: 215 16% 38%;
-    --surface: 210 22% 98%;
+    --radius: 0.25rem;
+    --heading: 215 42% 12%;
+    --body: 215 16% 40%;
+    --surface: 214 32% 98%;
     --surface-elevated: 0 0% 100%;
 
-    /* Brand gradient: anchor #246b96 → deeper same-hue (premium depth, not flat) */
-    --brand-gradient: linear-gradient(135deg, #246b96, hsl(202 64% 27%));
+    --scrollbar-thumb: 215 22% 55%;
+    --scrollbar-thumb-hover: 215 40% 32%;
+    --scrollbar-track: 214 26% 93%;
 
-    /* Scrollbars: square thumb, slate + primary (overridden in .dark) */
-    --scrollbar-thumb: 202 42% 46%;
-    --scrollbar-thumb-hover: 202 50% 38%;
-    --scrollbar-track: 214 26% 91%;
-
-    --shadow-card:
-      0 2px 8px hsl(222 47% 11% / 0.04),
-      0 20px 48px -28px hsl(202 55% 22% / 0.18),
-      0 0 0 1px hsl(214 32% 88% / 0.85);
-
-    --shadow-float:
-      0 10px 28px -12px hsl(222 47% 11% / 0.12),
-      0 28px 64px -24px hsl(202 58% 32% / 0.22);
-
-    /*
-      Fluid type scale — grows/shrinks smoothly with viewport (≈320px → 1920px)
-      Formula: clamp(min, rem + vw, max)
-    */
-    --fluid-root: clamp(0.9375rem, 0.8rem + 0.55vw, 1.25rem);
-    --fluid-text-xs: clamp(0.7rem, 0.62rem + 0.28vw, 0.8125rem);
-    --fluid-text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-    --fluid-text-base: clamp(0.9375rem, 0.85rem + 0.4vw, 1.125rem);
-    --fluid-text-md: clamp(1.05rem, 0.95rem + 0.55vw, 1.25rem);
-    --fluid-text-lg: clamp(1.35rem, 1.1rem + 1.15vw, 1.95rem);
-    --fluid-text-xl: clamp(1.75rem, 1.35rem + 1.85vw, 2.85rem);
-    --fluid-text-2xl: clamp(2.15rem, 1.55rem + 2.85vw, 4rem);
-    --fluid-text-3xl: clamp(2.5rem, 1.7rem + 4vw, 5rem);
-    --fluid-text-mega: clamp(3rem, 0.85rem + 9.5vw, 11rem);
-    --fluid-text-hero: clamp(3rem, 0.65rem + 10.5vw, 12rem);
-    --fluid-text-display: clamp(2.5rem, 1.25rem + 5vw, 5.75rem);
-  }
-
-  .dark {
-    --background: 222 47% 9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 41% 12%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 41% 11%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 202 61% 37%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 202 64% 29%;
-
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 210 40% 96%;
-
-    --muted: 217 28% 16%;
-    --muted-foreground: 215 16% 72%;
-
-    --accent: 217 30% 20%;
-    --accent-foreground: 210 40% 96%;
-
-    --highlight: 188 72% 42%;
-    --highlight-foreground: 222 47% 9%;
-
-    --destructive: 0 62% 48%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 217 28% 22%;
-    --input: 217 28% 22%;
-    --ring: 202 61% 37%;
-
-    --heading: 210 40% 98%;
-    --body: 215 16% 72%;
-    --surface: 222 44% 8%;
-    --surface-elevated: 222 41% 12%;
-
-    --shadow-card:
-      0 2px 12px hsl(0 0% 0% / 0.35), 0 24px 48px -28px hsl(188 55% 25% / 0.25),
-      0 0 0 1px hsl(217 28% 22% / 0.9);
-
-    --shadow-float:
-      0 12px 32px -14px hsl(0 0% 0% / 0.45),
-      0 28px 64px -24px hsl(188 50% 20% / 0.35);
-
-    --scrollbar-thumb: 188 42% 48%;
-    --scrollbar-thumb-hover: 188 50% 55%;
-    --scrollbar-track: 217 26% 16%;
+    --fluid-root: clamp(0.9375rem, 0.85rem + 0.4vw, 1.0625rem);
+    --fluid-text-xs: clamp(0.6875rem, 0.65rem + 0.2vw, 0.75rem);
+    --fluid-text-sm: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem);
+    --fluid-text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --fluid-text-md: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+    --fluid-text-lg: clamp(1.375rem, 1.15rem + 1vw, 1.75rem);
+    --fluid-text-xl: clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);
+    --fluid-text-2xl: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem);
+    --fluid-text-3xl: clamp(2.75rem, 1.8rem + 4vw, 5rem);
+    --fluid-text-display: clamp(3.25rem, 1.5rem + 7vw, 7.5rem);
+    --fluid-text-hero: clamp(3.75rem, 1.2rem + 10vw, 9.5rem);
+    --fluid-text-mega: clamp(4rem, 1rem + 12vw, 11rem);
   }
 }
 
@@ -145,76 +83,55 @@
   }
 
   html {
-    scroll-behavior: smooth;
     font-size: var(--fluid-root);
     overflow-x: clip;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
   }
 
   body {
     @apply bg-background font-body text-body antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: clip;
-    background-image:
-      radial-gradient(
-        circle at 10% -10%,
-        hsl(var(--primary) / 0.09),
-        transparent 38%
-      ),
-      radial-gradient(
-        circle at 92% 0%,
-        hsl(188 72% 34% / 0.06),
-        transparent 40%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.72) 0%,
-        hsl(210 40% 98%) 100%
-      );
     min-height: 100vh;
+    background-color: hsl(var(--background));
   }
 
-  .dark body {
-    background-image:
-      radial-gradient(
-        circle at 12% -8%,
-        hsl(var(--primary) / 0.14),
-        transparent 42%
-      ),
-      radial-gradient(
-        circle at 88% 4%,
-        hsl(188 72% 34% / 0.08),
-        transparent 45%
-      ),
-      linear-gradient(180deg, hsl(222 47% 9%) 0%, hsl(222 44% 7%) 100%);
-  }
-
-  /* Scrollbars: box-shaped thumb (no rounding), theme colors (Firefox + WebKit) */
   * {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
   }
 
   *::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   }
 
   *::-webkit-scrollbar-track {
     background: hsl(var(--scrollbar-track));
-    border-radius: 0;
   }
 
   *::-webkit-scrollbar-thumb {
     background: hsl(var(--scrollbar-thumb));
-    border-radius: 0;
   }
 
   *::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--scrollbar-thumb-hover));
-  }
-
-  *::-webkit-scrollbar-corner {
-    background: hsl(var(--scrollbar-track));
   }
 
   h1,
@@ -223,233 +140,111 @@
   h4,
   h5,
   h6 {
-    @apply font-heading text-heading tracking-tight;
+    @apply font-display text-heading tracking-tight;
   }
 
-  /* Page titles stay medium-bold; home hero + section display tags opt into heavier weight */
-  h1 {
-    @apply font-semibold;
-  }
-
-  h1.section-display-tag {
-    @apply font-black;
-  }
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-semibold uppercase tracking-[0.04em];
-  }
-
-  /* Fluid type scale — all sizes track viewport width */
   h1 {
     font-size: var(--fluid-text-hero);
-    line-height: 1;
-    letter-spacing: -0.03em;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 700;
     @apply text-balance;
   }
+
   h2 {
     font-size: var(--fluid-text-2xl);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 700;
   }
+
   h3 {
     font-size: var(--fluid-text-xl);
-    line-height: 1.2;
-    letter-spacing: -0.015em;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 600;
   }
+
   h4 {
+    font-family: var(--font-body), system-ui, sans-serif;
     font-size: var(--fluid-text-lg);
     line-height: 1.3;
-    letter-spacing: -0.012em;
-  }
-  h5 {
-    font-size: clamp(1rem, 0.92rem + 0.4vw, 1.2rem);
-    line-height: 1.3;
-    letter-spacing: 0.04em;
+    letter-spacing: -0.015em;
+    font-weight: 600;
   }
 
   p,
   li {
-    line-height: 1.8;
-  }
-
-  /* Calibrated body text — clear and readable */
-  .text-body-base {
-    font-size: var(--fluid-text-md);
     line-height: 1.75;
   }
-  .text-body-sm {
-    font-size: var(--fluid-text-sm);
-    line-height: 1.7;
-  }
-  .text-body-xs {
-    font-size: var(--fluid-text-xs);
-    line-height: 1.65;
+
+  ::selection {
+    background: hsl(211 48% 42% / 0.18);
   }
 }
 
 @layer utilities {
-  /* Full-site dark mode: use these instead of raw bg-white / gray hex */
   .surface-page {
-    @apply bg-white dark:bg-background;
+    @apply bg-background;
   }
 
   .surface-muted {
-    @apply bg-[#F8FAFC] dark:bg-slate-950/50;
+    @apply bg-muted;
   }
 
   .surface-panel {
-    @apply bg-white dark:bg-card;
-  }
-
-  .surface-muted-soft {
-    @apply bg-[#FAFBFC] dark:bg-slate-900/40;
+    @apply bg-white;
   }
 
   .container-wide {
-    @apply mx-auto min-w-0 w-full max-w-[1240px]
-      pl-[max(1rem,env(safe-area-inset-left,0px))]
-      pr-[max(1rem,env(safe-area-inset-right,0px))]
-      lg:pl-[max(1.25rem,env(safe-area-inset-left,0px))]
-      lg:pr-[max(1.25rem,env(safe-area-inset-right,0px))]
-      xl:pl-[max(1.5rem,env(safe-area-inset-left,0px))]
-      xl:pr-[max(1.5rem,env(safe-area-inset-right,0px))];
+    @apply mx-auto min-w-0 w-full max-w-[1180px]
+      pl-[max(1.25rem,env(safe-area-inset-left,0px))]
+      pr-[max(1.25rem,env(safe-area-inset-right,0px))]
+      lg:pl-[max(2rem,env(safe-area-inset-left,0px))]
+      lg:pr-[max(2rem,env(safe-area-inset-right,0px))];
   }
 
-  /* Section vertical rhythm on 8px grid: 80 / 96 / 128 px */
+  .container-narrow {
+    @apply mx-auto min-w-0 w-full max-w-[720px]
+      pl-[max(1.25rem,env(safe-area-inset-left,0px))]
+      pr-[max(1.25rem,env(safe-area-inset-right,0px))];
+  }
+
   .section-padding {
-    @apply py-14 md:py-16 lg:py-20;
-  }
-
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-
-  .shadow-float {
-    box-shadow: var(--shadow-float);
+    @apply py-24 md:py-32 lg:py-40;
   }
 
   .section-label {
-    @apply inline-flex items-center justify-center gap-2 font-semibold uppercase tracking-[0.16em] text-primary/85;
-    font-size: var(--fluid-text-xs);
-  }
-
-  .section-header {
-    @apply mx-auto flex w-full max-w-5xl flex-col items-center space-y-5 text-center sm:space-y-6;
-  }
-
-  .section-header .section-label {
-    @apply justify-center;
+    @apply font-mono text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-muted-foreground;
   }
 
   .section-lead {
-    @apply max-w-3xl text-center text-body;
+    @apply max-w-xl text-body;
     font-size: var(--fluid-text-base);
     line-height: 1.7;
-  }
-
-  /* Body copy under section headings — same size as .section-lead */
-  .section-copy {
-    font-size: var(--fluid-text-base);
-    line-height: 1.7;
-  }
-
-  .section-subheading {
-    @apply font-heading font-semibold uppercase text-balance tracking-[0.04em] text-[rgb(12,12,12)] dark:text-heading;
-    font-size: var(--fluid-text-2xl);
-    line-height: 1.15;
-  }
-
-  .section-subheading--light {
-    color: #fff;
-  }
-
-  .section-display-tag {
-    @apply font-heading font-black uppercase leading-[0.92] tracking-[-0.04em];
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-    column-gap: 0.14em;
-    font-size: var(--fluid-text-mega);
-    max-width: 100%;
-  }
-
-  .section-display-tag--compact {
-    font-size: clamp(2rem, 0.75rem + 7.25vw, 7.5rem);
-    letter-spacing: -0.035em;
-  }
-
-  .section-display-tag-syntax {
-    @apply text-primary;
-  }
-
-  .section-display-tag-text {
-    @apply text-[rgb(12,12,12)] dark:text-heading;
-  }
-
-  .section-display-tag-syntax--light {
-    @apply text-[#7DD3FC];
-  }
-
-  .section-display-tag-text--light {
-    @apply text-white;
-  }
-
-  .section-label::before {
-    content: "";
-    @apply inline-block h-1.5 w-1.5 bg-primary align-middle;
-  }
-
-  .card-surface {
-    @apply border border-border/50 bg-white/95 backdrop-blur-[2px] dark:border-border/50 dark:bg-card/95;
-  }
-
-  .section-anchor {
-    @apply relative;
-  }
-
-  .section-anchor::before {
-    content: "";
-    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent;
-  }
-
-  .soft-panel {
-    @apply border border-border/65 bg-gradient-to-b from-white via-white to-[#F4F7FB] shadow-card dark:border-border/50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950;
-  }
-
-  .display-kicker {
-    @apply font-semibold uppercase tracking-[0.2em] text-primary/90;
-    font-size: var(--fluid-text-xs);
-  }
-
-  .gradient-text {
-    background-image: var(--brand-gradient);
-    @apply bg-clip-text text-transparent;
   }
 
   .section-heading {
-    @apply font-heading font-semibold text-balance text-[rgb(12,12,12)] dark:text-heading;
+    @apply font-display text-heading text-balance;
     font-size: var(--fluid-text-3xl);
-    line-height: 1.08;
-    letter-spacing: -0.025em;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+  }
+
+  .text-fluid-hero {
+    font-size: var(--fluid-text-hero);
+    line-height: 0.95;
+  }
+
+  .text-fluid-display {
+    font-size: var(--fluid-text-display);
+    line-height: 1;
   }
 
   .text-fluid-mega {
     font-size: var(--fluid-text-mega);
     line-height: 0.92;
-  }
-
-  .text-fluid-hero {
-    font-size: var(--fluid-text-hero);
-    line-height: 1;
-  }
-
-  .text-fluid-display {
-    font-size: var(--fluid-text-display);
-    line-height: 1.08;
   }
 
   .text-fluid-xl {
@@ -477,46 +272,46 @@
     line-height: 1.65;
   }
 
-  .section-heading-accent {
-    @apply font-heading not-italic text-primary;
+  .hairline {
+    @apply border-border/80;
   }
 
-  .section-heading.section-heading--light {
-    color: #fff;
+  .link-underline {
+    @apply relative inline-block;
   }
 
-  /* Premium section frame - subtle lift + hairline edge (use sparingly) */
-  .pro-surface {
-    @apply border border-border/50 bg-gradient-to-b from-white via-white to-[#F7FAFC] shadow-card ring-1 ring-black/[0.02] dark:border-border/50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 dark:ring-white/[0.04];
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-primary transition-transform duration-300 ease-out;
   }
 
-  /* Stat / metric numerals - aligned figures */
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
   .tabular-nums-pro {
     font-variant-numeric: tabular-nums;
   }
 
-  .text-balance-safe {
-    text-wrap: balance;
-  }
-
-  /* Staggered reveal - use with animation-delay inline */
-  .animate-reveal {
-    animation: fade-up 0.65s ease-out both;
+  .mask-reveal {
+    clip-path: inset(0 0 100% 0);
   }
 
   @keyframes fade-up {
     from {
       opacity: 0;
-      transform: translateY(14px);
+      transform: translateY(18px);
     }
-
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  /* Skeleton shimmer - premium loading states */
+  .animate-reveal {
+    animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
   @keyframes skeleton-shimmer {
     100% {
       transform: translateX(100%);
@@ -524,11 +319,11 @@
   }
 
   .skeleton-shimmer {
-    @apply relative overflow-hidden bg-muted/90;
+    @apply relative overflow-hidden bg-muted;
   }
 
   .skeleton-shimmer::after {
-    content: "";
+    content: '';
     @apply absolute inset-0;
     transform: translateX(-100%);
     background: linear-gradient(
@@ -540,12 +335,10 @@
     animation: skeleton-shimmer 1.35s ease-in-out infinite;
   }
 
-  /* Indeterminate bar for route / splash loading */
   @keyframes route-load-bar {
     0% {
       transform: translateX(-100%);
     }
-
     100% {
       transform: translateX(380%);
     }
@@ -553,5 +346,13 @@
 
   .animate-route-load-bar {
     animation: route-load-bar 1.15s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-reveal,
+    .animate-route-load-bar,
+    .skeleton-shimmer::after {
+      animation: none !important;
+    }
   }
 }

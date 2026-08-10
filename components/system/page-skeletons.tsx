@@ -134,31 +134,20 @@ export function BlogPostLoadingSkeleton () {
 /** Card grid only: use inside project sections while the grid chunk loads */
 export function ProjectCardsGridSkeleton ({ count = 6 }: { count?: number }) {
   return (
-    <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-3'>
+    <div className='divide-y divide-heading/10 border-y border-heading/10'>
       {Array.from({ length: count }).map((_, i) => (
         <div
           key={i}
-          className='overflow-hidden rounded-xl border border-border/60 surface-panel shadow-card dark:border-border/50'
+          className='mx-auto grid w-full max-w-[1280px] lg:grid-cols-2'
         >
-          <Skeleton className='h-56 w-full sm:h-64' />
-          <div className='space-y-3 p-5'>
-            <div className='flex items-center justify-between'>
-              <Skeleton className='h-3 w-24' />
-              <Skeleton className='h-3.5 w-3.5' />
-            </div>
-            <Skeleton className='h-6 w-[85%]' />
+          <Skeleton className='aspect-[16/10] w-full lg:min-h-[360px]' />
+          <div className='space-y-4 px-6 py-8 sm:px-8 md:px-10 md:py-12'>
+            <Skeleton className='h-3 w-40' />
+            <Skeleton className='h-10 w-[80%]' />
             <Skeleton className='h-4 w-full' />
             <Skeleton className='h-4 w-[90%]' />
-            <Skeleton className='h-4 w-3/4' />
-            <Skeleton className='mt-1 h-6 w-40 rounded-sm' />
-            <div className='flex items-center justify-between border-t border-border/60 pt-3'>
-              <div className='flex gap-1.5'>
-                <Skeleton className='h-5 w-14 rounded-full' />
-                <Skeleton className='h-5 w-12 rounded-full' />
-                <Skeleton className='h-5 w-10 rounded-full' />
-              </div>
-              <Skeleton className='h-4 w-20' />
-            </div>
+            <Skeleton className='mt-4 h-3 w-56' />
+            <Skeleton className='mt-6 h-5 w-36' />
           </div>
         </div>
       ))}
@@ -169,15 +158,13 @@ export function ProjectCardsGridSkeleton ({ count = 6 }: { count?: number }) {
 /** Projects grid */
 export function ProjectsGridLoadingSkeleton () {
   return (
-    <section className='section-anchor min-h-[60vh] surface-page py-10 md:py-14'>
-      <div className='container-wide space-y-8'>
-        <div className='space-y-3'>
-          <Skeleton className='h-3 w-24 ' />
-          <Skeleton className='h-10 max-w-md ' />
-          <Skeleton className='h-4 max-w-2xl ' />
-        </div>
-        <ProjectCardsGridSkeleton count={6} />
+    <section className='min-h-[60vh] bg-[hsl(214_28%_98%)]'>
+      <div className='container-wide space-y-6 py-16 md:py-20'>
+        <Skeleton className='h-3 w-24' />
+        <Skeleton className='h-12 max-w-xl' />
+        <Skeleton className='h-5 max-w-lg' />
       </div>
+      <ProjectCardsGridSkeleton count={4} />
     </section>
   )
 }

@@ -5,9 +5,8 @@ export function AboutPersonJsonLd () {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: site.name,
-    jobTitle: 'Full-Stack Developer',
-    description:
-      'Full-Stack Developer specialising in React, Next.js, Node.js, Express and MongoDB.',
+    jobTitle: site.role,
+    description: site.description,
     url: `${site.url}about`,
     address: {
       '@type': 'PostalAddress',
@@ -15,11 +14,13 @@ export function AboutPersonJsonLd () {
       addressCountry: 'PK'
     },
     knowsAbout: [
+      'Product Engineering',
       'React',
       'Next.js',
       'Node.js',
       'MongoDB',
       'TypeScript',
+      'SaaS platforms',
       'REST APIs'
     ],
     worksFor: {

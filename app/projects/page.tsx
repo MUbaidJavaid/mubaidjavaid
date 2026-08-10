@@ -1,11 +1,12 @@
-import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { EmptyState } from '@/components/system/EmptyState'
 import { ProjectCardsGridSkeleton } from '@/components/system/page-skeletons'
+import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { projects } from '@/data/projects'
 import { pageMetadata } from '@/lib/seo'
-import { FolderOpen } from 'lucide-react'
+import { ArrowUpRight, FolderOpen } from 'lucide-react'
 import type { Metadata } from 'next'
 import dynamicImport from 'next/dynamic'
+import Link from 'next/link'
 
 const ProjectsPortfolioGrid = dynamicImport(
   () =>
@@ -19,9 +20,9 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Projects',
+  title: 'Work',
   description:
-    'Explore case studies from the M Ubaid Javaid portfolio, covering business websites, full-stack web applications, frontend architecture, and maintainable product execution.',
+    'Selected product case studies by M Ubaid Javaid — problem framing, architecture, and implementation depth.',
   path: '/projects'
 })
 
@@ -29,69 +30,84 @@ export default function ProjectsPage () {
   return (
     <>
       <PageHeroHeader
-        subtitle='Projects'
-        tagPattern='bracket'
+        subtitle='Work · Evidence gallery'
+        watermark='WORK'
         title={
           <>
-            Project <span style={{ color: '#256e99' }}>portfolio</span> with
-            implementation depth
+            Case studies with
+            <span className='block text-[hsl(211_48%_42%)]'>
+              implementation depth.
+            </span>
           </>
         }
-        description='This section is designed to help you evaluate delivery quality, not just visual output. Each case study is documented with context, technical direction, and execution details so you can understand how decisions were made and what was actually shipped.'
-      />
+        description='Each project documents problem framing, architecture choices, and what actually shipped—so you can evaluate judgment, not just visuals.'
+      >
+        <div className='flex flex-wrap items-center gap-5'>
+          <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
+            {String(projects.length).padStart(2, '0')} documented products
+          </p>
+          <Link
+            href='/contact'
+            className='group inline-flex items-center gap-2 text-sm font-semibold text-heading'
+          >
+            Start a conversation
+            <ArrowUpRight
+              size={15}
+              className='transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
+              aria-hidden
+            />
+          </Link>
+        </div>
+      </PageHeroHeader>
 
-      <section className='section-anchor surface-page py-10'>
-        <div className='container-wide relative z-10 space-y-6'>
-          <div className='grid gap-4 md:grid-cols-3 mb-20'>
-            <div className='md:border-r md:border-border/70'>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                What you will see
-              </p>
-              <p className='mt-2 text-sm leading-relaxed text-body/80'>
-                Problem framing, architecture choices, stack constraints, and
-                implementation decisions that affected delivery.
-              </p>
-            </div>
-            <div className='md:border-r md:border-border/70'>
-              <p className='text-xs  font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                Why it matters
-              </p>
-              <p className='mt-2 text-sm leading-relaxed text-body/80'>
-                This helps founders and hiring teams assess engineering
-                judgment, maintainability mindset, and product execution
-                maturity.
-              </p>
-            </div>
-            <div>
-              <p className='text-xs font-semibold uppercase tracking-[0.14em] text-primary/75'>
-                Next step
-              </p>
-              <p className='mt-2 text-sm leading-relaxed text-body/80'>
-                If a project direction matches your goals, continue with the
-                contact flow for scope discussion and implementation planning.
-              </p>
-            </div>
+      <section className='bg-[hsl(214_28%_98%)]'>
+        <div className='mx-auto grid w-full max-w-[1280px] gap-8 border-b border-heading/10 px-6 py-10 sm:px-8 md:grid-cols-3 md:gap-12 md:px-10 md:py-12 lg:px-12'>
+          <div>
+            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+              What you will see
+            </p>
+            <p className='mt-3 text-sm leading-relaxed text-body'>
+              Problem framing, architecture choices, stack constraints, and
+              implementation decisions that affected delivery.
+            </p>
           </div>
-          {projects.length === 0 ? (
+          <div>
+            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+              Why it matters
+            </p>
+            <p className='mt-3 text-sm leading-relaxed text-body'>
+              Helps founders and hiring teams assess engineering judgment and
+              product execution maturity.
+            </p>
+          </div>
+          <div>
+            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+              Next step
+            </p>
+            <p className='mt-3 text-sm leading-relaxed text-body'>
+              If a direction matches your goals,{' '}
+              <Link href='/contact' className='link-underline text-heading'>
+                start a conversation
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+
+        {projects.length === 0 ? (
+          <div className='container-wide py-16'>
             <EmptyState
               icon={FolderOpen}
               title='No projects to show yet'
-              description='Case studies will appear here as they are published. In the meantime, reach out if you would like to discuss a build or see relevant work in conversation.'
+              description='Case studies will appear here as they are published.'
               primaryAction={{ label: 'Contact', href: '/contact' }}
               secondaryAction={{ label: 'Go home', href: '/' }}
               className='max-w-xl'
             />
-          ) : (
-            <>
-              <ProjectsPortfolioGrid />
-              <div className='surface-panel px-5 py-4 text-sm text-body/75 dark:border-border/50'>
-                Looking for a specific industry, workflow, or architecture
-                pattern? Share your requirements through the contact page and I
-                will map you to the most relevant implementations.
-              </div>
-            </>
-          )}
-        </div>
+          </div>
+        ) : (
+          <ProjectsPortfolioGrid />
+        )}
       </section>
     </>
   )

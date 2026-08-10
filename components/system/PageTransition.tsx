@@ -1,8 +1,9 @@
 'use client'
 
-import type { ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { brandMotion } from '@/lib/brand-system'
+import { motion, useReducedMotion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import type { ReactNode } from 'react'
 
 export function PageTransition ({
   children
@@ -10,6 +11,11 @@ export function PageTransition ({
   children: ReactNode
 }) {
   const pathname = usePathname()
+  const reduce = useReducedMotion()
+
+  if (reduce) {
+    return <div key={pathname}>{children}</div>
+  }
 
   return (
     <motion.div
@@ -18,7 +24,7 @@ export function PageTransition ({
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.32,
-        ease: [0.22, 1, 0.36, 1]
+        ease: brandMotion.ease
       }}
     >
       {children}
