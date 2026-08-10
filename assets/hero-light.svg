@@ -58,12 +58,40 @@
   <rect width="1200" height="460" fill="url(#gridL)"/>
 
   <g filter="url(#softBlurL)">
-    <rect width="1200" height="460" fill="url(#blobBlueL)"/>
-    <rect width="1200" height="460" fill="url(#blobIndigoL)"/>
-    <rect width="1200" height="460" fill="url(#blobCyanL)"/>
+    <rect width="1200" height="460" fill="url(#blobBlueL)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 22 14; -10 20; 0 0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
+    <rect width="1200" height="460" fill="url(#blobIndigoL)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -18 -10; 14 12; 0 0" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
+    <rect width="1200" height="460" fill="url(#blobCyanL)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 12 -16; -16 8; 0 0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
   </g>
 
   <rect width="1200" height="460" filter="url(#noiseFilterL)"/>
+
+  <g opacity="0.16" stroke="#159C90" stroke-width="1" fill="none">
+    <path id="circuitAL" d="M 700 60 H 900 V 160 H 1080"/>
+    <path id="circuitBL" d="M 760 340 H 940 V 240 H 1000 V 130"/>
+    <path id="circuitCL" d="M 640 400 H 820 V 300 H 1150"/>
+  </g>
+  <g fill="#159C90">
+    <circle cx="700" cy="60" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="0s" repeatCount="indefinite"/></circle>
+    <circle cx="900" cy="160" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="0.8s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="160" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="1.6s" repeatCount="indefinite"/></circle>
+    <circle cx="940" cy="240" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" begin="0.4s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="300" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" begin="1.2s" repeatCount="indefinite"/></circle>
+  </g>
+  <circle r="3.5" fill="#3B6FE0">
+    <animateMotion dur="5s" begin="0.3s" repeatCount="indefinite"><mpath href="#circuitAL"/></animateMotion>
+  </circle>
+  <circle r="3.5" fill="#3B6FE0" opacity="0.8">
+    <animateMotion dur="6s" begin="1.4s" repeatCount="indefinite"><mpath href="#circuitBL"/></animateMotion>
+  </circle>
+  <circle r="3.5" fill="#3B6FE0" opacity="0.6">
+    <animateMotion dur="5.5s" begin="2.2s" repeatCount="indefinite"><mpath href="#circuitCL"/></animateMotion>
+  </circle>
 
   <rect x="0.5" y="0.5" width="1199" height="459" rx="18" fill="none" stroke="#14161A" stroke-opacity="0.07"/>
 
@@ -76,7 +104,7 @@
   </g>
 
   <g clip-path="url(#revealClipL)">
-    <text x="64" y="216" font-family="Helvetica Neue, Arial, sans-serif" font-size="60" font-weight="600" fill="#14161A" letter-spacing="-1.5">
+    <text x="64" y="216" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="58" font-weight="700" fill="#14161A" letter-spacing="0">
       M UBAID JAVAID
     </text>
   </g>

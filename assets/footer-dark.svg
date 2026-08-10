@@ -20,7 +20,7 @@
   <g filter="url(#footBlur)"><rect width="1200" height="220" fill="url(#footGlow)"/></g>
   <rect x="0.5" y="0.5" width="1199" height="219" rx="18" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
 
-  <text x="600" y="82" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="600" fill="#F4F5F7">
+  <text x="600" y="82" text-anchor="middle" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="700" fill="#F4F5F7">
     Let&#8217;s build something that scales.
   </text>
   <rect x="490" y="98" width="220" height="2.5" rx="1.25" fill="url(#ctaUnderline)">

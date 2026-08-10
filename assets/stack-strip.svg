@@ -1,27 +1,19 @@
 <svg width="1000" height="230" viewBox="0 0 1000 230" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      .lbl { font-family: Helvetica Neue, Arial, sans-serif; font-size: 10.5px; fill: #7C8494; letter-spacing: 1.5px; }
-      .chip { font-family: Helvetica Neue, Arial, sans-serif; font-size: 12.5px; fill: #D8DBE2; }
-    </style>
-  </defs>
 
   <!-- Row 1: Languages & Runtime -->
   <g transform="translate(0,0)">
     <rect x="0" y="6" width="3" height="16" fill="#3B6FE0"/>
-    <text x="16" y="18" class="lbl">LANGUAGES &amp; RUNTIME</text>
+    <text x="16" y="18" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="10.5" fill="#7C8494" letter-spacing="1.5">LANGUAGES &amp; RUNTIME</text>
     <g transform="translate(0,36)">
-      <g>
-        <rect width="102" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="18" y="21" class="chip">TypeScript</text>
-      </g>
+      <rect width="102" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="18" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">TypeScript</text>
       <g transform="translate(112,0)">
         <rect width="102" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">JavaScript</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">JavaScript</text>
       </g>
       <g transform="translate(224,0)">
         <rect width="86" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Node.js</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Node.js</text>
       </g>
     </g>
   </g>
@@ -29,19 +21,17 @@
   <!-- Row 2: Frontend -->
   <g transform="translate(0,90)">
     <rect x="0" y="6" width="3" height="16" fill="#5B5BD6"/>
-    <text x="16" y="18" class="lbl">FRONTEND</text>
+    <text x="16" y="18" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="10.5" fill="#7C8494" letter-spacing="1.5">FRONTEND</text>
     <g transform="translate(0,36)">
-      <g>
-        <rect width="72" height="32" rx="16" fill="#12141B" stroke="#5B5BD6" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">React</text>
-      </g>
+      <rect width="72" height="32" rx="16" fill="#12141B" stroke="#5B5BD6" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">React</text>
       <g transform="translate(82,0)">
         <rect width="86" height="32" rx="16" fill="#12141B" stroke="#5B5BD6" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Next.js</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Next.js</text>
       </g>
       <g transform="translate(178,0)">
         <rect width="126" height="32" rx="16" fill="#12141B" stroke="#5B5BD6" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Tailwind CSS</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Tailwind CSS</text>
       </g>
     </g>
   </g>
@@ -49,23 +39,21 @@
   <!-- Row 3: Backend & Data -->
   <g transform="translate(0,150)">
     <rect x="0" y="6" width="3" height="16" fill="#4FD1C5"/>
-    <text x="16" y="18" class="lbl">BACKEND &amp; DATA</text>
+    <text x="16" y="18" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="10.5" fill="#7C8494" letter-spacing="1.5">BACKEND &amp; DATA</text>
     <g transform="translate(0,36)">
-      <g>
-        <rect width="90" height="32" rx="16" fill="#12141B" stroke="#4FD1C5" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Express</text>
-      </g>
+      <rect width="90" height="32" rx="16" fill="#12141B" stroke="#4FD1C5" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Express</text>
       <g transform="translate(100,0)">
         <rect width="98" height="32" rx="16" fill="#12141B" stroke="#4FD1C5" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">MongoDB</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">MongoDB</text>
       </g>
       <g transform="translate(208,0)">
         <rect width="72" height="32" rx="16" fill="#12141B" stroke="#4FD1C5" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Redis</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Redis</text>
       </g>
       <g transform="translate(290,0)">
         <rect width="108" height="32" rx="16" fill="#12141B" stroke="#4FD1C5" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">REST APIs</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">REST APIs</text>
       </g>
     </g>
   </g>
@@ -73,23 +61,21 @@
   <!-- Row 4: Platform & Tooling -->
   <g transform="translate(500,0)">
     <rect x="0" y="6" width="3" height="16" fill="#3B6FE0"/>
-    <text x="16" y="18" class="lbl">PLATFORM &amp; TOOLING</text>
+    <text x="16" y="18" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="10.5" fill="#7C8494" letter-spacing="1.5">PLATFORM &amp; TOOLING</text>
     <g transform="translate(0,36)">
-      <g>
-        <rect width="82" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Docker</text>
-      </g>
+      <rect width="82" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Docker</text>
       <g transform="translate(92,0)">
         <rect width="78" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Vercel</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Vercel</text>
       </g>
       <g transform="translate(180,0)">
         <rect width="76" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Stripe</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Stripe</text>
       </g>
       <g transform="translate(266,0)">
         <rect width="60" height="32" rx="16" fill="#12141B" stroke="#3B6FE0" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Git</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Git</text>
       </g>
     </g>
   </g>
@@ -97,19 +83,17 @@
   <!-- Row 5: Practices -->
   <g transform="translate(500,90)">
     <rect x="0" y="6" width="3" height="16" fill="#5B5BD6"/>
-    <text x="16" y="18" class="lbl">PRACTICES</text>
+    <text x="16" y="18" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="10.5" fill="#7C8494" letter-spacing="1.5">PRACTICES</text>
     <g transform="translate(0,36)">
-      <g>
-        <rect width="150" height="32" rx="16" fill="#12141B" stroke="#5B5BD6" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">System Design</text>
-      </g>
+      <rect width="150" height="32" rx="16" fill="#12141B" stroke="#5B5BD6" stroke-opacity="0.35" stroke-width="1"/>
+      <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">System Design</text>
       <g transform="translate(160,0)">
         <rect width="90" height="32" rx="16" fill="#12141B" stroke="#5B5BD6" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Auth</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Auth</text>
       </g>
       <g transform="translate(260,0)">
         <rect width="120" height="32" rx="16" fill="#12141B" stroke="#5B5BD6" stroke-opacity="0.35" stroke-width="1"/>
-        <text x="16" y="21" class="chip">Payments</text>
+        <text x="16" y="21" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="12.5" fill="#D8DBE2">Payments</text>
       </g>
     </g>
   </g>

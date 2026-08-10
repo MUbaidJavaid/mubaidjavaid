@@ -8,19 +8,19 @@
 
     <radialGradient id="blobBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(220 120) rotate(35) scale(420 300)">
-      <stop offset="0%" stop-color="#3B6FE0" stop-opacity="0.55"/>
+      <stop offset="0%" stop-color="#3B6FE0" stop-opacity="0.62"/>
       <stop offset="100%" stop-color="#3B6FE0" stop-opacity="0"/>
     </radialGradient>
 
     <radialGradient id="blobIndigo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(980 360) rotate(-25) scale(380 260)">
-      <stop offset="0%" stop-color="#5B5BD6" stop-opacity="0.45"/>
+      <stop offset="0%" stop-color="#5B5BD6" stop-opacity="0.52"/>
       <stop offset="100%" stop-color="#5B5BD6" stop-opacity="0"/>
     </radialGradient>
 
     <radialGradient id="blobCyan" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
       gradientTransform="translate(760 40) rotate(10) scale(300 180)">
-      <stop offset="0%" stop-color="#4FD1C5" stop-opacity="0.25"/>
+      <stop offset="0%" stop-color="#4FD1C5" stop-opacity="0.34"/>
       <stop offset="100%" stop-color="#4FD1C5" stop-opacity="0"/>
     </radialGradient>
 
@@ -63,12 +63,41 @@
   <rect width="1200" height="460" fill="url(#grid)"/>
 
   <g filter="url(#softBlur)">
-    <rect width="1200" height="460" fill="url(#blobBlue)"/>
-    <rect width="1200" height="460" fill="url(#blobIndigo)"/>
-    <rect width="1200" height="460" fill="url(#blobCyan)"/>
+    <rect width="1200" height="460" fill="url(#blobBlue)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 22 14; -10 20; 0 0" dur="14s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
+    <rect width="1200" height="460" fill="url(#blobIndigo)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -18 -10; 14 12; 0 0" dur="17s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
+    <rect width="1200" height="460" fill="url(#blobCyan)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 12 -16; -16 8; 0 0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"/>
+    </rect>
   </g>
 
   <rect width="1200" height="460" filter="url(#noiseFilter)"/>
+
+  <!-- circuit motif: bespoke background signature -->
+  <g opacity="0.22" stroke="#4FD1C5" stroke-width="1" fill="none">
+    <path id="circuitA" d="M 700 60 H 900 V 160 H 1080"/>
+    <path id="circuitB" d="M 760 340 H 940 V 240 H 1000 V 130"/>
+    <path id="circuitC" d="M 640 400 H 820 V 300 H 1150"/>
+  </g>
+  <g fill="#4FD1C5">
+    <circle cx="700" cy="60" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="0s" repeatCount="indefinite"/></circle>
+    <circle cx="900" cy="160" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="0.8s" repeatCount="indefinite"/></circle>
+    <circle cx="1080" cy="160" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.4s" begin="1.6s" repeatCount="indefinite"/></circle>
+    <circle cx="940" cy="240" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" begin="0.4s" repeatCount="indefinite"/></circle>
+    <circle cx="820" cy="300" r="2.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" begin="1.2s" repeatCount="indefinite"/></circle>
+  </g>
+  <circle r="3.5" fill="#7FA8FF">
+    <animateMotion dur="5s" begin="0.3s" repeatCount="indefinite"><mpath href="#circuitA"/></animateMotion>
+  </circle>
+  <circle r="3.5" fill="#7FA8FF" opacity="0.8">
+    <animateMotion dur="6s" begin="1.4s" repeatCount="indefinite"><mpath href="#circuitB"/></animateMotion>
+  </circle>
+  <circle r="3.5" fill="#7FA8FF" opacity="0.6">
+    <animateMotion dur="5.5s" begin="2.2s" repeatCount="indefinite"><mpath href="#circuitC"/></animateMotion>
+  </circle>
 
   <rect x="0.5" y="0.5" width="1199" height="459" rx="18" fill="none" stroke="#FFFFFF" stroke-opacity="0.06"/>
 
@@ -83,7 +112,7 @@
 
   <!-- Name -->
   <g clip-path="url(#revealClip)">
-    <text x="64" y="216" font-family="Helvetica Neue, Arial, sans-serif" font-size="60" font-weight="600" fill="url(#textFade)" letter-spacing="-1.5">
+    <text x="64" y="216" font-family="-apple-system, Helvetica Neue, Arial, sans-serif" font-size="58" font-weight="700" fill="url(#textFade)" letter-spacing="0">
       M UBAID JAVAID
     </text>
   </g>
