@@ -63,8 +63,7 @@ export function ProcessDeliveryVisual ({ className }: { className?: string }) {
   const inView = useInView(root, { once: true, margin: '-10%' })
   const { scrollYProgress } = useScroll({
     target: root,
-    offset: ['start 80%', 'end 45%'],
-    layoutEffect: false
+    offset: ['start 80%', 'end 45%']
   })
   const progress = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
 
