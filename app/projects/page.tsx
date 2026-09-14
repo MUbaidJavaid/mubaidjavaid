@@ -1,6 +1,7 @@
 import { EmptyState } from '@/components/system/EmptyState'
 import { ProjectCardsGridSkeleton } from '@/components/system/page-skeletons'
 import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
+import { evolvoWork } from '@/data/evolvo-work'
 import { projects } from '@/data/projects'
 import { pageMetadata } from '@/lib/seo'
 import { ArrowUpRight, FolderOpen } from 'lucide-react'
@@ -16,13 +17,21 @@ const ProjectsPortfolioGrid = dynamicImport(
   { loading: () => <ProjectCardsGridSkeleton count={projects.length} /> }
 )
 
+const EvolvoWorkGallery = dynamicImport(
+  () =>
+    import('@/components/sections/EvolvoWorkGallery').then(m => ({
+      default: m.EvolvoWorkGallery
+    })),
+  { loading: () => <ProjectCardsGridSkeleton count={6} /> }
+)
+
 export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
   title: 'Work',
   description:
-    'Selected product case studies by M Ubaid Javaid — problem framing, architecture, and implementation depth.',
+    'Client products shipped at Evolvo-Technologies plus documented case studies by M Ubaid Javaid — fintech, healthcare, prop trading, and real estate.',
   path: '/projects'
 })
 
@@ -30,27 +39,28 @@ export default function ProjectsPage () {
   return (
     <>
       <PageHeroHeader
-        subtitle='Work · Evidence gallery'
+        subtitle='Work · Evolvo delivery + case studies'
         watermark='WORK'
         title={
           <>
-            Case studies with
+            Live products,
             <span className='block text-[hsl(211_48%_42%)]'>
-              implementation depth.
+              documented depth.
             </span>
           </>
         }
-        description='Each project documents problem framing, architecture choices, and what actually shipped—so you can evaluate judgment, not just visuals.'
+        description='Production sites shipped at Evolvo-Technologies, grouped by domain — then selected case studies with architecture, problem framing, and implementation notes.'
       >
         <div className='flex flex-wrap items-center gap-5'>
           <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
-            {String(projects.length).padStart(2, '0')} documented products
+            {String(evolvoWork.length).padStart(2, '0')} live products ·{' '}
+            {String(projects.length).padStart(2, '0')} case studies
           </p>
           <Link
-            href='/contact'
+            href='#evolvo'
             className='group inline-flex items-center gap-2 text-sm font-semibold text-heading'
           >
-            Start a conversation
+            Browse Evolvo work
             <ArrowUpRight
               size={15}
               className='transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
@@ -64,20 +74,20 @@ export default function ProjectsPage () {
         <div className='mx-auto grid w-full max-w-[1280px] gap-8 border-b border-heading/10 px-6 py-10 sm:px-8 md:grid-cols-3 md:gap-12 md:px-10 md:py-12 lg:px-12'>
           <div>
             <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
-              What you will see
+              Client delivery
             </p>
             <p className='mt-3 text-sm leading-relaxed text-body'>
-              Problem framing, architecture choices, stack constraints, and
-              implementation decisions that affected delivery.
+              Fintech, healthcare, prop trading, real estate, and brand sites
+              shipped with Evolvo-Technologies — each with a live URL.
             </p>
           </div>
           <div>
             <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
-              Why it matters
+              Case studies
             </p>
             <p className='mt-3 text-sm leading-relaxed text-body'>
-              Helps founders and hiring teams assess engineering judgment and
-              product execution maturity.
+              Selected products with problem framing, architecture choices, and
+              implementation depth you can evaluate.
             </p>
           </div>
           <div>
@@ -90,6 +100,23 @@ export default function ProjectsPage () {
                 start a conversation
               </Link>
               .
+            </p>
+          </div>
+        </div>
+
+        <EvolvoWorkGallery />
+
+        <div className='border-t border-heading/10'>
+          <div className='mx-auto w-full max-w-[1280px] px-6 py-12 sm:px-8 md:px-10 md:py-16 lg:px-12'>
+            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+              Documented case studies
+            </p>
+            <h2 className='mt-3 font-display text-[clamp(1.8rem,3.4vw,3rem)] font-semibold leading-[1.05] tracking-tight text-heading'>
+              Implementation depth.
+            </h2>
+            <p className='mt-4 max-w-[54ch] text-sm leading-relaxed text-body'>
+              Longer write-ups for products where architecture, workflow, and
+              delivery decisions are worth inspecting closely.
             </p>
           </div>
         </div>

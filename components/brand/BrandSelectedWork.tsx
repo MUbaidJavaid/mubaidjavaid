@@ -19,7 +19,7 @@ export function BrandSelectedWork () {
             <h2 className={cn('mt-3', brandType.title)}>Products in production.</h2>
           </div>
           <Link href='/projects' className='link-underline text-sm font-medium text-heading'>
-            All case studies
+            All work
           </Link>
         </div>
       </div>

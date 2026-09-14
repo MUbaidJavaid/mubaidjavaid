@@ -79,15 +79,15 @@ export function ProofSignalStage ({
   const signals = [
     {
       id: '01',
-      title: 'Shipped products',
-      body: 'Case studies with architecture, workflow, and outcomes.',
-      href: '/projects'
+      title: 'Evolvo delivery',
+      body: 'Live client products across fintech, healthcare, markets, and real estate.',
+      href: '/projects#evolvo'
     },
     {
       id: '02',
-      title: 'Published writing',
-      body: 'Notes you can read before the first call.',
-      href: '/blog'
+      title: 'Case studies',
+      body: 'Architecture, workflow, and outcomes you can inspect in depth.',
+      href: '/projects'
     },
     {
       id: '03',

@@ -74,13 +74,13 @@ export const experience = {
       duration: 'Feb 2026 — Present',
       location: 'On-site',
       type: 'Full-time',
-      copy: 'Full-stack delivery with Next.js and MERN — architecture, APIs, performance, and production releases.',
+      copy: 'Shipping production web products for Evolvo clients — fintech, healthcare, prop trading, and real estate — with Next.js, MERN, and launch-ready interfaces.',
       highlights: [
-        'Developing full-stack applications with Next.js and React',
-        'Implementing server-side rendering and static site generation',
-        'Optimizing application performance and SEO',
-        'Collaborating with design and product teams',
-        'Writing clean, maintainable code with TypeScript'
+        'Shipped live client products across fintech, healthcare, markets, and real estate',
+        'Built conversion-led marketing sites and operational product surfaces',
+        'Implemented server-side rendering, SEO, and production deploys on Vercel',
+        'Collaborating with design and product teams on multi-domain launches',
+        'Writing clean, maintainable TypeScript across Next.js and React codebases'
       ],
       technologies: [
         'React',
@@ -337,7 +337,7 @@ export const fitSignals = [
   },
   {
     title: 'Domain systems you can trust',
-    body: 'Housing society ops, POS, healthcare, fintech, and commerce patterns already shipped — so your product starts from proven structure, not a blank canvas.'
+    body: 'Prop trading, payments, healthcare, and real-estate products already live from Evolvo delivery — plus PAS/ERP and commerce platforms you can inspect in the case studies.'
   },
   {
     title: 'Handover your team can extend',

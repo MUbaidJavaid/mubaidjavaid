@@ -2,7 +2,7 @@
 
 import { BrandSection } from '@/components/brand/system/BrandSection'
 import { ProofSignalStage } from '@/components/visual/ProofSignalStage'
-import { posts } from '@/data/posts'
+import { evolvoWork } from '@/data/evolvo-work'
 import { projects } from '@/data/projects'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
@@ -10,18 +10,18 @@ import Link from 'next/link'
 export function BrandProof () {
   const stats = [
     {
+      value: String(evolvoWork.length).padStart(2, '0'),
+      numeric: evolvoWork.length,
+      label: 'Live Evolvo products',
+      shortLabel: 'Evolvo',
+      href: '/projects#evolvo'
+    },
+    {
       value: String(projects.length).padStart(2, '0'),
       numeric: projects.length,
       label: 'Documented case studies',
       shortLabel: 'Work',
       href: '/projects'
-    },
-    {
-      value: String(posts.length).padStart(2, '0'),
-      numeric: posts.length,
-      label: 'Published articles',
-      shortLabel: 'Writing',
-      href: '/blog'
     },
     {
       value: '24h',
