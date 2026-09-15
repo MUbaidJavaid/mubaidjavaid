@@ -1,7 +1,8 @@
 # Software Requirements Specification  
 ## M Ubaid Javaid — Personal Portfolio, SEO, and Client-Hunting System
 
-> **Superseded for SEO + client-acquisition decisions** by [`PORTFOLIO_SEO_CLIENT_MASTER.md`](./PORTFOLIO_SEO_CLIENT_MASTER.md) (SRS-PORTFOLIO-SEO-CLIENT-001, 15 Sep 2026). Keep this file as the historical v1.0 baseline.
+> **Authoritative SEO + client-acquisition SRS:** [`PORTFOLIO_SEO_CLIENT_MASTER.md`](./PORTFOLIO_SEO_CLIENT_MASTER.md) (SRS-PORTFOLIO-SEO-CLIENT-001).  
+> This file is the **v1 historical baseline** plus a short implementation status. Prefer the master doc for phase status and acceptance.
 
 | Field | Value |
 |---|---|
@@ -10,10 +11,23 @@
 | Owner | M Ubaid Javaid |
 | Location | Multan, Pakistan |
 | Primary site | https://mubaidjavaid.vercel.app/ |
-| Preview / research URL | https://mubaidjavaid-ten.vercel.app/ |
-| Status | Living spec — use for SEO research and outbound |
-| Version | 1.0 |
+| Preview / research URL | https://mubaidjavaid-ten.vercel.app/ (retire / noindex — do not use as public site) |
+| Status | Living — **implementation synced 15 Sep 2026** |
+| Version | 1.1 |
 | Date | 15 September 2026 |
+
+### Implementation status (v1.1)
+
+| Track | Status |
+|---|---|
+| Master research (`PORTFOLIO_SEO_CLIENT_MASTER.md`) | Complete |
+| Phases 1–5 (code: entity, technical SEO, on-page, cases, commercial blog) | Complete in repo |
+| Commercial / hire-intent articles | **35** buyer posts (batches A+B+C) + upgraded engineering notes (~57 total) |
+| Phases 6–8 | Docs + analytics hooks ready; GSC/outreach execution = owner |
+| Brand palette | Unified steel navy (`--primary` / `--highlight`); purple CTA drift removed |
+| Live robots + sitemap on primary | Verified working; redeploy after content changes |
+
+**Owner checklist still open:** Google Search Console + Bing sitemap submit; GitHub profile website = primary URL; LinkedIn Featured = proof pack; weekly outreach from `CLIENT_OUTREACH_PACK.md`.
 
 ---
 

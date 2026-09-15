@@ -41,12 +41,21 @@ export const postsBatchCommercial: BlogPost[] = [
           'We add observability basics (structured logs, error boundaries), tighten forms and empty states, and document how to extend the codebase. Launch is a checklist, not a vibe.',
           'If you need the marketing site first for fundraising, we can sequence that — but we label it clearly so nobody confuses a brochure with an MVP.'
         ]
+      },
+      {
+        id: 'searchers',
+        title: 'What founders usually search before this conversation',
+        paragraphs: [
+          'Queries like “Next.js SaaS MVP timeline”, “hire Next.js developer”, and “marketing site vs SaaS MVP” are really scope questions. If you are comparing brochure quotes to product quotes, read the marketing-vs-multi-tenant article next.',
+          'Bring one success event to the first call. That single sentence saves a week of thrash.'
+        ]
       }
     ],
     keyTakeaways: [
       'One workflow beats ten unfinished screens.',
       'Staging URL from week one keeps decisions honest.',
-      'Tenancy and auth are product decisions, not “later” chores.'
+      'Tenancy and auth are product decisions, not “later” chores.',
+      'Label brochure work and product work as different buys.'
     ],
     conclusion:
       'If you want a Next.js SaaS MVP with clear ownership and a realistic calendar, start from the services page and send the workflow you care about most.',
@@ -92,12 +101,21 @@ export const postsBatchCommercial: BlogPost[] = [
           'Look for weekly demos, written scope, and a clear definition of done. “Hire me, I’m 10x” is not a process.',
           'Timezone honesty matters for remote work from Pakistan: async updates, overlapping hours when needed, and a staging URL you can click without a meeting.'
         ]
+      },
+      {
+        id: 'interview',
+        title: 'Five interview questions that separate seniors',
+        paragraphs: [
+          'When do you choose Server Actions vs Route Handlers? How do you set `metadataBase` and canonicals? What was your last production incident?',
+          'How do you structure RBAC for a second tenant? What do you refuse to put in an MVP? Vague answers here predict vague delivery.'
+        ]
       }
     ],
     keyTakeaways: [
       'Prefer live proof with role clarity over vanity metrics.',
       'Test App Router judgment, not just React trivia.',
-      'Process and communication are part of the hire.'
+      'Process and communication are part of the hire.',
+      'Incident stories beat buzzword bingo.'
     ],
     conclusion:
       'Use this checklist on any candidate — including me. Then open the services page and compare against the work you actually need.',

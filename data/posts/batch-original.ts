@@ -4,14 +4,14 @@ import type { BlogPost } from './types'
 export const originalPosts: BlogPost[] = [
   {
     slug: 'seo-friendly-nextjs-business-websites-without-sacrificing-ux',
-    title: 'Improving Frontend Performance in Next.js Without Sacrificing UX',
-    subtitle: 'When Lighthouse scores and real user experience stay aligned',
+    title: 'SEO-Friendly Next.js Business Websites (Without Killing UX)',
+    subtitle: 'Metadata, Core Web Vitals, and structure buyers actually feel',
     summary:
-      'How I keep SEO, perceived speed, and layout stability on the same track for business sites - without turning pages into keyword soup.',
+      'How to build SEO-friendly Next.js business sites that stay fast: page intent, App Router metadata, LCP/CLS, and lean client JavaScript — without keyword stuffing.',
     publishedAt: '2026-02-18',
-    readTime: '11 min read',
+    readTime: '12 min read',
     category: 'Next.js Performance',
-    tags: ['Next.js', 'SEO', 'UX', 'Core Web Vitals'],
+    tags: ['Next.js', 'SEO', 'UX', 'Core Web Vitals', 'Business Website'],
     intro:
       'Business sites get squeezed from two sides: marketing wants rankings and rich content; users want fast, calm pages. Next.js gives you the tools to satisfy both if you decide structure early - routing, metadata, images, and what actually ships to the client.',
     sections: [
@@ -82,22 +82,25 @@ export async function generateMetadata(
       'Prefer server rendering for marketing shells; isolate client components.',
     ],
     conclusion:
-      'Performance and SEO for Next.js business sites are mostly product decisions expressed in code: what loads first, what is promised in the snippet, and what the user sees in the first second. Nail those, and scores tend to follow.',
+      'Performance and SEO for Next.js business sites are mostly product decisions expressed in code: what loads first, what is promised in the snippet, and what the user sees in the first second. Nail those, and scores tend to follow. For a launch checklist and LCP fixes, see the newer commercial guides — then discuss your site on Contact.',
     relatedLinks: [
+      { label: 'SEO launch checklist', href: '/blog/nextjs-app-router-seo-launch-checklist' },
+      { label: 'Fix slow Next.js LCP', href: '/blog/fix-slow-nextjs-lcp-for-business-sites' },
       { label: 'Services', href: '/services' },
       { label: 'Projects', href: '/projects' },
+      { label: 'Discuss your project', href: '/contact' }
     ],
   },
   {
     slug: 'lessons-from-role-based-inventory-support-workflow-app',
-    title: 'Lessons from Building Full-Stack Apps with Role-Based Workflows',
-    subtitle: 'Permissions, state machines, and code you can change later',
+    title: 'Role-Based MERN Workflows — Lessons From Production Ops Tools',
+    subtitle: 'RBAC, state machines, and code you can change later',
     summary:
-      'What I learned shipping an internal MERN tool where admins and operators saw different screens - and the same record could be edited from two angles.',
+      'What I learned shipping full-stack MERN tools where admins and operators see different screens — server-enforced permissions, explicit workflow states, and maintainable features for SaaS-style ops.',
     publishedAt: '2026-01-22',
     readTime: '12 min read',
     category: 'Full-Stack Systems',
-    tags: ['MERN Stack', 'Architecture', 'RBAC', 'MongoDB'],
+    tags: ['MERN Stack', 'Architecture', 'RBAC', 'MongoDB', 'SaaS'],
     intro:
       'Role-based UIs look like “hide a menu item” until you debug a ticket where an operator could see a status the API never allowed, or an admin action skipped audit. The fix is almost always explicit rules in one place - not scattered `if (role === ...)` checks.',
     sections: [
@@ -159,22 +162,24 @@ router.post(
       'Structure code by feature so role additions do not scatter changes.',
     ],
     conclusion:
-      'Role-based MERN apps punish implicit rules. If you name capabilities, model states, and keep mutations honest at the API, the React layer stays understandable - and you ship the next workflow change without fear.',
+      'Role-based MERN apps punish implicit rules. If you name capabilities, model states, and keep mutations honest at the API, the React layer stays understandable — and you ship the next workflow change without fear. Building SaaS roles next? Read the RBAC guide, then Contact.',
     relatedLinks: [
-      { label: 'Inventory case study', href: '/projects/inventory-management-support-ticket-system' },
+      { label: 'SaaS RBAC on Next.js / MERN', href: '/blog/saas-rbac-roles-nextjs-mern' },
+      { label: 'QuikPOS case study', href: '/projects/quikpos-saas-point-of-sale' },
       { label: 'Services', href: '/services' },
+      { label: 'Discuss your project', href: '/contact' }
     ],
   },
   {
     slug: 'structuring-mern-dashboards-for-maintainability',
-    title: 'Structuring React Dashboards for Maintainable MERN Codebases',
+    title: 'Structuring MERN / React Admin Dashboards for Maintainability',
     subtitle: 'Folders, data boundaries, and tables that do not rot',
     summary:
-      'How I split dashboard code so filters, tables, and mutations can evolve without turning every screen into a 600-line component.',
+      'How I structure Next.js/React admin dashboards in MERN codebases so filters, tables, and mutations evolve without 600-line screen components — for SaaS and ops tools.',
     publishedAt: '2025-12-08',
-    readTime: '10 min read',
+    readTime: '11 min read',
     category: 'React Architecture',
-    tags: ['React', 'Node.js', 'TypeScript', 'Dashboards'],
+    tags: ['React', 'Node.js', 'TypeScript', 'Dashboards', 'MERN', 'Admin'],
     intro:
       'Dashboards are never “finished.” New columns, new filters, and new exports arrive weekly. If data fetching, table config, and layout share one file, every change risks regressions. I separate **what** the screen loads from **how** it renders.',
     sections: [
@@ -228,10 +233,18 @@ export function OrdersPage() {
       'Right-size API payloads before micro-optimizing React.',
     ],
     conclusion:
-      'Maintainable dashboards are boring on purpose: predictable folders, explicit data boundaries, and URLs that reflect state. That boredom is what lets you ship the next feature without rewriting the last one.',
+      'Maintainable dashboards are boring on purpose: predictable folders, explicit data boundaries, and URLs that reflect state. That boredom is what lets you ship the next feature without rewriting the last one. Need an ops console estimate? See the timeline article, then Contact.',
     relatedLinks: [
-      { label: 'Movie discovery UI', href: '/projects/movie-discovery-frontend' },
-      { label: 'Contact', href: '/contact' },
+      {
+        label: 'How long to build an admin dashboard',
+        href: '/blog/how-long-to-build-admin-dashboard-nextjs'
+      },
+      {
+        label: 'HSMS case study',
+        href: '/projects/hsms-housing-society-management'
+      },
+      { label: 'Services', href: '/services' },
+      { label: 'Discuss your project', href: '/contact' }
     ],
   },
 ]

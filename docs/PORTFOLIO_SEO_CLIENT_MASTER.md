@@ -918,22 +918,29 @@ Ranked by business value × proof fit (volumes UNKNOWN).
 
 **Reject:** “What is React?”, “What is Next.js?” unless SERP shows rare gap — usually dominated by docs/giants.
 
+### §30 implementation note (15 Sep 2026)
+- Rows **1–8:** shipped in `data/posts/batch-commercial.ts` (deepened)
+- Rows **9, 11, 14, 17, 20** (+ hire/LCP/SME extras): `batch-commercial-b.ts` (12)
+- Local/hire/stack search batch: `batch-commercial-c.ts` (15)
+- All posts pass `enrichPostForSearch` (services + contact + projects CTAs)
+- **Total posts on site:** ~57 (20+ commercial buyer set plus engineering notes); original SEO/RBAC/dashboard posts retitled for search intent
+
 ---
 
 
 # 31 — 90-DAY IMPLEMENTATION ROADMAP
 
-| Phase | Tasks | Priority | Owner | Dependency | Expected outcome | Verify | Risk |
-|---|---|---|---|---|---|---|---|
-| 0 Research+baseline | This document; GSC access; screenshot SERPs | P0 | M Ubaid | — | Shared truth | Doc exists | Skipping GSC |
-| 1 Canonical/entity | Promote repo to primary; fix GitHub; LinkedIn Featured; noindex/301 `-ten`; jobTitle cluster | P0 | M Ubaid + Vercel | Can overwrite primary? | One origin | `site:` + view-source canonical | Wrong project overwrite |
-| 2 Technical SEO | Sitemap 200; robots; OG compress; LCP retest; debug noindex | P0 | Eng | Phase 1 | Clean crawl | GSC coverage | Lab≠field |
-| 3 On-page | Titles/H1/meta per §33 table; home subhead; services hire copy | P0 | Eng | Phase 1 | Intent clarity | View-source | Keyword stuffing |
-| 4 Case studies | Attribution; structure; internal links | P1 | Eng | Phase 3 | Proof depth | Human review | Fake metrics |
-| 5 Commercial content | Articles 1–8 from §30 | P1 | M Ubaid | Phase 3 | Buyer traffic | GSC queries | Thin posts |
-| 6 Authority | Directories (honest); team page ask; writing | P2 | M Ubaid | Phase 1 | Mentions | Manual | Spam dirs |
-| 7 Client hunting | LI + email packs weekly | P0 ongoing | M Ubaid | Proof URLs live | Conversations | CRM/notes | Spammy outreach |
-| 8 Measure | 28/60/90 GSC+analytics review | P0 | M Ubaid | GSC | Iterate titles/CTAs | Dashboard | Vanity metrics |
+| Phase | Tasks | Priority | Owner | Dependency | Expected outcome | Verify | Risk | Status (15 Sep 2026) |
+|---|---|---|---|---|---|---|---|---|
+| 0 Research+baseline | This document; GSC access; screenshot SERPs | P0 | M Ubaid | — | Shared truth | Doc exists | Skipping GSC | **Done** (doc); GSC property still user |
+| 1 Canonical/entity | Promote repo to primary; fix GitHub; LinkedIn Featured; noindex/301 `-ten`; jobTitle cluster | P0 | M Ubaid + Vercel | Can overwrite primary? | One origin | `site:` + view-source canonical | Wrong project overwrite | **Code done** — Software Engineer cluster, `-ten` noindex middleware, `getSiteUrl` rejects `-ten`. User: GitHub website + LinkedIn Featured |
+| 2 Technical SEO | Sitemap 200; robots; OG compress; LCP retest; debug noindex | P0 | Eng | Phase 1 | Clean crawl | GSC coverage | Lab≠field | **Done in code + live** — robots/sitemap on primary; thank-you noindex; OG present. PageSpeed retest user |
+| 3 On-page | Titles/H1/meta per §33 table; home subhead; services hire copy | P0 | Eng | Phase 1 | Intent clarity | View-source | Keyword stuffing | **Done** — titles via `pageMetadata` + layout template (no double brand); hire copy on `/services` |
+| 4 Case studies | Attribution; structure; internal links | P1 | Eng | Phase 3 | Proof depth | Human review | Fake metrics | **Done** — `deliveryAttribution`, `relatedSlugs`, case CTAs |
+| 5 Commercial content | Articles 1–8 from §30 + search batch | P1 | Eng | Phase 3 | Buyer traffic | GSC queries | Thin posts | **Done** — 8 (§30) + 12 batch-B = **20** commercial posts in `data/posts/` |
+| 6 Authority | Directories (honest); team page ask; writing | P2 | M Ubaid | Phase 1 | Mentions | Manual | Spam dirs | **Partial** — outreach pack docs; directories/Evolvo ask = user |
+| 7 Client hunting | LI + email packs weekly | P0 ongoing | M Ubaid | Proof URLs live | Conversations | CRM/notes | Spammy outreach | **Pack ready** — `docs/CLIENT_OUTREACH_PACK.md`; weekly execution = user |
+| 8 Measure | 28/60/90 GSC+analytics review | P0 | M Ubaid | GSC | Iterate titles/CTAs | Dashboard | Vanity metrics | **Checklist ready** — `docs/PHASE8_MEASUREMENT.md` + `trackCta` events; GSC/GA verify = user |
 
 ---
 
@@ -1159,23 +1166,41 @@ Allow `/`; Sitemap absolute on canonical; exclude thank-you/debug if needed; pre
 
 ---
 
-## APPENDIX A — Research date stamp
+## APPENDIX A — Research + implementation stamp
 
 - Research completed: **15 September 2026**
 - Deliverable path: `docs/PORTFOLIO_SEO_CLIENT_MASTER.md`
-- Code changes in this pass: **none** (per plan)
-- Next step after approval: Phase 1 Production promote + entity alignment implementation
+- **Implementation pass (same day):** Phases 1–5 code complete; 6–8 docs + analytics hooks; brand palette unified to steel navy (no purple drift); title template duplication fixed; commercial blog batches A+B (20 buyer posts)
+- Live verified: `https://mubaidjavaid.vercel.app/robots.txt` + `/sitemap.xml` on primary (commercial URLs included after deploy)
+- **Still user-owned:** GSC/Bing verify + sitemap submit; GitHub website field; LinkedIn Featured; weekly outreach; PageSpeed retest log; optional custom domain
 
 ## APPENDIX B — Proof pack (outbound)
 
-1. `https://mubaidjavaid.vercel.app/` (after cutover)  
+1. `https://mubaidjavaid.vercel.app/`  
 2. `/projects`  
 3. One matching case study  
 4. `/contact`
 
 ## APPENDIX C — Relationship to old SRS
 
-`docs/PORTFOLIO_SRS.md` remains historical baseline. **This master document supersedes it** for SEO + client-acquisition decisions where they conflict (especially: ProfessionalService emphasis, meta char “requirements”, backlink “50%”, GBP assumptions, LCP CSS-background guidance, and the incomplete diagnosis that hosts were mere mirrors).
+`docs/PORTFOLIO_SRS.md` remains historical baseline (**v1.1** adds implementation status pointer). **This master document supersedes it** for SEO + client-acquisition decisions where they conflict (especially: ProfessionalService emphasis, meta char “requirements”, backlink “50%”, GBP assumptions, LCP CSS-background guidance, and the incomplete diagnosis that hosts were mere mirrors).
+
+## APPENDIX D — Code / content map (implemented)
+
+| Area | Location |
+|---|---|
+| Canonical URL helper | `lib/site-url.ts` |
+| Metadata / JSON-LD | `lib/seo.ts` |
+| Robots / sitemap | `app/robots.ts`, `app/sitemap.ts` |
+| Preview noindex | `middleware.ts` |
+| CTA analytics | `lib/analytics.ts`, `components/analytics/TrackedCtaLink.tsx` |
+| Commercial posts §30 | `data/posts/batch-commercial.ts` (8) |
+| Commercial posts search batch | `data/posts/batch-commercial-b.ts` (12) |
+| Case attribution | `data/projects.ts` → `deliveryAttribution`, `relatedSlugs` |
+| How I work | `/services#how-i-work` |
+| Outreach pack | `docs/CLIENT_OUTREACH_PACK.md` |
+| Measurement | `docs/PHASE8_MEASUREMENT.md` |
+| Brand color tokens | `app/globals.css` (`--primary` / `--highlight` steel navy) |
 
 ---
 
