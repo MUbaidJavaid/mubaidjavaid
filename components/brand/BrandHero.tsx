@@ -34,11 +34,11 @@ export function BrandHero () {
       />
 
       <div
-        className='pointer-events-none absolute -right-24 top-1/4 h-[55%] w-[50%] rounded-full bg-[hsl(211_80%_48%/0.16)] blur-3xl'
+        className='pointer-events-none absolute -right-24 top-1/4 h-[55%] w-[50%] rounded-full bg-[hsl(263_55%_42%/0.18)] blur-3xl'
         aria-hidden
       />
       <div
-        className='pointer-events-none absolute -left-20 bottom-0 h-[40%] w-[40%] rounded-full bg-[hsl(215_48%_30%/0.35)] blur-3xl'
+        className='pointer-events-none absolute -left-20 bottom-0 h-[40%] w-[40%] rounded-full bg-[hsl(263_40%_28%/0.35)] blur-3xl'
         aria-hidden
       />
 
@@ -59,7 +59,7 @@ export function BrandHero () {
             width={640}
             height={1024}
             fetchPriority='high'
-            decoding='async'
+            decoding='sync'
             className='absolute inset-x-0 bottom-0 top-[14%] h-[86%] w-full object-cover object-top opacity-[0.38] contrast-[1.08] saturate-[0.7]'
           />
         </picture>
