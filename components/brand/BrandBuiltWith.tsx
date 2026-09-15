@@ -1,31 +1,20 @@
-'use client'
-
-import { BrandSection } from '@/components/brand/system/BrandSection'
-import { MotionReveal } from '@/components/brand/system/MotionReveal'
 import { builtWithTools } from '@/data/site'
-import { cn } from '@/lib/utils'
-import { motion, useReducedMotion } from 'framer-motion'
-import Image from 'next/image'
 
 /**
- * Post-hero strip — production tools on light paper (brand theme).
+ * Production-tools marquee — CSS animation only (no Framer Motion).
  */
 export function BrandBuiltWith () {
-  const reduce = useReducedMotion()
   const loop = [...builtWithTools, ...builtWithTools]
 
   return (
-    <BrandSection
+    <section
       id='built-with'
-      layout='band'
       className='min-h-0 border-t border-border/70 bg-white'
     >
       <div className='container-wide py-10 md:py-12'>
-        <MotionReveal>
-          <p className='text-center font-mono text-[0.625rem] uppercase tracking-[0.22em] text-muted-foreground'>
-            Built with production-grade tools
-          </p>
-        </MotionReveal>
+        <p className='text-center font-mono text-[0.625rem] uppercase tracking-[0.22em] text-muted-foreground'>
+          Built with production-grade tools
+        </p>
 
         <div className='relative mt-7 overflow-hidden'>
           <div
@@ -37,32 +26,26 @@ export function BrandBuiltWith () {
             aria-hidden
           />
 
-          <motion.ul
-            className='flex w-max gap-10 md:gap-12'
-            animate={reduce ? undefined : { x: ['0%', '-50%'] }}
-            transition={
-              reduce
-                ? undefined
-                : {
-                    duration: 42,
-                    ease: 'linear',
-                    repeat: Infinity
-                  }
-            }
+          <ul
+            className='brand-marquee flex w-max gap-10 md:gap-12'
             aria-label='Production tools'
           >
             {loop.map((tool, i) => (
               <li
                 key={`${tool.name}-${i}`}
                 className='flex shrink-0 items-center gap-2.5'
+                aria-hidden={i >= builtWithTools.length}
               >
                 <span className='grid h-7 w-7 shrink-0 place-items-center'>
-                  <Image
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={tool.logo}
-                    alt={tool.name}
+                    alt=''
                     width={24}
                     height={24}
-                    className='!h-6 !w-6 object-contain'
+                    loading='lazy'
+                    decoding='async'
+                    className='h-6 w-6 object-contain'
                   />
                 </span>
                 <span className='whitespace-nowrap text-sm font-medium tracking-tight text-heading'>
@@ -70,22 +53,9 @@ export function BrandBuiltWith () {
                 </span>
               </li>
             ))}
-          </motion.ul>
+          </ul>
         </div>
-
-        <ul
-          className={cn(
-            'mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3',
-            reduce ? 'flex' : 'sr-only'
-          )}
-        >
-          {builtWithTools.map(tool => (
-            <li key={tool.name} className='text-sm text-body'>
-              {tool.name}
-            </li>
-          ))}
-        </ul>
       </div>
-    </BrandSection>
+    </section>
   )
 }

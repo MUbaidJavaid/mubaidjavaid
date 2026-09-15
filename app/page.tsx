@@ -1,17 +1,55 @@
 import { BrandBuiltWith } from '@/components/brand/BrandBuiltWith'
-import { BrandContact } from '@/components/brand/BrandContact'
-import { BrandFitSignals } from '@/components/brand/BrandFitSignals'
 import { BrandHero } from '@/components/brand/BrandHero'
-import { BrandImpact } from '@/components/brand/BrandImpact'
-import { BrandOpenSource } from '@/components/brand/BrandOpenSource'
-import { BrandPhilosophy } from '@/components/brand/BrandPhilosophy'
-import { BrandProcess } from '@/components/brand/BrandProcess'
-import { BrandProof } from '@/components/brand/BrandProof'
-import { BrandTechnologies } from '@/components/brand/BrandTechnologies'
-import { BrandTimeline } from '@/components/brand/BrandTimeline'
-import { BrandWriting } from '@/components/brand/BrandWriting'
 import { pageMetadata } from '@/lib/seo'
 import type { Metadata } from 'next'
+import nextDynamic from 'next/dynamic'
+
+const BrandFitSignals = nextDynamic(() =>
+  import('@/components/brand/BrandFitSignals').then(m => ({
+    default: m.BrandFitSignals
+  }))
+)
+const BrandProof = nextDynamic(() =>
+  import('@/components/brand/BrandProof').then(m => ({ default: m.BrandProof }))
+)
+const BrandImpact = nextDynamic(() =>
+  import('@/components/brand/BrandImpact').then(m => ({ default: m.BrandImpact }))
+)
+const BrandProcess = nextDynamic(() =>
+  import('@/components/brand/BrandProcess').then(m => ({
+    default: m.BrandProcess
+  }))
+)
+const BrandPhilosophy = nextDynamic(() =>
+  import('@/components/brand/BrandPhilosophy').then(m => ({
+    default: m.BrandPhilosophy
+  }))
+)
+const BrandTechnologies = nextDynamic(() =>
+  import('@/components/brand/BrandTechnologies').then(m => ({
+    default: m.BrandTechnologies
+  }))
+)
+const BrandOpenSource = nextDynamic(() =>
+  import('@/components/brand/BrandOpenSource').then(m => ({
+    default: m.BrandOpenSource
+  }))
+)
+const BrandTimeline = nextDynamic(() =>
+  import('@/components/brand/BrandTimeline').then(m => ({
+    default: m.BrandTimeline
+  }))
+)
+const BrandWriting = nextDynamic(() =>
+  import('@/components/brand/BrandWriting').then(m => ({
+    default: m.BrandWriting
+  }))
+)
+const BrandContact = nextDynamic(() =>
+  import('@/components/brand/BrandContact').then(m => ({
+    default: m.BrandContact
+  }))
+)
 
 export const dynamic = 'force-static'
 export const revalidate = 86400
@@ -26,6 +64,22 @@ export const metadata: Metadata = pageMetadata({
 export default function HomePage () {
   return (
     <>
+      <link
+        rel='preload'
+        as='image'
+        href='/mubaidjavaid-hero-sm.webp'
+        type='image/webp'
+        media='(max-width: 767px)'
+        fetchPriority='high'
+      />
+      <link
+        rel='preload'
+        as='image'
+        href='/mubaidjavaid-hero.webp'
+        type='image/webp'
+        media='(min-width: 768px)'
+        fetchPriority='high'
+      />
       <BrandHero />
       <BrandBuiltWith />
       <BrandFitSignals />

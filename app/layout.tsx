@@ -24,21 +24,24 @@ const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-body',
-  display: 'swap'
+  display: 'swap',
+  preload: true
 })
 
 const syne = Syne({
   subsets: ['latin'],
-  weight: ['500', '600', '700', '800'],
+  weight: ['600', '700', '800'],
   variable: '--font-display',
-  display: 'swap'
+  display: 'swap',
+  preload: true
 })
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-mono',
-  display: 'swap'
+  display: 'swap',
+  preload: false
 })
 
 export const metadata: Metadata = {

@@ -112,7 +112,7 @@
     background-color: hsl(var(--background));
   }
 
-  * {
+  html {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
   }
@@ -348,10 +348,25 @@
     animation: route-load-bar 1.15s ease-in-out infinite;
   }
 
+  @keyframes brand-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .brand-marquee {
+    animation: brand-marquee 42s linear infinite;
+    will-change: transform;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .animate-reveal,
     .animate-route-load-bar,
-    .skeleton-shimmer::after {
+    .skeleton-shimmer::after,
+    .brand-marquee {
       animation: none !important;
     }
   }
