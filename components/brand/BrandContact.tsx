@@ -159,7 +159,7 @@ export function BrandContact () {
                 </Link>
               </div>
 
-              <p className='mt-6 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-white/40'>
+              <p className='mt-6 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-white/65'>
                 {contactCta.support}
               </p>
             </div>

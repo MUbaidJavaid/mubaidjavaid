@@ -66,7 +66,7 @@ export function BrandImpact () {
             <p className='font-display text-2xl font-semibold text-heading'>
               {String(items.length).padStart(2, '0')}
             </p>
-            <p className='mt-1 font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
+            <p className='mt-1 font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-muted-foreground'>
               Product outcomes
             </p>
           </div>
@@ -152,11 +152,11 @@ export function BrandImpact () {
 
       <div className='relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-16 pt-10 sm:px-8 md:px-10 md:pb-20 md:pt-14 lg:px-12 lg:pb-24'>
         <div className='mb-2 flex items-center gap-4'>
-          <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-heading/[0.35]'>
+          <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-muted-foreground'>
             More shipped outcomes
           </p>
           <span className='h-px flex-1 bg-heading/10' aria-hidden />
-          <p className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-heading/30'>
+          <p className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-muted-foreground'>
             Proof index
           </p>
         </div>

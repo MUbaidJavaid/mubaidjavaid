@@ -64,22 +64,6 @@ export const metadata: Metadata = pageMetadata({
 export default function HomePage () {
   return (
     <>
-      <link
-        rel='preload'
-        as='image'
-        href='/mubaidjavaid-hero-sm.webp'
-        type='image/webp'
-        media='(max-width: 767px)'
-        fetchPriority='high'
-      />
-      <link
-        rel='preload'
-        as='image'
-        href='/mubaidjavaid-hero.webp'
-        type='image/webp'
-        media='(min-width: 768px)'
-        fetchPriority='high'
-      />
       <BrandHero />
       <BrandBuiltWith />
       <BrandFitSignals />

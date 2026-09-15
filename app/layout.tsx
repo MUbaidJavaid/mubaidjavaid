@@ -30,7 +30,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 const syne = Syne({
   subsets: ['latin'],
-  weight: ['600', '700', '800'],
+  weight: ['600', '700'],
   variable: '--font-display',
   display: 'swap',
   preload: true
@@ -47,8 +47,11 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   icons: {
-    icon: '/mubaidjavaid.png',
-    apple: '/mubaidjavaid.png'
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-192.png', sizes: '192x192', type: 'image/png' }
+    ],
+    apple: '/apple-touch-icon.png'
   },
   title: {
     default: `${site.name} · ${site.role}`,
@@ -112,6 +115,24 @@ export default function RootLayout ({
 
   return (
     <html lang='en' className='light'>
+      <head>
+        <link
+          rel='preload'
+          as='image'
+          href='/mubaidjavaid-hero-sm.webp'
+          type='image/webp'
+          media='(max-width: 767px)'
+          fetchPriority='high'
+        />
+        <link
+          rel='preload'
+          as='image'
+          href='/mubaidjavaid-hero.webp'
+          type='image/webp'
+          media='(min-width: 768px)'
+          fetchPriority='high'
+        />
+      </head>
       <body
         className={`${plusJakarta.variable} ${syne.variable} ${ibmPlexMono.variable} flex min-h-screen flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom,0px))] font-body lg:pb-0`}
       >

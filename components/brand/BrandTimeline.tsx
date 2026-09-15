@@ -57,7 +57,7 @@ export function BrandTimeline () {
               maintainable products, not a résumé dump.
             </p>
             <div className='mt-7 flex items-center gap-3' aria-hidden>
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-heading/35'>
+              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-muted-foreground'>
                 2024
               </span>
               <span className='relative h-px flex-1 bg-heading/15'>

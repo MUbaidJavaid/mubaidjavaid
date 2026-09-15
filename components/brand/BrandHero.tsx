@@ -10,9 +10,10 @@ const socials = [
 ] as const
 
 /**
- * Server-rendered cinematic hero.
- * Decorative portrait is a CSS background (not an <img>) so LCP is the H1.
- * No client JS / Framer Motion on first paint.
+ * Server-rendered cinematic hero. Portrait is a real <img> with
+ * fetchPriority=high so Lighthouse can discover the LCP request from HTML.
+ * One file per breakpoint — never image-set 1x/2x (high-DPR phones would
+ * ignore the mobile preload and wait ~2s to start the 2x download).
  */
 export function BrandHero () {
   return (
@@ -45,14 +46,23 @@ export function BrandHero () {
         className='pointer-events-none absolute inset-y-0 right-0 w-[64%] max-w-3xl overflow-hidden bg-[#06080f]'
         aria-hidden
       >
-        <div
-          className='absolute inset-x-0 bottom-0 top-[14%] bg-cover bg-top opacity-[0.38] contrast-[1.08] saturate-[0.7]'
-          style={{
-            backgroundImage:
-              'image-set(url("/mubaidjavaid-hero-sm.webp") 1x, url("/mubaidjavaid-hero.webp") 2x)',
-            backgroundPosition: '50% 0%'
-          }}
-        />
+        <picture>
+          <source
+            media='(min-width: 768px)'
+            srcSet='/mubaidjavaid-hero.webp'
+            type='image/webp'
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src='/mubaidjavaid-hero-sm.webp'
+            alt=''
+            width={640}
+            height={1024}
+            fetchPriority='high'
+            decoding='async'
+            className='absolute inset-x-0 bottom-0 top-[14%] h-[86%] w-full object-cover object-top opacity-[0.38] contrast-[1.08] saturate-[0.7]'
+          />
+        </picture>
         <div
           className='absolute inset-0'
           style={{

@@ -169,11 +169,11 @@ export function BrandWriting () {
             </div>
 
             <div className='mt-10 flex items-center gap-4'>
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-heading/[0.35]'>
+              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-muted-foreground'>
                 Index
               </span>
               <span className='h-px flex-1 bg-heading/[0.15]' aria-hidden />
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-heading/[0.35]'>
+              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-muted-foreground'>
                 {String(index.length).padStart(2, '0')} entries
               </span>
             </div>

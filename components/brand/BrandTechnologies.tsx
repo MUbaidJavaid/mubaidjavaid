@@ -97,7 +97,7 @@ export function BrandTechnologies () {
                       <span className='grid h-14 w-14 place-items-center sm:h-16 sm:w-16'>
                         <Image
                           src={item.logo}
-                          alt={item.name}
+                          alt=''
                           width={64}
                           height={64}
                           className='!h-14 !w-14 object-contain sm:!h-16 sm:!w-16'
