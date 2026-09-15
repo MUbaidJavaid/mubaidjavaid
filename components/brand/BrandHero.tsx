@@ -89,13 +89,6 @@ function HeroScrollCue ({ reduce }: { reduce: boolean | null }) {
  */
 export function BrandHero () {
   const reduce = useReducedMotion()
-  const [mounted, setMounted] = useState(false)
-  const [imageLoaded, setImageLoaded] = useState(false)
-  const portraitReady = mounted && (imageLoaded || !!reduce)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   return (
     <section
@@ -125,12 +118,9 @@ export function BrandHero () {
         aria-hidden
       />
 
-      {/* Ghost portrait — hidden until decoded so raw image never flashes before CSS */}
-      <motion.div
-        className='pointer-events-none absolute inset-y-0 right-0 w-[64%] max-w-3xl overflow-hidden'
-        initial={reduce ? false : { opacity: 0, x: 40 }}
-        animate={{ opacity: portraitReady ? 1 : 0, x: 0 }}
-        transition={{ duration: 1.1, ease: brandMotion.ease }}
+      {/* Ghost portrait — CSS-only wash so the raw studio photo never flashes */}
+      <div
+        className='pointer-events-none absolute inset-y-0 right-0 w-[64%] max-w-3xl overflow-hidden bg-[#06080f]'
         aria-hidden
       >
         <div className='absolute inset-x-0 bottom-0 top-[14%]'>
@@ -140,21 +130,34 @@ export function BrandHero () {
             fill
             priority
             sizes='(max-width: 1024px) 75vw, 55vw'
-            onLoad={() => setImageLoaded(true)}
-            onLoadingComplete={() => setImageLoaded(true)}
-            style={{
-              objectFit: 'cover',
-              objectPosition: '50% 0%',
-              opacity: portraitReady ? 0.78 : 0,
-              transition: 'opacity 0.45s ease'
-            }}
-            className='mix-blend-multiply contrast-[1.06] brightness-[1.04]'
+            className='object-cover object-top contrast-[1.08] saturate-[0.7]'
+            style={{ objectPosition: '50% 0%', opacity: 0.38 }}
           />
         </div>
-        <div className='absolute inset-0 bg-gradient-to-r from-[#06080f] via-[#06080f]/50 to-transparent' />
-        <div className='absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-[#06080f] to-transparent' />
-        <div className='absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-[#06080f]/45 to-transparent' />
-      </motion.div>
+        <div
+          className='absolute inset-0'
+          style={{
+            background:
+              'linear-gradient(90deg, #06080f 0%, rgba(6,8,15,0.88) 28%, rgba(6,8,15,0.42) 58%, rgba(6,8,15,0.22) 100%)'
+          }}
+        />
+        <div
+          className='absolute inset-0'
+          style={{ backgroundColor: 'rgba(6, 8, 15, 0.28)' }}
+        />
+        <div
+          className='absolute inset-x-0 bottom-0 h-[32%]'
+          style={{
+            background: 'linear-gradient(to top, #06080f, transparent)'
+          }}
+        />
+        <div
+          className='absolute inset-y-0 right-0 w-1/5'
+          style={{
+            background: 'linear-gradient(to left, rgba(6,8,15,0.5), transparent)'
+          }}
+        />
+      </div>
 
       {/* Giant watermark */}
       <motion.p
