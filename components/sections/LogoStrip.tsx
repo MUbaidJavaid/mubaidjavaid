@@ -157,7 +157,7 @@ export function LogoStrip () {
     <section className='section-anchor border-y border-border/55 surface-muted py-12 md:py-14 dark:border-border/50'>
       <div className='container-wide'>
         <div className='mb-8 flex flex-col items-center gap-3 text-center'>
-          <p className='text-[10px] font-bold uppercase tracking-[0.3em] text-body/50'>
+          <p className='text-xs font-semibold tracking-wide text-body/50'>
             Technologies I Build With
           </p>
         </div>

@@ -96,7 +96,7 @@ export function CodeQualitySection () {
                     </span>
                     <span className='min-w-0 flex-1 pt-0.5'>
                       <span
-                        className='font-heading text-base font-semibold uppercase tracking-[0.06em] sm:text-lg'
+                        className='font-display text-base font-semibold tracking-tight sm:text-lg'
                         style={{
                           color: isActive ? PRIMARY : 'hsl(var(--heading))'
                         }}

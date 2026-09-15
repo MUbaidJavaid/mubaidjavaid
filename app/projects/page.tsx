@@ -4,6 +4,8 @@ import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { evolvoWork } from '@/data/evolvo-work'
 import { projects } from '@/data/projects'
 import { pageMetadata } from '@/lib/seo'
+import { brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { ArrowUpRight, FolderOpen } from 'lucide-react'
 import type { Metadata } from 'next'
 import dynamicImport from 'next/dynamic'
@@ -44,15 +46,14 @@ export default function ProjectsPage () {
         title={
           <>
             Selected work &amp;
-            <span className='block text-highlight'>
-              production delivery.
-            </span>
+            <br />
+            <span className='text-highlight'>production delivery.</span>
           </>
         }
         description='Case studies and live products delivered with Next.js and MERN — fintech, healthcare, POS, and housing-society systems. Evolvo client sites are labeled as employment delivery.'
       >
         <div className='flex flex-wrap items-center gap-5'>
-          <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
+          <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
             {String(evolvoWork.length).padStart(2, '0')} live products ·{' '}
             {String(projects.length).padStart(2, '0')} case studies
           </p>
@@ -73,7 +74,7 @@ export default function ProjectsPage () {
       <section className='bg-[hsl(214_28%_98%)]'>
         <div className='mx-auto grid w-full max-w-[1280px] gap-8 border-b border-heading/10 px-6 py-10 sm:px-8 md:grid-cols-3 md:gap-12 md:px-10 md:py-12 lg:px-12'>
           <div>
-            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+            <p className='font-mono text-xs tracking-wide text-highlight'>
               Client delivery
             </p>
             <p className='mt-3 text-sm leading-relaxed text-body'>
@@ -82,7 +83,7 @@ export default function ProjectsPage () {
             </p>
           </div>
           <div>
-            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+            <p className='font-mono text-xs tracking-wide text-highlight'>
               Case studies
             </p>
             <p className='mt-3 text-sm leading-relaxed text-body'>
@@ -91,7 +92,7 @@ export default function ProjectsPage () {
             </p>
           </div>
           <div>
-            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+            <p className='font-mono text-xs tracking-wide text-highlight'>
               Next step
             </p>
             <p className='mt-3 text-sm leading-relaxed text-body'>
@@ -108,10 +109,10 @@ export default function ProjectsPage () {
 
         <div className='border-t border-heading/10'>
           <div className='mx-auto w-full max-w-[1280px] px-6 py-12 sm:px-8 md:px-10 md:py-16 lg:px-12'>
-            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+            <p className='font-mono text-xs tracking-wide text-highlight'>
               Documented case studies
             </p>
-            <h2 className='mt-3 font-display text-[clamp(1.8rem,3.4vw,3rem)] font-semibold leading-[1.05] tracking-tight text-heading'>
+            <h2 className={cn('mt-3', brandType.title)}>
               Implementation depth.
             </h2>
             <p className='mt-4 max-w-[54ch] text-sm leading-relaxed text-body'>

@@ -29,10 +29,10 @@ export default function NotFound () {
       </div>
       <div className='container-wide relative text-center'>
         <LostIllustration />
-        <p className='text-xs font-semibold uppercase tracking-[0.2em] text-primary/90'>
+        <p className='font-mono text-xs font-semibold tracking-wide text-primary/90'>
           Page not found
         </p>
-        <h1 className='section-heading mx-auto mt-3 max-w-xl text-[1.85rem] sm:text-[2.35rem]'>
+        <h1 className='mx-auto mt-3 max-w-xl font-display text-[clamp(2rem,4vw,3rem)] font-bold leading-[1.08] tracking-[-0.02em] text-heading'>
           This page doesn&apos;t exist{' '}
           <span className='text-body/80'>(or maybe it was moved).</span>
         </h1>
@@ -43,7 +43,7 @@ export default function NotFound () {
         <div className='mt-10 flex flex-wrap items-center justify-center gap-3'>
           <Link
             href='/'
-            className='inline-flex  bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-all hover:bg-primary-hover hover:shadow-lg active:scale-[0.98]'
+            className='cta-primary'
           >
             Go home
           </Link>

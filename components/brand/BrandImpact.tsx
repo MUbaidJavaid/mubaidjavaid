@@ -129,7 +129,7 @@ export function BrandImpact () {
                   <p className='font-mono text-xs tracking-wide text-highlight'>
                     01 · Lead outcome
                   </p>
-                  <h3 className='mt-5 font-display text-[clamp(2rem,3.5vw,3.3rem)] font-semibold leading-[1] tracking-[-0.04em] text-heading'>
+                  <h3 className={cn('mt-5', brandType.title, 'font-semibold')}>
                     {featured.title}
                   </h3>
                   <p className='mt-6 text-sm leading-relaxed text-body md:text-base'>

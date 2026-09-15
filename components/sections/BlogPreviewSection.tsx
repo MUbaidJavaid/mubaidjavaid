@@ -86,15 +86,15 @@ export function BlogPreviewSection () {
                   </span>
 
                   <div className='relative z-[1] flex flex-wrap items-center gap-2'>
-                    <span className='border border-white/20 bg-white/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white/95'>
+                    <span className='border border-white/20 bg-white/10 px-2 py-0.5 text-xs font-semibold tracking-wide text-white/95'>
                       Featured
                     </span>
-                    <span className='border border-white/15 bg-black/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-[#C8E6F5]'>
+                    <span className='border border-white/15 bg-black/20 px-2 py-0.5 text-xs font-semibold tracking-wide text-highlight-soft'>
                       {leadPost.category}
                     </span>
                   </div>
 
-                  <h3 className='relative z-[1] mt-5 font-heading !font-semibold uppercase text-[1.15rem] leading-snug tracking-[0.03em] text-white transition-colors group-hover:text-[#DCEAF3] sm:text-[1.3rem]'>
+                  <h3 className='relative z-[1] mt-5 font-display text-[1.15rem] font-semibold leading-snug tracking-tight text-white transition-colors group-hover:text-highlight-soft sm:text-[1.3rem]'>
                     {leadPost.title}
                   </h3>
 
@@ -110,7 +110,7 @@ export function BlogPreviewSection () {
                       <span className='h-px w-3 bg-white/25' aria-hidden />
                       <span>{leadPost.readTime}</span>
                     </div>
-                    <span className='inline-flex items-center gap-1.5 text-[12px] font-bold text-[#DCEAF3] transition-all group-hover:gap-2.5'>
+                    <span className='inline-flex items-center gap-1.5 text-[12px] font-bold text-highlight-soft transition-all group-hover:gap-2.5'>
                       Read article
                       <ArrowRight className='h-3.5 w-3.5' />
                     </span>
@@ -162,7 +162,7 @@ export function BlogPreviewSection () {
                         <span className='font-mono text-[10px] font-bold tracking-[0.16em] text-primary'>
                           {num}
                         </span>
-                        <span className='border border-border/55 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.1em] text-body/65 dark:border-border/40'>
+                        <span className='border border-border/55 px-2 py-0.5 text-xs font-semibold tracking-wide text-body/65 dark:border-border/40'>
                           {post.category}
                         </span>
                         <span className='text-[11px] text-body/45'>
@@ -170,7 +170,7 @@ export function BlogPreviewSection () {
                         </span>
                       </div>
 
-                      <h3 className='relative z-[1] mt-2.5 font-heading !font-semibold uppercase text-[0.98rem] leading-snug tracking-[0.03em] text-heading transition-colors group-hover:text-primary sm:text-[1.05rem]'>
+                      <h3 className='relative z-[1] mt-2.5 font-display text-[0.98rem] font-semibold leading-snug tracking-tight text-heading transition-colors group-hover:text-primary sm:text-[1.05rem]'>
                         {post.title}
                       </h3>
                       <p className='relative z-[1] mt-2 line-clamp-2 text-[12.5px] leading-relaxed text-body/65'>

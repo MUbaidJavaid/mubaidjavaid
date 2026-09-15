@@ -2,7 +2,8 @@
 
 import type { BlogPost } from '@/data/posts'
 import { posts } from '@/data/posts'
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
@@ -47,24 +48,24 @@ export function BlogArticlesSection ({
               className='group block px-6 py-8 sm:px-8 md:px-10 md:py-12'
             >
               <div className='flex flex-wrap items-center gap-3'>
-                <p className='font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-[hsl(211_48%_42%)]'>
+                <p className='font-mono text-xs tracking-wide text-highlight'>
                   Featured note
                 </p>
-                <span className='font-mono text-[0.5rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
+                <span className='font-mono text-xs tracking-wide text-heading/[0.35]'>
                   {featuredPost.category}
                 </span>
               </div>
-              <h2 className='mt-5 max-w-[18ch] font-display text-[clamp(2rem,4vw,3.4rem)] font-bold leading-[0.98] tracking-[-0.04em] text-heading transition-colors group-hover:text-[hsl(211_48%_38%)]'>
+              <h2 className={cn('mt-5 max-w-[18ch]', brandType.title, 'transition-colors group-hover:text-highlight')}>
                 {featuredPost.title}
               </h2>
               <p className='mt-5 max-w-2xl text-sm leading-relaxed text-body md:text-base'>
                 {featuredPost.summary}
               </p>
               <div className='mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-heading/10 pt-5'>
-                <span className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.4]'>
+                <span className='font-mono text-xs tracking-wide text-heading/[0.4]'>
                   {formatDate(featuredPost.publishedAt)}
                 </span>
-                <span className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.4]'>
+                <span className='font-mono text-xs tracking-wide text-heading/[0.4]'>
                   {featuredPost.readTime}
                 </span>
                 <span className='ml-auto inline-flex items-center gap-2 text-sm font-semibold text-heading'>
@@ -85,7 +86,7 @@ export function BlogArticlesSection ({
               >
                 01
               </p>
-              <p className='font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-[hsl(211_70%_72%)]'>
+              <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
                 Issue lead
               </p>
               <p className='mt-6 font-display text-2xl font-semibold leading-snug'>
@@ -102,11 +103,11 @@ export function BlogArticlesSection ({
 
       <div>
         <div className='mb-2 flex items-center gap-4'>
-          <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-heading/[0.35]'>
+          <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
             Article index
           </p>
           <span className='h-px flex-1 bg-heading/10' aria-hidden />
-          <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.3]'>
+          <p className='font-mono text-xs tracking-wide text-heading/[0.3]'>
             {String(otherPosts.length).padStart(2, '0')} entries
           </p>
         </div>
@@ -128,14 +129,14 @@ export function BlogArticlesSection ({
                 href={`/blog/${post.slug}`}
                 className='group grid gap-3 py-7 sm:grid-cols-[3rem_1fr_auto] sm:items-start sm:gap-6 md:py-8'
               >
-                <span className='font-mono text-[0.625rem] text-[hsl(211_48%_42%)]'>
+                <span className='font-mono text-xs text-highlight'>
                   {String(i + 2).padStart(2, '0')}
                 </span>
                 <div className='min-w-0'>
-                  <p className='font-mono text-[0.5rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
+                  <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
                     {post.category} · {formatDate(post.publishedAt)}
                   </p>
-                  <h3 className='mt-2 font-display text-xl font-semibold tracking-tight text-heading transition-colors group-hover:text-[hsl(211_48%_38%)] md:text-2xl'>
+                  <h3 className='mt-2 font-display text-xl font-semibold tracking-tight text-heading transition-colors group-hover:text-highlight md:text-2xl'>
                     {post.title}
                   </h3>
                   <p className='mt-2 line-clamp-2 max-w-2xl text-sm leading-relaxed text-body'>
@@ -143,7 +144,7 @@ export function BlogArticlesSection ({
                   </p>
                 </div>
                 <div className='flex items-center justify-between gap-4 sm:flex-col sm:items-end'>
-                  <span className='font-mono text-[0.5625rem] text-heading/[0.35]'>
+                  <span className='font-mono text-xs text-heading/[0.35]'>
                     {post.readTime}
                   </span>
                   <ArrowUpRight

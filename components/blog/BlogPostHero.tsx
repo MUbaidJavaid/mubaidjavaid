@@ -1,7 +1,9 @@
 'use client'
 
 import { LottiePlayer } from '@/components/ui/LottiePlayer'
+import { brandType } from '@/lib/brand-system'
 import { lottieAssets } from '@/lib/lottie-assets'
+import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
@@ -73,7 +75,7 @@ export function BlogPostHero ({
             <ChevronLeft className='h-4 w-4' aria-hidden />
             All articles
           </Link>
-          <span className='font-mono text-[10px] font-bold tracking-[0.18em] text-white/40'>
+          <span className='font-mono text-xs font-bold tracking-[0.18em] text-white/40'>
             NOTE {noteNo} · ARTICLE
           </span>
         </div>
@@ -86,21 +88,21 @@ export function BlogPostHero ({
             className='max-w-3xl'
           >
             <div className='flex flex-wrap items-center gap-3'>
-              <span className='font-mono text-[11px] font-bold tracking-[0.2em] text-[#7DD3FC]'>
-                NOTE {noteNo}
+              <span className='font-mono text-xs font-semibold tracking-wide text-highlight-on-ink'>
+                Note {noteNo}
               </span>
               <span className='h-px w-8 bg-white/25' aria-hidden />
-              <span className='border border-white/20 bg-white/5 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#C8E6F5]'>
+              <span className='border border-white/20 bg-white/5 px-2 py-0.5 text-xs font-semibold tracking-wide text-highlight-soft'>
                 {category}
               </span>
             </div>
 
-            <h1 className='mt-4 font-heading font-semibold uppercase leading-[1.05] tracking-[-0.02em] text-white text-[clamp(1.75rem,1rem+2.9vw,2.95rem)]'>
+            <h1 className={cn('mt-4 max-w-[22ch]', brandType.titleHeroInk)}>
               {title}
             </h1>
 
             {subtitle ? (
-              <p className='mt-3 max-w-2xl text-base font-medium text-[#9BC9E0] md:text-lg'>
+              <p className='mt-3 max-w-2xl text-base font-medium text-highlight-soft md:text-lg'>
                 {subtitle}
               </p>
             ) : null}
@@ -120,7 +122,7 @@ export function BlogPostHero ({
                 {tags.slice(0, 6).map(tag => (
                   <span
                     key={tag}
-                    className='border border-white/15 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.06em] text-white/55'
+                    className='border border-white/15 px-2 py-0.5 text-xs font-medium tracking-wide text-white/55'
                   >
                     {tag}
                   </span>
@@ -130,7 +132,7 @@ export function BlogPostHero ({
 
             <a
               href='#article-body'
-              className='mt-8 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.12em] text-[#7DD3FC] transition-colors hover:text-white'
+              className='mt-8 inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-highlight-on-ink transition-colors hover:text-white'
             >
               Start reading
               <ArrowRight className='h-3.5 w-3.5' />
@@ -143,7 +145,7 @@ export function BlogPostHero ({
             transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
             className='relative mx-auto flex w-full max-w-md flex-col items-center justify-center border border-white/10 bg-black/20 p-5 lg:max-w-none lg:p-7'
           >
-            <p className='relative z-[1] mb-1 self-start font-mono text-[10px] font-bold tracking-[0.2em] text-[#7DD3FC]/75'>
+            <p className='relative z-[1] mb-1 self-start font-mono text-xs font-bold tracking-[0.2em] text-highlight-on-ink/75'>
               PUBLISH · WEB
             </p>
             <LottiePlayer
@@ -153,10 +155,10 @@ export function BlogPostHero ({
               speed={0.8}
             />
             <div className='relative z-[1] mt-2 flex w-full items-center justify-between gap-3'>
-              <p className='font-mono text-[10px] tracking-[0.12em] text-white/40'>
+              <p className='font-mono text-xs tracking-[0.12em] text-white/40'>
                 {category}
               </p>
-              <p className='font-mono text-[10px] tracking-[0.12em] text-white/40'>
+              <p className='font-mono text-xs tracking-[0.12em] text-white/40'>
                 {readTime}
               </p>
             </div>

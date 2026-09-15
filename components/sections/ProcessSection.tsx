@@ -273,7 +273,7 @@ export function ProcessSection () {
         {/* Active step detail */}
         <div className='mx-auto mt-5 max-w-xl px-1 text-center sm:mt-8'>
           <p
-            className='text-sm font-semibold uppercase tracking-[0.04em] sm:text-base'
+            className='text-sm font-semibold tracking-wide sm:text-base'
             style={{ color: activeColor }}
           >
             Step {activeStep + 1} — {active.step}
@@ -281,7 +281,7 @@ export function ProcessSection () {
           <p className='section-copy mt-2 text-body/85'>
             {active.description}
           </p>
-          <p className='mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-primary/75 sm:text-sm'>
+          <p className='mt-2 text-xs font-semibold tracking-wide text-primary/75 sm:text-sm'>
             {stepDurations[activeStep] ?? `Phase ${activeStep + 1}`}
           </p>
         </div>

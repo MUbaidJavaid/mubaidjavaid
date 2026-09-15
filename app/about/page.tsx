@@ -3,7 +3,9 @@ import { BrandContact } from '@/components/brand/BrandContact'
 import { BrandPhilosophy } from '@/components/brand/BrandPhilosophy'
 import { BrandTimeline } from '@/components/brand/BrandTimeline'
 import { aboutPreview, experience, heroContent, site } from '@/data/site'
+import { brandType } from '@/lib/brand-system'
 import { pageMetadata } from '@/lib/seo'
+import { cn } from '@/lib/utils'
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -50,10 +52,10 @@ export default function AboutPage () {
 
         <div className='relative mx-auto grid min-h-[min(900px,calc(100svh-5rem))] w-full max-w-[1380px] gap-x-12 px-6 pb-16 pt-14 sm:px-8 md:px-10 md:pb-20 md:pt-20 lg:grid-cols-[minmax(0,1.18fr)_minmax(320px,0.82fr)] lg:px-12 lg:py-24 xl:gap-x-20'>
           <div className='mb-8 flex items-center justify-between lg:col-start-1 lg:mb-0 lg:self-start'>
-            <p className='font-mono text-[0.625rem] uppercase tracking-[0.24em] text-[hsl(211_48%_42%)]'>
+            <p className={brandType.label}>
               About · {site.role}
             </p>
-            <p className='hidden font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-heading/35 sm:block'>
+            <p className={cn('hidden sm:block', brandType.mono, 'text-heading/35')}>
               Multan / PK
             </p>
           </div>
@@ -78,7 +80,7 @@ export default function AboutPage () {
               />
               <div className='absolute inset-x-0 bottom-0 flex items-end justify-between border-t border-white/15 px-5 py-5 text-white md:px-6'>
                 <div>
-                  <p className='font-mono text-[0.5rem] uppercase tracking-[0.2em] text-white/55'>
+                  <p className='font-mono text-xs tracking-wide text-white/55'>
                     Independent profile
                   </p>
                   <p className='mt-1.5 font-display text-lg font-semibold'>
@@ -90,23 +92,22 @@ export default function AboutPage () {
                 </span>
               </div>
             </div>
-            <p className='absolute -right-7 top-10 hidden font-mono text-[0.5rem] uppercase tracking-[0.28em] text-heading/30 [writing-mode:vertical-rl] xl:block'>
+            <p className={cn('absolute -right-7 top-10 hidden [writing-mode:vertical-rl] xl:block', brandType.mono, 'text-heading/30')}>
               Product engineering · 2026
             </p>
           </div>
 
           <div className='mt-10 lg:col-start-1 lg:row-start-2 lg:mt-8 lg:self-center'>
-            <h1 className='max-w-[14ch] font-display text-[clamp(2.85rem,5.8vw,5.8rem)] font-bold leading-[0.9] tracking-[-0.055em] text-heading'>
+            <h1 className={cn('max-w-[14ch]', brandType.titleHero)}>
               About
-              <span className='block text-highlight'>
-                M Ubaid Javaid
-              </span>
+              <br />
+              <span className='text-highlight'>M Ubaid Javaid</span>
             </h1>
 
             <div className='mt-8 grid gap-6 border-t border-heading/10 pt-7 md:grid-cols-[1fr_1.35fr] md:gap-10'>
-              <p className='font-mono text-[0.5625rem] uppercase leading-relaxed tracking-[0.15em] text-heading/40'>
+              <p className={cn('leading-relaxed', brandType.mono, 'text-heading/40')}>
                 Currently
-                <span className='mt-2 block text-heading/70'>
+                <span className='mt-2 block text-sm font-sans normal-case tracking-normal text-heading/70'>
                   {currentRole
                     ? `${currentRole.role} · ${currentRole.company}`
                     : site.role}
@@ -130,7 +131,7 @@ export default function AboutPage () {
                   key={item}
                   className='group border-b border-heading/10 py-5 last:border-b-0 sm:border-b-0 sm:px-5 sm:first:pl-0 sm:last:pr-0'
                 >
-                  <span className='font-mono text-[0.5625rem] text-[hsl(211_48%_42%)]'>
+                  <span className={cn(brandType.mono, 'text-highlight')}>
                     /{String(i + 1).padStart(2, '0')}
                   </span>
                   <p className='mt-3 max-w-[22ch] text-sm leading-relaxed text-heading transition-transform duration-300 group-hover:translate-x-1'>
@@ -143,7 +144,7 @@ export default function AboutPage () {
             <div className='mt-8 flex flex-wrap items-center gap-x-7 gap-y-4'>
               <Link
                 href='/contact'
-                className='group inline-flex min-h-11 items-center gap-3 bg-heading px-5 text-sm font-semibold text-white transition-colors hover:bg-[hsl(211_48%_38%)]'
+                className='cta-primary group'
               >
                 Discuss your project
                 <ArrowUpRight
@@ -162,7 +163,7 @@ export default function AboutPage () {
                 href={site.github}
                 target='_blank'
                 rel='noreferrer'
-                className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-heading/45 transition-colors hover:text-heading'
+                className={cn(brandType.mono, 'text-heading/45 transition-colors hover:text-heading')}
               >
                 GitHub ↗
               </Link>

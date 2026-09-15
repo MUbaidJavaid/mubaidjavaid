@@ -1,6 +1,6 @@
 'use client'
 
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
 import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import type { ReactNode } from 'react'
@@ -73,11 +73,9 @@ export function PageHeroHeader ({
           }}
         >
           {subtitle ? (
-            <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_48%_42%)]'>
-              {subtitle}
-            </p>
+            <p className={brandType.label}>{subtitle}</p>
           ) : null}
-          <h1 className='mt-5 max-w-[16ch] font-display text-[clamp(2.6rem,6vw,5.2rem)] font-bold leading-[0.94] tracking-[-0.045em] text-heading'>
+          <h1 className={cn('mt-5 max-w-[16ch]', brandType.titleHero)}>
             {title}
           </h1>
           {description ? (

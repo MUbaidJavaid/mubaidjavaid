@@ -92,7 +92,7 @@ export function MernStackShowcase () {
             {LAYERS.map((layer, i) => (
               <span
                 key={`${layer.id}-letter`}
-                className='w-14 text-center font-heading text-[11px] font-semibold uppercase tracking-[0.12em] sm:w-16'
+                className='w-14 text-center font-heading text-xs font-semibold tracking-wide sm:w-16'
                 style={{
                   color:
                     active === i ? layer.color : 'hsl(var(--body) / 0.65)'
@@ -215,12 +215,12 @@ export function MernStackShowcase () {
                     ) : null}
                     <div className='min-w-0'>
                       <p
-                        className='font-heading text-[10px] font-semibold uppercase tracking-[0.12em]'
+                        className='font-heading text-xs font-semibold tracking-wide'
                         style={{ color: current.color }}
                       >
                         {current.letter} · {current.role}
                       </p>
-                      <h3 className='mt-0.5 font-heading text-[15px] font-semibold uppercase tracking-[0.04em] text-heading sm:text-base'>
+                      <h3 className='mt-0.5 font-display text-[15px] font-semibold tracking-tight text-heading sm:text-base'>
                         {current.name}
                       </h3>
                       <p className='mt-1 text-[13px] leading-snug text-body/80'>
@@ -246,7 +246,7 @@ export function MernStackShowcase () {
             />
           ) : null}
           <p className='text-[13px] text-body/70'>
-            <span className='font-heading font-semibold uppercase tracking-[0.08em] text-heading/80'>
+            <span className='font-display font-semibold tracking-tight text-heading/80'>
               Next.js
             </span>
             {' — '}

@@ -1,7 +1,9 @@
 import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { services } from '@/data/site'
+import { brandType } from '@/lib/brand-system'
 import { pageMetadata } from '@/lib/seo'
+import { cn } from '@/lib/utils'
 import {
   ArrowUpRight,
   Boxes,
@@ -80,7 +82,8 @@ export default function ServicesPage () {
         title={
           <>
             Hire a full-stack
-            <span className='block text-highlight'>
+            <br />
+            <span className='text-highlight'>
               Next.js & MERN engineer.
             </span>
           </>
@@ -92,12 +95,12 @@ export default function ServicesPage () {
             href='/contact'
             event='discuss_project'
             detail='services_hero'
-            className='inline-flex items-center gap-2 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover'
+            className='cta-primary'
           >
             Discuss your project
             <ArrowUpRight size={15} aria-hidden />
           </TrackedCtaLink>
-          <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
+          <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
             04 offerings · one delivery path
           </p>
         </div>
@@ -106,11 +109,11 @@ export default function ServicesPage () {
       <section className='relative isolate overflow-hidden bg-background'>
         <div className='mx-auto w-full max-w-[1280px] px-6 py-6 sm:px-8 md:px-10 lg:px-12'>
           <div className='flex items-center gap-4 border-b border-heading/10 pb-5'>
-            <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-heading/[0.35]'>
+            <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
               Delivery system
             </p>
             <span className='h-px flex-1 bg-heading/10' aria-hidden />
-            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-[hsl(211_48%_42%)]'>
+            <p className='font-mono text-xs tracking-wide text-highlight'>
               Scope → Ship → Handover
             </p>
           </div>
@@ -128,26 +131,26 @@ export default function ServicesPage () {
                 <article className='mx-auto grid w-full max-w-[1280px] gap-8 px-6 py-12 sm:px-8 md:px-10 md:py-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 lg:px-12'>
                   <div>
                     <div className='flex items-center gap-3'>
-                      <span className='flex h-11 w-11 items-center justify-center rounded-full border border-heading/[0.15] text-[hsl(211_48%_42%)]'>
+                      <span className='flex h-11 w-11 items-center justify-center rounded-full border border-heading/[0.15] text-highlight'>
                         <Icon size={17} strokeWidth={1.55} aria-hidden />
                       </span>
-                      <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-[hsl(211_48%_42%)]'>
+                      <p className='font-mono text-xs tracking-wide text-highlight'>
                         {String(index + 1).padStart(2, '0')} · {meta?.phase}
                       </p>
                     </div>
-                    <h2 className='mt-6 font-display text-[clamp(1.8rem,3vw,2.75rem)] font-semibold leading-[1.05] tracking-tight text-heading'>
+                    <h2 className={cn('mt-6', brandType.title)}>
                       {service.title}
                     </h2>
                     <p className='mt-4 max-w-[40ch] text-sm leading-relaxed text-body md:text-base'>
                       {service.description}
                     </p>
-                    <p className='mt-6 max-w-[36ch] border-l-2 border-[hsl(211_48%_42%)] pl-4 text-sm text-heading/70'>
+                    <p className='mt-6 max-w-[36ch] border-l-2 border-highlight pl-4 text-sm text-heading/70'>
                       {meta?.fit}
                     </p>
                   </div>
 
                   <div className='border-t border-heading/10 pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0'>
-                    <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-heading/[0.35]'>
+                    <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
                       What ships
                     </p>
                     <ul className='mt-4 divide-y divide-heading/10 border-y border-heading/10'>
@@ -156,7 +159,7 @@ export default function ServicesPage () {
                           key={item}
                           className='grid grid-cols-[2.25rem_1fr] gap-3 py-4 text-sm leading-relaxed text-heading'
                         >
-                          <span className='font-mono text-[0.5625rem] text-[hsl(211_48%_42%)]'>
+                          <span className='font-mono text-xs text-highlight'>
                             {String(deliverableIndex + 1).padStart(2, '0')}
                           </span>
                           {item}
@@ -174,10 +177,10 @@ export default function ServicesPage () {
           id='how-i-work'
           className='mx-auto w-full max-w-[1280px] border-t border-heading/10 px-6 py-14 sm:px-8 md:px-10 md:py-20 lg:px-12'
         >
-          <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-highlight'>
+          <p className='font-mono text-xs tracking-wide text-highlight'>
             How I work
           </p>
-          <h2 className='mt-4 max-w-[18ch] font-display text-[clamp(1.8rem,3.2vw,2.75rem)] font-semibold leading-[1.05] tracking-tight text-heading'>
+          <h2 className={cn('mt-4 max-w-[18ch]', brandType.title)}>
             Remote-ready process from Multan.
           </h2>
           <p className='mt-4 max-w-[52ch] text-sm leading-relaxed text-body md:text-base'>
@@ -204,7 +207,7 @@ export default function ServicesPage () {
               }
             ].map((item, i) => (
               <li key={item.t} className='border-t border-heading/10 pt-4'>
-                <span className='font-mono text-[0.5625rem] text-highlight'>
+                <span className='font-mono text-xs text-highlight'>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <p className='mt-2 font-display text-lg font-semibold text-heading'>
@@ -238,7 +241,7 @@ export default function ServicesPage () {
 
         <div className='mx-auto flex w-full max-w-[1280px] flex-col gap-5 px-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-8 md:px-10 lg:px-12'>
           <div>
-            <p className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-heading/[0.35]'>
+            <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
               Good fit / not a fit
             </p>
             <p className='mt-3 max-w-[48ch] text-sm leading-relaxed text-body'>

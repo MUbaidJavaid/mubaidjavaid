@@ -1,5 +1,7 @@
 'use client'
 
+import { brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 import Image from 'next/image'
@@ -60,16 +62,16 @@ export function ProjectCaseHero ({
           <p className='section-label'>
             Case {caseNo} · {role}
           </p>
-          <h1 className='mt-5 font-display text-fluid-display font-normal tracking-tight text-heading'>
+          <h1 className={cn('mt-5', brandType.titleHero)}>
             {shortTitle}
           </h1>
           <p className='mt-6 max-w-xl text-fluid-base text-body'>{description}</p>
           {deliveryAttribution ? (
-            <p className='mt-4 max-w-xl border-l-2 border-highlight pl-4 font-mono text-[0.6875rem] leading-relaxed tracking-wide text-muted-foreground'>
+            <p className='mt-4 max-w-xl border-l-2 border-highlight pl-4 font-mono text-xs leading-relaxed tracking-wide text-muted-foreground'>
               {deliveryAttribution}
             </p>
           ) : null}
-          <p className='mt-6 font-mono text-[0.6875rem] tracking-wide text-muted-foreground'>
+          <p className='mt-6 font-mono text-xs tracking-wide text-muted-foreground'>
             {stackPreview}
           </p>
           <div className='mt-8 flex flex-wrap gap-3'>
@@ -78,7 +80,7 @@ export function ProjectCaseHero ({
                 href={liveUrl}
                 target='_blank'
                 rel='noreferrer'
-                className='inline-flex items-center gap-2 bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover'
+                className='cta-primary'
               >
                 <ExternalLink className='h-3.5 w-3.5' aria-hidden />
                 Live product
@@ -129,7 +131,7 @@ export function ProjectCaseHero ({
           </div>
           {images.length > 1 ? (
             <div className='mt-4 flex items-center justify-between'>
-              <p className='font-mono text-[0.6875rem] tabular-nums text-muted-foreground'>
+              <p className='font-mono text-xs tabular-nums text-muted-foreground'>
                 {String(selectedIndex + 1).padStart(2, '0')} /{' '}
                 {String(images.length).padStart(2, '0')}
               </p>

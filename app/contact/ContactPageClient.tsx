@@ -3,6 +3,7 @@
 import { ClickSpark } from '@/components/ui/ClickSpark'
 import { contactCta, site } from '@/data/site'
 import { trackCta } from '@/lib/analytics'
+import { brandType } from '@/lib/brand-system'
 import {
   BUDGET_OPTIONS,
   contactPayloadSchema,
@@ -199,12 +200,13 @@ export function ContactPageClient () {
 
         <div className='grid lg:grid-cols-[0.86fr_1.14fr]'>
           <aside className='relative px-6 py-12 text-white sm:px-8 md:px-12 md:py-16 lg:min-h-[760px] lg:px-14 lg:py-20'>
-            <p className='font-mono text-[0.625rem] uppercase tracking-[0.22em] text-highlight-on-ink'>
+            <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
               Let&apos;s work together
             </p>
-            <h1 className='mt-5 max-w-[12ch] font-display text-[clamp(2.65rem,5vw,4.9rem)] font-bold leading-[0.94] tracking-[-0.045em] text-white'>
+            <h1 className={cn('mt-5 max-w-[12ch]', brandType.titleHeroInk)}>
               Discuss your
-              <span className='block text-highlight-soft'>project.</span>
+              <br />
+              <span className='text-highlight-soft'>project.</span>
             </h1>
             <p className='mt-6 max-w-[38ch] text-sm leading-relaxed text-white/65 md:text-base'>
               {contactCta.body}
@@ -215,12 +217,12 @@ export function ContactPageClient () {
                 <span className='absolute -inset-1 rounded-full border border-emerald-400/30' />
                 <span className='relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400' />
               </span>
-              <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-white/50'>
+              <p className='font-mono text-xs tracking-wide text-white/50'>
                 {contactCta.support}
               </p>
             </div>
 
-            <p className='mt-10 font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-[hsl(211_70%_72%)]'>
+            <p className='mt-10 font-mono text-xs tracking-wide text-highlight-on-ink'>
               Direct channels
             </p>
             <ul className='mt-3 divide-y divide-white/10 border-y border-white/10'>
@@ -235,11 +237,11 @@ export function ContactPageClient () {
                         : {})}
                       className='group flex min-h-16 items-center gap-4 py-4'
                     >
-                      <span className='flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-[hsl(211_70%_72%)] transition-colors group-hover:border-white/50 group-hover:bg-white/5'>
+                      <span className='flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-highlight-on-ink transition-colors group-hover:border-white/50 group-hover:bg-white/5'>
                         <Icon size={16} strokeWidth={1.7} aria-hidden />
                       </span>
                       <span className='min-w-0 flex-1'>
-                        <span className='block font-mono text-[0.5rem] uppercase tracking-[0.14em] text-white/35'>
+                        <span className='block font-mono text-xs tracking-wide text-white/35'>
                           {link.kicker}
                         </span>
                         <span className='mt-1 block truncate text-sm font-semibold text-white/85 transition-colors group-hover:text-white'>
@@ -258,7 +260,7 @@ export function ContactPageClient () {
             </ul>
 
             <div className='mt-8 border-l-2 border-[hsl(211_55%_68%)] pl-4'>
-              <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-[hsl(211_70%_72%)]'>
+              <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
                 What to include
               </p>
               <p className='mt-2 max-w-[40ch] text-sm leading-relaxed text-white/55'>
@@ -288,14 +290,14 @@ export function ContactPageClient () {
             </p>
             <div className='flex items-end justify-between gap-4 border-b border-heading/10 pb-5'>
               <div>
-                <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-[hsl(211_48%_42%)]'>
+                <p className='font-mono text-xs tracking-wide text-highlight'>
                   Project inquiry
                 </p>
                 <h2 className='mt-3 font-display text-2xl font-semibold tracking-tight text-heading md:text-3xl'>
                   Send a message
                 </h2>
               </div>
-              <p className='hidden font-mono text-[0.5rem] uppercase tracking-[0.14em] text-heading/[0.3] sm:block'>
+              <p className='hidden font-mono text-xs tracking-wide text-heading/[0.3] sm:block'>
                 Reply within 24h
               </p>
             </div>
@@ -309,7 +311,7 @@ export function ContactPageClient () {
                 <div className='space-y-1.5'>
                   <label
                     htmlFor='contact-name'
-                    className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'
+                    className='font-mono text-xs tracking-wide text-heading/[0.45]'
                   >
                     Full name
                   </label>
@@ -329,7 +331,7 @@ export function ContactPageClient () {
                 <div className='space-y-1.5'>
                   <label
                     htmlFor='contact-email'
-                    className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'
+                    className='font-mono text-xs tracking-wide text-heading/[0.45]'
                   >
                     Email address
                   </label>
@@ -353,7 +355,7 @@ export function ContactPageClient () {
               <div className='space-y-1.5'>
                 <label
                   htmlFor='contact-type'
-                  className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'
+                  className='font-mono text-xs tracking-wide text-heading/[0.45]'
                 >
                   Project type
                 </label>
@@ -375,7 +377,7 @@ export function ContactPageClient () {
               <div className='space-y-1.5'>
                 <label
                   htmlFor='contact-message'
-                  className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'
+                  className='font-mono text-xs tracking-wide text-heading/[0.45]'
                 >
                   Message
                 </label>
@@ -399,7 +401,7 @@ export function ContactPageClient () {
               </div>
 
               <div className='space-y-2.5'>
-                <p className='font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/[0.45]'>
+                <p className='font-mono text-xs tracking-wide text-heading/[0.45]'>
                   Budget range
                 </p>
                 <div className='flex flex-wrap gap-2'>
@@ -443,7 +445,7 @@ export function ContactPageClient () {
                 >
                   {submitBanner.tone === 'pending' ? (
                     <Loader2
-                      className='mt-0.5 h-5 w-5 shrink-0 animate-spin text-[hsl(211_48%_42%)]'
+                      className='mt-0.5 h-5 w-5 shrink-0 animate-spin text-highlight'
                       aria-hidden
                     />
                   ) : submitBanner.tone === 'error' ? (

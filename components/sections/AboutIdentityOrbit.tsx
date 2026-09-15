@@ -484,7 +484,7 @@ export function AboutIdentityOrbit ({
                   transition={fade}
                 >
                   <p
-                    className='font-heading text-[14px] font-semibold uppercase tracking-[0.08em] sm:text-[15px]'
+                    className='font-display text-sm font-semibold tracking-tight sm:text-[15px]'
                     style={{ color: PRIMARY }}
                   >
                     {current.title}

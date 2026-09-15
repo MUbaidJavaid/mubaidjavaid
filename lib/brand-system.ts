@@ -76,13 +76,17 @@ export const brandMotion = {
 
 export const brandType = {
   label: 'section-label',
-  /** Homepage / band H2 — one scale site-wide (Issues 1, 4) */
+  /** Section H2 — one scale site-wide */
   title:
     'font-display text-[clamp(2.25rem,4.2vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.02em] text-heading',
   titleInk:
     'font-display text-[clamp(2.25rem,4.2vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.02em] text-white',
+  /** Page H1 on light surfaces */
   titleHero:
     'font-display text-[clamp(2.75rem,5.5vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-heading',
+  /** Page H1 on ink surfaces */
+  titleHeroInk:
+    'font-display text-[clamp(2.75rem,5.5vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-white',
   lead: 'max-w-md text-sm leading-relaxed text-body md:text-base',
   italic: 'font-body text-xl font-medium leading-snug text-heading/70 md:text-2xl',
   mono: 'font-mono text-xs tracking-wide text-muted-foreground'

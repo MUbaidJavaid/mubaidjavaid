@@ -99,11 +99,11 @@ export function ExperienceSnapshot () {
 
                   <div>
                     <div className='flex flex-wrap items-center gap-x-2.5 gap-y-1'>
-                      <h3 className='font-heading !font-semibold uppercase text-base leading-snug tracking-[0.04em] text-primary sm:text-lg'>
+                      <h3 className='font-display text-base font-semibold leading-snug tracking-tight text-primary sm:text-lg'>
                         {role.company}
                       </h3>
                       {role.current && (
-                        <span className='text-[11px] font-semibold uppercase tracking-[0.12em] text-emerald-600 dark:text-emerald-400'>
+                        <span className='text-xs font-semibold tracking-wide text-emerald-600 dark:text-emerald-400'>
                           Current
                         </span>
                       )}

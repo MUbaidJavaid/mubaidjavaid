@@ -64,7 +64,7 @@ export function TechStackSection () {
               key={group.title}
               className='card-surface p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-float'
             >
-              <h3 className='text-base font-semibold uppercase tracking-[0.04em] text-heading'>
+              <h3 className='text-base font-semibold tracking-tight text-heading'>
                 {group.title}
               </h3>
               <div className='mt-3 flex flex-wrap gap-2'>

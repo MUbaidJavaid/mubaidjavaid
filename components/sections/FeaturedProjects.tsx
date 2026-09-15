@@ -96,7 +96,7 @@ export function FeaturedProjects () {
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <span className='truncate text-[12px] font-semibold uppercase tracking-[0.07em] sm:text-[13px]'>
+                <span className='truncate text-xs font-semibold tracking-wide sm:text-[13px]'>
                   {label}
                 </span>
                 <span
@@ -199,12 +199,12 @@ export function FeaturedProjects () {
                       {String(activeProject + 1).padStart(2, '0')}
                     </span>
                     <span className='h-px flex-1 bg-border/55' aria-hidden />
-                    <span className='max-w-[60%] truncate text-[10px] font-semibold uppercase tracking-[0.1em] text-body/50'>
+                    <span className='max-w-[60%] truncate text-xs font-semibold tracking-wide text-body/50'>
                       {project.role}
                     </span>
                   </div>
 
-                  <h3 className='mt-3 font-heading !font-semibold uppercase text-[1.1rem] leading-snug tracking-[0.03em] text-heading sm:text-[1.2rem]'>
+                  <h3 className='mt-3 font-display text-[1.1rem] font-semibold leading-snug tracking-tight text-heading sm:text-[1.2rem]'>
                     {project.title}
                   </h3>
 

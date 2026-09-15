@@ -1,6 +1,6 @@
 'use client'
 
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
 import { projects } from '@/data/projects'
 import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
@@ -59,7 +59,7 @@ export function ProjectsPortfolioGrid () {
                   className='pointer-events-none absolute inset-0 bg-gradient-to-t from-heading/25 via-transparent to-transparent'
                   aria-hidden
                 />
-                <span className='absolute left-4 top-4 bg-primary px-2.5 py-1.5 font-mono text-[0.5rem] uppercase tracking-[0.16em] text-primary-foreground md:left-5 md:top-5'>
+                <span className='absolute left-4 top-4 bg-primary px-2.5 py-1.5 font-mono text-xs tracking-wide text-primary-foreground md:left-5 md:top-5'>
                   Case {String(i + 1).padStart(2, '0')}
                 </span>
               </div>
@@ -72,17 +72,17 @@ export function ProjectsPortfolioGrid () {
                   {String(i + 1).padStart(2, '0')}
                 </span>
 
-                <p className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_48%_42%)]'>
+                <p className='font-mono text-xs tracking-wide text-highlight'>
                   {project.role}
                 </p>
-                <h2 className='mt-3 font-display text-[clamp(1.7rem,3vw,2.6rem)] font-semibold leading-[1.05] tracking-tight text-heading transition-colors group-hover:text-[hsl(211_48%_38%)]'>
+                <h2 className={cn('mt-3', brandType.title, 'transition-colors group-hover:text-highlight')}>
                   {short}
                 </h2>
                 <p className='mt-4 max-w-[46ch] text-sm leading-relaxed text-body'>
                   {project.impact[0] ?? project.summary}
                 </p>
 
-                <p className='mt-6 font-mono text-[0.5rem] uppercase tracking-[0.1em] text-heading/[0.35]'>
+                <p className='mt-6 font-mono text-xs tracking-wide text-heading/[0.35]'>
                   {project.stack.slice(0, 5).join(' · ')}
                 </p>
 

@@ -1,7 +1,8 @@
 'use client'
 
 import { site } from '@/data/site'
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight, Mail } from 'lucide-react'
 import Link from 'next/link'
@@ -39,12 +40,11 @@ export function ThankYouPanel () {
         }}
         className='relative z-10 mx-auto flex min-h-[70vh] w-full max-w-[720px] flex-col justify-center px-6 py-20 sm:px-8 md:px-10'
       >
-        <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_48%_42%)]'>
-          Message received
-        </p>
-        <h1 className='mt-5 font-display text-[clamp(2.6rem,6vw,4.5rem)] font-bold leading-[0.94] tracking-[-0.045em] text-heading'>
+        <p className={brandType.label}>Message received</p>
+        <h1 className={cn('mt-5', brandType.titleHero)}>
           Thanks.
-          <span className='block text-[hsl(211_48%_42%)]'>
+          <br />
+          <span className='text-highlight'>
             I&apos;ll reply within 24 hours.
           </span>
         </h1>
@@ -56,21 +56,21 @@ export function ThankYouPanel () {
         <div className='mt-10 flex flex-wrap gap-3'>
           <Link
             href='/'
-            className='inline-flex items-center gap-2 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover'
+            className='cta-primary'
           >
             Back to home
             <ArrowRight className='h-3.5 w-3.5' aria-hidden />
           </Link>
           <Link
             href={`mailto:${site.email}`}
-            className='inline-flex items-center gap-2 border border-border px-5 py-2.5 text-sm font-medium text-heading transition-colors hover:border-heading'
+            className='inline-flex min-h-11 items-center gap-2 border border-border px-5 py-2.5 text-sm font-medium text-heading transition-colors hover:border-heading'
           >
             <Mail className='h-4 w-4' aria-hidden />
             Email directly
           </Link>
         </div>
 
-        <p className='mt-8 font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
+        <p className={cn('mt-8', brandType.mono)}>
           <Link href='/contact' className='link-underline text-heading'>
             Back to contact
           </Link>

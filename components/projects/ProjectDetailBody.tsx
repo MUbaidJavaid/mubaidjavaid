@@ -178,12 +178,12 @@ export function ProjectDetailBody ({
             </div>
             <aside className='hidden lg:block'>
               <div className='sticky top-28 border-t border-heading pt-5'>
-                <p className='font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-muted-foreground'>
+                <p className='font-mono text-xs tracking-wide text-muted-foreground'>
                   Case {caseNo}
                 </p>
                 <p className='mt-2 font-display text-lg text-heading'>{shortTitle}</p>
                 <p className='mt-3 text-xs leading-relaxed text-body'>{project.role}</p>
-                <p className='mt-4 font-mono text-[0.625rem] leading-relaxed tracking-wide text-muted-foreground'>
+                <p className='mt-4 font-mono text-xs leading-relaxed tracking-wide text-muted-foreground'>
                   {project.stack.join(' · ')}
                 </p>
               </div>
@@ -199,7 +199,7 @@ export function ProjectDetailBody ({
               key={beat.label}
               className='grid gap-4 md:grid-cols-[10rem_1fr] md:gap-12'
             >
-              <p className='font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-muted-foreground'>
+              <p className='font-mono text-xs tracking-wide text-muted-foreground'>
                 {String(i + 1).padStart(2, '0')} · {beat.label}
               </p>
               <p className='max-w-2xl text-fluid-base text-heading/85'>{beat.body}</p>
@@ -232,7 +232,7 @@ export function ProjectDetailBody ({
           <ul className='mt-8 grid gap-4 sm:grid-cols-2'>
             {project.keyFeatures.map((feature, i) => (
               <li key={feature} className='border-t border-border/70 pt-4'>
-                <span className='font-mono text-[0.6875rem] text-muted-foreground'>
+                <span className='font-mono text-xs text-muted-foreground'>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <p className='mt-2 text-sm leading-relaxed text-heading/85'>
@@ -256,7 +256,7 @@ export function ProjectDetailBody ({
             <ul className='mt-10 max-w-2xl space-y-4'>
               {restImpact.map((line, i) => (
                 <li key={line} className='flex gap-4 text-sm text-body'>
-                  <span className='font-mono text-[0.6875rem] text-muted-foreground'>
+                  <span className='font-mono text-xs text-muted-foreground'>
                     {String(i + 2).padStart(2, '0')}
                   </span>
                   {line}
@@ -282,7 +282,7 @@ export function ProjectDetailBody ({
           <p className='section-label'>Continue</p>
           <div className='mt-6 grid gap-8 md:grid-cols-2'>
             <div>
-              <p className='font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted-foreground'>
+              <p className='font-mono text-xs tracking-wide text-muted-foreground'>
                 Related services
               </p>
               <Link
@@ -296,7 +296,7 @@ export function ProjectDetailBody ({
               </p>
             </div>
             <div>
-              <p className='font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted-foreground'>
+              <p className='font-mono text-xs tracking-wide text-muted-foreground'>
                 Related case studies
               </p>
               <ul className='mt-3 space-y-2'>

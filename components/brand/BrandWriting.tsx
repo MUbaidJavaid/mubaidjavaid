@@ -109,7 +109,7 @@ export function BrandWriting () {
                   <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
                     {featured.category}
                   </p>
-                  <h3 className='mt-4 max-w-[13ch] font-display text-[clamp(2.2rem,4.5vw,4rem)] font-bold leading-[0.98] tracking-[-0.04em] text-white'>
+                  <h3 className={cn('mt-4 max-w-[16ch]', brandType.titleInk)}>
                     {featured.title}
                   </h3>
                   <p className='mt-5 max-w-[44ch] text-sm leading-relaxed text-white/60'>

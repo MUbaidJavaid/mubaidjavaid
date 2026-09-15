@@ -166,7 +166,7 @@ export function BrandOpenSource () {
                       <item.Icon
                         size={15}
                         strokeWidth={1.5}
-                        className='text-[hsl(211_65%_68%)]'
+                        className='text-highlight-on-ink'
                         aria-hidden
                       />
                       <span className='font-mono text-xs tracking-wide text-white/[0.38] sm:text-xs'>

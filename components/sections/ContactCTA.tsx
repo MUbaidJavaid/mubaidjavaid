@@ -31,7 +31,7 @@ export function ContactCTA () {
             {/* Primary ask */}
             <div className='flex flex-col justify-center gap-5 border-b border-border/55 p-6 sm:p-7 lg:border-b-0 lg:border-r dark:border-border/40'>
               <div className='space-y-2.5'>
-                <h3 className='font-heading !font-semibold uppercase text-[1.15rem] leading-snug tracking-[0.03em] text-heading sm:text-[1.25rem]'>
+                <h3 className='font-display text-[1.15rem] font-semibold leading-snug tracking-tight text-heading sm:text-[1.25rem]'>
                   {contactCta.title}
                 </h3>
                 <p className='flex items-center gap-2 text-[13px] text-body/65'>
@@ -64,7 +64,7 @@ export function ContactCTA () {
             {/* Good fits + links */}
             <div className='flex flex-col justify-between gap-6 p-6 sm:p-7'>
               <div>
-                <p className='text-[10px] font-bold uppercase tracking-[0.16em] text-primary/80'>
+                <p className='text-xs font-semibold tracking-wide text-primary/80'>
                   Good fits
                 </p>
                 <ul className='mt-4 divide-y divide-border/55 dark:divide-border/40'>

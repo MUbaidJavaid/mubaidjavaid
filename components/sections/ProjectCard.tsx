@@ -73,7 +73,7 @@ export function ProjectCard ({ project }: { project: Project }) {
             href={project.liveUrl}
             target='_blank'
             rel='noopener noreferrer'
-            className='absolute right-2.5 top-2.5 z-10 flex items-center gap-1 border border-emerald-600/20 bg-emerald-500/90 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white transition-colors hover:bg-emerald-500'
+            className='absolute right-2.5 top-2.5 z-10 flex items-center gap-1 border border-emerald-600/20 bg-emerald-500/90 px-2 py-0.5 text-xs font-semibold tracking-wide text-white transition-colors hover:bg-emerald-500'
             onClick={e => e.stopPropagation()}
           >
             <span className='relative flex h-1.5 w-1.5'>
@@ -96,14 +96,14 @@ export function ProjectCard ({ project }: { project: Project }) {
       {/* Content */}
       <div className='flex flex-1 flex-col p-4'>
         <div className='mb-2 flex items-start justify-between gap-3'>
-          <p className='text-[10px] font-semibold uppercase tracking-[0.16em] text-primary/80'>
+          <p className='text-xs font-semibold tracking-wide text-primary/80'>
             {project.role}
           </p>
           <ArrowUpRight className='h-3.5 w-3.5 text-foreground/15 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary' />
         </div>
         <Link
           href={`/projects/${project.slug}`}
-          className='block font-heading !font-semibold uppercase text-[1.1rem] leading-snug tracking-[0.04em] text-heading transition-colors hover:text-primary'
+          className='block font-display text-[1.1rem] font-semibold leading-snug tracking-tight text-heading transition-colors hover:text-primary'
         >
           {project.title}
         </Link>

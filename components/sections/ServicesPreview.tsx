@@ -96,7 +96,7 @@ export function ServicesPreview () {
                   <div className='min-w-0'>
                     <div className='flex items-start gap-2'>
                       <h3
-                        className={`font-heading !font-semibold uppercase text-[1.05rem] leading-snug tracking-[0.04em] transition-colors duration-500 sm:text-lg md:text-xl ${
+                        className={`font-display text-[1.05rem] font-semibold leading-snug tracking-tight transition-colors duration-500 sm:text-lg md:text-xl ${
                           isActive
                             ? 'text-heading group-hover:text-primary'
                             : 'text-heading/55'

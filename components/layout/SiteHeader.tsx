@@ -176,7 +176,7 @@ export function SiteHeader () {
             className='container-wide flex min-h-full flex-col py-8'
             aria-label='Mobile'
           >
-            <p className='mb-5 font-mono text-xs uppercase tracking-[0.2em] text-highlight'>
+            <p className='mb-5 font-mono text-xs tracking-wide text-highlight'>
               Navigation
             </p>
             {navItems.map((item, index) => {
@@ -216,7 +216,7 @@ export function SiteHeader () {
                 Product engineering for teams who value clarity and lasting
                 craft.
               </p>
-              <span className='font-mono text-xs uppercase tracking-[0.14em] text-heading/35'>
+              <span className='font-mono text-xs tracking-wide text-heading/35'>
                 {site.location}
               </span>
             </div>

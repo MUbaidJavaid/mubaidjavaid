@@ -230,7 +230,7 @@ export function HeroSection () {
         >
           <div className='mx-auto mb-6 flex items-center justify-center gap-3 sm:mb-8' aria-hidden>
             <span className='h-px w-10 bg-gradient-to-r from-transparent to-border/80 sm:w-14' />
-            <span className='font-mono text-[9px] font-bold uppercase tracking-[0.28em] text-primary/55'>
+            <span className='font-mono text-xs font-semibold tracking-wide text-primary/55'>
               Focus
             </span>
             <span className='h-px w-10 bg-gradient-to-l from-transparent to-border/80 sm:w-14' />

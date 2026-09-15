@@ -56,12 +56,13 @@ export default function BlogPage () {
         title={
           <>
             Field notes from
-            <span className='block text-highlight'>production.</span>
+            <br />
+            <span className='text-highlight'>production.</span>
           </>
         }
         description={blogPreview.description}
       >
-        <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
+        <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
           {String(posts.length).padStart(2, '0')} published entries
         </p>
       </PageHeroHeader>
