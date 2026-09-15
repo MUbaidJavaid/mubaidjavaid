@@ -44,7 +44,7 @@ export default function ProjectsPage () {
         title={
           <>
             Selected work &amp;
-            <span className='block text-[hsl(263_48%_42%)]'>
+            <span className='block text-highlight'>
               production delivery.
             </span>
           </>

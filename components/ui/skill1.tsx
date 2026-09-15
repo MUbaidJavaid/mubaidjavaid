@@ -55,7 +55,7 @@ function renderLogoRow (tags: string[]) {
 const CATS = [
   {
     name: 'Frontend',
-    color: '#2872A1',
+    color: '#3A6F94',
     bg: 'rgba(0, 172, 240, 0.92)',
     r: 170,
     tags: [
@@ -318,7 +318,7 @@ export function TechStackSection1 () {
               className='absolute inset-0 flex flex-col items-center justify-center gap-0.5'
               style={{
                 background:
-                  'linear-gradient(145deg, #0F172A 0%, #1e3a5f 45%, #2872A1 100%)',
+                  'linear-gradient(145deg, #0F172A 0%, #1e3a5f 45%, #3A6F94 100%)',
                 borderRadius: '60% 40% 55% 45% / 45% 55% 40% 60%',
                 animation: 'morphBlob 8s ease-in-out infinite',
                 boxShadow:

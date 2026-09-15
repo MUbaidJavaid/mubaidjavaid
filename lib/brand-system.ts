@@ -1,6 +1,11 @@
 /**
  * Brand Visual System — single source of truth.
  *
+ * COLOR
+ * - One accent family only: steel navy (CSS --primary / --highlight, ~hsl 211).
+ * - Do not introduce purple, cyan-only accents, or one-off hex gradients for CTAs.
+ * - Prefer `bg-primary`, `text-highlight`, `text-highlight-on-ink` over raw hsl().
+ *
  * RULES
  * 1. Every homepage section uses BrandSection + BrandCopy + BrandStage only.
  * 2. A stage may contain exactly ONE media type: product | diagram | motion | code.

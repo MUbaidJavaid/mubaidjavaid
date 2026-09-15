@@ -35,11 +35,11 @@ export function BrandHero () {
       />
 
       <div
-        className='pointer-events-none absolute -right-24 top-1/4 h-[55%] w-[50%] rounded-full bg-[hsl(263_55%_42%/0.18)] blur-3xl'
+        className='pointer-events-none absolute -right-24 top-1/4 h-[55%] w-[50%] rounded-full bg-[hsl(211_55%_42%/0.18)] blur-3xl'
         aria-hidden
       />
       <div
-        className='pointer-events-none absolute -left-20 bottom-0 h-[40%] w-[40%] rounded-full bg-[hsl(263_40%_28%/0.35)] blur-3xl'
+        className='pointer-events-none absolute -left-20 bottom-0 h-[40%] w-[40%] rounded-full bg-[hsl(211_48%_28%/0.35)] blur-3xl'
         aria-hidden
       />
 
@@ -99,7 +99,7 @@ export function BrandHero () {
 
       <div className='relative z-10 mx-auto flex min-h-[100svh] max-w-[1180px] flex-col justify-center px-6 pb-24 pt-28 md:px-10 lg:px-12'>
         <div className='max-w-xl lg:max-w-2xl'>
-          <p className='font-mono text-[0.6875rem] uppercase tracking-[0.28em] text-[hsl(263_70%_72%)]'>
+          <p className='font-mono text-[0.6875rem] uppercase tracking-[0.28em] text-highlight-on-ink'>
             {site.role} · {site.roleSecondary}
           </p>
 
@@ -148,7 +148,7 @@ export function BrandHero () {
               )}
             >
               <span
-                className='absolute left-0 top-1/2 h-[2px] w-10 origin-center -translate-x-1/2 -translate-y-1/2 bg-[hsl(263_55%_58%)] transition-transform duration-300 group-hover:scale-x-125'
+                className='absolute left-0 top-1/2 h-[2px] w-10 origin-center -translate-x-1/2 -translate-y-1/2 bg-highlight-soft transition-transform duration-300 group-hover:scale-x-125'
                 aria-hidden
               />
               Discuss your project

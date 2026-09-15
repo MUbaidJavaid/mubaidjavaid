@@ -199,12 +199,12 @@ export function ContactPageClient () {
 
         <div className='grid lg:grid-cols-[0.86fr_1.14fr]'>
           <aside className='relative px-6 py-12 text-white sm:px-8 md:px-12 md:py-16 lg:min-h-[760px] lg:px-14 lg:py-20'>
-            <p className='font-mono text-[0.625rem] uppercase tracking-[0.22em] text-[hsl(263_70%_72%)]'>
+            <p className='font-mono text-[0.625rem] uppercase tracking-[0.22em] text-highlight-on-ink'>
               Let&apos;s work together
             </p>
             <h1 className='mt-5 max-w-[12ch] font-display text-[clamp(2.65rem,5vw,4.9rem)] font-bold leading-[0.94] tracking-[-0.045em] text-white'>
               Discuss your
-              <span className='block text-[hsl(263_55%_68%)]'>project.</span>
+              <span className='block text-highlight-soft'>project.</span>
             </h1>
             <p className='mt-6 max-w-[38ch] text-sm leading-relaxed text-white/65 md:text-base'>
               {contactCta.body}

@@ -56,7 +56,7 @@ export default function BlogPage () {
         title={
           <>
             Field notes from
-            <span className='block text-[hsl(263_48%_42%)]'>production.</span>
+            <span className='block text-highlight'>production.</span>
           </>
         }
         description={blogPreview.description}

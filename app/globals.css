@@ -15,9 +15,9 @@
 @layer base {
   :root {
     /*
-      Editorial trust palette — cool paper + ink.
-      Accent: deep royal purple (sparingly) for SaaS/fintech trust signals.
-      Radius kept tight for Swiss-grid editorial feel.
+      Brand palette — cool paper + ink + steel accent.
+      One accent family only (hsl 211 navy/steel). No purple drift.
+      CTAs use --primary; labels/highlights use --highlight.
     */
     --background: 214 32% 98%;
     --foreground: 215 42% 12%;
@@ -28,10 +28,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 42% 12%;
 
-    /* Ink primary CTAs */
-    --primary: 263 42% 22%;
+    /* Steel navy CTAs */
+    --primary: 211 48% 32%;
     --primary-foreground: 210 40% 98%;
-    --primary-hover: 263 40% 28%;
+    --primary-hover: 211 48% 26%;
 
     --secondary: 214 28% 94%;
     --secondary-foreground: 215 42% 14%;
@@ -39,19 +39,21 @@
     --muted: 214 26% 95%;
     --muted-foreground: 215 16% 40%;
 
-    --accent: 263 30% 96%;
-    --accent-foreground: 263 42% 22%;
+    --accent: 211 28% 95%;
+    --accent-foreground: 211 48% 28%;
 
-    /* Deep royal purple highlight */
-    --highlight: 263 48% 38%;
+    /* Brand highlight / label accent (same family as primary) */
+    --highlight: 211 48% 42%;
     --highlight-foreground: 0 0% 100%;
+    --highlight-soft: 211 55% 68%;
+    --highlight-on-ink: 211 70% 72%;
 
     --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 214 22% 88%;
     --input: 214 22% 88%;
-    --ring: 263 48% 38%;
+    --ring: 211 48% 42%;
 
     --radius: 0.125rem;
     --heading: 215 42% 12%;

@@ -66,7 +66,7 @@ export function BlogPreviewSection () {
               >
                 <Link
                   href={`/blog/${leadPost.slug}`}
-                  className='group relative flex h-full min-h-[280px] flex-col overflow-hidden border border-border/60 bg-[linear-gradient(155deg,#0F172A_0%,#152B40_52%,#1F5F86_100%)] p-6 text-white transition-colors sm:p-7 lg:border-0'
+                  className='group relative flex h-full min-h-[280px] flex-col overflow-hidden border border-border/60 bg-[linear-gradient(155deg,#0F172A_0%,#152B40_52%,#3A6F94_100%)] p-6 text-white transition-colors sm:p-7 lg:border-0'
                   aria-label={`Read featured article: ${leadPost.title}`}
                 >
                   <span

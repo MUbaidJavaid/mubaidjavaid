@@ -14,10 +14,11 @@ export function pageMetadata (input: {
   path?: string
 }): Metadata {
   const canonical = new URL(input.path ?? '/', site.url)
-  const fullTitle = `${input.title} · ${site.name}`
+  // Layout template appends ` · ${site.name}` — do not duplicate here.
+  const brandedTitle = `${input.title} · ${site.name}`
 
   return {
-    title: fullTitle,
+    title: input.title,
     description: input.description,
     alternates: {
       canonical
@@ -27,7 +28,7 @@ export function pageMetadata (input: {
       follow: true
     },
     openGraph: {
-      title: fullTitle,
+      title: brandedTitle,
       description: input.description,
       url: canonical,
       siteName: site.name,
@@ -37,7 +38,7 @@ export function pageMetadata (input: {
     },
     twitter: {
       card: 'summary_large_image',
-      title: fullTitle,
+      title: brandedTitle,
       description: input.description,
       images: [site.ogImage]
     }

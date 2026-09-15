@@ -65,7 +65,9 @@ export default {
         },
         highlight: {
           DEFAULT: 'hsl(var(--highlight))',
-          foreground: 'hsl(var(--highlight-foreground))'
+          foreground: 'hsl(var(--highlight-foreground))',
+          soft: 'hsl(var(--highlight-soft))',
+          'on-ink': 'hsl(var(--highlight-on-ink))'
         }
       },
       borderRadius: {

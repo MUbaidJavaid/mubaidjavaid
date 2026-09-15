@@ -80,7 +80,7 @@ export default function ServicesPage () {
         title={
           <>
             Hire a full-stack
-            <span className='block text-[hsl(263_48%_42%)]'>
+            <span className='block text-highlight'>
               Next.js & MERN engineer.
             </span>
           </>
@@ -174,7 +174,7 @@ export default function ServicesPage () {
           id='how-i-work'
           className='mx-auto w-full max-w-[1280px] border-t border-heading/10 px-6 py-14 sm:px-8 md:px-10 md:py-20 lg:px-12'
         >
-          <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-[hsl(263_48%_42%)]'>
+          <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-highlight'>
             How I work
           </p>
           <h2 className='mt-4 max-w-[18ch] font-display text-[clamp(1.8rem,3.2vw,2.75rem)] font-semibold leading-[1.05] tracking-tight text-heading'>
@@ -204,7 +204,7 @@ export default function ServicesPage () {
               }
             ].map((item, i) => (
               <li key={item.t} className='border-t border-heading/10 pt-4'>
-                <span className='font-mono text-[0.5625rem] text-[hsl(263_48%_42%)]'>
+                <span className='font-mono text-[0.5625rem] text-highlight'>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <p className='mt-2 font-display text-lg font-semibold text-heading'>

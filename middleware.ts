@@ -34,6 +34,13 @@ export function middleware (request: NextRequest) {
     return res
   }
 
+  // Thank-you is a conversion confirmation page — keep out of the index.
+  if (request.nextUrl.pathname === '/contact/thank-you') {
+    const res = NextResponse.next()
+    res.headers.set('X-Robots-Tag', 'noindex, follow')
+    return res
+  }
+
   return NextResponse.next()
 }
 

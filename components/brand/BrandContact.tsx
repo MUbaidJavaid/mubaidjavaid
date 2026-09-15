@@ -149,7 +149,7 @@ export function BrandContact () {
                   href={contactCta.primaryHref}
                   event='discuss_project'
                   detail='brand_contact'
-                  className='inline-flex items-center bg-[hsl(263_48%_38%)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[hsl(263_48%_32%)]'
+                  className='inline-flex items-center bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover'
                 >
                   {contactCta.primaryAction}
                 </TrackedCtaLink>

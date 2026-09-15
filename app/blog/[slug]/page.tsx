@@ -34,15 +34,17 @@ export async function generateMetadata ({
   }
 
   const canonical = new URL(`/blog/${post.slug}`, site.url)
+  const brandedTitle = `${post.title} · ${site.name}`
 
   return {
-    title: `${post.title} · ${site.name}`,
+    // Layout template appends ` · ${site.name}` — pass bare post title only.
+    title: post.title,
     description: post.summary,
     alternates: {
       canonical
     },
     openGraph: {
-      title: `${post.title} · ${site.name}`,
+      title: brandedTitle,
       description: post.summary,
       url: canonical,
       siteName: site.name,
@@ -54,13 +56,13 @@ export async function generateMetadata ({
           url: site.ogImage,
           width: 1200,
           height: 630,
-          alt: `${post.title} · ${site.name}`
+          alt: brandedTitle
         }
       ]
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${post.title} · ${site.name}`,
+      title: brandedTitle,
       description: post.summary,
       images: [site.ogImage]
     }
