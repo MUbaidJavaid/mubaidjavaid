@@ -55,9 +55,9 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Software Engineer · MERN / Next.js',
+  title: 'Software Engineer (MERN / Next.js)',
   description:
-    'M Ubaid Javaid is a Software Engineer in Multan building full-stack MERN and Next.js products for fintech, healthcare, and SaaS. Remote-ready. Discuss your project.',
+    'Software Engineer in Multan building full-stack MERN and Next.js products for fintech, healthcare, and SaaS. View production work and discuss your project.',
   path: '/'
 })
 

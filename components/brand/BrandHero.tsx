@@ -1,3 +1,4 @@
+import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { heroContent, site } from '@/data/site'
 import { cn } from '@/lib/utils'
 import { Github, Linkedin, Mail } from 'lucide-react'
@@ -134,8 +135,10 @@ export function BrandHero () {
           </ul>
 
           <div className='mt-10 flex flex-wrap items-center gap-4'>
-            <Link
+            <TrackedCtaLink
               href='/contact'
+              event='discuss_project'
+              detail='brand_hero'
               className={cn(
                 'group relative inline-flex items-center overflow-visible',
                 'border border-white/40 bg-white/[0.03] px-8 py-3.5 pl-10',
@@ -149,13 +152,15 @@ export function BrandHero () {
                 aria-hidden
               />
               Discuss your project
-            </Link>
-            <Link
+            </TrackedCtaLink>
+            <TrackedCtaLink
               href='/projects'
+              event='view_work'
+              detail='brand_hero'
               className='text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-white/55 transition-colors hover:text-white'
             >
               View work
-            </Link>
+            </TrackedCtaLink>
           </div>
         </div>
       </div>

@@ -37,9 +37,34 @@ export async function generateMetadata ({
     })
   }
 
+  const seoTitleBySlug: Record<string, string> = {
+    'hsms-housing-society-management':
+      'HSMS · Housing Society Management',
+    'naaz-wears-ecommerce': 'Naaz Wears · Fashion Ecommerce Case Study',
+    'quikpos-saas-point-of-sale': 'QuikPOS · Multi-Tenant POS SaaS',
+    'apex-platinum-fintech-platform': 'Apex Platinum · Fintech Case Study',
+    'surgicore-pro-surgical-management': 'SurgiCore Pro · Healthcare Case Study',
+    'vitalis-health-healthcare-platform': 'Vitalis Health · Healthcare Web App'
+  }
+
+  const seoDescBySlug: Record<string, string> = {
+    'hsms-housing-society-management':
+      'Housing society management system case study — roles, modules, and stack. Delivered as production engineering work.',
+    'naaz-wears-ecommerce':
+      'Pakistani fashion ecommerce case study with COD-oriented flows. Stack, constraints, and delivery notes.',
+    'quikpos-saas-point-of-sale':
+      'Multi-tenant point-of-sale SaaS case study — architecture, tenancy, and operational workflows.',
+    'apex-platinum-fintech-platform':
+      'Fintech platform case study covering product surfaces and engineering decisions. No fabricated returns.',
+    'surgicore-pro-surgical-management':
+      'Surgical management platform case study — operational UX and full-stack delivery notes.',
+    'vitalis-health-healthcare-platform':
+      'Healthcare web application case study — public and operational surfaces built with modern web stack.'
+  }
+
   return pageMetadata({
-    title: project.title,
-    description: project.summary,
+    title: seoTitleBySlug[project.slug] ?? project.title,
+    description: seoDescBySlug[project.slug] ?? project.summary,
     path: `/projects/${project.slug}`
   })
 }
@@ -115,6 +140,7 @@ export default async function ProjectDetailPage ({
         stackPreview={stackPreview}
         liveUrl={project.liveUrl}
         githubUrl={project.githubUrl}
+        deliveryAttribution={project.deliveryAttribution}
       />
 
       <ProjectDetailBody project={project} caseNo={caseNo} />

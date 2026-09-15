@@ -17,6 +17,7 @@ type ProjectCaseHeroProps = {
   stackPreview: string
   liveUrl?: string
   githubUrl?: string
+  deliveryAttribution?: string
 }
 
 export function ProjectCaseHero ({
@@ -28,7 +29,8 @@ export function ProjectCaseHero ({
   shortTitle,
   stackPreview,
   liveUrl,
-  githubUrl
+  githubUrl,
+  deliveryAttribution
 }: ProjectCaseHeroProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: images.length > 1 })
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -62,6 +64,11 @@ export function ProjectCaseHero ({
             {shortTitle}
           </h1>
           <p className='mt-6 max-w-xl text-fluid-base text-body'>{description}</p>
+          {deliveryAttribution ? (
+            <p className='mt-4 max-w-xl border-l-2 border-[hsl(263_48%_42%)] pl-4 font-mono text-[0.6875rem] leading-relaxed tracking-wide text-muted-foreground'>
+              {deliveryAttribution}
+            </p>
+          ) : null}
           <p className='mt-6 font-mono text-[0.6875rem] tracking-wide text-muted-foreground'>
             {stackPreview}
           </p>

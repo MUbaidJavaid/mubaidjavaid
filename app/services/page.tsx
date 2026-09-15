@@ -1,3 +1,4 @@
+import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { PageHeroHeader } from '@/components/sections/PageHeroHeader'
 import { services } from '@/data/site'
 import { pageMetadata } from '@/lib/seo'
@@ -87,13 +88,15 @@ export default function ServicesPage () {
         description='Contract and freelance delivery for SaaS MVPs, fintech and healthcare web apps, and production platforms — based in Multan, available remotely.'
       >
         <div className='flex flex-wrap items-center gap-4'>
-          <Link
+          <TrackedCtaLink
             href='/contact'
+            event='discuss_project'
+            detail='services_hero'
             className='inline-flex items-center gap-2 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover'
           >
             Discuss your project
             <ArrowUpRight size={15} aria-hidden />
-          </Link>
+          </TrackedCtaLink>
           <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
             04 offerings · one delivery path
           </p>
@@ -167,6 +170,72 @@ export default function ServicesPage () {
           })}
         </ul>
 
+        <section
+          id='how-i-work'
+          className='mx-auto w-full max-w-[1280px] border-t border-heading/10 px-6 py-14 sm:px-8 md:px-10 md:py-20 lg:px-12'
+        >
+          <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-[hsl(263_48%_42%)]'>
+            How I work
+          </p>
+          <h2 className='mt-4 max-w-[18ch] font-display text-[clamp(1.8rem,3.2vw,2.75rem)] font-semibold leading-[1.05] tracking-tight text-heading'>
+            Remote-ready process from Multan.
+          </h2>
+          <p className='mt-4 max-w-[52ch] text-sm leading-relaxed text-body md:text-base'>
+            Built for founders and CTOs who want staging URLs, written scope,
+            and honest timelines — not vanity “always online” claims.
+          </p>
+          <ol className='mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
+            {[
+              {
+                t: 'Scope',
+                d: 'One primary workflow, constraints, and definition of done before heavy build.'
+              },
+              {
+                t: 'Staging',
+                d: 'Clickable staging early. Decisions happen against a running product.'
+              },
+              {
+                t: 'Async rhythm',
+                d: 'PKT timezone with scheduled overlap. Weekly written updates with what changed / blocked.'
+              },
+              {
+                t: 'Handover',
+                d: 'Readable architecture, env docs, and a path your team can extend.'
+              }
+            ].map((item, i) => (
+              <li key={item.t} className='border-t border-heading/10 pt-4'>
+                <span className='font-mono text-[0.5625rem] text-[hsl(263_48%_42%)]'>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <p className='mt-2 font-display text-lg font-semibold text-heading'>
+                  {item.t}
+                </p>
+                <p className='mt-2 text-sm leading-relaxed text-body'>{item.d}</p>
+              </li>
+            ))}
+          </ol>
+          <div className='mt-10 flex flex-wrap gap-3'>
+            <Link
+              href='/projects/quikpos-saas-point-of-sale'
+              className='text-sm font-semibold text-heading underline-offset-4 hover:underline'
+            >
+              QuikPOS proof →
+            </Link>
+            <Link
+              href='/projects/vitalis-health-healthcare-platform'
+              className='text-sm font-semibold text-heading underline-offset-4 hover:underline'
+            >
+              Vitalis proof →
+            </Link>
+            <Link
+              href='/blog/remote-engineer-pakistan-timezone-git-staging'
+              className='text-sm font-semibold text-heading underline-offset-4 hover:underline'
+            >
+              Remote working notes →
+            </Link>
+          </div>
+        </section>
+
         <div className='mx-auto flex w-full max-w-[1280px] flex-col gap-5 px-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-8 md:px-10 lg:px-12'>
           <div>
             <p className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-heading/[0.35]'>
@@ -185,17 +254,19 @@ export default function ServicesPage () {
             >
               Review case studies
             </Link>
-            <Link
+            <TrackedCtaLink
               href='/contact'
+              event='discuss_project'
+              detail='services_footer'
               className='group inline-flex items-center gap-2 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover'
             >
-              Start a conversation
+              Discuss your project
               <ArrowUpRight
                 size={15}
                 className='transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
                 aria-hidden
               />
-            </Link>
+            </TrackedCtaLink>
           </div>
         </div>
       </section>

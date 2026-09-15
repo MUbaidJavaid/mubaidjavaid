@@ -1,5 +1,6 @@
 'use client'
 
+import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { BrandSection } from '@/components/brand/system/BrandSection'
 import { contactCta, site } from '@/data/site'
 import { brandMotion } from '@/lib/brand-system'
@@ -144,19 +145,23 @@ export function BrandContact () {
               </p>
 
               <div className='mt-8 flex items-center gap-3'>
-                <Link
+                <TrackedCtaLink
                   href={contactCta.primaryHref}
+                  event='discuss_project'
+                  detail='brand_contact'
                   className='inline-flex items-center bg-[hsl(263_48%_38%)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[hsl(263_48%_32%)]'
                 >
                   {contactCta.primaryAction}
-                </Link>
-                <Link
+                </TrackedCtaLink>
+                <TrackedCtaLink
                   href='/contact'
+                  event='discuss_project'
+                  detail='brand_contact_icon'
                   aria-label='Go to contact'
                   className='inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition-colors hover:border-white hover:bg-white/10'
                 >
                   <ArrowRight size={17} strokeWidth={1.75} />
-                </Link>
+                </TrackedCtaLink>
               </div>
 
               <p className='mt-6 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-white/65'>

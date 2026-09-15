@@ -39,17 +39,17 @@ export default function ProjectsPage () {
   return (
     <>
       <PageHeroHeader
-        subtitle='Work · Evolvo delivery + case studies'
+        subtitle='Work · Production delivery'
         watermark='WORK'
         title={
           <>
-            Live products,
-            <span className='block text-[hsl(211_48%_42%)]'>
-              documented depth.
+            Selected work &amp;
+            <span className='block text-[hsl(263_48%_42%)]'>
+              production delivery.
             </span>
           </>
         }
-        description='Production sites shipped at Evolvo-Technologies, grouped by domain — then selected case studies with architecture, problem framing, and implementation notes.'
+        description='Case studies and live products delivered with Next.js and MERN — fintech, healthcare, POS, and housing-society systems. Evolvo client sites are labeled as employment delivery.'
       >
         <div className='flex flex-wrap items-center gap-5'>
           <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
@@ -97,7 +97,7 @@ export default function ProjectsPage () {
             <p className='mt-3 text-sm leading-relaxed text-body'>
               If a direction matches your goals,{' '}
               <Link href='/contact' className='link-underline text-heading'>
-                start a conversation
+                discuss your project
               </Link>
               .
             </p>

@@ -2,6 +2,7 @@
 
 import { ClickSpark } from '@/components/ui/ClickSpark'
 import { contactCta, site } from '@/data/site'
+import { trackCta } from '@/lib/analytics'
 import {
   BUDGET_OPTIONS,
   contactPayloadSchema,
@@ -157,6 +158,7 @@ export function ContactPageClient () {
         detail: 'Opening thank-you…'
       })
       toast.success('Message delivered.')
+      trackCta('contact_submit', data.projectType)
 
       reset({
         name: '',

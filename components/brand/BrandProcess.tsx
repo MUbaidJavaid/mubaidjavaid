@@ -1,10 +1,10 @@
 'use client'
 
+import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { BrandSection } from '@/components/brand/system/BrandSection'
 import { ProcessHoneycomb } from '@/components/visual/ProcessHoneycomb'
 import { brandSpace, brandType } from '@/lib/brand-system'
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
 
 /**
  * Process — honeycomb diagram (reference layout, brand navy/steel theme).
@@ -28,12 +28,14 @@ export function BrandProcess () {
             build, and handover stay coherent.
           </p>
         </div>
-        <Link
+        <TrackedCtaLink
           href='/contact'
+          event='discuss_project'
+          detail='brand_process'
           className='link-underline shrink-0 text-sm font-medium text-heading'
         >
           Discuss your project
-        </Link>
+        </TrackedCtaLink>
       </div>
 
       <div className='border-t border-border/70 bg-muted/25'>

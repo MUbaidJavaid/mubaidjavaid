@@ -55,8 +55,8 @@ export default function BlogPage () {
         watermark='W.'
         title={
           <>
-            Notes from the
-            <span className='block text-[hsl(211_48%_42%)]'>workbench.</span>
+            Field notes from
+            <span className='block text-[hsl(263_48%_42%)]'>production.</span>
           </>
         }
         description={blogPreview.description}

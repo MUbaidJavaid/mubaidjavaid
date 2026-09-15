@@ -96,10 +96,10 @@ export default function AboutPage () {
           </div>
 
           <div className='mt-10 lg:col-start-1 lg:row-start-2 lg:mt-8 lg:self-center'>
-            <h1 className='max-w-[13ch] font-display text-[clamp(2.85rem,5.8vw,5.8rem)] font-bold leading-[0.9] tracking-[-0.055em] text-heading'>
-              I engineer the
-              <span className='block text-[hsl(211_48%_42%)]'>
-                confidence to ship.
+            <h1 className='max-w-[14ch] font-display text-[clamp(2.85rem,5.8vw,5.8rem)] font-bold leading-[0.9] tracking-[-0.055em] text-heading'>
+              About
+              <span className='block text-[hsl(263_48%_42%)]'>
+                M Ubaid Javaid
               </span>
             </h1>
 

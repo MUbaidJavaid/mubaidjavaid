@@ -1,3 +1,4 @@
+import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { BlogPostHero } from '@/components/blog/BlogPostHero'
 import { BlogReadingAside } from '@/components/blog/BlogReadingAside'
 import { getPostBySlug, posts } from '@/data/posts'
@@ -338,13 +339,15 @@ export default async function BlogPostPage ({
                 <ChevronLeft className='h-4 w-4' aria-hidden />
                 All articles
               </Link>
-              <Link
+              <TrackedCtaLink
                 href='/contact'
+                event='discuss_project'
+                detail={`blog_${post.slug}`}
                 className='inline-flex items-center gap-2 bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover'
               >
                 Start a conversation
                 <ArrowRight className='h-3.5 w-3.5' aria-hidden />
-              </Link>
+              </TrackedCtaLink>
             </div>
           </div>
 

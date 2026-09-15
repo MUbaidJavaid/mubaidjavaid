@@ -28,6 +28,13 @@ export type Project = {
   impact: string[];
   /** One short paragraph for "architecture at a glance" on the case study */
   architectureSummary: string;
+  /**
+   * Honest delivery framing — e.g. Evolvo employment vs independent work.
+   * Never implies client-brand ownership.
+   */
+  deliveryAttribution?: string;
+  /** Related case study slugs for internal linking */
+  relatedSlugs?: string[];
   /** Optional narrative beats — derived from existing copy when omitted */
   research?: string;
   strategy?: string;
@@ -75,6 +82,8 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development & Architecture",
+    deliveryAttribution: "Independent product-engineering case study — not a claim of client or company ownership.",
+    relatedSlugs: ["quikpos-saas-point-of-sale", "naaz-wears-ecommerce"],
     stack: [
       "Next.js",
       "React",
@@ -160,6 +169,8 @@ export const projects: Project[] = [
     liveUrl: "https://naazwears.vercel.app/",
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development",
+    deliveryAttribution: "Independent product-engineering case study — not a claim of store ownership.",
+    relatedSlugs: ["quikpos-saas-point-of-sale", "hsms-housing-society-management"],
     stack: [
       "Next.js 15",
       "React 19",
@@ -239,6 +250,8 @@ export const projects: Project[] = [
     liveUrl: "https://pos-saas-kappa.vercel.app/",
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development & Architecture",
+    deliveryAttribution: "Independent product-engineering case study — multi-tenant POS patterns from production delivery.",
+    relatedSlugs: ["naaz-wears-ecommerce", "apex-platinum-fintech-platform"],
     stack: [
       "React 19",
       "Vite",
@@ -322,6 +335,8 @@ export const projects: Project[] = [
     liveUrl: "https://apex-platinum.vercel.app/",
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development & UI Engineering",
+    deliveryAttribution: "Production fintech web delivery case study — role and stack as documented; not a claim of product ownership.",
+    relatedSlugs: ["quikpos-saas-point-of-sale", "vitalis-health-healthcare-platform"],
     stack: [
       "Next.js 16",
       "React 19",
@@ -392,6 +407,8 @@ export const projects: Project[] = [
     liveUrl: "https://surgi-core-opal.vercel.app/",
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development & Architecture",
+    deliveryAttribution: "Built as part of my role at Evolvo-Technologies — employment delivery, not ownership of the client brand.",
+    relatedSlugs: ["vitalis-health-healthcare-platform", "apex-platinum-fintech-platform"],
     stack: [
       "React 18",
       "TypeScript",
@@ -463,6 +480,8 @@ export const projects: Project[] = [
     liveUrl: "https://vitalis-health-indol.vercel.app/",
     githubUrl: "https://github.com/MUbaidJavaid",
     role: "Full-Stack Development",
+    deliveryAttribution: "Built as part of my role at Evolvo-Technologies — employment delivery, not ownership of the client brand.",
+    relatedSlugs: ["surgicore-pro-surgical-management", "apex-platinum-fintech-platform"],
     stack: [
       "React 18",
       "TypeScript",

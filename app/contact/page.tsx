@@ -1,4 +1,4 @@
-import { pageMetadata } from '@/lib/seo'
+import { pageMetadata, contactPageJsonLd } from '@/lib/seo'
 import type { Metadata } from 'next'
 import { ContactPageClient } from './ContactPageClient'
 
@@ -6,12 +6,22 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Discuss your project',
+  title: 'Contact',
   description:
-    'Contact M Ubaid Javaid for freelance, contract, or full-time full-stack work. Next.js, MERN, and production web products. Form, email, LinkedIn, and GitHub.',
+    'Contact for freelance, contract, or full-time full-stack work. Form, email, LinkedIn, GitHub.',
   path: '/contact'
 })
 
 export default function ContactPage () {
-  return <ContactPageClient />
+  return (
+    <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(contactPageJsonLd())
+        }}
+      />
+      <ContactPageClient />
+    </>
+  )
 }

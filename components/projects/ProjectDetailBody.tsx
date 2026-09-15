@@ -1,7 +1,8 @@
 'use client'
 
+import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import type { Project } from '@/data/projects'
-import { getProjectNarrative } from '@/data/projects'
+import { getProjectBySlug, getProjectNarrative, projects } from '@/data/projects'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -276,6 +277,63 @@ export function ProjectDetailBody ({
         </div>
       </section>
 
+      <section className='border-b border-border/70'>
+        <div className='container-wide py-12 md:py-16'>
+          <p className='section-label'>Continue</p>
+          <div className='mt-6 grid gap-8 md:grid-cols-2'>
+            <div>
+              <p className='font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted-foreground'>
+                Related services
+              </p>
+              <Link
+                href='/services'
+                className='mt-3 inline-flex text-sm font-semibold text-heading underline-offset-4 hover:underline'
+              >
+                Hire Next.js &amp; MERN delivery →
+              </Link>
+              <p className='mt-2 max-w-[36ch] text-sm text-body'>
+                Same stack patterns for SaaS, fintech, and healthcare builds.
+              </p>
+            </div>
+            <div>
+              <p className='font-mono text-[0.625rem] uppercase tracking-[0.14em] text-muted-foreground'>
+                Related case studies
+              </p>
+              <ul className='mt-3 space-y-2'>
+                {(project.relatedSlugs ?? [])
+                  .map(slug => getProjectBySlug(slug))
+                  .filter(Boolean)
+                  .map(related => (
+                    <li key={related!.slug}>
+                      <Link
+                        href={`/projects/${related!.slug}`}
+                        className='text-sm font-semibold text-heading underline-offset-4 hover:underline'
+                      >
+                        {related!.title.split('—')[0].trim()}
+                      </Link>
+                    </li>
+                  ))}
+                {(project.relatedSlugs?.length ?? 0) === 0
+                  ? projects
+                      .filter(p => p.slug !== project.slug)
+                      .slice(0, 2)
+                      .map(related => (
+                        <li key={related.slug}>
+                          <Link
+                            href={`/projects/${related.slug}`}
+                            className='text-sm font-semibold text-heading underline-offset-4 hover:underline'
+                          >
+                            {related.title.split('—')[0].trim()}
+                          </Link>
+                        </li>
+                      ))
+                  : null}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section>
         <div className='container-wide flex flex-wrap items-center gap-3 py-12 md:py-16'>
           <Link
@@ -285,12 +343,20 @@ export function ProjectDetailBody ({
             <ChevronLeft className='h-4 w-4' aria-hidden />
             All work
           </Link>
-          <Link
+          <TrackedCtaLink
             href='/contact'
+            event='case_cta'
+            detail={project.slug}
             className='inline-flex items-center gap-2 bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-hover'
           >
-            Discuss a similar build
+            Discuss a similar project
             <ArrowRight className='h-3.5 w-3.5' aria-hidden />
+          </TrackedCtaLink>
+          <Link
+            href='/services'
+            className='text-sm font-medium text-heading/70 underline-offset-4 hover:text-heading hover:underline'
+          >
+            Services
           </Link>
         </div>
       </section>
