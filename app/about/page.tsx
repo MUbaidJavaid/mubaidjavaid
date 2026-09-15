@@ -13,9 +13,9 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'About',
+  title: 'About · Software Engineer in Multan',
   description:
-    'M Ubaid Javaid is a Product Engineer in Multan building web products with clear architecture, reliable backends, and lasting craft.',
+    'M Ubaid Javaid is a Software Engineer in Multan, Pakistan. Full-stack MERN and Next.js. Experience at Evolvo-Technologies and Fiesta. Open to freelance, contract, and full-time.',
   path: '/about'
 })
 
@@ -66,7 +66,7 @@ export default function AboutPage () {
             <div className='relative aspect-[4/5] overflow-hidden bg-muted shadow-[0_35px_80px_-45px_hsl(215_35%_15%/0.55)]'>
               <Image
                 src='/mubaidjavaid-hero-banaer.jpg'
-                alt={`${site.name}, Product Engineer`}
+                alt={`${site.name}, Software Engineer in Multan`}
                 fill
                 sizes='(max-width: 1024px) 90vw, 430px'
                 className='object-cover object-top saturate-[0.88] transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.015] hover:saturate-100'
@@ -145,7 +145,7 @@ export default function AboutPage () {
                 href='/contact'
                 className='group inline-flex min-h-11 items-center gap-3 bg-heading px-5 text-sm font-semibold text-white transition-colors hover:bg-[hsl(211_48%_38%)]'
               >
-                Start a project
+                Discuss your project
                 <ArrowUpRight
                   className='h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
                   aria-hidden

@@ -32,7 +32,7 @@ export function BrandProcess () {
           href='/contact'
           className='link-underline shrink-0 text-sm font-medium text-heading'
         >
-          Start a project
+          Discuss your project
         </Link>
       </div>
 

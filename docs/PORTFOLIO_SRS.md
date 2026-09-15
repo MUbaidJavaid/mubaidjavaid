@@ -1,6 +1,8 @@
 # Software Requirements Specification  
 ## M Ubaid Javaid — Personal Portfolio, SEO, and Client-Hunting System
 
+> **Superseded for SEO + client-acquisition decisions** by [`PORTFOLIO_SEO_CLIENT_MASTER.md`](./PORTFOLIO_SEO_CLIENT_MASTER.md) (SRS-PORTFOLIO-SEO-CLIENT-001, 15 Sep 2026). Keep this file as the historical v1.0 baseline.
+
 | Field | Value |
 |---|---|
 | Document | SRS-PORTFOLIO-001 |

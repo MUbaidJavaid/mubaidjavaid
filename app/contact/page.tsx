@@ -6,19 +6,10 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Contact',
+  title: 'Discuss your project',
   description:
-    'Contact M Ubaid Javaid for freelance, contract, remote, and full-time opportunities. Get in touch for business websites, MERN Stack applications, Next.js development, and full-stack product delivery.',
-  path: '/contact',
-  keywords: [
-    'M Ubaid Javaid',
-    'Contact M Ubaid Javaid',
-    'Hire Full-Stack Developer',
-    'Freelance MERN Developer Pakistan',
-    'Next.js Developer hire',
-    'Full-Stack Developer freelance',
-    'Contract developer remote',
-  ],
+    'Contact M Ubaid Javaid for freelance, contract, or full-time full-stack work. Next.js, MERN, and production web products. Form, email, LinkedIn, and GitHub.',
+  path: '/contact'
 })
 
 export default function ContactPage () {

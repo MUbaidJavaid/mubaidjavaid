@@ -2,7 +2,12 @@ import { ProjectCaseHero } from '@/components/projects/ProjectCaseHero'
 import { ProjectDetailBody } from '@/components/projects/ProjectDetailBody'
 import { ProjectImageSlider } from '@/components/projects/ProjectImageSlider'
 import { getProjectBySlug, projects } from '@/data/projects'
-import { pageMetadata } from '@/lib/seo'
+import { site } from '@/data/site'
+import {
+  breadcrumbJsonLd,
+  creativeWorkJsonLd,
+  pageMetadata
+} from '@/lib/seo'
 import { ChevronLeft } from 'lucide-react'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -62,6 +67,28 @@ export default async function ProjectDetailPage ({
 
   return (
     <div className='surface-page'>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            creativeWorkJsonLd({
+              name: project.title,
+              description: project.summary,
+              url: `${site.url}projects/${project.slug}`,
+              image: project.image,
+              keywords: project.stack.slice(0, 8)
+            }),
+            breadcrumbJsonLd([
+              { name: 'Home', path: '/' },
+              { name: 'Work', path: '/projects' },
+              {
+                name: shortTitle,
+                path: `/projects/${project.slug}`
+              }
+            ])
+          ])
+        }}
+      />
       {/* Slim top bar */}
       <div className='absolute inset-x-0 top-0 z-30'>
         <div className='container-wide flex items-center justify-between py-4'>

@@ -29,9 +29,9 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Work',
+  title: 'Projects · Fintech, Healthcare & SaaS',
   description:
-    'Client products shipped at Evolvo-Technologies plus documented case studies by M Ubaid Javaid — fintech, healthcare, prop trading, and real estate.',
+    'Case studies and live products delivered with Next.js and MERN — fintech, healthcare, POS, and housing-society systems. Built in production roles at Evolvo-Technologies.',
   path: '/projects'
 })
 
@@ -127,7 +127,7 @@ export default function ProjectsPage () {
               icon={FolderOpen}
               title='No projects to show yet'
               description='Case studies will appear here as they are published.'
-              primaryAction={{ label: 'Contact', href: '/contact' }}
+              primaryAction={{ label: 'Discuss your project', href: '/contact' }}
               secondaryAction={{ label: 'Go home', href: '/' }}
               className='max-w-xl'
             />

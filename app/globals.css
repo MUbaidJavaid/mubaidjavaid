@@ -15,8 +15,9 @@
 @layer base {
   :root {
     /*
-      Premium trust palette — cool paper + deep navy (Stripe/Linear calm, not black/white).
-      Accent: steel blue used sparingly for links/focus.
+      Editorial trust palette — cool paper + ink.
+      Accent: deep royal purple (sparingly) for SaaS/fintech trust signals.
+      Radius kept tight for Swiss-grid editorial feel.
     */
     --background: 214 32% 98%;
     --foreground: 215 42% 12%;
@@ -27,10 +28,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 42% 12%;
 
-    /* Trust navy — primary CTAs */
-    --primary: 215 48% 18%;
+    /* Ink primary CTAs */
+    --primary: 263 42% 22%;
     --primary-foreground: 210 40% 98%;
-    --primary-hover: 215 46% 24%;
+    --primary-hover: 263 40% 28%;
 
     --secondary: 214 28% 94%;
     --secondary-foreground: 215 42% 14%;
@@ -38,11 +39,11 @@
     --muted: 214 26% 95%;
     --muted-foreground: 215 16% 40%;
 
-    --accent: 214 28% 94%;
-    --accent-foreground: 215 42% 14%;
+    --accent: 263 30% 96%;
+    --accent-foreground: 263 42% 22%;
 
-    /* Steel blue highlight */
-    --highlight: 211 48% 42%;
+    /* Deep royal purple highlight */
+    --highlight: 263 48% 38%;
     --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 72% 48%;
@@ -50,9 +51,9 @@
 
     --border: 214 22% 88%;
     --input: 214 22% 88%;
-    --ring: 215 48% 18%;
+    --ring: 263 48% 38%;
 
-    --radius: 0.25rem;
+    --radius: 0.125rem;
     --heading: 215 42% 12%;
     --body: 215 16% 40%;
     --surface: 214 32% 98%;

@@ -1,14 +1,20 @@
+import { getSiteUrl } from '@/lib/site-url'
+
 export const site = {
   name: 'M Ubaid Javaid',
-  role: 'Product Engineer',
+  /** Public job-title cluster for SEO + outreach (Product Engineer = secondary). */
+  role: 'Software Engineer',
+  roleSecondary: 'Full-Stack (MERN / Next.js)',
   location: 'Multan, Pakistan',
   email: 'mubaidjavaid97@gmail.com',
   github: 'https://github.com/MUbaidJavaid',
   linkedin: 'https://www.linkedin.com/in/m-ubaid-javaid-260735407',
   linkedinVanity: 'm-ubaid-javaid-260735407',
-  url: 'https://mubaidjavaid.vercel.app/',
+  /** Canonical origin — set NEXT_PUBLIC_SITE_URL for custom domain. */
+  url: getSiteUrl(),
+  ogImage: '/og-default.jpg',
   description:
-    'M Ubaid Javaid is a Product Engineer building web products with clear architecture, reliable backends, and interfaces that support real business outcomes — from MVP to production platforms.'
+    'M Ubaid Javaid is a Software Engineer in Multan building full-stack MERN and Next.js products for fintech, healthcare, and SaaS — remote-ready production delivery.'
 }
 
 export const navItems = [
@@ -22,15 +28,9 @@ export const navItems = [
 export const heroContent = {
   line: 'I build products that feel inevitable.',
   paragraph:
-    'Product Engineer in Multan — shipping full-stack web platforms with architecture that lasts, interfaces that convert, and systems teams can extend.',
+    'Software Engineer in Multan — full-stack MERN and Next.js platforms with architecture that lasts, interfaces that convert, and systems teams can extend. Open to remote clients worldwide.',
   availability: 'Open to freelance, contract, and full-time collaboration.',
-  skills: [
-    'MERN Stack',
-    'SaaS MVPs',
-    'Fintech',
-    'PAS',
-    'ERP'
-  ]
+  skills: ['MERN Stack', 'Next.js', 'SaaS MVPs', 'Fintech', 'Healthcare']
 } as const
 
 export const aboutPreview = {
@@ -194,7 +194,10 @@ export const services = brandServices
 export const contactCta = {
   title: 'Let’s build something solid.',
   body: 'New product, platform upgrade, or full-stack collaboration — share your scope and timeline.',
-  support: 'Freelance, contract, and full-time. Clear next steps within 24 hours.'
+  support: 'Freelance, contract, and full-time. Clear next steps within 24 hours.',
+  /** Primary conversion action — contact form / email inquiry */
+  primaryAction: 'Discuss your project',
+  primaryHref: '/contact'
 } as const
 
 export const blogPreview = {
@@ -205,7 +208,7 @@ export const blogPreview = {
 
 /** Legacy stubs — unused on brand surfaces; kept for orphan section modules */
 export const heroTaglines = [
-  'Product Engineer · Next.js · Full-stack',
+  'Software Engineer · MERN / Next.js · Multan',
   'Architecture-first product delivery',
   'Fast, accessible, production-ready web'
 ] as const

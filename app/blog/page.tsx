@@ -11,9 +11,9 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Writing',
+  title: 'Writing · Next.js, MERN & Product Engineering',
   description:
-    'Engineering notes by M Ubaid Javaid on React, Next.js, Node.js, MongoDB, and shipping production web products.',
+    'Practical notes on Next.js, MERN, APIs, and shipping production web products — written from real delivery work.',
   path: '/blog'
 })
 
@@ -44,8 +44,7 @@ export default function BlogPage () {
               description: p.summary,
               datePublished: p.publishedAt,
               url: `${site.url}blog/${p.slug}`,
-              author: { '@type': 'Person', name: site.name },
-              keywords: p.category
+              author: { '@type': 'Person', name: site.name }
             }))
           })
         }}
@@ -77,7 +76,7 @@ export default function BlogPage () {
               icon={BookOpen}
               title='No articles yet'
               description='Writing will appear here as it is published.'
-              primaryAction={{ label: 'Contact', href: '/contact' }}
+              primaryAction={{ label: 'Discuss your project', href: '/contact' }}
               secondaryAction={{ label: 'Go home', href: '/' }}
               className='max-w-xl'
             />

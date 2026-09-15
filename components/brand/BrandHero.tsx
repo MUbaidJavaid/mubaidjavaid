@@ -98,8 +98,8 @@ export function BrandHero () {
 
       <div className='relative z-10 mx-auto flex min-h-[100svh] max-w-[1180px] flex-col justify-center px-6 pb-24 pt-28 md:px-10 lg:px-12'>
         <div className='max-w-xl lg:max-w-2xl'>
-          <p className='font-mono text-[0.6875rem] uppercase tracking-[0.28em] text-[hsl(211_90%_68%)]'>
-            {site.role}
+          <p className='font-mono text-[0.6875rem] uppercase tracking-[0.28em] text-[hsl(263_70%_72%)]'>
+            {site.role} · {site.roleSecondary}
           </p>
 
           <div className='mt-5 flex items-start gap-4 md:gap-5'>
@@ -115,9 +115,8 @@ export function BrandHero () {
             </h1>
           </div>
 
-          <p className='mt-7 max-w-[34ch] text-base leading-relaxed text-white/65 md:text-lg'>
-            {heroContent.line} {site.role} based in {site.location} — building
-            platforms teams can ship and extend.
+          <p className='mt-7 max-w-[40ch] text-base leading-relaxed text-white/65 md:text-lg'>
+            {heroContent.paragraph}
           </p>
 
           <ul
@@ -127,16 +126,16 @@ export function BrandHero () {
             {heroContent.skills.map(skill => (
               <li
                 key={skill}
-                className='rounded-full bg-white/[0.08] px-4 py-2 text-[0.8125rem] font-semibold tracking-tight text-white'
+                className='border border-white/20 bg-white/[0.06] px-4 py-2 text-[0.8125rem] font-semibold tracking-tight text-white'
               >
                 {skill}
               </li>
             ))}
           </ul>
 
-          <div className='mt-10'>
+          <div className='mt-10 flex flex-wrap items-center gap-4'>
             <Link
-              href='/projects'
+              href='/contact'
               className={cn(
                 'group relative inline-flex items-center overflow-visible',
                 'border border-white/40 bg-white/[0.03] px-8 py-3.5 pl-10',
@@ -146,9 +145,15 @@ export function BrandHero () {
               )}
             >
               <span
-                className='absolute left-0 top-1/2 h-[2px] w-10 origin-center -translate-x-1/2 -translate-y-1/2 bg-[hsl(211_90%_60%)] transition-transform duration-300 group-hover:scale-x-125'
+                className='absolute left-0 top-1/2 h-[2px] w-10 origin-center -translate-x-1/2 -translate-y-1/2 bg-[hsl(263_55%_58%)] transition-transform duration-300 group-hover:scale-x-125'
                 aria-hidden
               />
+              Discuss your project
+            </Link>
+            <Link
+              href='/projects'
+              className='text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-white/55 transition-colors hover:text-white'
+            >
               View work
             </Link>
           </div>

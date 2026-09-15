@@ -145,10 +145,10 @@ export function BrandContact () {
 
               <div className='mt-8 flex items-center gap-3'>
                 <Link
-                  href='/contact'
-                  className='inline-flex items-center bg-[hsl(211_48%_42%)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[hsl(211_48%_36%)]'
+                  href={contactCta.primaryHref}
+                  className='inline-flex items-center bg-[hsl(263_48%_38%)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[hsl(263_48%_32%)]'
                 >
-                  Start a Project
+                  {contactCta.primaryAction}
                 </Link>
                 <Link
                   href='/contact'

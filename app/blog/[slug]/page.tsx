@@ -35,14 +35,13 @@ export async function generateMetadata ({
   const canonical = new URL(`/blog/${post.slug}`, site.url)
 
   return {
-    title: `${post.title} | ${site.name}`,
+    title: `${post.title} · ${site.name}`,
     description: post.summary,
-    keywords: [post.category, ...post.tags, site.role],
     alternates: {
       canonical
     },
     openGraph: {
-      title: `${post.title} | ${site.name}`,
+      title: `${post.title} · ${site.name}`,
       description: post.summary,
       url: canonical,
       siteName: site.name,
@@ -51,18 +50,18 @@ export async function generateMetadata ({
       tags: post.tags,
       images: [
         {
-          url: '/opengraph-image',
+          url: site.ogImage,
           width: 1200,
           height: 630,
-          alt: `${post.title} article preview`
+          alt: `${post.title} · ${site.name}`
         }
       ]
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${post.title} | ${site.name}`,
+      title: `${post.title} · ${site.name}`,
       description: post.summary,
-      images: ['/opengraph-image']
+      images: [site.ogImage]
     }
   }
 }
@@ -81,21 +80,23 @@ export default async function BlogPostPage ({
 
   const articleJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.summary,
     datePublished: post.publishedAt,
     author: {
       '@type': 'Person',
-      name: site.name
+      name: site.name,
+      url: site.url
     },
     publisher: {
       '@type': 'Person',
-      name: site.name
+      name: site.name,
+      url: site.url
     },
     mainEntityOfPage: `${site.url}blog/${post.slug}`,
     articleSection: post.category,
-    keywords: post.tags.join(', ')
+    image: new URL(site.ogImage, site.url).toString()
   }
 
   const currentIndex = posts.findIndex(p => p.slug === post.slug)

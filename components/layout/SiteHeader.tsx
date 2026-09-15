@@ -153,7 +153,7 @@ export function SiteHeader () {
                 : 'bg-primary text-primary-foreground hover:bg-primary-hover'
             )}
           >
-            Start a project
+            Discuss your project
             <ArrowUpRight className='ml-2 h-3.5 w-3.5' aria-hidden />
           </MagneticButton>
         </div>
@@ -211,7 +211,7 @@ export function SiteHeader () {
               href='/contact'
               className='mt-8 inline-flex min-h-12 items-center justify-between bg-primary px-5 text-sm font-semibold text-primary-foreground'
             >
-              Start a project
+              Discuss your project
               <ArrowUpRight className='h-4 w-4' aria-hidden />
             </Link>
             <div className='mt-auto flex items-end justify-between gap-6 pt-10'>

@@ -16,9 +16,9 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Services',
+  title: 'Hire Next.js & MERN Developer',
   description:
-    'Product engineering, platforms, performance, and architecture partnership — focused offerings by M Ubaid Javaid.',
+    'Contract and freelance full-stack development: Next.js, MERN, SaaS MVPs, fintech and healthcare web apps. Based in Multan, open to remote. Discuss your project.',
   path: '/services'
 })
 
@@ -74,24 +74,24 @@ export default function ServicesPage () {
   return (
     <>
       <PageHeroHeader
-        subtitle='Services · Focused offerings'
-        watermark='SHIP'
+        subtitle='Services · Hire Next.js & MERN'
+        watermark='HIRE'
         title={
           <>
-            Clear scope.
-            <span className='block text-[hsl(211_48%_42%)]'>
-              Production delivery.
+            Hire a full-stack
+            <span className='block text-[hsl(263_48%_42%)]'>
+              Next.js & MERN engineer.
             </span>
           </>
         }
-        description='Structured implementation for teams that need dependable full-stack execution—clearer journeys, reliable systems, and maintainable code.'
+        description='Contract and freelance delivery for SaaS MVPs, fintech and healthcare web apps, and production platforms — based in Multan, available remotely.'
       >
         <div className='flex flex-wrap items-center gap-4'>
           <Link
             href='/contact'
             className='inline-flex items-center gap-2 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover'
           >
-            Start a project
+            Discuss your project
             <ArrowUpRight size={15} aria-hidden />
           </Link>
           <p className='font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-heading/[0.35]'>
