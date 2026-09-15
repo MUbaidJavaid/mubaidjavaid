@@ -5,6 +5,7 @@ import { BrandSection } from '@/components/brand/system/BrandSection'
 import { ProcessHoneycomb } from '@/components/visual/ProcessHoneycomb'
 import { brandSpace, brandType } from '@/lib/brand-system'
 import { cn } from '@/lib/utils'
+import { ArrowUpRight } from 'lucide-react'
 
 /**
  * Process — honeycomb diagram (reference layout, brand navy/steel theme).
@@ -32,9 +33,10 @@ export function BrandProcess () {
           href='/contact'
           event='discuss_project'
           detail='brand_process'
-          className='link-underline shrink-0 text-sm font-medium text-heading'
+          className='cta-primary shrink-0'
         >
           Discuss your project
+          <ArrowUpRight className='h-3.5 w-3.5' aria-hidden />
         </TrackedCtaLink>
       </div>
 

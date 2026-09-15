@@ -50,14 +50,14 @@ export function BrandOpenSource () {
               viewport={{ once: true, margin: '-8%' }}
               transition={{ duration: brandMotion.durationSlow, ease: brandMotion.ease }}
             >
-              <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_90%_68%)]'>
-                {openSource.title} · Public by default
-              </p>
+          <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
+            {openSource.title} · Public by default
+          </p>
 
               <h2 className='mt-5 font-display text-[clamp(2.4rem,5vw,4.6rem)] font-bold leading-[0.95] tracking-[-0.045em]'>
                 <span className='text-white'>Code you can open.</span>
                 <br />
-                <span className='text-[hsl(211_55%_68%)]'>Work you can trust.</span>
+                <span className='text-highlight-soft'>Work you can trust.</span>
               </h2>
 
               <p className='mt-6 max-w-[39ch] text-sm leading-relaxed text-white/[0.62] md:text-base'>
@@ -70,7 +70,7 @@ export function BrandOpenSource () {
                   href={site.github}
                   target='_blank'
                   rel='noreferrer'
-                  className='group inline-flex items-center gap-3 bg-[hsl(211_48%_42%)] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_32px_-14px_hsl(211_60%_30%/0.9)] transition-colors hover:bg-[hsl(211_48%_36%)]'
+                  className='cta-primary group shadow-[0_14px_32px_-14px_hsl(211_60%_30%/0.9)]'
                 >
                   <Github size={17} strokeWidth={1.7} aria-hidden />
                   Explore repositories
@@ -80,7 +80,7 @@ export function BrandOpenSource () {
                     aria-hidden
                   />
                 </Link>
-                <span className='font-mono text-[0.625rem] uppercase tracking-[0.16em] text-white/[0.35]'>
+                <span className='font-mono text-xs tracking-wide text-white/55'>
                   Inspect before you hire
                 </span>
               </div>
@@ -109,7 +109,7 @@ export function BrandOpenSource () {
                       <Github size={19} strokeWidth={1.55} aria-hidden />
                     </span>
                     <div>
-                      <p className='font-mono text-[0.5625rem] uppercase tracking-[0.22em] text-white/[0.38]'>
+                      <p className='font-mono text-xs tracking-wide text-white/[0.38]'>
                         Public surface
                       </p>
                       <p className='mt-1 font-display text-sm font-semibold text-white/[0.85]'>
@@ -117,7 +117,7 @@ export function BrandOpenSource () {
                       </p>
                     </div>
                   </div>
-                  <span className='hidden items-center gap-2 rounded-full border border-[hsl(152_55%_55%/0.25)] bg-[hsl(152_55%_45%/0.08)] px-3 py-1.5 font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-[hsl(152_60%_70%)] sm:inline-flex'>
+                  <span className='hidden items-center gap-2 rounded-full border border-[hsl(152_55%_55%/0.25)] bg-[hsl(152_55%_45%/0.08)] px-3 py-1.5 font-mono text-xs tracking-wide text-[hsl(152_60%_70%)] sm:inline-flex'>
                     <span className='h-1.5 w-1.5 rounded-full bg-[hsl(152_60%_58%)]' />
                     Public
                   </span>
@@ -136,7 +136,7 @@ export function BrandOpenSource () {
                     >
                       <div className='flex items-start justify-between gap-4'>
                         <div>
-                          <p className='font-mono text-[0.5625rem] uppercase tracking-[0.2em] text-[hsl(211_70%_68%)]'>
+                          <p className='font-mono text-xs tracking-wide text-highlight-soft'>
                             {String(index + 1).padStart(2, '0')} · Repository
                           </p>
                           <h3 className='mt-3 font-display text-xl font-semibold tracking-tight text-white md:text-2xl'>
@@ -168,7 +168,7 @@ export function BrandOpenSource () {
                         className='text-[hsl(211_65%_68%)]'
                         aria-hidden
                       />
-                      <span className='font-mono text-[0.5rem] uppercase tracking-[0.12em] text-white/[0.38] sm:text-[0.5625rem]'>
+                      <span className='font-mono text-xs tracking-wide text-white/[0.38] sm:text-xs'>
                         {item.label}
                       </span>
                     </div>

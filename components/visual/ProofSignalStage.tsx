@@ -105,11 +105,11 @@ export function ProofSignalStage ({
     >
       <div className='mx-auto w-full max-w-[1280px] px-6 pb-16 pt-8 sm:px-8 md:px-10 md:pb-20 md:pt-10 lg:px-12 lg:pb-24'>
         <div className='flex items-center gap-4 pb-5'>
-          <p className='font-mono text-[0.625rem] uppercase tracking-[0.2em] text-white/[0.38]'>
+          <p className='font-mono text-xs tracking-wide text-white/[0.38]'>
             Live proof index
           </p>
           <span className='h-px flex-1 bg-white/10' aria-hidden />
-          <span className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-[hsl(211_70%_68%)]'>
+          <span className='font-mono text-xs tracking-wide text-highlight-soft'>
             03 signals · online
           </span>
         </div>
@@ -139,10 +139,10 @@ export function ProofSignalStage ({
                 </span>
 
                 <div className='relative flex items-center justify-between gap-4'>
-                  <p className='font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-[hsl(211_70%_68%)]'>
+                  <p className='font-mono text-xs tracking-wide text-highlight-soft'>
                     Signal {String(i + 1).padStart(2, '0')}
                   </p>
-                  <span className='inline-flex items-center gap-2 font-mono text-[0.5rem] uppercase tracking-[0.13em] text-white/[0.3]'>
+                  <span className='inline-flex items-center gap-2 font-mono text-xs tracking-wide text-white/[0.3]'>
                     <span className='h-1 w-1 rounded-full bg-[hsl(152_58%_55%)]' />
                     Verified
                   </span>
@@ -163,7 +163,7 @@ export function ProofSignalStage ({
                   <p className='mt-3 max-w-[28ch] text-sm leading-relaxed text-white/[0.48]'>
                     {signals[i]?.body}
                   </p>
-                  <span className='mt-6 inline-flex items-center gap-2 font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-white/[0.42] transition-colors group-hover:text-white'>
+                  <span className='mt-6 inline-flex items-center gap-2 font-mono text-xs tracking-wide text-white/[0.42] transition-colors group-hover:text-white'>
                     Open {stat.shortLabel}
                     <ArrowUpRight
                       size={13}

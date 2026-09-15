@@ -1,8 +1,7 @@
 import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { heroContent, site } from '@/data/site'
 import { cn } from '@/lib/utils'
-import { Github, Linkedin, Mail } from 'lucide-react'
-import Link from 'next/link'
+import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
 
 const socials = [
   { href: `mailto:${site.email}`, label: 'Email', Icon: Mail },
@@ -10,11 +9,15 @@ const socials = [
   { href: site.linkedin, label: 'LinkedIn', Icon: Linkedin }
 ] as const
 
+const sectionShortcuts = [
+  { href: '#proof', label: 'Proof' },
+  { href: '#impact', label: 'Impact' },
+  { href: '#contact', label: 'Contact' }
+] as const
+
 /**
  * Server-rendered cinematic hero. Portrait is a real <img> with
  * fetchPriority=high so Lighthouse can discover the LCP request from HTML.
- * One file per breakpoint — never image-set 1x/2x (high-DPR phones would
- * ignore the mobile preload and wait ~2s to start the 2x download).
  */
 export function BrandHero () {
   return (
@@ -90,31 +93,16 @@ export function BrandHero () {
         MERN
       </p>
 
-      <p
-        className='pointer-events-none absolute left-3 top-1/2 hidden -translate-y-1/2 font-mono text-[0.625rem] uppercase tracking-[0.42em] text-white/35 [writing-mode:vertical-rl] rotate-180 md:left-5 lg:left-8 lg:block'
-        aria-hidden
-      >
-        product · engineer
-      </p>
-
-      <div className='relative z-10 mx-auto flex min-h-[100svh] max-w-[1180px] flex-col justify-center px-6 pb-24 pt-28 md:px-10 lg:px-12'>
+      <div className='relative z-10 mx-auto flex min-h-[100svh] max-w-[1180px] flex-col justify-center px-6 pb-28 pt-28 md:px-10 lg:px-12'>
         <div className='max-w-xl lg:max-w-2xl'>
-          <p className='font-mono text-[0.6875rem] uppercase tracking-[0.28em] text-highlight-on-ink'>
+          {/* Issue 5: ≥12px; Issue 3/4 style — sentence case, not long all-caps */}
+          <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
             {site.role} · {site.roleSecondary}
           </p>
 
-          <div className='mt-5 flex items-start gap-4 md:gap-5'>
-            <span
-              className='mt-3 hidden font-mono text-[0.625rem] uppercase tracking-[0.35em] text-white/40 [writing-mode:vertical-rl] rotate-180 sm:block'
-              aria-hidden
-            >
-              Engineer
-            </span>
-
-            <h1 className='font-display text-[clamp(3.25rem,8.5vw,6.75rem)] font-bold leading-[0.92] tracking-[-0.045em] text-white'>
-              {site.name}
-            </h1>
-          </div>
+          <h1 className='mt-5 font-display text-[clamp(3.25rem,8.5vw,6.75rem)] font-bold leading-[0.92] tracking-[-0.045em] text-white'>
+            {site.name}
+          </h1>
 
           <p className='mt-7 max-w-[40ch] text-base leading-relaxed text-white/65 md:text-lg'>
             {heroContent.paragraph}
@@ -127,109 +115,88 @@ export function BrandHero () {
             {heroContent.skills.map(skill => (
               <li
                 key={skill}
-                className='border border-white/20 bg-white/[0.06] px-4 py-2 text-[0.8125rem] font-semibold tracking-tight text-white'
+                className='border border-white/20 bg-white/[0.06] px-4 py-2 text-sm font-semibold tracking-tight text-white'
               >
                 {skill}
               </li>
             ))}
           </ul>
 
+          {/* Issue 6 + 18: sentence-case primary CTA, shared ink style */}
           <div className='mt-10 flex flex-wrap items-center gap-4'>
             <TrackedCtaLink
               href='/contact'
               event='discuss_project'
               detail='brand_hero'
-              className={cn(
-                'group relative inline-flex items-center overflow-visible',
-                'border border-white/40 bg-white/[0.03] px-8 py-3.5 pl-10',
-                'text-[0.75rem] font-semibold uppercase tracking-[0.2em] text-white',
-                'transition-colors duration-300',
-                'hover:border-white/70 hover:bg-white/[0.06]'
-              )}
+              className='cta-primary-ink'
             >
-              <span
-                className='absolute left-0 top-1/2 h-[2px] w-10 origin-center -translate-x-1/2 -translate-y-1/2 bg-highlight-soft transition-transform duration-300 group-hover:scale-x-125'
-                aria-hidden
-              />
               Discuss your project
+              <ArrowUpRight className='h-3.5 w-3.5' aria-hidden />
             </TrackedCtaLink>
             <TrackedCtaLink
               href='/projects'
               event='view_work'
               detail='brand_hero'
-              className='text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-white/55 transition-colors hover:text-white'
+              className='inline-flex items-center gap-1.5 text-sm font-semibold text-white/70 underline-offset-4 transition-colors hover:text-white hover:underline'
             >
               View work
+              <ArrowUpRight className='h-3.5 w-3.5' aria-hidden />
             </TrackedCtaLink>
+          </div>
+
+          {/* Issue 15: socials inside content grid, not viewport edge */}
+          <div className='mt-10 flex items-center gap-5'>
+            {socials.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
+                className='inline-flex min-h-11 items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white'
+              >
+                <Icon size={20} strokeWidth={1.5} aria-hidden />
+                <span>{label}</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className='absolute bottom-8 left-5 z-20 hidden flex-col gap-4 md:left-8 lg:flex'>
-        {socials.map(({ href, label, Icon }) => (
-          <a
-            key={label}
-            href={href}
-            target={href.startsWith('mailto:') ? undefined : '_blank'}
-            rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
-            aria-label={label}
-            className='text-white/45 transition-colors hover:text-[hsl(211_90%_68%)]'
-          >
-            <Icon size={16} strokeWidth={1.5} />
-          </a>
-        ))}
-      </div>
-
+      {/* Issue 16: visible labels beside dots */}
       <nav
-        className='absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 flex-col items-center md:right-8 lg:flex'
+        className='absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 md:right-8 lg:block'
         aria-label='Section shortcuts'
       >
-        <div className='flex flex-col items-center gap-5'>
-          {['#proof', '#impact', '#contact'].map((href, i) => (
-            <a
-              key={href}
-              href={href}
-              className='flex h-4 w-4 items-center justify-center'
-              aria-label={['Scroll', 'Work', 'Connect'][i]}
-            >
-              <span
+        <ul className='flex flex-col gap-3'>
+          {sectionShortcuts.map((item, i) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
                 className={cn(
-                  'h-1.5 w-1.5 rounded-full bg-white/25',
-                  i === 0 && 'bg-[hsl(211_90%_60%)]'
+                  'group flex items-center justify-end gap-3 rounded-sm px-2 py-1.5 text-xs font-semibold tracking-wide text-white/70 transition-colors hover:bg-white/10 hover:text-white',
+                  i === 0 && 'bg-white/10 text-white'
                 )}
-                aria-hidden
-              />
-            </a>
+              >
+                <span>{item.label}</span>
+                <span
+                  className={cn(
+                    'h-1.5 w-1.5 rounded-full bg-white/25 transition-colors group-hover:bg-white',
+                    i === 0 && 'bg-highlight-soft'
+                  )}
+                  aria-hidden
+                />
+              </a>
+            </li>
           ))}
-        </div>
-        <a
-          href='#proof'
-          className='mt-10 font-mono text-[0.5625rem] uppercase tracking-[0.35em] text-white/40 [writing-mode:vertical-rl]'
-        >
-          Scroll
-        </a>
+        </ul>
       </nav>
 
-      <div className='absolute bottom-6 left-0 right-0 z-20 flex items-center justify-between px-6 lg:hidden'>
-        <div className='flex gap-4'>
-          {socials.map(({ href, label, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith('mailto:') ? undefined : '_blank'}
-              rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
-              aria-label={label}
-              className='text-white/50'
-            >
-              <Icon size={16} strokeWidth={1.5} />
-            </a>
-          ))}
-        </div>
+      <div className='absolute bottom-6 left-0 right-0 z-20 flex justify-end px-6 lg:hidden'>
         <a
           href='#proof'
-          className='font-mono text-[0.5625rem] uppercase tracking-[0.22em] text-white/40'
+          className='font-mono text-xs tracking-wide text-white/50'
         >
-          Scroll ↓
+          Scroll to proof ↓
         </a>
       </div>
     </section>

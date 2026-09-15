@@ -12,7 +12,7 @@ export function BrandBuiltWith () {
       className='min-h-0 border-t border-border/70 bg-white'
     >
       <div className='container-wide py-10 md:py-12'>
-        <p className='text-center font-mono text-[0.625rem] uppercase tracking-[0.22em] text-muted-foreground'>
+        <p className='text-center font-mono text-xs tracking-wide text-muted-foreground'>
           Built with production-grade tools
         </p>
 

@@ -36,13 +36,13 @@ export function SiteFooter () {
           <div>
             <div className='flex items-center gap-3'>
               <span className='h-px w-10 bg-[hsl(211_55%_68%)]' />
-              <p className='font-mono text-[0.625rem] uppercase tracking-[0.22em] text-[hsl(211_70%_72%)]'>
+              <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
                 Have a product in mind?
               </p>
             </div>
             <h2 className='mt-7 max-w-[11ch] font-display text-[clamp(2.8rem,6.8vw,6.5rem)] font-bold leading-[0.9] tracking-[-0.055em] text-white'>
               Let&apos;s build something
-              <span className='block text-[hsl(211_55%_68%)]'>that lasts.</span>
+              <span className='block text-highlight-soft'>that lasts.</span>
             </h2>
           </div>
 
@@ -51,13 +51,10 @@ export function SiteFooter () {
               Clear architecture, thoughtful interfaces, and engineering your
               team can confidently extend.
             </p>
-            <Link
-              href='/contact'
-              className='group mt-7 inline-flex min-h-12 items-center gap-5 border-b border-white/35 pb-2 text-sm font-semibold text-white transition-colors hover:border-[hsl(211_55%_68%)]'
-            >
-              Start a conversation
+            <Link href='/contact' className='cta-primary-ink mt-7 w-fit'>
+              Discuss your project
               <ArrowUpRight
-                className='h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5'
+                className='h-3.5 w-3.5'
                 aria-hidden
               />
             </Link>
@@ -71,14 +68,14 @@ export function SiteFooter () {
               className='group inline-flex items-center gap-4'
               aria-label={`${site.name} home`}
             >
-              <span className='flex h-11 w-11 items-center justify-center border border-white/20 font-display text-sm font-bold text-white transition-colors group-hover:border-[hsl(211_55%_68%)]'>
+              <span className='flex h-11 w-11 items-center justify-center border border-white/20 font-display text-sm font-bold text-white transition-colors group-hover:border-highlight-soft'>
                 MJ
               </span>
               <span>
                 <span className='block font-display text-lg font-semibold text-white'>
                   {site.name}
                 </span>
-                <span className='mt-0.5 block font-mono text-[0.5rem] uppercase tracking-[0.16em] text-white/40'>
+                <span className='mt-0.5 block font-mono text-xs tracking-wide text-white/50'>
                   {site.role} · {site.location}
                 </span>
               </span>
@@ -93,7 +90,7 @@ export function SiteFooter () {
 
           <div className='grid grid-cols-2 gap-8'>
             <div>
-              <p className='font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-white/35'>
+              <p className='font-mono text-xs tracking-wide text-white/45'>
                 Navigate
               </p>
               <nav className='mt-5 flex flex-col gap-3 text-sm text-white/65'>
@@ -109,16 +106,10 @@ export function SiteFooter () {
               </nav>
             </div>
             <div>
-              <p className='font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-white/35'>
+              <p className='font-mono text-xs tracking-wide text-white/45'>
                 Connect
               </p>
               <div className='mt-5 flex flex-col gap-3 text-sm text-white/65'>
-                <Link
-                  href={`mailto:${site.email}`}
-                  className='w-fit transition-colors hover:text-white'
-                >
-                  Email
-                </Link>
                 <Link
                   href={site.github}
                   target='_blank'
@@ -140,11 +131,11 @@ export function SiteFooter () {
           </div>
         </div>
 
-        <div className='flex flex-col gap-3 border-t border-white/10 pt-7 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between'>
-          <p className='font-mono uppercase tracking-[0.12em]'>
+        <div className='flex flex-col gap-3 border-t border-white/10 pt-7 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between'>
+          <p className='font-mono tracking-wide'>
             © {new Date().getFullYear()} {site.name}
           </p>
-          <p className='font-mono uppercase tracking-[0.12em]'>
+          <p className='font-mono tracking-wide'>
             Designed and engineered with intent
           </p>
         </div>

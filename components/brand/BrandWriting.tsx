@@ -64,10 +64,10 @@ export function BrandWriting () {
             transition={{ duration: brandMotion.durationSlow, ease: brandMotion.ease }}
           >
             <div className='flex items-center justify-between gap-4 border-b border-white/[0.15] pb-4'>
-              <p className='font-mono text-[0.625rem] uppercase tracking-[0.24em] text-[hsl(211_70%_72%)]'>
+              <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
                 The workbench
               </p>
-              <p className='font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-white/[0.35]'>
+              <p className='font-mono text-xs tracking-wide text-white/[0.35]'>
                 Issue 01 · 2026
               </p>
             </div>
@@ -95,7 +95,7 @@ export function BrandWriting () {
                 <span className='flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.15] text-white/70'>
                   <BookOpen size={15} strokeWidth={1.55} aria-hidden />
                 </span>
-                <p className='font-mono text-[0.625rem] uppercase tracking-[0.2em] text-white/[0.45]'>
+                <p className='font-mono text-xs tracking-wide text-white/[0.45]'>
                   Featured note
                 </p>
               </div>
@@ -105,7 +105,7 @@ export function BrandWriting () {
                   href={`/blog/${featured.slug}`}
                   className='group mt-6 block'
                 >
-                  <p className='font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-[hsl(211_70%_72%)]'>
+                  <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
                     {featured.category}
                   </p>
                   <h3 className='mt-4 max-w-[13ch] font-display text-[clamp(2.2rem,4.5vw,4rem)] font-bold leading-[0.98] tracking-[-0.04em] text-white'>
@@ -116,10 +116,10 @@ export function BrandWriting () {
                   </p>
 
                   <div className='mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-white/[0.15] pt-5'>
-                    <span className='font-mono text-[0.5625rem] uppercase tracking-[0.13em] text-white/40'>
+                    <span className='font-mono text-xs tracking-wide text-white/40'>
                       {formatDate(featured.publishedAt)}
                     </span>
-                    <span className='inline-flex items-center gap-2 font-mono text-[0.5625rem] uppercase tracking-[0.13em] text-white/40'>
+                    <span className='inline-flex items-center gap-2 font-mono text-xs tracking-wide text-white/40'>
                       <Clock3 size={11} aria-hidden />
                       {featured.readTime}
                     </span>
@@ -138,17 +138,14 @@ export function BrandWriting () {
           <div className='mx-auto max-w-3xl lg:mx-0'>
             <div className='flex items-start justify-between gap-6'>
               <div>
-                <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_48%_42%)]'>
+                <p className='font-mono text-xs tracking-wide text-highlight'>
                   {blogPreview.title} · Field notes
                 </p>
                 <h2 className='mt-5 max-w-[10ch] font-display text-[clamp(2.6rem,5.2vw,5rem)] font-bold leading-[0.94] tracking-[-0.05em] text-heading'>
                   Notes from the
-                  <span className='block text-[hsl(211_48%_42%)]'>workbench.</span>
+                  <span className='block text-highlight'>workbench.</span>
                 </h2>
               </div>
-              <p className='hidden font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-heading/30 sm:block [writing-mode:vertical-rl]'>
-                Build · learn · document
-              </p>
             </div>
 
             <div className='mt-7 flex items-end justify-between gap-6'>
@@ -157,7 +154,7 @@ export function BrandWriting () {
               </p>
               <Link
                 href='/blog'
-                className='group hidden shrink-0 items-center gap-2 font-mono text-[0.625rem] uppercase tracking-[0.15em] text-heading sm:inline-flex'
+                className='group hidden shrink-0 items-center gap-2 font-mono text-xs tracking-wide text-heading sm:inline-flex'
               >
                 All articles
                 <ArrowUpRight
@@ -169,11 +166,11 @@ export function BrandWriting () {
             </div>
 
             <div className='mt-10 flex items-center gap-4'>
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-muted-foreground'>
+              <span className='font-mono text-xs tracking-wide text-muted-foreground'>
                 Index
               </span>
               <span className='h-px flex-1 bg-heading/[0.15]' aria-hidden />
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-muted-foreground'>
+              <span className='font-mono text-xs tracking-wide text-muted-foreground'>
                 {String(index.length).padStart(2, '0')} entries
               </span>
             </div>
@@ -194,14 +191,14 @@ export function BrandWriting () {
                     href={`/blog/${post.slug}`}
                     className='group grid gap-3 py-6 sm:grid-cols-[2.5rem_1fr_auto] sm:gap-5 md:py-7'
                   >
-                    <span className='font-mono text-[0.625rem] text-[hsl(211_48%_42%)]'>
+                    <span className='font-mono text-xs text-highlight'>
                       {String(i + 2).padStart(2, '0')}
                     </span>
                     <div className='min-w-0'>
-                      <p className='font-mono text-[0.5rem] uppercase tracking-[0.16em] text-heading/[0.35]'>
+                      <p className='font-mono text-xs tracking-wide text-heading/[0.35]'>
                         {post.category}
                       </p>
-                      <h3 className='mt-2 font-display text-lg font-semibold leading-tight tracking-tight text-heading transition-colors group-hover:text-[hsl(211_48%_38%)] md:text-xl'>
+                      <h3 className='mt-2 font-display text-lg font-semibold leading-tight tracking-tight text-heading transition-colors group-hover:text-highlight md:text-xl'>
                         {post.title}
                       </h3>
                       <p className='mt-2 line-clamp-2 max-w-[48ch] text-xs leading-relaxed text-body'>
@@ -209,7 +206,7 @@ export function BrandWriting () {
                       </p>
                     </div>
                     <div className='flex items-center justify-between gap-4 sm:flex-col sm:items-end'>
-                      <span className='font-mono text-[0.5625rem] text-heading/[0.35]'>
+                      <span className='font-mono text-xs text-heading/[0.35]'>
                       {post.readTime}
                       </span>
                       <ArrowUpRight
@@ -225,7 +222,7 @@ export function BrandWriting () {
 
             <Link
               href='/blog'
-              className='mt-7 inline-flex items-center gap-2 font-mono text-[0.625rem] uppercase tracking-[0.15em] text-heading sm:hidden'
+              className='mt-7 inline-flex items-center gap-2 font-mono text-xs tracking-wide text-heading sm:hidden'
             >
               All articles <ArrowUpRight size={13} aria-hidden />
             </Link>

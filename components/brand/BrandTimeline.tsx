@@ -39,13 +39,13 @@ export function BrandTimeline () {
       <div className='relative z-10'>
         <div className='mx-auto grid w-full max-w-[1280px] gap-10 px-6 pb-12 pt-16 sm:px-8 md:px-10 md:pb-16 md:pt-20 lg:grid-cols-[1.12fr_0.88fr] lg:items-end lg:px-12 lg:pb-20 lg:pt-24'>
           <div>
-            <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_48%_42%)]'>
+            <p className='font-mono text-xs tracking-wide text-highlight'>
               {experience.title} · Delivery path
             </p>
             <h2 className='mt-5 font-display text-[clamp(2.4rem,5vw,4.6rem)] font-bold leading-[0.95] tracking-[-0.045em]'>
               <span className='text-heading'>Built through delivery.</span>
               <br />
-              <span className='text-[hsl(211_48%_42%)]'>
+              <span className='text-highlight'>
                 Proven in production.
               </span>
             </h2>
@@ -57,13 +57,13 @@ export function BrandTimeline () {
               maintainable products, not a résumé dump.
             </p>
             <div className='mt-7 flex items-center gap-3' aria-hidden>
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-muted-foreground'>
+              <span className='font-mono text-xs tracking-wide text-muted-foreground'>
                 2024
               </span>
               <span className='relative h-px flex-1 bg-heading/15'>
-                <span className='absolute -top-[3px] right-0 h-[7px] w-[7px] rounded-full bg-[hsl(211_48%_42%)] shadow-[0_0_0_5px_hsl(211_48%_42%/0.1)]' />
+                <span className='absolute -top-[3px] right-0 h-[7px] w-[7px] rounded-full bg-primary shadow-[0_0_0_5px_hsl(211_48%_42%/0.1)]' />
               </span>
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-[hsl(211_48%_42%)]'>
+              <span className='font-mono text-xs tracking-wide text-highlight'>
                 Now
               </span>
             </div>

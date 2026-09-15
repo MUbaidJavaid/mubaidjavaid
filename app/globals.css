@@ -218,7 +218,20 @@
   }
 
   .section-label {
-    @apply font-mono text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-muted-foreground;
+    @apply font-mono text-xs font-medium tracking-wide text-highlight;
+  }
+
+  /* Shared primary CTAs — one shape across light + ink surfaces */
+  .cta-primary {
+    @apply inline-flex min-h-11 items-center gap-2 bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover;
+  }
+
+  .cta-primary-ink {
+    @apply inline-flex min-h-11 items-center gap-2 bg-white px-5 py-2.5 text-sm font-semibold text-[hsl(215_42%_12%)] transition-colors hover:bg-white/90;
+  }
+
+  .brand-meta {
+    @apply font-mono text-xs tracking-wide text-muted-foreground;
   }
 
   .section-lead {

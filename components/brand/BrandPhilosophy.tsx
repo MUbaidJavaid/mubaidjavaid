@@ -57,17 +57,10 @@ export function BrandPhilosophy () {
         aria-hidden
       />
 
-      <p
-        className='pointer-events-none absolute left-3 top-1/2 hidden -translate-y-1/2 font-mono text-[0.625rem] uppercase tracking-[0.4em] text-heading/20 [writing-mode:vertical-rl] rotate-180 lg:left-6 lg:block'
-        aria-hidden
-      >
-        operating beliefs
-      </p>
-
       <div className='relative z-10 mx-auto w-full max-w-[1280px] px-6 py-16 sm:px-8 md:px-10 md:py-20 lg:px-12 lg:py-24'>
         <div className='flex items-end justify-between gap-6'>
           <div>
-            <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_48%_42%)]'>
+            <p className='font-mono text-xs tracking-wide text-highlight'>
               Engineering philosophy
             </p>
             <p className='mt-3 max-w-[34ch] text-sm text-body'>
@@ -75,7 +68,7 @@ export function BrandPhilosophy () {
               changes.
             </p>
           </div>
-          <p className='hidden font-mono text-[0.625rem] uppercase tracking-[0.2em] text-heading/30 sm:block'>
+          <p className='hidden font-mono text-xs tracking-wide text-heading/30 sm:block'>
             Ch. 03
           </p>
         </div>
@@ -103,7 +96,7 @@ export function BrandPhilosophy () {
                   ease: brandMotion.ease
                 }}
               >
-                <span className='font-mono text-[0.625rem] uppercase tracking-[0.22em] text-heading/35 md:w-10'>
+                <span className='font-mono text-xs tracking-wide text-heading/35 md:w-10'>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className='font-display text-[clamp(2.4rem,7vw,5.75rem)] font-bold leading-[0.92] tracking-[-0.045em] text-heading'>
@@ -111,7 +104,7 @@ export function BrandPhilosophy () {
                     className={cn(
                       'transition-colors duration-300',
                       active === i
-                        ? 'text-[hsl(211_48%_42%)]'
+                        ? 'text-highlight'
                         : 'text-heading'
                     )}
                   >
@@ -139,11 +132,11 @@ export function BrandPhilosophy () {
 
         <div className='mt-14 border-t border-heading/10 pt-8 md:mt-20 md:pt-10'>
           <div className='mb-2 flex items-center justify-between gap-4'>
-            <p className='font-mono text-[0.625rem] uppercase tracking-[0.2em] text-heading/35'>
+            <p className='font-mono text-xs tracking-wide text-heading/35'>
               How products get built here
             </p>
             <div className='h-px flex-1 bg-heading/10' aria-hidden />
-            <p className='font-mono text-[0.625rem] uppercase tracking-[0.16em] text-heading/30'>
+            <p className='font-mono text-xs tracking-wide text-heading/30'>
               {String(whyPartnerWithMe.length).padStart(2, '0')} laws
             </p>
           </div>
@@ -198,7 +191,7 @@ function PrincipleRow ({
         className='group grid w-full grid-cols-[3rem_minmax(0,1fr)] items-start gap-x-4 gap-y-2 py-5 text-left md:grid-cols-[4.5rem_minmax(12rem,18rem)_minmax(0,1fr)] md:gap-x-8 md:py-6'
         aria-expanded={open}
       >
-        <span className='font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-[hsl(211_48%_42%)]'>
+        <span className='font-mono text-xs tracking-wide text-highlight'>
           {String(index + 1).padStart(2, '0')}
         </span>
 
@@ -206,7 +199,7 @@ function PrincipleRow ({
           {title}
           <span
             className={cn(
-              'absolute -bottom-1 left-0 h-px origin-left bg-[hsl(211_48%_42%)] transition-transform duration-500',
+              'absolute -bottom-1 left-0 h-px origin-left bg-primary transition-transform duration-500',
               open ? 'w-full scale-x-100' : 'w-full scale-x-0'
             )}
             aria-hidden

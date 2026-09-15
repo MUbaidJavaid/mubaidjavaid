@@ -54,10 +54,10 @@ export function SiteHeader () {
         >
           <span
             className={cn(
-              'flex h-9 w-9 shrink-0 items-center justify-center border font-display text-[0.6875rem] font-bold tracking-[-0.03em] transition-colors',
+              'flex h-9 w-9 shrink-0 items-center justify-center border font-display text-xs font-bold tracking-[-0.03em] transition-colors',
               overInkHero
                 ? 'border-white/30 text-white group-hover:border-white'
-                : 'border-heading/20 text-heading group-hover:border-[hsl(211_48%_42%)] group-hover:text-[hsl(211_48%_42%)]'
+                : 'border-heading/20 text-heading group-hover:border-highlight group-hover:text-highlight'
             )}
           >
             MJ
@@ -73,8 +73,8 @@ export function SiteHeader () {
             </span>
             <span
               className={cn(
-                'mt-1 block font-mono text-[0.5rem] uppercase tracking-[0.18em]',
-                overInkHero ? 'text-white/45' : 'text-muted-foreground'
+                'mt-1 block font-mono text-xs tracking-wide',
+                overInkHero ? 'text-white/55' : 'text-muted-foreground'
               )}
             >
               {site.role}
@@ -105,7 +105,7 @@ export function SiteHeader () {
               >
                 <span
                   className={cn(
-                    'font-mono text-[0.4375rem] transition-colors',
+                    'font-mono text-xs transition-colors',
                     overInkHero ? 'text-white/30' : 'text-heading/25'
                   )}
                   aria-hidden
@@ -116,7 +116,7 @@ export function SiteHeader () {
                 <span
                   className={cn(
                     'absolute inset-x-0 bottom-0 h-px origin-left transition-transform duration-300',
-                    overInkHero ? 'bg-white' : 'bg-[hsl(211_48%_42%)]',
+                    overInkHero ? 'bg-white' : 'bg-primary',
                     isActive
                       ? 'scale-x-100'
                       : 'scale-x-0 group-hover:scale-x-100'
@@ -131,14 +131,14 @@ export function SiteHeader () {
         <div className='hidden items-center gap-5 lg:flex'>
           <span
             className={cn(
-              'inline-flex items-center gap-2 font-mono text-[0.625rem] uppercase tracking-[0.16em]',
+              'inline-flex items-center gap-2 font-mono text-xs tracking-wide',
               overInkHero ? 'text-white/60' : 'text-muted-foreground'
             )}
           >
             <span
               className={cn(
                 'h-1.5 w-1.5 rounded-full',
-                overInkHero ? 'bg-[hsl(211_90%_60%)]' : 'bg-highlight'
+                overInkHero ? 'bg-highlight-soft' : 'bg-highlight'
               )}
               aria-hidden
             />
@@ -147,14 +147,11 @@ export function SiteHeader () {
           <MagneticButton
             href='/contact'
             className={cn(
-              'inline-flex items-center px-4 py-2.5 text-[0.8125rem] font-medium transition-colors',
-              overInkHero
-                ? 'border border-white/40 bg-white/5 text-white hover:border-white hover:bg-white/10'
-                : 'bg-primary text-primary-foreground hover:bg-primary-hover'
+              overInkHero ? 'cta-primary-ink' : 'cta-primary'
             )}
           >
             Discuss your project
-            <ArrowUpRight className='ml-2 h-3.5 w-3.5' aria-hidden />
+            <ArrowUpRight className='h-3.5 w-3.5' aria-hidden />
           </MagneticButton>
         </div>
 
@@ -179,7 +176,7 @@ export function SiteHeader () {
             className='container-wide flex min-h-full flex-col py-8'
             aria-label='Mobile'
           >
-            <p className='mb-5 font-mono text-[0.5625rem] uppercase tracking-[0.2em] text-[hsl(211_48%_42%)]'>
+            <p className='mb-5 font-mono text-xs uppercase tracking-[0.2em] text-highlight'>
               Navigation
             </p>
             {navItems.map((item, index) => {
@@ -196,7 +193,7 @@ export function SiteHeader () {
                     isActive && 'text-heading'
                   )}
                 >
-                  <span className='mr-5 font-mono text-[0.5625rem] font-normal tracking-normal text-[hsl(211_48%_42%)]'>
+                  <span className='mr-5 font-mono text-xs font-normal tracking-normal text-highlight'>
                     /{String(index + 1).padStart(2, '0')}
                   </span>
                   {item.label}
@@ -219,7 +216,7 @@ export function SiteHeader () {
                 Product engineering for teams who value clarity and lasting
                 craft.
               </p>
-              <span className='font-mono text-[0.5rem] uppercase tracking-[0.14em] text-heading/35'>
+              <span className='font-mono text-xs uppercase tracking-[0.14em] text-heading/35'>
                 {site.location}
               </span>
             </div>

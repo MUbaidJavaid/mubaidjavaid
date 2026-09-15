@@ -96,7 +96,7 @@ function Hex ({
         }}
       >
         {center ? (
-          <p className='relative z-10 max-w-[11ch] px-1 text-center font-display text-[0.42rem] font-bold uppercase leading-[1.15] tracking-[0.025em] text-heading sm:px-2 sm:text-[clamp(0.36rem,1.25vw,0.75rem)] sm:leading-[1.25] sm:tracking-[0.07em]'>
+          <p className='relative z-10 max-w-[11ch] px-1 text-center font-display text-[0.75rem] font-bold leading-snug tracking-wide text-heading sm:text-xs'>
             Product design and development process
           </p>
         ) : (
@@ -258,7 +258,7 @@ export function ProcessHoneycomb ({ className }: { className?: string }) {
           <p
             key={`label-${step.id}`}
             className={cn(
-              'absolute z-30 font-display text-[0.42rem] font-bold uppercase leading-[1.15] tracking-[0.015em] text-heading sm:text-[clamp(0.34rem,1.65vw,0.7rem)] sm:leading-snug sm:tracking-[0.045em]',
+              'absolute z-30 font-display text-xs font-semibold leading-snug tracking-wide text-heading sm:text-sm',
               SLOT[step.slot].label
             )}
           >

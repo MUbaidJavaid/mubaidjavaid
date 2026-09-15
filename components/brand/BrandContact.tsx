@@ -6,7 +6,7 @@ import { contactCta, site } from '@/data/site'
 import { brandMotion } from '@/lib/brand-system'
 import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowRight, Handshake, Mail, MessageCircle, Phone } from 'lucide-react'
+import { ArrowUpRight, Github, Handshake, Linkedin, Mail } from 'lucide-react'
 import Link from 'next/link'
 
 function FloatingHex ({ className }: { className?: string }) {
@@ -58,22 +58,25 @@ function FloatingHex ({ className }: { className?: string }) {
 
 const rows = [
   {
-    label: "Let's Talk",
-    note: 'Share your product goals',
-    href: '/contact',
-    Icon: MessageCircle
-  },
-  {
-    label: 'Email Us',
+    label: 'Email',
     note: site.email,
     href: `mailto:${site.email}`,
-    Icon: Mail
+    Icon: Mail,
+    external: false
   },
   {
-    label: 'Call Us',
-    note: 'Book a discovery call',
-    href: '/contact',
-    Icon: Phone
+    label: 'GitHub',
+    note: 'Inspect repositories',
+    href: site.github,
+    Icon: Github,
+    external: true
+  },
+  {
+    label: 'LinkedIn',
+    note: 'Professional profile',
+    href: site.linkedin,
+    Icon: Linkedin,
+    external: true
   }
 ] as const
 
@@ -130,14 +133,14 @@ export function BrandContact () {
           <div className='relative z-10 grid lg:grid-cols-2 lg:items-center'>
             {/* LEFT */}
             <div className='bg-[hsl(215_48%_13%)] px-5 py-10 text-white sm:px-7 md:px-10 md:py-14 lg:bg-transparent lg:px-8 lg:py-16 lg:pr-16'>
-              <p className='font-mono text-[0.6875rem] uppercase tracking-[0.22em] text-[hsl(211_70%_72%)]'>
+              <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
                 Let&apos;s work together
               </p>
 
               <h2 className='mt-4 font-display text-[clamp(2rem,4vw,3.1rem)] font-bold leading-[1.06] tracking-tight'>
                 <span className='text-white'>Your Vision.</span>
                 <br />
-                <span className='text-[hsl(211_55%_68%)]'>My Commitment.</span>
+                <span className='text-highlight-soft'>My Commitment.</span>
               </h2>
 
               <p className='mt-4 max-w-[34ch] text-sm leading-relaxed text-white/70'>
@@ -149,22 +152,14 @@ export function BrandContact () {
                   href={contactCta.primaryHref}
                   event='discuss_project'
                   detail='brand_contact'
-                  className='inline-flex items-center bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover'
+                  className='cta-primary-ink'
                 >
                   {contactCta.primaryAction}
-                </TrackedCtaLink>
-                <TrackedCtaLink
-                  href='/contact'
-                  event='discuss_project'
-                  detail='brand_contact_icon'
-                  aria-label='Go to contact'
-                  className='inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition-colors hover:border-white hover:bg-white/10'
-                >
-                  <ArrowRight size={17} strokeWidth={1.75} />
+                  <ArrowUpRight size={15} aria-hidden />
                 </TrackedCtaLink>
               </div>
 
-              <p className='mt-6 font-mono text-[0.625rem] uppercase tracking-[0.14em] text-white/65'>
+              <p className='mt-6 font-mono text-xs tracking-wide text-white/65'>
                 {contactCta.support}
               </p>
             </div>
@@ -181,28 +176,7 @@ export function BrandContact () {
                 }}
               />
               <div className='flex w-full max-w-md gap-4 sm:max-w-lg lg:ml-auto lg:max-w-[28rem]'>
-                {/* 1) Icon column */}
-                <div className='flex shrink-0 flex-col'>
-                  {rows.map((row, i) => (
-                    <div
-                      key={row.label}
-                      className={cn(
-                        'flex items-center py-5',
-                        i > 0 && 'border-t border-transparent'
-                      )}
-                    >
-                      <Link
-                        href={row.href}
-                        aria-label={row.label}
-                        className='flex h-11 w-11 items-center justify-center rounded-full bg-[hsl(215_48%_13%)] text-white transition-colors hover:bg-[hsl(211_48%_42%)]'
-                      >
-                        <row.Icon size={17} strokeWidth={1.6} />
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-
-                {/* 2) Text + chevrons + dividers */}
+                {/* Issue 30: one link per channel — icon + copy share one hit target */}
                 <ul className='min-w-0 flex-1'>
                   {rows.map((row, i) => (
                     <motion.li
@@ -218,11 +192,16 @@ export function BrandContact () {
                     >
                       <Link
                         href={row.href}
+                        target={row.external ? '_blank' : undefined}
+                        rel={row.external ? 'noreferrer' : undefined}
                         className={cn(
-                          'group flex min-h-[3.75rem] items-center gap-3 py-5',
+                          'group flex min-h-[3.75rem] items-center gap-4 py-5',
                           i > 0 && 'border-t border-heading/10'
                         )}
                       >
+                        <span className='flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[hsl(215_48%_13%)] text-white transition-colors group-hover:bg-primary'>
+                          <row.Icon size={17} strokeWidth={1.6} aria-hidden />
+                        </span>
                         <span className='min-w-0 flex-1'>
                           <span className='block font-display text-base font-semibold tracking-tight text-heading'>
                             {row.label}
@@ -231,10 +210,11 @@ export function BrandContact () {
                             {row.note}
                           </span>
                         </span>
-                        <ArrowRight
+                        <ArrowUpRight
                           size={15}
                           strokeWidth={1.75}
-                          className='shrink-0 text-heading/40 transition-transform group-hover:translate-x-1 group-hover:text-heading'
+                          className='shrink-0 text-heading/40 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-heading'
+                          aria-hidden
                         />
                       </Link>
                     </motion.li>

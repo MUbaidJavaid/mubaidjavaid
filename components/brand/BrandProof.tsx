@@ -59,12 +59,12 @@ export function BrandProof () {
 
       <div className='relative z-10 mx-auto grid w-full max-w-[1280px] gap-10 px-6 pb-12 pt-16 sm:px-8 md:px-10 md:pb-16 md:pt-20 lg:grid-cols-[1fr_0.75fr] lg:items-end lg:px-12 lg:pb-20 lg:pt-24'>
         <div>
-          <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_90%_68%)]'>
+          <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
             Proof · Trust protocol
           </p>
           <h2 className='mt-5 font-display text-[clamp(2.8rem,6vw,5.7rem)] font-bold leading-[0.92] tracking-[-0.055em] text-white'>
             Verifiable
-            <span className='block text-[hsl(211_55%_68%)]'>signals.</span>
+            <span className='block text-highlight-soft'>signals.</span>
           </h2>
         </div>
 
@@ -76,7 +76,7 @@ export function BrandProof () {
           <div className='mt-7 flex flex-wrap items-center gap-5'>
             <Link
               href='/projects'
-              className='group inline-flex items-center gap-2 bg-[hsl(211_48%_42%)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[hsl(211_48%_36%)]'
+              className='cta-primary group'
             >
               Inspect the work
               <ArrowUpRight
@@ -85,7 +85,7 @@ export function BrandProof () {
                 aria-hidden
               />
             </Link>
-            <span className='inline-flex items-center gap-2 font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-white/[0.35]'>
+            <span className='inline-flex items-center gap-2 font-mono text-xs tracking-wide text-white/55'>
               <span className='h-1.5 w-1.5 rounded-full bg-[hsl(152_58%_55%)] shadow-[0_0_12px_hsl(152_58%_55%/0.75)]' />
               Publicly inspectable
             </span>

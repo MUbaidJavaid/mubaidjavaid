@@ -55,12 +55,12 @@ export function BrandFitSignals () {
       <div className='relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-12 pt-16 sm:px-8 md:px-10 md:pb-16 md:pt-20 lg:px-12 lg:pb-20 lg:pt-24'>
         <div className='grid gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:items-end'>
           <div>
-            <p className='font-mono text-[0.6875rem] uppercase tracking-[0.26em] text-[hsl(211_48%_42%)]'>
+            <p className='font-mono text-xs tracking-wide text-highlight'>
               What you get delivered · 04 phases
             </p>
             <h2 className='mt-5 font-display text-[clamp(2.7rem,5.5vw,5.2rem)] font-bold leading-[0.93] tracking-[-0.05em] text-heading'>
               Clear scope.
-              <span className='block text-[hsl(211_48%_42%)]'>
+              <span className='block text-highlight'>
                 Production delivery.
               </span>
             </h2>
@@ -73,19 +73,19 @@ export function BrandFitSignals () {
               stay coherent.
             </p>
             <div className='mt-7 flex items-center gap-3' aria-hidden>
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-heading/[0.35]'>
+              <span className='font-mono text-xs tracking-wide text-heading/[0.35]'>
                 Scope
               </span>
               <span className='relative h-px flex-1 bg-heading/[0.15]'>
                 <motion.span
-                  className='absolute inset-y-0 left-0 w-full origin-left bg-[hsl(211_48%_42%)]'
+                  className='absolute inset-y-0 left-0 w-full origin-left bg-primary'
                   initial={reduce ? false : { scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.1, ease: brandMotion.ease }}
                 />
               </span>
-              <span className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-[hsl(211_48%_42%)]'>
+              <span className='font-mono text-xs tracking-wide text-highlight'>
                 Handover
               </span>
             </div>
@@ -96,7 +96,7 @@ export function BrandFitSignals () {
       <div className='relative z-10 border-y border-heading/10 bg-background/[0.55]'>
         <ol className='relative mx-auto grid w-full max-w-[1280px] md:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-heading/10'>
           <div
-            className='pointer-events-none absolute left-0 right-0 top-0 hidden h-px bg-[hsl(211_48%_42%)] lg:block'
+            className='pointer-events-none absolute left-0 right-0 top-0 hidden h-px bg-primary lg:block'
             aria-hidden
           />
           {fitSignals.map((item, i) => (
@@ -127,19 +127,19 @@ export function BrandFitSignals () {
 
               <div className='relative flex h-full flex-col'>
                 <div className='flex items-center justify-between gap-4'>
-                  <span className='flex h-11 w-11 items-center justify-center rounded-full border border-heading/[0.15] text-[hsl(211_48%_42%)] transition-all duration-300 group-hover:border-[hsl(211_48%_42%/0.4)] group-hover:bg-[hsl(211_48%_42%)] group-hover:text-white'>
+                  <span className='flex h-11 w-11 items-center justify-center rounded-full border border-heading/[0.15] text-highlight transition-all duration-300 group-hover:border-[hsl(211_48%_42%/0.4)] group-hover:bg-primary group-hover:text-white'>
                     {(() => {
                       const Icon = phases[i]?.Icon ?? Compass
                       return <Icon size={17} strokeWidth={1.55} aria-hidden />
                     })()}
                   </span>
-                  <span className='font-mono text-[0.5625rem] uppercase tracking-[0.16em] text-heading/[0.35]'>
+                  <span className='font-mono text-xs tracking-wide text-heading/[0.35]'>
                     {phases[i]?.label}
                   </span>
                 </div>
 
                 <div className='mt-auto pt-10'>
-                  <p className='font-mono text-[0.5rem] uppercase tracking-[0.14em] text-[hsl(211_48%_42%)]'>
+                  <p className='font-mono text-xs tracking-wide text-highlight'>
                     {phases[i]?.detail}
                   </p>
                   <h3 className='mt-3 font-display text-xl font-semibold leading-tight tracking-tight text-heading'>
@@ -151,7 +151,7 @@ export function BrandFitSignals () {
                 </div>
 
                 <span
-                  className='absolute -bottom-8 left-0 h-0.5 w-full origin-left scale-x-0 bg-[hsl(211_48%_42%)] transition-transform duration-500 group-hover:scale-x-100'
+                  className='absolute -bottom-8 left-0 h-0.5 w-full origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100'
                   aria-hidden
                 />
               </div>
@@ -161,7 +161,7 @@ export function BrandFitSignals () {
       </div>
 
       <div className='relative z-10 mx-auto flex w-full max-w-[1280px] flex-col gap-5 px-6 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-8 md:px-10 lg:px-12'>
-        <p className='font-mono text-[0.5625rem] uppercase tracking-[0.15em] text-heading/[0.35]'>
+        <p className='font-mono text-xs tracking-wide text-heading/50'>
           One owner · one decision path · one maintainable release
         </p>
         <Link
