@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="176" height="48" viewBox="0 0 176 48" role="img" aria-label="Portfolio">
+  <rect x="1" y="1" width="174" height="46" rx="12" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.75"/>
+  <rect x="10" y="10" width="28" height="28" rx="8" fill="#0F766E"/>
+  <!-- globe logo -->
+  <g fill="none" stroke="#ECFDF5" stroke-width="1.8" stroke-linecap="round">
+    <circle cx="24" cy="24" r="8"/>
+    <path d="M16 24h16"/>
+    <path d="M24 16c2.4 2.2 3.6 4.6 3.6 8S26.4 29.8 24 32c-2.4-2.2-3.6-4.6-3.6-8S21.6 18.2 24 16z"/>
+  </g>
+  <text x="48" y="30" fill="#0B0E13" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Portfolio</text>
+</svg>

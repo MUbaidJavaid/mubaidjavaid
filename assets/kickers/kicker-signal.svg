@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="44" viewBox="0 0 760 44" role="img" aria-label="HOW I WORK">
+  <rect width="760" height="44" fill="none"/>
+  <rect x="0" y="12" width="20" height="20" rx="6" fill="#0F766E" fill-opacity="0.12"/>
+  <g transform="translate(2 14) scale(0.8)"><g fill="none" stroke="#0F766E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14a7 7 0 0 1 14 0"/><path d="M6 14a4 4 0 0 1 8 0"/><circle cx="10" cy="14" r="1.5" fill="#0F766E"/></g></g>
+  <text x="32" y="27" fill="#5A636F" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2.4">HOW I WORK</text>
+</svg>

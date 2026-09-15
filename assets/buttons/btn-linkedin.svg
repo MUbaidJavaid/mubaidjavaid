@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="176" height="48" viewBox="0 0 176 48" role="img" aria-label="LinkedIn">
+  <rect x="1" y="1" width="174" height="46" rx="12" fill="#FFFFFF" stroke="#0A66C2" stroke-width="1.75"/>
+  <!-- Official-style LinkedIn mark -->
+  <rect x="10" y="10" width="28" height="28" rx="6" fill="#0A66C2"/>
+  <path fill="#FFFFFF" d="M18.2 20.2h3.2v11.2h-3.2V20.2zm1.6-5.1c1.05 0 1.9.85 1.9 1.9s-.85 1.9-1.9 1.9-1.9-.85-1.9-1.9.85-1.9 1.9-1.9zM24 20.2h3.05v1.55h.04c.42-.8 1.46-1.65 3.1-1.65 3.32 0 3.93 2.18 3.93 5.02v6.28H30.9v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.93v5.68H24V20.2z"/>
+  <text x="48" y="30" fill="#0B0E13" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="700">LinkedIn</text>
+</svg>

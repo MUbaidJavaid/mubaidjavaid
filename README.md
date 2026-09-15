@@ -1,189 +1,237 @@
-
 <!--
-  SETUP — replace before publishing:
-  · GitHub username used below: mubaidjavaid  (swap in yours for the two stat embeds)
-  · Contact links in contact-strip.svg / footer-dark.svg are visual placeholders — wrap them
-    in real <a href> tags around the <img> in this file once you have the URLs.
-  · Everything else renders straight from /assets — no external hosting, no build step.
+  GitHub profile README — Product Engineer
+  Path hero + careful SVG system. Text + real links remain source of truth.
 -->
 
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
-  <img src="./assets/hero-dark.svg" alt="M Ubaid Javaid — Full-Stack Software Engineer" width="100%">
-</picture>
-
-<br><br>
-
-<img src="./assets/contact-strip.svg" alt="Portfolio · LinkedIn · Email · Resume">
-
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
+    <img src="./assets/hero-light.svg" alt="M Ubaid Javaid — Software Engineer, full-stack MERN and Next.js, Multan, Pakistan" width="100%">
+  </picture>
 </div>
 
 <br>
 
-<img src="./assets/divider.svg" width="100%">
+# M Ubaid Javaid
+
+**Software Engineer — full-stack (MERN / Next.js)** · Multan, Pakistan
+
+I build production web systems: multi-tenant SaaS, operational dashboards, and the APIs and data models underneath them. Currently at **Evolvo Technologies**, shipping client products across fintech, healthcare, prop trading and real estate.
+
+<p align="center">
+  <a href="https://mubaidjavaid.vercel.app"><img src="./assets/buttons/btn-portfolio.svg" alt="Portfolio" height="48"></a>
+  &nbsp;
+  <a href="https://mubaidjavaid.vercel.app/projects"><img src="./assets/buttons/btn-cases.svg" alt="Case studies" height="48"></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/m-ubaid-javaid-260735407"><img src="./assets/buttons/btn-linkedin.svg" alt="LinkedIn" height="48"></a>
+  &nbsp;
+  <a href="mailto:mubaidjavaid97@gmail.com"><img src="./assets/buttons/btn-email.svg" alt="Email" height="48"></a>
+  &nbsp;
+  <a href="https://github.com/MUbaidJavaid"><img src="./assets/buttons/btn-github.svg" alt="GitHub" height="48"></a>
+</p>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,nodejs,express,mongodb,firebase,tailwind,vercel,docker,github" alt="TypeScript, JavaScript, React, Next.js, Node.js, Express, MongoDB, Firebase, Tailwind, Vercel, Docker, GitHub" />
+</p>
+
+<img src="./assets/domains-strip.svg" alt="Domains: fintech, healthcare, ops/POS, commerce" width="100%">
 
 <br>
 
-## Philosophy
+<img src="./assets/proof-strip.svg" alt="6 case studies, 2 verified roles, 50+ Evolvo sites attributed, 0 invented metrics" width="100%">
 
-> Software is a liability the moment it ships. The job is to make sure it's a liability worth carrying — readable, testable, and boring in the parts that should be boring.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/divider-dark.svg">
+  <img src="./assets/divider.svg" alt="" width="100%">
+</picture>
 
-I build full-stack products end to end: schema design, API contracts, auth, billing, and the UI layer that sits on top of all of it. My interest isn't in using every tool available — it's in choosing the smallest set of tools that solves the problem correctly and stays maintainable eighteen months later.
+<img src="./assets/kickers/kicker-work.svg" alt="Selected work" width="100%">
 
-Three things guide most of my decisions:
+## Selected work
+
+Each card links to a written case study — architecture, trade-offs, and what I'd do differently.
 
 <table>
-<tr>
-<td width="33%" valign="top">
-
-**Correctness before speed**
-Fast software that returns wrong data is worse than slow software that doesn't ship. I optimize the second time, not the first.
-
-</td>
-<td width="33%" valign="top">
-
-**Boundaries over cleverness**
-Clear module boundaries and typed contracts outlast clever one-off abstractions. TypeScript is a design tool, not a linter.
-
-</td>
-<td width="33%" valign="top">
-
-**Operate what you build**
-Code that isn't monitored isn't finished. Logging, alerting, and rollback paths are part of the feature, not an afterthought.
-
-</td>
-</tr>
+  <tr>
+    <td width="50%">
+      <a href="https://mubaidjavaid.vercel.app/projects/hsms-housing-society-management">
+        <img src="./assets/cards/card-hsms.svg" alt="HSMS — Housing Society Management System" width="100%">
+      </a>
+    </td>
+    <td width="50%">
+      <a href="https://mubaidjavaid.vercel.app/projects/quikpos-saas-point-of-sale">
+        <img src="./assets/cards/card-pos.svg" alt="QuikPOS — Multi-tenant Point of Sale SaaS" width="100%">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <a href="https://mubaidjavaid.vercel.app/projects/naaz-wears-ecommerce">
+        <img src="./assets/cards/card-commerce.svg" alt="Naaz Wears — D2C E-Commerce" width="100%">
+      </a>
+    </td>
+    <td width="50%">
+      <a href="https://mubaidjavaid.vercel.app/projects/apex-platinum-fintech-platform">
+        <img src="./assets/cards/card-fintech.svg" alt="Apex Platinum — Fintech Platform" width="100%">
+      </a>
+    </td>
+  </tr>
 </table>
 
+### HSMS — Housing Society Management System
+
+Multi-tenant platform for housing-society operations: plot lifecycle, installment billing, visitor management, and compliance workflows. Workflows, forms and business rules live in the database rather than in code. Hybrid RBAC + ABAC, JWT auth, offline-first PWA.
+
+`Next.js` `Express` `MongoDB` `PWA` — [Case study](https://mubaidjavaid.vercel.app/projects/hsms-housing-society-management)
+
+<sub>Independent product-engineering case study — not a claim of client ownership.</sub>
+
+### QuikPOS — Multi-Tenant Point-of-Sale SaaS
+
+Cloud POS: barcode scanning, credit ledgers, bilingual surfaces. Tenant isolation at the data layer; offline queue reconciles on reconnect. Domain stores instead of one global client state.
+
+`React` `Vite` `Firebase` `Zustand` — [Live](https://pos-saas-kappa.vercel.app) · [Case study](https://mubaidjavaid.vercel.app/projects/quikpos-saas-point-of-sale)
+
+<sub>Independent product-engineering case study — multi-tenant POS patterns from production delivery.</sub>
+
+### Naaz Wears — D2C E-Commerce
+
+Production storefront: catalog, checkout, tracking, admin, receipts. SEO pages server-rendered; Convex for data/auth/functions; session carts merge on sign-in.
+
+`Next.js` `React` `Convex` `Cloudinary` `PWA` — [Live](https://naazwears.vercel.app) · [Case study](https://mubaidjavaid.vercel.app/projects/naaz-wears-ecommerce)
+
+<sub>Independent product-engineering case study — not a claim of store ownership.</sub>
+
+### Apex Platinum — Fintech Platform
+
+Institutional portal: payment flows, multicurrency, custody visualisation. SSR marketing + client dashboard; heavy visuals via dynamic imports.
+
+`Next.js` `React` `TypeScript` `Three.js` `GSAP` — [Live](https://apex-platinum.vercel.app) · [Case study](https://mubaidjavaid.vercel.app/projects/apex-platinum-fintech-platform)
+
+<sub>Production fintech delivery case study — not a claim of product ownership.</sub>
+
+<img src="./assets/kickers/kicker-evolvo.svg" alt="Evolvo delivery" width="100%">
+
+### Evolvo Technologies — client delivery
+
+Built as part of my role — not product ownership.
+
+<table>
+  <tr>
+    <td width="50%">
+      <a href="https://surgi-core-opal.vercel.app">
+        <img src="./assets/cards/card-surgicore.svg" alt="SurgiCore Pro — surgical ops platform" width="100%">
+      </a>
+    </td>
+    <td width="50%">
+      <a href="https://vitalis-health-indol.vercel.app">
+        <img src="./assets/cards/card-vitalis.svg" alt="Vitalis Health — clinic and admin surface" width="100%">
+      </a>
+    </td>
+  </tr>
+</table>
+
+[SurgiCore case study](https://mubaidjavaid.vercel.app/projects/surgicore-pro-surgical-management) · [Vitalis case study](https://mubaidjavaid.vercel.app/projects/vitalis-health-healthcare-platform) · **[50+ Evolvo gallery](https://mubaidjavaid.vercel.app/projects#evolvo)**
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/divider-dark.svg">
+  <img src="./assets/divider.svg" alt="" width="100%">
+</picture>
+
+## System shape
+
+<img src="./assets/diagrams/architecture.svg" alt="Multi-tenant production architecture" width="100%">
+
 <br>
 
-## About
-
-I'm a full-stack engineer specializing in the MERN stack, with a focus on the systems that sit underneath a product's surface — authentication, subscription billing, rate-limited APIs, and the data models that have to hold up once real users start writing to them.
-
-Most of my work falls into one of three categories:
-
-- **SaaS foundations** — multi-tenant auth, role-based access, subscription and metered billing, webhooks that don't silently drop events.
-- **API design** — REST services with explicit versioning, input validation at the boundary, and predictable error shapes.
-- **Interface engineering** — React and Next.js front ends where state management and data-fetching strategy are decided before the first component is written, not after the third refactor.
-
-I read incident reports and postmortems from engineering teams the way some people read tech blogs — the failure modes are usually more instructive than the success stories.
+<img src="./assets/diagrams/auth-flow.svg" alt="Auth to role to tenant to policy to action flow" width="100%">
 
 <br>
+
+<img src="./assets/diagrams/delivery.svg" alt="Delivery loop: model, slice, harden, ship, live" width="100%">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/divider-dark.svg">
+  <img src="./assets/divider.svg" alt="" width="100%">
+</picture>
+
+<img src="./assets/kickers/kicker-stack.svg" alt="Stack" width="100%">
+
+## Stack
+
+<img src="./assets/stack-strip.svg" alt="Core, interface, server and data, platform stack" width="100%">
+
+- **Core** — TypeScript, JavaScript, Node.js  
+- **Interface** — React, Next.js, Tailwind CSS, shadcn/ui, Zustand, TanStack Query, Framer Motion  
+- **Server & data** — Express, MongoDB, Firebase/Firestore, Convex, REST APIs, JWT  
+- **Platform** — Vercel, Docker, Cloudinary, Git, GitHub  
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/divider-dark.svg">
+  <img src="./assets/divider.svg" alt="" width="100%">
+</picture>
+
+<img src="./assets/kickers/kicker-system.svg" alt="Experience" width="100%">
 
 ## Experience
 
-<table>
-<tr>
-<td width="90" valign="top"><b>2024 — Now</b></td>
-<td>
-
-**Full-Stack Engineer — Independent / Contract**
-Design and build SaaS backends and dashboards for early-stage products: authentication systems, Stripe-based billing, and REST APIs consumed by React front ends. Own projects from data model through deployment.
-
-</td>
-</tr>
-<tr>
-<td width="90" valign="top"><b>2022 — 2024</b></td>
-<td>
-
-**Full-Stack Developer — MERN Applications**
-Built and shipped production features across the MERN stack: authentication flows, admin dashboards, and third-party API integrations. Focused on reducing response times and cutting redundant database calls in high-traffic endpoints.
-
-</td>
-</tr>
-<tr>
-<td width="90" valign="top"><b>Earlier</b></td>
-<td>
-
-**Foundations**
-Started with vanilla JavaScript and PHP, moved into React and Node as the ecosystem matured. Spent a disproportionate amount of that time reading source code of libraries I depended on — it remains the fastest way I know to actually understand a tool.
-
-</td>
-</tr>
-</table>
+<img src="./assets/experience-strip.svg" alt="Evolvo Technologies current, Fiesta Content Solutions previous" width="100%">
 
 <br>
 
-<img src="./assets/kicker-work.svg" width="100%">
+**Evolvo Technologies** — MERN-Stack & Next.js Developer · Feb 2026 – present  
+
+Production web products for client brands across fintech, healthcare, prop trading and real estate. SSR, SEO, and Vercel deploys across multi-domain launches.
+
+**Fiesta Content Solutions** — MERN-Stack Developer · Jul 2024 – Jan 2026  
+
+MERN end to end: React interfaces, Express REST APIs, MongoDB schema design, auth and authorisation.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/divider-dark.svg">
+  <img src="./assets/divider.svg" alt="" width="100%">
+</picture>
+
+<img src="./assets/kickers/kicker-signal.svg" alt="How I work" width="100%">
+
+## How I work
+
+- **Decide the data model first.** Most “frontend” pain started as a rushed schema.
+- **Tenant boundaries belong in the platform, not the query.** Rules and middleware outlive memory.
+- **Ship a vertical slice before a broad one.** Auth → persisted outcome beats five half-built features.
+
+<img src="./assets/kickers/kicker-writing.svg" alt="Writing" width="100%">
+
+## Writing
+
+<a href="https://mubaidjavaid.vercel.app/blog">
+  <img src="./assets/writing-strip.svg" alt="Writing: Next.js vs React SPA, Vercel vs VPS, Hiring Next.js in Pakistan" width="100%">
+</a>
+
+- [Next.js vs React SPA for a business website](https://mubaidjavaid.vercel.app/blog/nextjs-vs-react-spa-business-website)  
+- [Vercel vs VPS for a Next.js SaaS](https://mubaidjavaid.vercel.app/blog/vercel-vs-vps-for-nextjs-saas)  
+- [Hiring a freelance Next.js developer in Pakistan](https://mubaidjavaid.vercel.app/blog/freelance-nextjs-developer-pakistan)  
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/divider-dark.svg">
+  <img src="./assets/divider.svg" alt="" width="100%">
+</picture>
+
+## Contact
+
+<img src="./assets/contact-strip.svg" alt="Let's build the next production system" width="100%">
 
 <br>
 
-<div align="center">
-<img src="./assets/cards/card-billing.svg" width="49%">
-<img src="./assets/cards/card-auth.svg" width="49%">
-</div>
-<br>
-<div align="center">
-<img src="./assets/cards/card-dashboard.svg" width="49%">
-<img src="./assets/cards/card-api.svg" width="49%">
-</div>
+<p align="center">
+  <a href="mailto:mubaidjavaid97@gmail.com"><img src="./assets/buttons/btn-email.svg" alt="Email" height="48"></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/m-ubaid-javaid-260735407"><img src="./assets/buttons/btn-linkedin.svg" alt="LinkedIn" height="48"></a>
+  &nbsp;
+  <a href="https://mubaidjavaid.vercel.app"><img src="./assets/buttons/btn-portfolio.svg" alt="Portfolio" height="48"></a>
+</p>
 
-<br>
+Open to freelance, contract and full-time. Send the shape of the problem — I'll tell you honestly if I'm the right person.
 
-## Architecture
-
-<div align="center"><img src="./assets/diagrams/architecture.svg" width="100%"></div>
-<br>
-<div align="center"><img src="./assets/diagrams/auth-flow.svg" width="100%"></div>
-<br>
-<div align="center"><img src="./assets/diagrams/deployment.svg" width="100%"></div>
-
-<br>
-
-## Engineering Principles
-
-- **Types are contracts, not paperwork.** If a shape can be wrong at runtime, it should be impossible at compile time.
-- **A migration you can't reverse isn't a migration.** Every schema change ships with a rollback path before it ships with a feature.
-- **Errors are part of the API.** A 500 with no context is a debugging tax charged to whoever's on call.
-- **Cache invalidation is a design decision, made early.** Not a patch applied after the first stale-data bug report.
-- **Tests describe behavior, not implementation.** A refactor shouldn't break a test suite that the feature itself didn't break.
-
-<br>
-
-<img src="./assets/kicker-stack.svg" width="100%">
-
-<br>
-
-<img src="./assets/stack-strip.svg" width="100%">
-
-<br><br>
-
-<img src="./assets/kicker-signal.svg" width="100%">
-
-<br>
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=mubaidjavaid&show_icons=true&hide_border=true&bg_color=0D0F14&title_color=F4F5F7&text_color=A9AFBC&icon_color=4FD1C5&count_private=true" width="49%">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mubaidjavaid&layout=compact&hide_border=true&bg_color=0D0F14&title_color=F4F5F7&text_color=A9AFBC&langs_count=8" width="43%">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=mubaidjavaid&custom_title=Contribution%20Activity&bg_color=0D0F14&color=4FD1C5&line=3B6FE0&point=F4F5F7&area=true&hide_border=true" width="90%">
-
-</div>
-
-<br>
-
-## Current Focus
-
-| | |
-|---|---|
-| **Building** | Usage-based billing patterns that stay correct under webhook replay and network partition |
-| **Deepening** | System design for multi-tenant SaaS at scale — sharding, tenant isolation, and read/write splitting |
-| **Exploring** | Edge runtimes for authentication middleware to cut cold-start latency on serverless deployments |
-| **Reading** | Postmortems and incident retrospectives from infrastructure teams — the failure modes teach faster than the docs |
-
-<br>
-
-<img src="./assets/divider.svg" width="100%">
-
-<div align="center">
-<img src="./assets/footer-dark.svg" width="100%">
-</div>
-
-<div align="center">
-<sub>Every visual above is a real, editable SVG in <code>/assets</code> — no screenshots, no external image hosting.</sub>
-</div>
+**[mubaidjavaid97@gmail.com](mailto:mubaidjavaid97@gmail.com)** · [LinkedIn](https://www.linkedin.com/in/m-ubaid-javaid-260735407) · [Portfolio](https://mubaidjavaid.vercel.app)

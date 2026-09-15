@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="150" viewBox="0 0 760 150" role="img" aria-labelledby="t">
+  <title id="t">Experience</title>
+  <rect width="760" height="150" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+
+  <rect x="20" y="20" width="350" height="110" rx="12" fill="#F0FDFA" stroke="#99F6E4"/>
+  <rect x="36" y="36" width="32" height="32" rx="8" fill="#0F766E" fill-opacity="0.15"/>
+  <g transform="translate(42 42)" fill="none" stroke="#0F766E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 18V6l7-3 7 3v12"/><path d="M8 18v-4h4v4M7 9h.01M13 9h.01"/>
+  </g>
+  <text x="80" y="50" fill="#0F766E" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">CURRENT</text>
+  <text x="80" y="72" fill="#0B0E13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Evolvo Technologies</text>
+  <text x="36" y="100" fill="#374151" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12">MERN-Stack &amp; Next.js Developer</text>
+  <text x="36" y="118" fill="#6B7280" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">Feb 2026 – present</text>
+
+  <rect x="390" y="20" width="350" height="110" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <rect x="406" y="36" width="32" height="32" rx="8" fill="#334155" fill-opacity="0.12"/>
+  <g transform="translate(412 42)" fill="none" stroke="#334155" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="6" width="16" height="12" rx="2"/><path d="M7 6V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1M2 11h16"/>
+  </g>
+  <text x="450" y="50" fill="#64748B" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">PREVIOUS</text>
+  <text x="450" y="72" fill="#0B0E13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Fiesta Content Solutions</text>
+  <text x="406" y="100" fill="#374151" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12">MERN-Stack Developer</text>
+  <text x="406" y="118" fill="#6B7280" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">Jul 2024 – Jan 2026</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="248" viewBox="0 0 520 248" role="img" aria-labelledby="t">
+  <title id="t">VITALIS HEALTH — Clinic + admin surface</title>
+  <defs>
+    <linearGradient id="gVit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.16"/>
+      <stop offset="55%" stop-color="#059669" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="518" height="246" rx="18" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="1" y="1" width="518" height="246" rx="18" fill="url(#gVit)"/>
+  <rect x="0" y="0" width="7" height="248" rx="3.5" fill="#059669"/>
+
+  <!-- left copy -->
+  <text x="24" y="34" fill="#059669" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.5">EVOLVO</text>
+  <text x="24" y="52" fill="#059669" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">VITALIS HEALTH</text>
+  <text x="24" y="88" fill="#0B0E13" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Clinic + admin surface</text>
+  <text x="24" y="114" fill="#5A636F" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12">Appointments · billing · staff</text>
+  <text x="24" y="150" fill="#374151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+    <tspan x="24" dy="0">Evolvo client delivery — public site</tspan>
+    <tspan x="24" dy="18">plus operational admin dashboard.</tspan>
+  </text>
+  <text x="24" y="222" fill="#059669" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Case study →</text>
+
+  <!-- right illustration panel -->
+  <rect x="330" y="28" width="166" height="166" rx="20" fill="#059669" fill-opacity="0.08" stroke="#059669" stroke-opacity="0.25"/>
+  
+  <g transform="translate(358 52)">
+    <path d="M65 118c-28-18-42-34-42-54a24 24 0 0 1 42-16 24 24 0 0 1 42 16c0 20-14 36-42 54z" fill="#059669"/>
+    <path d="M30 78h18l8-16 10 32 8-16h20" fill="none" stroke="#ECFDF5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+</svg>

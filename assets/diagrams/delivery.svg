@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="170" viewBox="0 0 760 170" role="img" aria-labelledby="t">
+  <title id="t">Delivery loop</title>
+  <rect width="760" height="170" rx="14" fill="#0B0E13" stroke="#1C2230"/>
+  <g transform="translate(24 16) scale(0.9)"><g fill="none" stroke="#4FD1C5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1 2-2 4-2 4s2-1 4-2"/><path d="M13 3c3 1 6 4 7 7-3 1-5 3-7 5l-3-3c2-2 4-4 5-7z"/><path d="M9 11 5 15"/><circle cx="13.5" cy="6.5" r="1"/></g></g>
+  <text x="52" y="34" fill="#E9ECF1" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="700">How I ship</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="28" y="56" width="120" height="86" rx="12" fill="#121826" stroke="#2A3344"/>
+    <g transform="translate(68 66) scale(0.85)"><g fill="none" stroke="#4FD1C5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="10" cy="5" rx="7" ry="3"/><path d="M3 5v10c0 1.7 3.1 3 7 3s7-1.3 7-3V5"/><path d="M3 10c0 1.7 3.1 3 7 3s7-1.3 7-3"/></g></g>
+    <text x="88" y="112" text-anchor="middle" fill="#4FD1C5" font-size="12" font-weight="700">1. Model</text>
+    <text x="88" y="130" text-anchor="middle" fill="#8B94A3" font-size="10">Schema first</text>
+
+    <text x="156" y="104" fill="#4FD1C5" font-size="16">→</text>
+
+    <rect x="176" y="56" width="120" height="86" rx="12" fill="#121826" stroke="#2A3344"/>
+    <g transform="translate(216 66) scale(0.85)"><g fill="none" stroke="#4FD1C5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2 2 6l8 4 8-4-8-4z"/><path d="M2 10l8 4 8-4M2 14l8 4 8-4"/></g></g>
+    <text x="236" y="112" text-anchor="middle" fill="#4FD1C5" font-size="12" font-weight="700">2. Slice</text>
+    <text x="236" y="130" text-anchor="middle" fill="#8B94A3" font-size="10">Auth → persist</text>
+
+    <text x="304" y="104" fill="#4FD1C5" font-size="16">→</text>
+
+    <rect x="324" y="56" width="120" height="86" rx="12" fill="#121826" stroke="#2A3344"/>
+    <g transform="translate(364 66) scale(0.85)"><g fill="none" stroke="#4FD1C5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2 3 5v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V5l-7-3z"/></g></g>
+    <text x="384" y="112" text-anchor="middle" fill="#4FD1C5" font-size="12" font-weight="700">3. Harden</text>
+    <text x="384" y="130" text-anchor="middle" fill="#8B94A3" font-size="10">Tenant · roles</text>
+
+    <text x="452" y="104" fill="#4FD1C5" font-size="16">→</text>
+
+    <rect x="472" y="56" width="120" height="86" rx="12" fill="#121826" stroke="#2A3344"/>
+    <g transform="translate(512 66) scale(0.85)"><g fill="none" stroke="#4FD1C5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1 2-2 4-2 4s2-1 4-2"/><path d="M13 3c3 1 6 4 7 7-3 1-5 3-7 5l-3-3c2-2 4-4 5-7z"/><path d="M9 11 5 15"/><circle cx="13.5" cy="6.5" r="1"/></g></g>
+    <text x="532" y="112" text-anchor="middle" fill="#4FD1C5" font-size="12" font-weight="700">4. Ship</text>
+    <text x="532" y="130" text-anchor="middle" fill="#8B94A3" font-size="10">Vercel · SEO</text>
+
+    <text x="600" y="104" fill="#4FD1C5" font-size="16">→</text>
+
+    <rect x="620" y="56" width="112" height="86" rx="12" fill="#0F766E"/>
+    <g transform="translate(656 66) scale(0.85)"><g fill="none" stroke="#ECFDF5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.5 2.5 2.5 4.5-5"/></g></g>
+    <text x="676" y="112" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="700">Live</text>
+    <text x="676" y="130" text-anchor="middle" fill="#A7F3D0" font-size="10">Production</text>
+  </g>
+</svg>

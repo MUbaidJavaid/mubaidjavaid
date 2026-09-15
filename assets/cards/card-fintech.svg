@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="248" viewBox="0 0 520 248" role="img" aria-labelledby="t">
+  <title id="t">APEX PLATINUM — Fintech Platform</title>
+  <defs>
+    <linearGradient id="gFin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0369A1" stop-opacity="0.16"/>
+      <stop offset="55%" stop-color="#0369A1" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="518" height="246" rx="18" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="1" y="1" width="518" height="246" rx="18" fill="url(#gFin)"/>
+  <rect x="0" y="0" width="7" height="248" rx="3.5" fill="#0369A1"/>
+
+  <!-- left copy -->
+  
+  <text x="24" y="40" fill="#0369A1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">APEX PLATINUM</text>
+  <text x="24" y="76" fill="#0B0E13" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Fintech Platform</text>
+  <text x="24" y="102" fill="#5A636F" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12">Next.js · Three.js · GSAP</text>
+  <text x="24" y="138" fill="#374151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+    <tspan x="24" dy="0">Payments, multicurrency, custody UI,</tspan>
+    <tspan x="24" dy="18">SSR marketing + client dashboard.</tspan>
+  </text>
+  <text x="24" y="222" fill="#0369A1" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Case study →</text>
+
+  <!-- right illustration panel -->
+  <rect x="330" y="28" width="166" height="166" rx="20" fill="#0369A1" fill-opacity="0.08" stroke="#0369A1" stroke-opacity="0.25"/>
+  
+  <g transform="translate(350 48)">
+    <rect x="18" y="100" width="18" height="40" rx="3" fill="#0369A1" fill-opacity="0.45"/>
+    <rect x="44" y="70" width="18" height="70" rx="3" fill="#0369A1" fill-opacity="0.65"/>
+    <rect x="70" y="48" width="18" height="92" rx="3" fill="#0369A1"/>
+    <rect x="96" y="30" width="18" height="110" rx="3" fill="#0284C7"/>
+    <path d="M20 95 L48 72 L74 58 L106 28" fill="none" stroke="#0EA5E9" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="106" cy="28" r="7" fill="#0EA5E9"/>
+    <circle cx="118" cy="118" r="16" fill="#0369A1" fill-opacity="0.2" stroke="#0369A1" stroke-width="2"/>
+    <text x="118" y="123" text-anchor="middle" fill="#0369A1" font-family="Arial,sans-serif" font-size="14" font-weight="700">$</text>
+  </g>
+
+</svg>

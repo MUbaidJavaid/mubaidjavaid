@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="248" viewBox="0 0 520 248" role="img" aria-labelledby="t">
+  <title id="t">QUIKPOS — Multi-tenant POS SaaS</title>
+  <defs>
+    <linearGradient id="gPos" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B45309" stop-opacity="0.16"/>
+      <stop offset="55%" stop-color="#B45309" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="518" height="246" rx="18" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <rect x="1" y="1" width="518" height="246" rx="18" fill="url(#gPos)"/>
+  <rect x="0" y="0" width="7" height="248" rx="3.5" fill="#B45309"/>
+
+  <!-- left copy -->
+  
+  <text x="24" y="40" fill="#B45309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.8">QUIKPOS</text>
+  <text x="24" y="76" fill="#0B0E13" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Multi-tenant POS SaaS</text>
+  <text x="24" y="102" fill="#5A636F" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12">Firestore · Offline queue · Zustand</text>
+  <text x="24" y="138" fill="#374151" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+    <tspan x="24" dy="0">Barcode, Udhaar ledgers, bilingual UI,</tspan>
+    <tspan x="24" dy="18">tenant isolation at the data layer.</tspan>
+  </text>
+  <text x="24" y="222" fill="#B45309" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" font-weight="700">Case study →</text>
+
+  <!-- right illustration panel -->
+  <rect x="330" y="28" width="166" height="166" rx="20" fill="#B45309" fill-opacity="0.08" stroke="#B45309" stroke-opacity="0.25"/>
+  
+  <g transform="translate(352 48)">
+    <rect x="20" y="20" width="90" height="70" rx="10" fill="#B45309"/>
+    <rect x="28" y="30" width="74" height="40" rx="4" fill="#FFF7ED"/>
+    <rect x="34" y="38" width="28" height="6" rx="2" fill="#B45309" fill-opacity="0.35"/>
+    <rect x="34" y="50" width="50" height="6" rx="2" fill="#B45309" fill-opacity="0.2"/>
+    <rect x="40" y="98" width="50" height="14" rx="3" fill="#B45309" fill-opacity="0.85"/>
+    <!-- barcode -->
+    <g fill="#B45309" transform="translate(30 120)">
+      <rect x="0" y="0" width="3" height="22"/><rect x="6" y="0" width="2" height="22"/>
+      <rect x="11" y="0" width="4" height="22"/><rect x="18" y="0" width="2" height="22"/>
+      <rect x="23" y="0" width="3" height="22"/><rect x="29" y="0" width="5" height="22"/>
+      <rect x="37" y="0" width="2" height="22"/><rect x="42" y="0" width="3" height="22"/>
+      <rect x="48" y="0" width="2" height="22"/><rect x="53" y="0" width="4" height="22"/>
+      <rect x="60" y="0" width="2" height="22"/><rect x="65" y="0" width="3" height="22"/>
+    </g>
+  </g>
+
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="44" viewBox="0 0 760 44" role="img" aria-label="EXPERIENCE">
+  <rect width="760" height="44" fill="none"/>
+  <rect x="0" y="12" width="20" height="20" rx="6" fill="#0F766E" fill-opacity="0.12"/>
+  <g transform="translate(2 14) scale(0.8)"><g fill="none" stroke="#0F766E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V6l7-3 7 3v12"/><path d="M8 18v-4h4v4M7 9h.01M13 9h.01M7 12h.01M13 12h.01"/></g></g>
+  <text x="32" y="27" fill="#5A636F" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2.4">EXPERIENCE</text>
+</svg>

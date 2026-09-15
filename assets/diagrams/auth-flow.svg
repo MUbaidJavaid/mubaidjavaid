@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="210" viewBox="0 0 760 210" role="img" aria-labelledby="t">
+  <title id="t">Auth and access flow</title>
+  <rect width="760" height="210" rx="14" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <g transform="translate(24 16) scale(0.9)"><g fill="none" stroke="#0F766E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="12" height="9" rx="2"/><path d="M7 9V6a3 3 0 0 1 6 0v3"/></g></g>
+  <text x="52" y="34" fill="#0B0E13" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Auth → role → tenant → action</text>
+  <text x="52" y="54" fill="#6B7280" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="11">Pattern used across HSMS / QuikPOS-class systems</text>
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="28" y="84" width="120" height="92" rx="12" fill="#F0FDFA" stroke="#0F766E"/>
+    <g transform="translate(68 96) scale(0.9)"><g fill="none" stroke="#0F766E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="12" height="9" rx="2"/><path d="M7 9V6a3 3 0 0 1 6 0v3"/></g></g>
+    <text x="88" y="140" text-anchor="middle" fill="#0F766E" font-size="12" font-weight="700">Sign-in</text>
+    <text x="88" y="158" text-anchor="middle" fill="#5A636F" font-size="10">JWT / session</text>
+
+    <text x="158" y="134" fill="#94A3B8" font-size="18">→</text>
+
+    <rect x="178" y="84" width="120" height="92" rx="12" fill="#F8FAFC" stroke="#94A3B8"/>
+    <g transform="translate(218 96) scale(0.9)"><g fill="none" stroke="#334155" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="3"/><path d="M1 17c0-2.5 2.5-4.5 6-4.5s6 2 6 4.5"/><circle cx="14.5" cy="8" r="2.5"/><path d="M19 17c0-2-1.8-3.5-4.5-3.8"/></g></g>
+    <text x="238" y="140" text-anchor="middle" fill="#0B0E13" font-size="12" font-weight="700">Roles</text>
+    <text x="238" y="158" text-anchor="middle" fill="#5A636F" font-size="10">RBAC + ABAC</text>
+
+    <text x="308" y="134" fill="#94A3B8" font-size="18">→</text>
+
+    <rect x="328" y="84" width="120" height="92" rx="12" fill="#FFF7ED" stroke="#EA580C"/>
+    <g transform="translate(368 96) scale(0.9)"><g fill="none" stroke="#C2410C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V7l7-4 7 4v11"/><path d="M7 18v-5h6v5"/><path d="M3 18h14"/><path d="M9 9h.01M13 9h.01M9 12h.01M13 12h.01"/></g></g>
+    <text x="388" y="140" text-anchor="middle" fill="#C2410C" font-size="12" font-weight="700">Tenant</text>
+    <text x="388" y="158" text-anchor="middle" fill="#78716C" font-size="10">Scope bound</text>
+
+    <text x="458" y="134" fill="#94A3B8" font-size="18">→</text>
+
+    <rect x="478" y="84" width="120" height="92" rx="12" fill="#EEF2FF" stroke="#6366F1"/>
+    <g transform="translate(518 96) scale(0.9)"><g fill="none" stroke="#4338CA" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2 3 5v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V5l-7-3z"/></g></g>
+    <text x="538" y="140" text-anchor="middle" fill="#4338CA" font-size="12" font-weight="700">Policy</text>
+    <text x="538" y="158" text-anchor="middle" fill="#64748B" font-size="10">Rules / middleware</text>
+
+    <text x="608" y="134" fill="#94A3B8" font-size="18">→</text>
+
+    <rect x="628" y="84" width="104" height="92" rx="12" fill="#0F766E"/>
+    <g transform="translate(660 96) scale(0.9)"><g fill="none" stroke="#ECFDF5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.5 2.5 2.5 4.5-5"/></g></g>
+    <text x="680" y="140" text-anchor="middle" fill="#ECFDF5" font-size="12" font-weight="700">Action</text>
+    <text x="680" y="158" text-anchor="middle" fill="#A7F3D0" font-size="10">Allowed</text>
+  </g>
+</svg>
