@@ -4,6 +4,8 @@ import { BrandSection } from '@/components/brand/system/BrandSection'
 import { ProofSignalStage } from '@/components/visual/ProofSignalStage'
 import { evolvoWork } from '@/data/evolvo-work'
 import { projects } from '@/data/projects'
+import { brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -62,9 +64,10 @@ export function BrandProof () {
           <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
             Proof · Trust protocol
           </p>
-          <h2 className='mt-5 font-display text-[clamp(2.8rem,6vw,5.7rem)] font-bold leading-[0.92] tracking-[-0.055em] text-white'>
+          <h2 className={cn('mt-5', brandType.titleInk)}>
             Verifiable
-            <span className='block text-highlight-soft'>signals.</span>
+            <br />
+            <span className='text-highlight-soft'>signals.</span>
           </h2>
         </div>
 

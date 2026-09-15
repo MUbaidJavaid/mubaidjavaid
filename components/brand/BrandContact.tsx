@@ -3,7 +3,7 @@
 import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { BrandSection } from '@/components/brand/system/BrandSection'
 import { contactCta, site } from '@/data/site'
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
 import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, Github, Handshake, Linkedin, Mail } from 'lucide-react'
@@ -137,8 +137,8 @@ export function BrandContact () {
                 Let&apos;s work together
               </p>
 
-              <h2 className='mt-4 font-display text-[clamp(2rem,4vw,3.1rem)] font-bold leading-[1.06] tracking-tight'>
-                <span className='text-white'>Your Vision.</span>
+              <h2 className={cn('mt-4', brandType.titleInk)}>
+                Your Vision.
                 <br />
                 <span className='text-highlight-soft'>My Commitment.</span>
               </h2>

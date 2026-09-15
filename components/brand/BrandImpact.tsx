@@ -1,7 +1,7 @@
 'use client'
 
 import { BrandSection } from '@/components/brand/system/BrandSection'
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
 import { impactOutcomes } from '@/lib/homepage-media'
 import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
@@ -63,9 +63,10 @@ export function BrandImpact () {
           <p className='font-mono text-xs tracking-wide text-highlight'>
             Impact · Shipped evidence
           </p>
-          <h2 className='mt-5 font-display text-[clamp(2.7rem,6vw,5.6rem)] font-bold leading-[0.92] tracking-[-0.055em] text-heading'>
+          <h2 className={cn('mt-5', brandType.title)}>
             Outcomes
-            <span className='block text-highlight'>you can see.</span>
+            <br />
+            <span className='text-highlight'>you can see.</span>
           </h2>
           <p className='mt-6 max-w-[48ch] text-sm leading-relaxed text-body md:text-base'>
             Observable results from shipped products—real workflows,

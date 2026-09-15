@@ -2,7 +2,8 @@
 
 import { BrandSection } from '@/components/brand/system/BrandSection'
 import { openSource, site } from '@/data/site'
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, Code2, Eye, GitBranch, Github } from 'lucide-react'
 import Link from 'next/link'
@@ -54,8 +55,8 @@ export function BrandOpenSource () {
             {openSource.title} · Public by default
           </p>
 
-              <h2 className='mt-5 font-display text-[clamp(2.4rem,5vw,4.6rem)] font-bold leading-[0.95] tracking-[-0.045em]'>
-                <span className='text-white'>Code you can open.</span>
+              <h2 className={cn('mt-5', brandType.titleInk)}>
+                Code you can open.
                 <br />
                 <span className='text-highlight-soft'>Work you can trust.</span>
               </h2>

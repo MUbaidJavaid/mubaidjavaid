@@ -76,11 +76,14 @@ export const brandMotion = {
 
 export const brandType = {
   label: 'section-label',
-  title: 'font-display text-3xl font-bold text-heading md:text-4xl lg:text-[2.75rem] leading-[1.05] tracking-tight',
+  /** Homepage / band H2 — one scale site-wide (Issues 1, 4) */
+  title:
+    'font-display text-[clamp(2.25rem,4.2vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.02em] text-heading',
+  titleInk:
+    'font-display text-[clamp(2.25rem,4.2vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.02em] text-white',
   titleHero:
-    'font-display text-[clamp(2.75rem,5.5vw,5.25rem)] font-bold leading-[0.95] tracking-[-0.04em] text-heading',
+    'font-display text-[clamp(2.75rem,5.5vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.025em] text-heading',
   lead: 'max-w-md text-sm leading-relaxed text-body md:text-base',
-  /** Syne has no italic — use body weight contrast instead */
   italic: 'font-body text-xl font-medium leading-snug text-heading/70 md:text-2xl',
   mono: 'font-mono text-xs tracking-wide text-muted-foreground'
 } as const

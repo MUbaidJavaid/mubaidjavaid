@@ -99,7 +99,7 @@ export function BrandPhilosophy () {
                 <span className='font-mono text-xs tracking-wide text-heading/35 md:w-10'>
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <span className='font-display text-[clamp(2.4rem,7vw,5.75rem)] font-bold leading-[0.92] tracking-[-0.045em] text-heading'>
+                <span className='font-display text-[clamp(2rem,4.5vw,3.25rem)] font-bold leading-[1.08] tracking-[-0.02em] text-heading'>
                   <span
                     className={cn(
                       'transition-colors duration-300',

@@ -2,7 +2,7 @@
 
 import { BrandSection } from '@/components/brand/system/BrandSection'
 import { fitSignals } from '@/data/site'
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
 import { cn } from '@/lib/utils'
 import { motion, useReducedMotion } from 'framer-motion'
 import {
@@ -58,11 +58,10 @@ export function BrandFitSignals () {
             <p className='font-mono text-xs tracking-wide text-highlight'>
               What you get delivered · 04 phases
             </p>
-            <h2 className='mt-5 font-display text-[clamp(2.7rem,5.5vw,5.2rem)] font-bold leading-[0.93] tracking-[-0.05em] text-heading'>
+            <h2 className={cn('mt-5', brandType.title)}>
               Clear scope.
-              <span className='block text-highlight'>
-                Production delivery.
-              </span>
+              <br />
+              <span className='text-highlight'>Production delivery.</span>
             </h2>
           </div>
 

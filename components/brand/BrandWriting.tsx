@@ -1,7 +1,8 @@
 'use client'
 
 import { BrandSection } from '@/components/brand/system/BrandSection'
-import { brandMotion } from '@/lib/brand-system'
+import { brandMotion, brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { posts } from '@/data/posts'
 import { blogPreview } from '@/data/site'
 import { motion, useReducedMotion } from 'framer-motion'
@@ -141,9 +142,10 @@ export function BrandWriting () {
                 <p className='font-mono text-xs tracking-wide text-highlight'>
                   {blogPreview.title} · Field notes
                 </p>
-                <h2 className='mt-5 max-w-[10ch] font-display text-[clamp(2.6rem,5.2vw,5rem)] font-bold leading-[0.94] tracking-[-0.05em] text-heading'>
+                <h2 className={cn('mt-5 max-w-[12ch]', brandType.title)}>
                   Notes from the
-                  <span className='block text-highlight'>workbench.</span>
+                  <br />
+                  <span className='text-highlight'>workbench.</span>
                 </h2>
               </div>
             </div>

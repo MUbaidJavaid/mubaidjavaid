@@ -1,5 +1,6 @@
 import { BrandBuiltWith } from '@/components/brand/BrandBuiltWith'
 import { BrandHero } from '@/components/brand/BrandHero'
+import { HomeSectionNav } from '@/components/brand/HomeSectionNav'
 import { pageMetadata } from '@/lib/seo'
 import type { Metadata } from 'next'
 import nextDynamic from 'next/dynamic'
@@ -64,6 +65,7 @@ export const metadata: Metadata = pageMetadata({
 export default function HomePage () {
   return (
     <>
+      <HomeSectionNav />
       <BrandHero />
       <BrandBuiltWith />
       <BrandFitSignals />

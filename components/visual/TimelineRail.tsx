@@ -86,11 +86,11 @@ export function TimelineRail ({ items }: { items: Item[] }) {
 
               <div className='relative'>
                 <div className='flex flex-wrap items-center gap-3'>
-                  <p className='font-mono text-[0.625rem] uppercase tracking-[0.18em] text-[hsl(211_48%_42%)]'>
+                  <p className='font-mono text-xs tracking-wide text-highlight'>
                     {item.year}
                   </p>
                   {item.current ? (
-                    <span className='inline-flex items-center gap-2 font-mono text-[0.5rem] uppercase tracking-[0.13em] text-[hsl(152_48%_34%)]'>
+                    <span className='inline-flex items-center gap-2 font-mono text-xs tracking-wide text-[hsl(152_48%_34%)]'>
                       <span className='h-1.5 w-1.5 rounded-full bg-[hsl(152_48%_42%)]' />
                       Current
                     </span>
@@ -110,7 +110,7 @@ export function TimelineRail ({ items }: { items: Item[] }) {
                   {item.body}
                 </p>
 
-                <div className='mt-6 flex items-center gap-2 border-t border-heading/10 pt-4 font-mono text-[0.5625rem] uppercase tracking-[0.12em] text-heading/35'>
+                <div className='mt-6 flex items-center gap-2 border-t border-heading/10 pt-4 font-mono text-xs tracking-wide text-heading/50'>
                   <MapPin size={12} strokeWidth={1.6} aria-hidden />
                   {item.location}
                 </div>
@@ -119,11 +119,11 @@ export function TimelineRail ({ items }: { items: Item[] }) {
                   {item.technologies.map((technology, technologyIndex) => (
                     <span
                       key={technology}
-                      className='inline-flex items-center gap-2 font-mono text-[0.5rem] uppercase tracking-[0.09em] text-heading/40'
+                      className='inline-flex items-center gap-2 font-mono text-xs tracking-wide text-heading/45'
                     >
                       {technologyIndex > 0 ? (
                         <span
-                          className='h-0.5 w-0.5 rounded-full bg-[hsl(211_48%_42%)]'
+                          className='h-0.5 w-0.5 rounded-full bg-highlight'
                           aria-hidden
                         />
                       ) : null}

@@ -1,4 +1,6 @@
 import { site } from '@/data/site'
+import { brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
@@ -40,9 +42,10 @@ export function SiteFooter () {
                 Have a product in mind?
               </p>
             </div>
-            <h2 className='mt-7 max-w-[11ch] font-display text-[clamp(2.8rem,6.8vw,6.5rem)] font-bold leading-[0.9] tracking-[-0.055em] text-white'>
+            <h2 className={cn('mt-7 max-w-[14ch]', brandType.titleInk)}>
               Let&apos;s build something
-              <span className='block text-highlight-soft'>that lasts.</span>
+              <br />
+              <span className='text-highlight-soft'>that lasts.</span>
             </h2>
           </div>
 

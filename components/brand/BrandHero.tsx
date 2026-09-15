@@ -1,23 +1,10 @@
 import { TrackedCtaLink } from '@/components/analytics/TrackedCtaLink'
 import { heroContent, site } from '@/data/site'
-import { cn } from '@/lib/utils'
-import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
-
-const socials = [
-  { href: `mailto:${site.email}`, label: 'Email', Icon: Mail },
-  { href: site.github, label: 'GitHub', Icon: Github },
-  { href: site.linkedin, label: 'LinkedIn', Icon: Linkedin }
-] as const
-
-const sectionShortcuts = [
-  { href: '#proof', label: 'Proof' },
-  { href: '#impact', label: 'Impact' },
-  { href: '#contact', label: 'Contact' }
-] as const
+import { ArrowUpRight } from 'lucide-react'
 
 /**
- * Server-rendered cinematic hero. Portrait is a real <img> with
- * fetchPriority=high so Lighthouse can discover the LCP request from HTML.
+ * Hero — brand, one headline, one supporting line, CTA group only.
+ * Socials live in the footer (Issue 7 density).
  */
 export function BrandHero () {
   return (
@@ -86,21 +73,13 @@ export function BrandHero () {
         />
       </div>
 
-      <p
-        className='pointer-events-none absolute bottom-[-0.08em] right-[-0.04em] select-none font-display text-[clamp(5rem,22vw,14rem)] font-bold leading-none tracking-[-0.06em] text-white/[0.04]'
-        aria-hidden
-      >
-        MERN
-      </p>
-
-      <div className='relative z-10 mx-auto flex min-h-[100svh] max-w-[1180px] flex-col justify-center px-6 pb-28 pt-28 md:px-10 lg:px-12'>
+      <div className='relative z-10 mx-auto flex min-h-[100svh] max-w-[1180px] flex-col justify-center px-6 pb-24 pt-28 md:px-10 lg:px-12'>
         <div className='max-w-xl lg:max-w-2xl'>
-          {/* Issue 5: ≥12px; Issue 3/4 style — sentence case, not long all-caps */}
           <p className='font-mono text-xs tracking-wide text-highlight-on-ink'>
             {site.role} · {site.roleSecondary}
           </p>
 
-          <h1 className='mt-5 font-display text-[clamp(3.25rem,8.5vw,6.75rem)] font-bold leading-[0.92] tracking-[-0.045em] text-white'>
+          <h1 className='mt-5 font-display text-[clamp(2.75rem,6.5vw,4.75rem)] font-bold leading-[1.05] tracking-[-0.025em] text-white'>
             {site.name}
           </h1>
 
@@ -122,7 +101,6 @@ export function BrandHero () {
             ))}
           </ul>
 
-          {/* Issue 6 + 18: sentence-case primary CTA, shared ink style */}
           <div className='mt-10 flex flex-wrap items-center gap-4'>
             <TrackedCtaLink
               href='/contact'
@@ -143,61 +121,7 @@ export function BrandHero () {
               <ArrowUpRight className='h-3.5 w-3.5' aria-hidden />
             </TrackedCtaLink>
           </div>
-
-          {/* Issue 15: socials inside content grid, not viewport edge */}
-          <div className='mt-10 flex items-center gap-5'>
-            {socials.map(({ href, label, Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith('mailto:') ? undefined : '_blank'}
-                rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}
-                className='inline-flex min-h-11 items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white'
-              >
-                <Icon size={20} strokeWidth={1.5} aria-hidden />
-                <span>{label}</span>
-              </a>
-            ))}
-          </div>
         </div>
-      </div>
-
-      {/* Issue 16: visible labels beside dots */}
-      <nav
-        className='absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 md:right-8 lg:block'
-        aria-label='Section shortcuts'
-      >
-        <ul className='flex flex-col gap-3'>
-          {sectionShortcuts.map((item, i) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                className={cn(
-                  'group flex items-center justify-end gap-3 rounded-sm px-2 py-1.5 text-xs font-semibold tracking-wide text-white/70 transition-colors hover:bg-white/10 hover:text-white',
-                  i === 0 && 'bg-white/10 text-white'
-                )}
-              >
-                <span>{item.label}</span>
-                <span
-                  className={cn(
-                    'h-1.5 w-1.5 rounded-full bg-white/25 transition-colors group-hover:bg-white',
-                    i === 0 && 'bg-highlight-soft'
-                  )}
-                  aria-hidden
-                />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <div className='absolute bottom-6 left-0 right-0 z-20 flex justify-end px-6 lg:hidden'>
-        <a
-          href='#proof'
-          className='font-mono text-xs tracking-wide text-white/50'
-        >
-          Scroll to proof ↓
-        </a>
       </div>
     </section>
   )

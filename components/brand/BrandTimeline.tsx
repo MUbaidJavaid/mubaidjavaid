@@ -3,6 +3,8 @@
 import { BrandSection } from '@/components/brand/system/BrandSection'
 import { TimelineRail } from '@/components/visual/TimelineRail'
 import { experience } from '@/data/site'
+import { brandType } from '@/lib/brand-system'
+import { cn } from '@/lib/utils'
 
 export function BrandTimeline () {
   const items = experience.roles.map(role => ({
@@ -42,12 +44,10 @@ export function BrandTimeline () {
             <p className='font-mono text-xs tracking-wide text-highlight'>
               {experience.title} · Delivery path
             </p>
-            <h2 className='mt-5 font-display text-[clamp(2.4rem,5vw,4.6rem)] font-bold leading-[0.95] tracking-[-0.045em]'>
-              <span className='text-heading'>Built through delivery.</span>
+            <h2 className={cn('mt-5', brandType.title)}>
+              Built through delivery.
               <br />
-              <span className='text-highlight'>
-                Proven in production.
-              </span>
+              <span className='text-highlight'>Proven in production.</span>
             </h2>
           </div>
 
